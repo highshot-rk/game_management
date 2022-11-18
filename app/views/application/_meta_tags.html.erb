@@ -1,0 +1,26 @@
+<!-- Feed RSS -->
+<link rel="alternate" type="application/rss+xml" title="All Indie Games - indiexpo - Free to Play" href="<%= feed_all_url(locale: nil, format: 'xml') %>" />
+<link rel="alternate" type="application/rss+xml" title="Popular Games - indiexpo - Free to Play" href="<%= feed_popular_url(locale: nil, format: 'xml') %>" />
+<link rel="alternate" type="application/rss+xml" title="Events - indiexpo - Free to Play" href="<%= feed_events_url(locale: nil, format: 'xml') %>" />
+
+<!-- META TAG -->
+<meta name='description' content='<%= t('.description') %>' />
+<meta name="keywords" content="<%= t('.keywords') %>" />
+<!-- META TAG OG -->
+<meta property="og:title" content="indiexpo.net - Free Indie Games" />
+<meta property="og:site_name" content="indiexpo.net - Free Indie Games">
+<meta property="fb:app_id" content='<%= Settings.social.facebook.app_id %>' />
+<meta property="fb:admins" content="<%= Settings.social.facebook.admins %>">
+<meta property="og:type" content="website" />
+<meta property="og:url" content='https://www.indiexpo.net'/>
+<meta property="og:image" content='<%= asset_path('Images/LogoMask.png') %>'/>
+<meta property="og:description" content='<%= t('.description') %>' />
+<!-- META TAG Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@indiexpo_net">
+<meta name="twitter:creator" content="@indiexpo_net">
+<meta name="twitter:url" content='https://www.indiexpo.net'>
+<meta name="twitter:title" content='indiexpo.net - Free Indie Games'>
+<meta name="twitter:description" content='<%= t('.description') %>'>
+<meta name="twitter:image" content='<%= asset_path('Images/LogoMask.png') %>'>
+<!-- END META TAG -->

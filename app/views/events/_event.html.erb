@@ -1,0 +1,8 @@
+<div class="box_preview div100">
+<%= link_to event_url(event.slug), class: 'box_screen_preview' do %>
+	<%= image_tag event.image, alt: event.title, class: 'screen_preview' %>
+<% end %>
+<div class="caption">
+	<%= event.title %>
+</div>
+</div>

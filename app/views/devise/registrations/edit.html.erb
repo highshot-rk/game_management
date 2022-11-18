@@ -1,0 +1,42 @@
+<div class="AreaNotifications">
+	<div class="notifications" style="height: auto">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">
+				<% if params[:type] == 'change_password' %><%= t('.change_password') %>
+				<% else %><%= t('.change_email') %>
+				<% end %>
+			</div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body center Write20">
+
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+				<%= devise_error_messages! %>
+
+				<% if params[:type] == 'change_email' %>
+					<div class="center WidFlo Write20"><%= t('.current_email') %></div>
+					<div class="WidFlo" style="border: 1px solid #393a3a; border-radius: 4px; padding: 0.5%;"><i><%= current_user.email %></i></div>
+					<%= f.label :email, t('.new_email'), class: 'center WidFlo' %>
+					<%= f.email_field :email, class: 'WidFlo' %>
+				<% end %>
+
+				<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+					<div class="WidFlo">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+				<% end %>
+
+				<% if params[:type] == 'change_password' %>
+					<%= f.label :password, t('.new_password'), class: 'center WidFlo' %>
+					<%= f.password_field :password, autocomplete: "off", class: 'WidFlo' %>
+
+					<%= f.label :password_confirmation, t('.confirm_new_password'), class: 'center WidFlo' %>
+					<%= f.password_field :password_confirmation, autocomplete: "off", class: 'WidFlo' %>
+				<% end %>
+
+				<%= f.label :current_password, t('.current_password'), class: 'center WidFlo' %>
+				<%= f.password_field :current_password, autocomplete: "off", class: 'WidFlo' %>
+
+				<%= f.submit t('.save'), class: 'Botton WidFlo blank25' %>
+			<% end %>
+		</div>
+	</div>
+</div>

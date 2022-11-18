@@ -1,0 +1,330 @@
+social:
+  facebook:
+    app_id: 109314972734310
+    admins: 222239234471888
+
+public_activity:
+  mailer:
+    exclusions:
+      activity_keys:
+        - score
+      scopes:
+        - staff
+
+downloads:
+  max_per_ip: 3
+
+download_links:
+  exclusions:
+    - steampowered.com
+    - amazon.com
+    - gog.com
+    - epicgames.com
+    - indiegala.com
+    - kinguin.net
+    - kartridge.com
+    - itch.io
+    - gamejolt.com
+    - indiedb.com
+    - kongregate.com
+    - newgrounds.com
+    - freem.ne.jp
+    - betverse.io
+    - game.nicovideo.jp
+    - rpgmaker.net
+    - stencyl.com
+    - yoyogames.com
+    - adventuregamestudio.co
+    - adventuregamestudio.co.uk
+    - scratch.mit.edu
+    - desura.com
+    - crazygames.com
+    - ludumdare.com
+    - ldjam.com
+    - globalgamejam.org
+    - gm48.net
+    - deviantart.com
+    - shorte.st
+    - adf.ly
+    - ouo.io
+    - linkshrink.net
+    - shorturl.at
+    - gca.sh
+    - blv.me
+    - linkbucks.com
+    - adyou.me
+    - ad7.biz
+    - cli.gs
+    - is.gd
+    - tinyurl.com
+    - bit.ly
+    - snipurl.com
+    - goo.gl
+    - facebook.com
+    - twitter.com
+    - youtube.com
+    - youtu.be
+    - gofundme.com
+    - kickstarter.com
+    - indiegogo.com
+    - patreon.com
+    - linktr.ee
+
+scores:
+  download: 1,
+  login: 1,
+  rating: 5,
+  comment: 20,
+  following: 10,
+  event: 20,
+  medal: 20,
+  game: 25
+
+privileges:
+  comments:
+    screens:
+      required_level: 2
+    length:
+      required_level: 4
+      base: 380
+      enhanced: 500
+  events:
+    create:
+      required_level: 8
+
+levels:
+  - 25
+  - 75
+  - 125
+  - 200
+  - 350
+  - 475
+  - 725
+  - 925
+  - 1325
+  - 1675
+  - 2375
+  - 2850
+  - 3800
+  - 4525
+  - 5975
+  - 6900
+  - 8750
+  - 10075
+  - 12725
+  - 14400
+  - 17750
+  - 20125
+  - 24875
+  - 27725
+  - 33425
+  - 37225
+  - 44825
+  - 49350
+  - 58400
+  - 64375
+  - 76325
+  - 83225
+  - 97025
+  - 105775
+  - 123275
+  - 133350
+  - 153500
+  - 166225
+  - 191675
+  - 206075
+
+medals:
+  downloads:
+    descending: false
+    symbol: 'd'
+    positions: [10000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1000, 750, 500, 250, 125]
+  ratings:
+    descending: false
+    symbol: 'v'
+    positions: [100, 75, 50, 25]
+  followers:
+    descending: false
+    symbol: 'fans'
+    positions: [200, 100, 75, 50, 25]
+  chart:
+    descending: true
+    symbol: 't'
+    positions: [1, 2, 3, 10, 25, 50, 100]
+  vig:
+    descending: false
+    symbol: 'vig'
+  king:
+    descending: false
+    symbol: 'king'
+  age:
+    descending: false
+    symbol: 'age'
+    positions: [9, 8, 7, 6, 5, 4, 3, 2, 1]
+  level_2:
+    descending: false
+    symbol: 'level_2'
+  level_4:
+    descending: false
+    symbol: 'level_4'
+  level_6:
+    descending: false
+    symbol: 'level_6'
+  level_10:
+    descending: false
+    symbol: 'level_10'
+  level_16:
+    descending: false
+    symbol: 'level_16'
+  level_26:
+    descending: false
+    symbol: 'level_26'
+  commented_games:
+    descending: false
+    symbol: 'cg'
+  followed_games:
+    descending: false
+    symbol: 'fg'
+  rated_games:
+    descending: false
+    symbol: 'rg'
+  downloaded_games:
+    descending: false
+    symbol: 'dg'
+  events:
+    descending: false
+    symbol: 'e'
+  life:
+    descending: false
+    symbol: 'life'
+  games:
+    descending: false
+    symbol: 'g'
+  game_medals_1:
+    descending: false
+    symbol: 'gm1'
+  game_medals_10:
+    descending: false
+    symbol: 'gm10'
+  user_games:
+    descending: false
+    symbol: 'ug'
+  user_downloads:
+    descending: false
+    symbol: 'ud'
+
+search:
+  mappings:
+    :l: :language
+    :g: :genre
+    :p: :platform
+    :t: :tool
+    :rt: :release_type
+    :ip: :indiepad
+    :po: :playonline
+    :sc: :score
+    :mo: :mobile
+    :ad: :adult
+    :y: :year
+
+indiepad:
+  default:
+    left: 37
+    up: 38
+    right: 39
+    down: 40
+    z: 90
+    x: 88
+    escape: 27
+  keynames:
+    up: ArrowUp
+    down: ArrowDown
+    left: ArrowLeft
+    right: ArrowRight
+    escape: Escape
+    spacebar: SpaceBar
+    shift: Shift
+    '0': Digit0
+    '1': Digit1
+    '2': Digit2
+    '3': Digit3
+    '4': Digit4
+    '5': Digit5
+    '6': Digit6
+    '7': Digit7
+    '8': Digit8
+    '9': Digit9
+    a: KeyA
+    b: KeyB
+    c: KeyC
+    d: KeyD
+    e: KeyE
+    f: KeyF
+    g: KeyG
+    h: KeyH
+    i: KeyI
+    j: KeyJ
+    k: KeyK
+    l: KeyL
+    m: KeyM
+    n: KeyN
+    o: KeyO
+    p: KeyP
+    q: KeyQ
+    r: KeyR
+    s: KeyS
+    t: KeyT
+    u: KeyU
+    v: KeyV
+    w: KeyW
+    x: KeyX
+    y: KeyY
+    z: KeyZ
+    enter: Enter
+    ctrl: ControlLeft
+  keycodes:
+    up: 38
+    down: 40
+    left: 37
+    right: 39
+    escape: 27
+    spacebar: 32
+    shift: 16
+    '0': 48
+    '1': 49
+    '2': 50
+    '3': 51
+    '4': 52
+    '5': 53
+    '6': 54
+    '7': 55
+    '8': 56
+    '9': 57
+    a: 65
+    b: 66
+    c: 67
+    d: 68
+    e: 69
+    f: 70
+    g: 71
+    h: 72
+    i: 73
+    j: 74
+    k: 75
+    l: 76
+    m: 77
+    n: 78
+    o: 79
+    p: 80
+    q: 81
+    r: 82
+    s: 83
+    t: 84
+    u: 85
+    v: 86
+    w: 87
+    x: 88
+    y: 89
+    z: 90
+    enter: 13
+    ctrl: 17

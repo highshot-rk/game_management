@@ -1,0 +1,940 @@
+---
+hi:
+  active_admin:
+    dashboard: डैशबोर्ड
+  activerecord:
+    attributes:
+      event:
+        description: वर्णन
+        end_date: अंतिम तिथि
+        prizes: पुरस्कार
+        rules: नियम
+        screen: इमेज
+        start_date: आरंभ करने की तिथि
+        title: शीर्षक
+        website: वेबसाइट
+      game:
+        author: डेवलपर
+        description: वर्णन
+        genre: प्रकार
+        title: शीर्षक
+        website: वेबसाइट
+      user:
+        username_or_email: उपयोगकर्ता नाम/ईमेल
+        password: पासवर्ड
+        username: उपयोगकर्ता नाम
+        characters_minimum: "न्यूनतम %{minimum_password_length} अक्षर"
+        email: ईमेल
+        terms_of_service: मैं लायसेंस शर्तों को स्वीकार
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: आप 24 घंटे में केवल 2 गेम अपलोड कर सकते हैं
+        user:
+          attributes:
+            username:
+              invalid: में केवल अक्षरांकीय वर्ण (A-Z, 0-9)
+    models:
+      game_languages: Languages
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: आपका समतल %{level} तक बढ़ा था
+      score: आपका स्कोर बढ़ा दिया गया था %{score}
+      new_title: New Title
+      prizes: पुरस्कार
+      game_new_leader: आप सबसे श्रेष्ठ खिलाड़ी है %{game} के!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: और दिखाएं
+      ok: Ok
+      setlanguage: अपनी भाषा चुनें
+    footer:
+      about: इसके बारे में
+      contact_us: हमसे संपर्क करें
+      language: भाषा (Language)
+      faq: पाठकों द्वारा अक्सर पूछे जाने वाले सवाल
+      feed_rss: आरएसएस फ़ीड
+      developers: डेवलपर
+      sitemap: Site Map
+      terms_and_conds: शर्तें
+      blog: चिट्ठा
+    markdown_instructions:
+      formatting_help: स्वरूपण मदद
+      you_type: आपने टाईप किया
+      you_see: आप को दिखा
+      italics: तिरछे अक्षर
+      bold: मोटे अक्षर
+      hashtag: हैशटैग
+      profile: प्रोफ़ाइल
+      item_one: वस्तु 1
+      item_two: वस्तु 2
+      item_three: वस्तु 3
+      spoiler: स्पॉइलर
+    menubar:
+      home: होम पेज
+      chart: चार्ट
+      downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+      events: ईवेंट
+      language: भाषा
+      news: खबरे
+    meta_tags:
+      description: इंडीक्सपो हजारों लोगों को इंडी गेम और मूल रूप से बनाए गए गेम खोजने, देखने और साझा करने की अनुमति देता है।
+      keywords: indiexpo, indie games, गेम, डाउनलोड करें, खेलें, उप्लोड, खिलाड़ी, डेवलपर, ईवेंट, चुनौतियां, लीडरबोर्ड गेम्स, चार्ट, सबसे ज्यादा डाउनलोड किया जाने वाला, सबसे लोकप्रिय, नई रिलीज़,  Gaming Creator on the Rise
+    navbar:
+      register: साइन अप करें
+      login: लॉग इन करें
+      search: "खोजें... (गेम, #हैशटैग, @Profiles)"
+      upload: उप्लोड
+      level_up: ऊपर का स्तर!
+    slideshow_mobile:
+      show_more: और दिखाएं
+    structured_data:
+      description: इंडीक्सपो हजारों लोगों को इंडी गेम और मूल रूप से बनाए गए गेम खोजने, देखने और साझा करने की अनुमति देता है।
+      keywords: indiexpo, indie games, गेम, डाउनलोड करें, खेलें, उप्लोड, खिलाड़ी, डेवलपर, ईवेंट, चुनौतियां, लीडरबोर्ड गेम्स, चार्ट, सबसे ज्यादा डाउनलोड किया जाने वाला, सबसे लोकप्रिय, नई रिलीज़,  Gaming Creator on the Rise
+      games: गेम
+    terms:
+      terms_and_conditions: शर्तें
+  comments:
+    answers:
+      more_comments: और दिखाएं
+    comment:
+      answer: उत्तर दें
+      answers:
+        few: '%{count} जवाब देखें'
+        many: '%{count} जवाब देखें'
+        one: जवाब देखें
+        other: '%{count} जवाब देखें'
+      destroy: हटाएँ
+      destroy_confirm: क्या आपको यकीन है?
+      level: Level
+      new: नया
+      verified: सत्यापित
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: Now Loading...
+      publish: साझा करें
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short_date: "%-d/%-m"
+  devise:
+    sessions:
+      new:
+        login: लॉग इन करें
+        recover_password: पासवर्ड बदलें
+        send_email_again: फिर से ईमेल भेजें
+        details:
+          structured_data:
+            login: लॉग इन करें
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: लॉग इन करें
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: ईमेल
+        send_email_again: फिर से ईमेल भेजें
+        details:
+          structured_data:
+            send_email_again: फिर से ईमेल भेजें
+            description: अपने ईमेल पते की पुष्टि करें
+          meta_tags:
+            send_email_again: फिर से ईमेल भेजें
+            description: अपने ईमेल पते की पुष्टि करें
+    mailer:
+      confirmation_instructions:
+        welcome: अभी जुड़े और आंनद लिज्ये!
+        title: 'अपना ईमेल नीचे दिए गए लिंक पर हमारे साथ जांचे:'
+        confirm_account: अपने ईमेल पते की पुष्टि करें
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: पासवर्ड बदलें
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: किसी ने आपका पासवर्ड बदलने के लिए एक लिंक का अनुरोध किया है, और आप इसे नीचे दिए गए लिंक के माध्यम से कर सकते हैं।
+      unlock_instructions:
+        unlock_account: मेरा खाता अनलॉक करें
+    passwords:
+      new:
+        recover_password: पासवर्ड बदलें
+        email: ईमेल
+        send: Send
+        details:
+          structured_data:
+            recover_password: पासवर्ड बदलें
+            description: Enter an email that you can check now
+          meta_tags:
+            recover_password: पासवर्ड बदलें
+            description: Enter an email that you can check now
+      edit:
+        change_password: पासवर्ड बदलें
+        new_password: नया पासवर्ड
+        confirm_new_password: नए पासवर्ड की पुष्टि करें
+    registrations:
+      new:
+        register: साइन अप करें
+        details:
+          structured_data:
+            register: साइन अप करें
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: साइन अप करें
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: पासवर्ड बदलें
+        change_email: ईमेल बदलें
+        new_password: नया पासवर्ड
+        confirm_new_password: नए पासवर्ड की पुष्टि करें
+        current_password: वर्तमान पासवर्ड
+        current_email: मौजूदा ईमेल
+        new_email: नया ईमेल
+        save: बदलाव सहेजें
+    shared:
+      menubar:
+        login: लॉग इन करें
+        recover_password: पासवर्ड बदलें
+        register: साइन अप करें
+        send_email_again: फिर से ईमेल भेजें
+  download_links:
+    download_link:
+      download: डाउनलोड करें
+  errors:
+    messages:
+      not_saved: सहेजने में विफल
+  events:
+    events:
+      details:
+        meta_tags:
+          events: ईवेंट & चुनौतियां
+          description: 'Indie Games : ईवेंट & चुनौतियां - आगामी ईवेंट & Past'
+        structured_data:
+          events: ईवेंट & चुनौतियां
+          description: 'Indie Games : ईवेंट & चुनौतियां - आगामी ईवेंट & Past'
+    active_selector:
+      active: आगामी ईवेंट
+      inactive: Past
+    edit:
+      destroy: हटाएँ
+      destroy_confirm: क्या आपको यकीन है?
+    end_after_start: should be after start date
+    event_types:
+      all: सब
+      contest: प्रतियोगिता
+      mini_contest: Mini Contest
+      new: ईवेंट बनाएँ
+      other: Other
+    form:
+      language: भाषा
+      publish: साझा करें
+      type: प्रकार
+    menubar:
+      details: ब्यौरा
+      edit: संपादित करें
+    index:
+      events: ईवेंट
+      challenges: चुनौतियां
+      champions: चापायोंस
+      points: पॉइंट्स
+      show_more: और दिखाएं
+    new:
+      event: Event
+    share:
+      share: शेयर करें
+      email: ईमेल
+      qrcode: क्यूआर कोड
+    show:
+      description: वर्णन
+      ended: Inactive
+      ends: प्रति
+      from: प्रेषक
+      genre: प्रकार
+      language: भाषा
+      prizes: पुरस्कार
+      rules: नियम
+      share: शेयर करें
+      subscribers: सदस्य
+      to: To
+      website: वेबसाइट
+  feeds:
+    index:
+      feed_rss: आरएसएस फ़ीड
+      events: 'Indie Games : ईवेंट'
+      latest: 'Indie Games : नई रिलीज़'
+      popular: 'Indie Games : सबसे लोकप्रिय'
+      last_updated: 'Indie Games : हाल ही में अद्यतित'
+    details:
+      meta_tags:
+        feed_rss: आरएसएस फ़ीड
+        description: 'Indie Games : आरएसएस फ़ीड - ईवेंट - नई रिलीज़ - सबसे लोकप्रिय - हाल ही में अद्यतित'
+      structured_data:
+        feed_rss: आरएसएस फ़ीड
+        description: 'Indie Games : आरएसएस फ़ीड - ईवेंट - नई रिलीज़ - सबसे लोकप्रिय - हाल ही में अद्यतित'
+  layouts:
+    application:
+      indie_games: Indie Games
+    game:
+      play: खेलें
+      download: डाउनलोड करें
+      new: नया
+      updates: Updates!
+      show_more: और दिखाएं
+      adult_content_message_html: इस सामग्री को देखने के लिए आपको कम से कम अठारह साल का होना चाहिए।</br> क्या आप अठारह से अधिक हैं और वयस्क सामग्री देखने को तैयार हैं?
+      yes: हाँ
+      no: नहीं न
+  games:
+    game:
+      play: खेलें
+      download: डाउनलोड करें
+      new: नया
+      updates: Updates!
+      chart: चार्ट
+      verified: सत्यापित
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: खिलाड़ी
+      game_menu:
+        comments: टिप्पणियां
+        details: ब्यौरा
+        updates: Updates
+        edit: संपादित करें
+        statistics: इनसाइट
+      structured_data:
+       games: गेम
+       developer: डेवलपर
+      index:
+        videogame: वीडियो गेम
+        published_by: 'द्वारा प्रकाशित '
+        edit: संपादित करें
+        statistics: इनसाइट
+        players: खिलाड़ी
+        news: खबरे
+        no_news: कोई खबर नहीं
+        website: वेबसाइट
+        recommended: सुझाए गए
+    edit:
+      edit: संपादित करें
+      destroy: हटाएँ
+      destroy_confirm: क्या आपको यकीन है?
+    embed_popup:
+      embed: एंबेड
+      preview: पूर्व दर्शन
+    record_chart:
+      chart: चार्ट
+      login: लॉग इन करें
+      score_system_games: लीडरबोर्ड गेम्स
+    followers_list:
+      subscribers: सदस्य
+      verified: सत्यापित
+    players_list:
+      downloads_count: खिलाड़ी
+      last_week: पिछले 7 दिन
+      no_logged_user: गेस्ट
+      no_result: कोई परिणाम नहीं मिले
+      verified: सत्यापित
+    form:
+      add_external_link: बाहरी लिंक जोड़ें
+      add_file: Add file
+      html5_description: 'एचटीएमएल 5 / फ्लैश / वेबजीएल गेम्स के लिए: अपनी गेम युक्त एक ज़िप फ़ाइल अपलोड करें। ज़िप में index.html फ़ाइल होना चाहिए।'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Long Description
+      artworks: Artworks
+      delete: हटाएँ
+      downloads: Downloads
+      genre: प्रकार
+      language: भाषा
+      publish: साझा करें
+      remove_file: हटाएँ
+      remove_url: हटाएँ
+      restore: रद्द करें
+      screens: इमेज
+      status: स्थिति
+      complete: पूर्ण
+      demo: डेमो
+      minigame: छोटा गेम
+      tool: उपकरण
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: खिलाड़ी
+      level: Level
+      subscribers: सदस्य
+      comments: टिप्पणियां
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: वर्णन
+      send: Send
+    new:
+      upload: उप्लोड
+    share:
+      share: शेयर करें
+      email: ईमेल
+      qrcode: क्यूआर कोड
+    show:
+      play: खेलें
+      embed: एंबेड
+      share: शेयर करें
+      monetisation: Monetisation
+      download: डाउनलोड करें
+      subscribe: सदस्य बनें
+      subscribed: सदस्यता ले ली है
+      subscribers: सदस्य
+      comment: टिप्पणियां
+      description: वर्णन
+      published_on: को प्रकाशित
+      adult_content: Adults Contents
+      complete: पूर्ण
+      demo: डेमो
+      minigame: छोटा गेम
+      language: भाषा
+      first_to_comment: एक सार्वजनिक टिप्पणी जोड़ें...
+      mobile_first: Mobile Friendly
+      more_comments: और दिखाएं
+      screens: इमेज
+      video: Video
+      top_player: शीर्ष खिलाड़ी
+      epic_win: Epic Win!
+      on_the_rise: Gaming Creator on the Rise
+      verified: सत्यापित
+    stats:
+      statistics: इनसाइट
+      comments: टिप्पणियां
+      monetisation: Monetisation
+      daily: आज
+      days: दिन
+      date: Date
+      downloads: खिलाड़ी
+      followings: सदस्य
+      chart: चार्ट
+      most_rated: सबसे वोटित
+      followings_chart: सबसे अधिक अनुवर्ती
+      most_downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+      last_week: Last week
+      this_week: This week
+      last_6_months:  पिछले 180 दिन
+      totals: Totals
+      visits: बार देखा गया
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Other
+      engagement: Engagement
+      show_more: और दिखाएं
+      qrcode: क्यूआर कोड
+      warning: चेतावनी
+    support:
+      prizes: पुरस्कार
+      donate: 'दान करें %{price}$'
+    tips:
+      enhancements: बेहतर बनाइए
+      only_to_you: सिर्फ़ आपको दिखाई देगा
+  games_sections:
+    chart:
+      last_6_months:  पिछले 180 दिन
+      details:
+        meta_tags:
+          chart: चार्ट
+          description: 'Indie Games : सबसे ज्यादा डाउनलोड किया जाने वाला - सबसे वोटित - सबसे अधिक अनुवर्ती'
+        structured_data:
+          chart: चार्ट
+          description: 'Indie Games : सबसे ज्यादा डाउनलोड किया जाने वाला - सबसे वोटित - सबसे अधिक अनुवर्ती'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+          description: 'Indie Games : सबसे ज्यादा डाउनलोड किया जाने वाला - आज - पिछले 7 दिन - पिछले 30 दिन - आजीवन'
+        structured_data:
+          downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+          description: 'Indie Games : सबसे ज्यादा डाउनलोड किया जाने वाला - आज - पिछले 7 दिन - पिछले 30 दिन - आजीवन'
+    news:
+      details:
+        meta_tags:
+          news: खबरे
+          description: 'Indie Games : खबरे - पिछले 30 दिन'
+        structured_data:
+          news: खबरे
+          description: 'Indie Games : खबरे - पिछले 30 दिन'
+    filters:
+      chart:
+        most_downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+        voted: सबसे वोटित
+        followed: सबसे अधिक अनुवर्ती
+      downloaded:
+        everytime: आजीवन
+        last_month: पिछले 30 दिन
+        last_week: पिछले 7 दिन
+        today: आज
+      news:
+        last_commented: टिप्पणियां
+        last_updated: हाल ही में अद्यतित
+        latest: नई रिलीज़
+        popular: सबसे लोकप्रिय
+  genres:
+    genre:
+      rpg: भूमिका निभाना
+      browsergame: Browser Game
+      platformaction: आर्केड गेम
+      shootemup: Shoot em Up
+      puzzle: पहेली
+      pointandclick: Point and Click
+      sport: Sport
+      fighting: Fighting
+      other: Other
+    genres:
+      all: सब
+    select:
+      genre: प्रकार
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: Infringes my rights
+        offensive: Hateful or abusive content
+        sexual: Sexual content
+        spam: Spam or misleading
+        violent: Violent or repulsive content
+  home:
+    navigation:
+      home: होम पेज
+      news: खबरे
+      chart: चार्ट
+      events: ईवेंट
+      downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+      console: Console
+      subscriptions: सदस्यता
+      your_games: Your Games
+      history: इतिहास देखें
+    landing:
+      last_followed_games_updated: अगर तुमसे रह गया तो
+      play: खेलें
+      recommended: सुझाए गए
+      based_recent_activity: आपकी हाल की गतिविधि के आधार पर
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: जयंती
+      query_of_the_day_3: सबसे अधिक अनुवर्ती - पिछले 180 दिन
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: लीडरबोर्ड गेम्स
+      query_of_the_day_6: Updates!
+      downloaded: सबसे ज्यादा डाउनलोड किया जाने वाला
+      today: आज
+      last_week: पिछले 7 दिन
+      last_month: पिछले 30 दिन
+      latest: नई रिलीज़
+      show_more: और दिखाएं
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'Indie Games : खेलें'
+        meta_tags:
+          console: Console
+          description: 'Indie Games : खेलें'
+    subscriptions:
+      subscriptions: सदस्यता
+      updates: Updates!
+      no_result: कोई परिणाम नहीं मिले
+      no_subscriptions_message: जब आप कम से कम 5 गेम की सदस्यता लेते हैं तो indiexpo सर्वोत्तम काम करता है।
+      players: खिलाड़ी
+      subscribers: सदस्य
+      comments: टिप्पणियां
+      details: ब्यौरा
+      show_more: और दिखाएं
+    your_games:
+      your_games: Your Games
+      players: खिलाड़ी
+      subscribers: सदस्य
+      comments: टिप्पणियां
+      details: ब्यौरा
+      show_more: और दिखाएं
+    history:
+      history: इतिहास देखें
+      score_system_games: लीडरबोर्ड गेम्स
+      last_commented: टिप्पणियां
+      subscriptions: सदस्यता
+      votes: Votes
+  static:
+    about:
+      about: इसके बारे में
+      app: मोबाइल अनुप्रयोग
+      extension: Extensions
+      social_networks: सामाजिक जालक्रम
+      games: गेम
+      show_more: और दिखाएं
+      details:
+        structured_data:
+          about: इसके बारे में
+          description: इंडीक्सपो हजारों लोगों को इंडी गेम और मूल रूप से बनाए गए गेम खोजने, देखने और साझा करने की अनुमति देता है।
+        meta_tags:
+          about: इसके बारे में
+          description: इंडीक्सपो हजारों लोगों को इंडी गेम और मूल रूप से बनाए गए गेम खोजने, देखने और साझा करने की अनुमति देता है।
+    faq:
+      faq: पाठकों द्वारा अक्सर पूछे जाने वाले सवाल
+      question_1: What is indiexpo?
+      answer_1: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games. Indiexpo provides an area for people to connect, inform, and inspire others across the globe and acts as a distribution platform for original content creators and advertisers large and small.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: पाठकों द्वारा अक्सर पूछे जाने वाले सवाल
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+        meta_tags:
+          faq: पाठकों द्वारा अक्सर पूछे जाने वाले सवाल
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+    developers:
+      developers: डेवलपर
+      details:
+        structured_data:
+          developers: डेवलपर
+          description: Explore our Developer Products. इनसाइट, मोबाइल अनुप्रयोग, Extensions, Tutorials
+        meta_tags:
+          developers: डेवलपर
+          description: Explore our Developer Products. इनसाइट, मोबाइल अनुप्रयोग, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: अपनी भाषा चुनें
+  medals:
+    medal:
+      titles:
+        age: "%{score} वर्षों"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: Now Loading...
+      publish: साझा करें
+    news:
+      destroy: हटाएँ
+      destroy_confirm: क्या आपको यकीन है?
+    index:
+      players: खिलाड़ी
+      subscribers: सदस्य
+      download: डाउनलोड करें
+  options:
+    index:
+      dashboard: डैशबोर्ड
+      profile: प्रोफ़ाइल
+      followed_games: सदस्यता
+      your_games: Your Games
+      settings: सेटिंग
+      logout: साइन आउट करें
+  platforms:
+    platforms:
+      all: सब
+    select:
+      platform: प्लेटफ़ॉर्म
+  public_activities:
+    index:
+      destroy_confirm: क्या आपको यकीन है?
+      mark_all_as_read: सभी को पढ़ा हुआ चिह्नित करें
+      notifications: सूचनाएँ
+      see_all: और दिखाएं
+  public_activities_mailer:
+    notify:
+      hello: नमस्ते %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Unsubscribe
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: सत्यापित
+  reports:
+    new:
+      details: 'वर्णन:'
+      question: What is the issue?
+      send: Send
+      title: 'रिपोर्ट करें: %{game}'
+      report_submitted: हमें बताने के लिए धन्यवाद.
+      report_submitted_message: आपका फ़ीडबैक हमारे सिस्टम की यह जानने में मदद करता है कि कुछ गड़बड़ है.
+  scores:
+    score:
+      points: पॉइंट्स
+      delete: हटाएँ
+      destroy_confirm: क्या आपको यकीन है?
+      verified: सत्यापित
+  search:
+    games:
+      filters: फ़िल्टर
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      no_result: कोई परिणाम नहीं मिले
+      search: खोजें
+      search_placeholder: खोजें...
+      search_tools: Search tools
+      language: भाषा
+      genre: प्रकार
+      platform: प्लेटफ़ॉर्म
+      recommended: सुझाए गए
+      tool: उपकरण
+      status: स्थिति
+      games: गेम
+      score_system_games: लीडरबोर्ड गेम्स
+      year: साल
+    details:
+      meta_tags:
+        search: खोजें
+        description:  "खोजें... (गेम, #हैशटैग, @Profiles, Search tools, भाषा, प्रकार, प्लेटफ़ॉर्म, साल, Tool, स्थिति)"
+      structured_data:
+        search: खोजें
+        description:  "खोजें... (गेम, #हैशटैग, @Profiles, Search tools, भाषा, प्रकार, प्लेटफ़ॉर्म, साल, Tool, स्थिति)"
+  settings:
+    edit:
+      settings: सेटिंग
+    form:
+      language: भाषा (Language)
+      setlanguage: अपनी भाषा चुनें
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: ईमेल सूचनाएं
+      general: सामान्य
+      mail_comment_answer: मेरी टिप्पणियों के जवाब
+      mail_comment_mention: उल्लेख किए जाने पर
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: सदस्यता
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Your Games
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: अकाउंट डेटा
+      email: ईमेल
+      password: पासवर्ड
+      edit: संपादित करें
+      stats: इनसाइट
+      comments: टिप्पणियां
+      subscriptions: सदस्यता
+      show_more: और दिखाएं
+      save: बदलाव सहेजें
+      delete_account: स्थायी रूप से खाता हटाएँ
+  sitemaps:
+    index:
+      active_events: आगामी ईवेंट
+      inactive_events: Past
+      new_events: ईवेंट बनाएँ
+      recover: पासवर्ड बदलें
+      sign_in: लॉग इन करें
+      sign_up: साइन अप करें
+      sitemap: Site Map
+    details:
+      meta_tags:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: सदस्य बनें
+    unsubscribe_button:
+      unsubscribe: Unsubscribe
+  time:
+    formats:
+      default: "%H:%M %d/%m/%Y"
+  tools:
+    select:
+      tool: उपकरण
+  users:
+    show:
+      page_title: "%{username} indiexpo पर हैं"
+      online: ऑनलाइन
+      chart: Rank
+      last_month: पिछले 30 दिन
+      level: Level
+      games: गेम
+      score_system_games: लीडरबोर्ड गेम्स
+      show_more: और दिखाएं
+      subscriptions: सदस्यता
+      last_commented: टिप्पणियां
+      history: इतिहास देखें
+      other_players: Other Players
+      verified: सत्यापित
+    details:
+      structured_data:
+        developer: डेवलपर
+        gamer: Gamer
+      meta_tags:
+        about: इसके बारे में
+        description: प्रोफ़ाइल, जयचिह्न पेटी, गेम, सदस्यता, लीडरबोर्ड गेम्स, टिप्पणियां & इतिहास देखें
+  me:
+    menubar:
+      profile: प्रोफ़ाइल
+      event_subscriptions: My Events
+      followed_games: सदस्यता
+      your_games: Your Games
+      settings: सेटिंग
+    followed_games:
+      no_result: कोई परिणाम नहीं मिले
+      no_subscriptions_message: जब आप कम से कम 5 गेम की सदस्यता लेते हैं तो indiexpo सर्वोत्तम काम करता है।
+    games:
+      your_games: Your Games
+      visits: बार देखा गया
+      downloads_count: खिलाड़ी
+      subscribers: सदस्य
+      totals: Totals
+      no_result: कोई परिणाम नहीं मिले
+      upload: उप्लोड
+  levels:
+    index:
+      level: Level
+      user_chart: Rank
+      last_month: पिछले 30 दिन
+      gems: Gems
+      trophy_case: जयचिह्न पेटी
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: सत्यापित
+    goals:
+      goals: Goals
+    stats:
+      stats: इनसाइट
+      comments: टिप्पणियां
+      subscriptions: सदस्यता
+      your_games: Your Games
+      votes: Votes
+  warning:
+    index:
+      warning: चेतावनी
+      destroy: हटाएँ
+      destroy_confirm: क्या आपको यकीन है?
+      delete_account: आपका अकाउंट डिलीट हो जाने के बाद इसे वापस नहीं पाया जा सकेगा.
+      delete_account_description: जब आप अपना indiexpo अकाउंट हटा देंगे, तो आप आपने द्वारा indiexpo पर साझा की गई सामग्री या जानकारी को वापस नहीं पा सकेंगे.

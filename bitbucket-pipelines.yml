@@ -1,0 +1,10 @@
+image: node:8.11.1
+
+pipelines:
+   tags:
+      release-*:
+         - step:
+             script:
+               - ssh -i /opt/atlassian/pipelines/agent/data/id_rsa freankexpo@95.110.226.136 "cd indiexpo; script/server/deploy"
+             deployment:
+                production

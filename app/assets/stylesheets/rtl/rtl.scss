@@ -1,0 +1,53 @@
+body {direction: rtl; overflow-x: hidden;}
+#Menu {display: flex}
+.Logo {right: 0;}
+.website_language {margin-right: 170px; left: revert !important;}
+.navbar-menu {margin-left: 0px !important; margin-right: 19%;}
+.navbar-menu-search{float: right !important;}
+.OptionsIcons {float: left !important;}
+.List ul {right: 0;}
+.List li span {margin-right: 15%;}
+#SlideShow {margin-left: 2.7% !important;}
+.slide_preview_container {left: 0; right: auto !important;}
+.slide_preview {background-position: right;}
+.notifications{margin-right: 25%;}
+.close-notifications-icon {float: left !important;}
+.info-notifications-icon {float: left !important;}
+.badge {float: right !important; margin-right: 0 !important; margin-left: 10px;}
+.text-body-notifications {float: right !important;}
+.links-notifications {float: left !important;}
+.flags {text-align: right !important;}
+.news_count {margin-right: 33%;}
+#ListRight {margin-left: 1% !important; margin-right: 19% !important; float: revert !important;}
+.AreaLeft {float: right !important;}
+.AreaRight{margin: 0px 0px 0px 3% !important;}
+.Footer {margin-right: 19%; margin-left: 0 !important; float: right !important;}
+.Footer a {float: right !important;}
+.div74 {margin-left: 1%; margin-right: 0 !important; float: right !important}
+.div26 {float: right !important}
+.div45 {float: right !important}
+.padding_right {padding-right: 0 !important; padding-left: 2%;}
+.Write30 {margin-right: 0 !important; float: right !important;}
+.Write20 {margin-right: 0 !important; margin-left: 4%; float: right !important;}
+.Write20 span {margin-top: 6px; margin-right: 6px;}
+.box_preview {float: right !important; margin-left: 2%; margin-right: 0 !important}
+.caption{float: right !important;}
+.sticker_new {left: 0;}
+.Botton {float: right !important;}
+.game_name {float: right !important;}
+.best_player {float: right !important;}
+.info_details {float: right !important;}
+.SubDownload{float: left;}
+.DownloadButtons{padding-bottom: 0 !important}
+.share-button {float: right !important}
+.favourite_game {float: right !important}
+.subscribe-button {border-left: none !important; border-right: 1px solid #ccc;}
+.embed {left: 0; right: auto !important;}
+.right {float: left !important}
+.active {border-left: none !important; border-right: 4px solid #c60;}
+.circle {
+	float: right;
+	&:first-child {
+		margin-left: 2% !important;
+	}
+}

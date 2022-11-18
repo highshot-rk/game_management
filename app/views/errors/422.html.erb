@@ -1,0 +1,16 @@
+<% content_for :menubar do %>
+	<%= render 'errors/menubar' %>
+<% end %>
+
+<div class="WrapList">
+	<div class="Write30 WidFlo">
+		Ouch! Something bad happened...
+	</div>
+
+	<div class="Write20 WidFlo">
+		It seems that the site got a big bug! <a class="textc60" href="mailto:info@indiexpo.net">Please report this to the boss</a>
+	</div>
+
+	<!-- Games List -->
+	<%#= render 'games', games: @games, skip_pages: (@filter != :everytime) %>
+</div>

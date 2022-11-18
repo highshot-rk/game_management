@@ -1,0 +1,41 @@
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.indiexpo.net/",
+      "name": "indiexpo",
+      "image": "<%= asset_path('Images/LogoMask.png') %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "<%= about_url %>",
+			"@type": "AboutPage",
+      "name": "<%=t('.about')%>",
+      "image": "<%= asset_path('Images/LogoMask.png') %>"
+    }
+  }]
+}
+</script>
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "AboutPage",
+	"breadcrumb": "indiexpo > <%=t('.about')%>",
+	"reviewedBy": "indiexpo Staff",
+	"url": "<%= about_url %>",
+	"name": "<%=t('.about')%>",
+	"description": "<%= t('.description') %>",
+	"keywords": "<%=t('.about')%>, <%= t('application.meta_tags.keywords') %>",
+	"primaryImageOfPage": "<%= asset_path('Images/LogoMask.png') %>",
+	"inLanguage": "<%= I18n.locale %>"
+}
+</script>
+<!-- STRUCTURED DATA END -->

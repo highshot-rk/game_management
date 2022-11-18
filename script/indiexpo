@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  ssh -t freankexpo@95.110.226.136 'cd indiexpo; bash'
+else
+  command=$1
+  ssh -t freankexpo@95.110.226.136 "cd indiexpo; script/server/$command"
+fi

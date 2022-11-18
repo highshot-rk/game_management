@@ -1,0 +1,58 @@
+<%= page_title t('.login') %>
+<% content_for(:structured_data) do %>
+	<%= render 'devise/sessions/new/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'devise/sessions/new/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<%= render 'devise/shared/menubar', menu: :login %>
+<% end %>
+
+<%= render 'terms' %>
+<!-- rightwrap -->
+<div id="ListRight" style="max-width: 750px;">
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		<div class="WidFlo center background900 Write20">
+			<%= flash[:alert] %>
+		</div>
+		<br>
+  <%= hidden_field_tag :from, @from %>
+  <!-- Username -->
+  <div class="Window2">
+    <div class="Write20"><%= f.label :username_or_email %></div>
+			<%= f.text_field :username_or_email, autofocus: true, required: true, class: "WidFlo" %>
+  </div>
+  <!-- Password -->
+  <div class="Window2">
+    <div class="Write20"><%= f.label :password %></div>
+			<%= f.password_field :password, autocomplete: "off", required: true, class: "WidFlo" %>
+  </div>
+  <!-- Remember_me -->
+  <div class="Window2">
+    <div class="Write20">
+				<%= f.check_box :remember_me, checked: true %>
+    <%= f.label :remember_me %>
+    </div>
+  </div>
+		<!-- Submit -->
+		<%= f.submit t('.login'), class: 'Botton div100' %>
+  <% end %>
+	<div class="right">
+		<%= link_to t('.recover_password'), new_user_password_path, class: 'BottonLight hoveron right' %>
+		<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+			<br><%= link_to t('.send_email_again'), new_confirmation_path(resource_name), class: 'BottonLight hoveron right' %>
+		<% end -%>
+	</div>
+	<!-- Login with the Socials 
+	<div class="Window2 facebook">
+		<div class="Write20 center">Login with Facebook</div>
+	</div>
+	<div class="Window2 googleplus">
+		<div class="Write20 center">Login with Google</div>
+	</div>
+	<div class="Window2 twitter">
+		<div class="Write20 center">Login with Twitter</div>
+	</div>
+	-->
+</div>

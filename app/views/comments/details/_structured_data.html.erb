@@ -1,0 +1,77 @@
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.indiexpo.net/search",
+      "name": "<%= t('search.games.games') %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.indiexpo.net/search?search%5Bauthor%5D=<%= @game.author %>",
+      "name": "<%= @game.author %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "<%= game_url(@game.slug, locale: nil) %>",
+      "name": "<%= @game.title %>",
+      "image": "<%= @game.image %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@id": "<%= game_comments_url(@game.slug) %>",
+      "name": "<%= t('games.show.comment') %>",
+      "image": "<%= @game.image %>"
+    }
+  }]
+}
+</script>
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "DiscussionForumPosting",
+	"@id": "<%= game_comments_url(@game.slug) %>",
+	"headline": "<%= @game.title %> - <%= t('games.show.comment') %>",
+	"mainEntityOfPage": "<%= game_url(@game.slug, locale: nil) %>",
+	"author": {
+		"@type": "Person",
+		"name": "<%= @game.author %>",
+		"jobTitle": "<%= t('games.details.structured_data.developer') %>",
+		"url": "<%= game_author_page_url(@game) %>",
+		"image": "<%= asset_url('Images/pages/profile.png') %>"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "<%= @game.author %>",
+		"url": "<%= game_author_page_url(@game) %>",
+		"logo": {
+			"@type": "ImageObject",
+			"author": "<%= @game.author %>",
+			"contentUrl": "<%= @game.image %>",
+			"url": "<%= @game.image %>"
+		}
+	},
+	<% if @comments.size > 0 %>
+		"interactionStatistic": {
+			"@type": "InteractionCounter",
+			"interactionType": "http://schema.org/CommentAction",
+			"userInteractionCount": <%= @game.comments_count %>
+		},
+	<% end %>
+	"datePublished": "<%= l @game.created_at.to_date %>",
+	"image": "<%= @game.image %>",
+	"url": "<%= game_comments_url(@game.slug) %>"
+}
+</script>
+<!-- STRUCTURED DATA END -->

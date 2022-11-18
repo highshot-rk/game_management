@@ -1,0 +1,1 @@
+<%= form.collection_select defined?(name) || :genre, Genre.all, :id, :name, include_blank: t('.genre'), selected: search_params[:genre] %>

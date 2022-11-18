@@ -1,0 +1,80 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.prizes') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<!-- Prize 1 -->
+			<div class="WidFlo div100" style="margin-bottom: 20px;">
+				<div class="center">
+					<%= image_tag 'Images/icons/prize.png', class: 'icon' %>
+				</div>
+				<%#= form_tag("https://www.sandbox.paypal.com/cgi-bin/webscr", authenticity_token: false) do %>
+				<%= form_tag("https://www.paypal.com/cgi-bin/webscr", authenticity_token: false, class: 'center') do %>
+					<%= hidden_field_tag :business,  @game.monetisation&.paypal_account %>
+					<%= hidden_field_tag :cmd, "_donations" %>
+
+					<%= hidden_field_tag :item_name, @game.monetisation&.description %>
+					<% if current_user %>
+						<%= hidden_field_tag :item_number, "Donation through indiexpo by #{current_user.username}" %>
+					<% else %>
+						<%= hidden_field_tag :item_number, "Donation through indiexpo by an Anonymus Indiexpor" %>
+					<% end %>
+					<%= hidden_field_tag :amount, "1.00" %>
+					<%= hidden_field_tag :currency_code, "USD" %>
+
+					<%= submit_tag t('.donate', price: 1), id: "prize-one-submit", class: "Write20 Botton center", style: "margin: 0; float: none; width: auto;" %>
+				<% end %>
+				<div class="Write20 center hoveron"><%= @game.monetisation&.description %></div>
+			</div>
+			<!-- Prize 2 -->
+			<div class="WidFlo div100" style="margin-bottom: 20px;">
+				<div class="center">
+					<%= image_tag 'Images/icons/guide.png', class: 'icon' %>
+				</div>
+				<%= form_tag("https://www.paypal.com/cgi-bin/webscr", authenticity_token: false, class: 'center') do %>
+					<%= hidden_field_tag :business,  @game.monetisation&.paypal_account %>
+					<%= hidden_field_tag :cmd, "_donations" %>
+
+					<%= hidden_field_tag :item_name, "Mystery Box" %>
+					<% if current_user %>
+						<%= hidden_field_tag :item_number, "Donation through indiexpo by #{current_user.username}" %>
+					<% else %>
+						<%= hidden_field_tag :item_number, "Donation through indiexpo by an Anonymus Indiexpor" %>
+					<% end %>
+					<%= hidden_field_tag :amount, "2.50" %>
+					<%= hidden_field_tag :currency_code, "USD" %>
+
+					<%= submit_tag t('.donate', price: 2.5), id: "prize-two-submit", class: "Write20 Botton center", style: "margin: 0; float: none; width: auto;" %>
+				<% end %>
+				<div class="Write20 center hoveron">Mystery Box</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("#prize-one-submit").click(function(){
+		$.ajax({
+		  type: 'GET',
+		  url: '/supporters/create',
+		  data: {
+		    prize: 1,
+				game_id: <%= @game.id %>
+ 		  }
+		});
+	});
+
+	$("#prize-two-submit").click(function(){
+		$.ajax({
+			type: 'GET',
+			url: '/supporters/create',
+			data: {
+				prize: 2,
+				game_id: <%= @game.id %>
+			}
+		});
+	});
+</script>

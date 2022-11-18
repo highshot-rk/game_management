@@ -1,0 +1,83 @@
+<%= page_title t('.sitemap') %>
+<% content_for(:structured_data) do %>
+	<%= render 'sitemaps/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'sitemaps/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<li class="selected">
+		<div class="desktop_only"><%=t('.sitemap')%></div>
+		<%= image_tag "Images/icons/pages/sitemap.png", class: 'mobile_only', alt: t(".sitemap") %>
+	</li>
+<% end %>
+
+<div class="WrapList">
+	<h1 class="Write30 WidFlo">indiexpo - <%=t('.sitemap')%></h1>
+
+	<!-- Home -->
+	<div class="div45 div100">
+		<h1><%= link_to t('home.navigation.home'), root_path, class: 'Write20 WidFlo' %></h1>
+		<div class="WidFlo">
+			<%=t('home.navigation.downloaded')%><br>
+			(<%= link_to t('games_sections.filters.downloaded.today'), downloaded_games_url(filter: :today) %> - 
+			<%= link_to t('games_sections.filters.downloaded.last_week'), downloaded_games_url(filter: :last_week) %> - 
+			<%= link_to t('games_sections.filters.downloaded.last_month'), downloaded_games_url(filter: :last_month) %>)<br>
+			<%= link_to t('home.navigation.console'), indiepad_games_path %>
+		</div>
+	</div>
+
+	<!-- News -->
+	<div class="div45 div100">
+		<h2><%= link_to t('application.menubar.news'), news_games_url, class: 'Write20 WidFlo' %></h2>
+		<div class="WidFlo">
+			<%= link_to t('games_sections.filters.news.popular'), news_games_url(filter: :popular) %><br>
+			<%= link_to t('games_sections.filters.news.latest'), news_games_url(filter: :latest) %>
+		</div>
+	</div>
+
+	<div class="WidFlo blank25"><hr></div>
+
+	<!-- Chart -->
+	<div class="div45 div100">
+		<h3><%= link_to t('application.menubar.chart'), chart_games_url, class: 'Write20 WidFlo' %></h3>
+		<div class="WidFlo">
+			<%= link_to t('games_sections.filters.chart.voted'), chart_games_url(filter: :voted) %><br>
+			<%= link_to t('games_sections.filters.chart.most_downloaded'), chart_games_url(filter: :most_downloaded) %><br>
+			<%= link_to t('games_sections.filters.chart.followed'), chart_games_url(filter: :followed) %>
+		</div>
+	</div>
+
+	<!-- Events -->
+	<div class="div45 div100">
+		<h4><%= link_to t('application.menubar.events'), events_url, class: 'Write20 WidFlo' %></h4>
+		<div class="WidFlo">
+			<%= link_to t('.active_events'), events_url %><br>
+			<%= link_to t('.inactive_events'), events_url(passed: true) %>
+		</div>
+	</div>
+
+	<div class="WidFlo blank25"><hr></div>
+
+	<!-- Login -->
+	<div class="div45 div100">
+		<%= link_to t('.sign_in'), new_user_session_path %><br>
+		<%= link_to t('.sign_up'), new_user_registration_path %><br>
+		<%= link_to t('.recover'), new_user_password_path %>
+	</div>
+
+	<!-- Upload & Search-->
+	<div class="div45">
+		<h6><%= link_to t('application.navbar.upload'), new_game_path, class: 'Write20 WidFlo' %></h6>
+		<h7><%= link_to t('search.games.search'), search_path, class: 'Write20 WidFlo' %></h7>
+	</div>
+
+	<!-- Static Pages-->
+	<div class="div45">
+		<%= link_to t('application.footer.about'), about_path %><br>
+		<%= link_to t('application.footer.faq'), faq_path %><br>
+		<%= link_to t('application.footer.developers'), developers_path %>
+	</div>
+
+	<%= image_tag 'Images/Sprites/sitemap.png', class: 'right' %>
+</div>

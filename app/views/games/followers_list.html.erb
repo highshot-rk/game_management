@@ -1,0 +1,25 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.subscribers') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<% @followings.each_with_index do |follower, followers_index| %>
+				<% user_profile_url = user_url(follower.user.username) %>
+				<div class="WidFlo">
+					<div class="badge">
+						<%= image_tag "Images/icons/fav_off.png", class: 'icon' %>
+					</div>
+					<div>
+						<%= @game.followings_count - followers_index %>.
+						<%= link_to follower.user.username, user_profile_url, class: 'author' %>
+						<%= image_tag('Images/icons/verified_mini.png', alt: t('.verified'), title: t('.verified')) if follower.user.verified? %>
+						<div class="hoveron">[<%= follower.created_at.to_date %>]</div>
+					</div>
+				</div>
+				<hr>
+			<% end %>
+		</div>
+	</div>
+</div>

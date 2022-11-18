@@ -1,0 +1,18 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">
+				<%= t('.dashboard') %>
+			</div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+
+		<div class="notifications_body">
+			<%= link_to(t('.profile'), user_url(current_user.username), class: 'ShowMore') %>
+			<%= link_to(t('.followed_games'), user_followed_games_url, class: 'ShowMore') %>
+			<%= link_to(t('.your_games'), user_games_url, class: 'ShowMore') %>
+			<%= link_to(t('.settings'), edit_user_settings_url, class: 'ShowMore') %>
+			<%= link_to(t('.logout'), destroy_user_session_path, method: :delete, class: 'ShowMore') %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,74 @@
+<%= link_to '#', data: { show_element: '#stats_area' }, class: 'Write20 WidFlo' do %>
+	<%= t('.stats') %>
+	<%= image_tag 'Images/icons/arrow_down.png', class: 'right' %>
+<% end %>
+<div id="stats_area" class="WidFlo" style="display: none">
+	<div class="Write20"><%= t('.stats') %></div>
+	<div class="WidFlo">
+				<% if current_user.level >= 3 %>
+					<!-- Comments -->
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'Images/icons/comments.png', alt: 'power1', class: 'icon' %>
+						</div>
+				<div class="center">
+					<%= t('.comments') %>
+					<span class="WidFlo hoveron"><%= current_user.comments.count %></span>
+				</div>
+					</div>
+					<!-- Subscriptions -->
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'Images/icons/fav_off.png', alt: 'Subscriptions', class: 'icon' %>
+						</div>
+				<div class="center">
+					<%= t('.subscriptions') %>
+					<span class="WidFlo hoveron"><%= current_user.followed_games.count %></span>
+				</div>
+					</div>
+					<% if current_user.games.count > 0 %>
+						<!-- Your Games -->
+						<div class="div33 div100">
+							<div class="center">
+								<%= image_tag 'Images/icons/games.png', alt: 'Games', class: 'icon' %>
+							</div>
+					<div class="center">
+						<%= t('.your_games') %>
+						<span class="WidFlo hoveron"><%= current_user.games.count %></span>
+					</div>
+						</div>
+					<% end %>
+					<!-- Votes -->
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'Images/icons/star.png', alt: 'Votes', class: 'icon' %>
+						</div>
+				<div class="center">
+					<%= t('.votes') %>
+					<span class="WidFlo hoveron"><%= current_user.rated_games.count %></span>
+				</div>
+					</div>
+					<!-- Download -->
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'Images/icons/downloads.png', alt: 'Downloads', class: 'icon' %>
+						</div>
+				<div class="center">
+					Download
+					<span class="WidFlo hoveron"><%= current_user.downloaded_games.count %></span>
+				</div>
+					</div>
+
+				<% else %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'Images/icons/no_access.png', alt: 'No View', class: 'icon' %>
+						</div>
+						<div class="center">Required: Level 3</div>
+					</div>
+				<% end %>
+	</div>
+	<%= link_to '#', data: { hide_element: '#stats_area' }, class: 'WidFlo' do %>
+		<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+	<% end %>
+</div>

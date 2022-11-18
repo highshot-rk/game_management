@@ -1,0 +1,29 @@
+<div id="SlideShow">
+  <!-- Cover Image -->
+  <div id="ScreenCover" style="background-image: url(<%= @game.image %>);"></div>
+  <!-- Game Name -->
+  <div id="GameName"><h1><%= @game.title %></h1>
+    <!-- Game Author -->
+    <div style="font-size: 20px; text-decoration: underline;">
+      <h2><%= link_to @game.author, search_path(search: { author: @game.author }) %>
+      </h2>
+    </div>
+    <!-- Area Download-->
+    <div class="AreaDownload">
+      <% @game.download_links.each do |download_link| %>
+      <%= render(download_link) %>
+      <% end %>
+      <div class="AreaDownload">
+        <%= t('.downloads_count') %>: <%= @game.downloads_count %>
+        <br>
+        <%# SE l'utente non è registrato, oppure se aveva votato col vecchio sistema, non permettere il voto %>
+        <% if current_user && current_user.ratings.legacy.find_by(game: @game) %>
+          <div class="rateit" data-rateit-readonly="true" data-rateit-value="<%= @game.ratings_avg %>" data-rateit-ispreset="true" data-rateit-step="1" data-rateit-resetable="false" data-rateit-starwidth="40" data-rateit-starheight="32"></div>
+          </div>
+        <% else %>
+          <div class="rateit" data-rateit-game="<%= @game.id %>" data-rateit-value="<%= '%.1f' % @game.ratings_avg %>" data-rateit-ispreset="true" data-rateit-step="1" data-rateit-resetable="false" data-rateit-starwidth="40" data-rateit-starheight="32"></div>
+        <% end %>
+	  </div>
+    </div>
+  </div>
+</div>

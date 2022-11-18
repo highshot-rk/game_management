@@ -1,0 +1,41 @@
+<% content_for :menubar do %>
+	<%= render 'menubar', menu: :your_games %>
+<% end %>
+
+<div data-pjax-container>
+	<div class="WrapList">
+		<% if current_user.games.any? %>
+			<div class="div33 div100" style="height: auto;">
+				<div class="Write20 WidFlo">
+					<%= t('.visits') %><br>
+					<%= current_user.your_games_total_visits.size %>
+				</div>
+				<div class="hoveron"><%= t('.totals') %></div>
+			</div>
+			<div class="div33 div100" style="height: auto;">
+				<div class="Write20 WidFlo">
+					<%= t('.downloads_count') %><br>
+					<%= current_user.your_games_total_downloads.size %>
+				</div>
+				<div class="hoveron"><%= t('.totals') %></div>
+			</div>
+			<div class="div33 div100" style="height: auto;">
+				<div class="Write20 WidFlo">
+					<%= t('.subscribers') %><br>
+					<%= current_user.followers.size %>
+				</div>
+				<div class="hoveron"><%= t('.totals') %></div>
+			</div>
+			<div class="ShowMore"><%= t('.your_games') %>: <%= current_user.games.count %></div>
+		<% else %>
+			<div class="Write20 center"><%= t('.no_result') %></div>
+		<% end %>
+		<%= link_to t('.upload'), new_game_path, class: 'Botton WidFlo center' %>
+    <div id="tab_yourgames">
+      <div id="game_list">
+        <%= render partial: 'games/game', collection: @games %>
+        <%= paginate @games %>
+      </div>
+    </div>
+  </div>
+</div>

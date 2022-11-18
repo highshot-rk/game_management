@@ -1,0 +1,4 @@
+<h1>New report from <%= @report.user.username %></h1>
+
+<p><%= @report.user.username %> reported a "<%= @report.game.title %>" download.</p>
+<p><%= link_to 'Click here to open', admin_report_url(@report.id) %></p>

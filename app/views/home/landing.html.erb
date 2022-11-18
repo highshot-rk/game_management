@@ -1,0 +1,61 @@
+<% content_for :menubar do %>
+	<%= render 'menubar', menu: :home %>
+<% end %>
+<% content_for :header  do %>
+	<%= render 'application/slideshow' %>
+<% end %>
+<% visitors_cache("#{I18n.locale}_#{@cache_key}") do %>
+<div data-pjax-container>
+	<%= render 'navigation', section: :home %>
+	<div id="ListRight">
+		<!-- Mobile Slideshow -->
+		<%= render 'application/slideshow_mobile' %>
+		<!-- Followed Games Updated -->
+		<% if @last_updated_followed_games && @last_updated_followed_games.length > 0 %>
+			<%= link_to t('.last_followed_games_updated'), subscribed_games_path, class: 'Write20 WidFlo' %>
+			<div class="circle_container">
+				<div class="circle_sub_container">
+					<% @last_updated_followed_games.each_with_index do |game, game_index| %>
+						<%= link_to game_news_path(game.slug), class: 'circle', data: { analytics_click: "Click on Followed Game #{game_index +1}"} do %>
+							<%= image_tag game.image, alt: "#{t('.play')} #{game.title}" %>
+						<% end %>
+					<% end %>
+					<!-- Link to Subscriptions List -->
+					<%= link_to subscribed_games_path, class: 'circle mobile_only', data: { analytics_click: "Click on Followed Game All Subscriptions"} do %>
+						<%= image_tag 'Files/AllSubscriptions.png' %>
+						<div class="record_prev"><%= t('.show_more') %></div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		<!-- Recommended -->
+		<div class="Write20 WidFlo"><%= t('.recommended') %></div>
+		<% if current_user %>
+			<div class="WidFlo hoveron"><%= t('.based_recent_activity') %></div>
+		<% end %>
+		<%= render 'games/games', games: @recommended, skip_pages: true %>
+			<!-- Query of the Day -->
+			<% if @query_of_the_day.any? %>
+				<div class="Write20 WidFlo"><%= t(".query_of_the_day_#{Time.now.wday}") %></div>
+				<%= render 'games/games', games: @query_of_the_day, skip_pages: true %>
+			<% end %>
+		<!-- Downloaded Today - Last Week - Last Month -->
+			<div class="WidFlo">
+		<div class="Write20 div50"><%= t('.downloaded') %></div>
+		<%= link_to t('.today'), downloaded_games_url(filter: :today), class: 'Write20 div50' %>
+		<%= link_to t('.last_week'), downloaded_games_url(filter: :last_week), class: 'Write20 hoveron div50' %>
+		<%= link_to t('.last_month'), downloaded_games_url(filter: :last_month), class: 'Write20 hoveron div50' %>
+			</div>
+		<%= render 'games/games', games: @downloaded, skip_pages: true %>
+		<!-- Latest -->
+		<%= link_to t('.latest'), news_games_url(filter: :latest), class: 'Write20 WidFlo' %>
+				<div class="WidFlo">
+					<%= link_to "#love", search_path(search: { q: 'love' }), class: 'textc60', data: { analytics_click: 'tag hashtag home' }, target: '_blank' %>, 
+					<%= link_to "#horror", search_path(search: { q: 'horror' }), class: 'textc60', data: { analytics_click: 'tag hashtag home' }, target: '_blank' %>, 
+					<%= link_to "#VisualNovel", search_path(search: { q: 'visualnovel' }), class: 'textc60', data: { analytics_click: 'tag hashtag home' }, target: '_blank' %>
+				</div>
+		<%= render 'games/games', games: @recent, skip_pages: true %>
+		<%= link_to t('.show_more'), news_games_url(filter: :latest), class: 'ShowMore' %>
+	</div>
+</div>
+<% end %>

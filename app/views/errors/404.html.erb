@@ -1,0 +1,19 @@
+<% content_for :menubar do %>
+	<%= render 'errors/menubar' %>
+<% end %>
+
+<div class="WrapList">
+	<div class="Write30 WidFlo">
+		This is not the web page you are looking for...
+	</div>
+
+	<div class="Write20 WidFlo">
+		Don't worry... It happens to the best of us.
+	</div>
+
+	<!-- Image -->
+	<%= image_tag 'Images/Sprites/404.png', class: 'right' %>
+	<div class="clear"></div>
+
+	<%= render 'games/games', games: @games, skip_pages: true %>
+</div>

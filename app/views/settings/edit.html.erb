@@ -1,0 +1,8 @@
+<%= page_title t('.settings') %>
+<% content_for :menubar do %>
+	<%= render 'me/menubar', menu: :settings %>
+<% end %>
+
+<div class="WrapList">
+	<%= render 'form' %>
+</div>

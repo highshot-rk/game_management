@@ -1,0 +1,136 @@
+		<div class="WidFlo">
+			<!-- Year Club -->
+			<% if user.sing_up_age > 0 %>
+				<div class="badge">
+					<%= image_tag "medals/User/Badge_Year_#{user.sing_up_age}.png", alt: "#{user.sing_up_age} Year", class: 'icon' %>
+					<div class="icon_description"><%= user.sing_up_age %> Years 
+						<% if user.sing_up_age >= 5 %>
+							- <i>"Et super hanc petram..."</i>
+						<% elsif user.sing_up_age < 2 %>
+							- <i>"Stay hungry, Stay foolish"</i>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+
+			<!-- Level Badges -->
+			<% if user.level >= 2 %>
+				<div class="badge">
+					<%= image_tag 'Images/icons/Level_2.png', alt: 'power1', class: 'icon' %>
+					<div class="icon_description">Level 2: Badge near your comments</div>
+				</div>
+			<% end %>
+
+			<% if user.level >= 4 %>
+				<div class="badge">
+					<%= image_tag 'Images/icons/Level_4.png', alt: 'power2', class: 'icon' %>
+					<div class="icon_description">Level 4: Longest Comments</div>
+				</div>
+			<% end %>
+
+			<% if user.level >= 6 %>
+				<div class="badge">
+					<%= image_tag 'Images/icons/Level_6.png', alt: 'power3', class: 'icon' %>
+					<div class="icon_description">Level 6: Bronze Ring - Join Exclusive Events</div>
+				</div>
+			<% end %>
+
+			<% if user.level >= 10 %>
+				<div class="badge">
+					<%= image_tag 'Images/icons/Level_10.png', alt: 'power4', class: 'icon' %>
+					<div class="icon_description">Level 10: Suggested-Games-Algorithm Improved</div>
+				</div>
+			<% end %>
+
+			<% if user.level >= 16 %>
+				<div class="badge">
+					<%= image_tag 'Images/icons/Level_16.png', alt: 'power5', class: 'icon' %>
+					<div class="icon_description">Level 16 : Beta Features</div>
+				</div>
+			<% end %>
+
+			<% if user.level >= 26 %>
+				<div class="badge">
+					<%= image_tag 'Images/icons/Level_26.png', alt: 'power6', class: 'icon' %>
+					<div class="icon_description">Level 26 : Silver Ring - Join Extra-Exclusive Events</div>
+				</div>
+			<% end %>
+
+			<!-- Badges -->
+			<% if user.commented_games.count >= 25 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_comments.png', alt: 'Badge Comments', class: 'icon' %>
+					<div class="icon_description">Over 25 Comments</div>
+				</div>
+			<% end %>
+
+			<% if user.followed_games.count >= 25 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_follow.png', alt: 'Badge Follow', class: 'icon' %>
+					<div class="icon_description">Over 25 Games Followed</div>
+				</div>
+			<% end %>
+
+			<% if user.rated_games.count >= 50 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_rates.png', alt: 'Badge Votes', class: 'icon' %>
+					<div class="icon_description">Left over 50 Votes</div>
+				</div>
+			<% end %>
+
+			<% if user.downloaded_games.count >= 100 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_downloads.png', alt: 'Badge Downloads', class: 'icon' %>
+					<div class="icon_description">Over 100 Downloads</div>
+				</div>
+			<% end %>
+
+			<% if user.event_subscriptions.count >= 10 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_event.png', alt: 'Badge Events', class: 'icon' %>
+					<div class="icon_description">Joined over 10 Events</div>
+				</div>
+			<% end %>
+
+			<% if user.commented_games.count >= 50 && user.followed_games.count >= 50 && user.rated_games.count >= 100 && user.downloaded_games.count >= 250 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_through_life.png', alt: 'Badge Through Life', class: 'icon' %>
+					<div class="icon_description">Like a Boss</div>
+				</div>
+			<% end %>
+
+			<!-- Developer Badges -->
+			<% if user.games.count > 0 %>
+				<div class="badge">
+					<%= image_tag 'medals/User/Badge_developer.png', alt: 'Badge Developer', class: 'icon' %>
+					<div class="icon_description">I Am a Developer</div>
+				</div>
+
+				<% if user.game_medals.count >= 10 %>
+					<div class="badge">
+						<%= image_tag 'medals/User/Badge_medals.png', alt: 'Badge of the Badges', class: 'icon' %>
+						<div class="icon_description">Over 10 Game-Medals</div>
+					</div>
+
+				<% elsif user.game_medals.count >= 1 %>
+					<div class="badge">
+						<%= image_tag 'medals/User/Badge_first_medal.png', alt: 'First Medal', class: 'icon' %>
+						<div class="icon_description">First Medal!</div>
+					</div>
+				<% end %>
+
+				<% if user.games.count >= 10 %>
+					<div class="badge">
+						<%= image_tag 'medals/User/Badge_blacksmith.png', alt: 'BlackSmith', class: 'icon' %>
+						<div class="icon_description">You made over 10 Games</div>
+					</div>
+				<% end %>
+
+				<% if user.downloads.count >= 1000 %>
+					<div class="badge">
+						<%= image_tag 'medals/User/Badge_1000D.png', alt: 'Badge of 1000 Downloads', class: 'icon' %>
+						<div class="icon_description">1000 Download</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>

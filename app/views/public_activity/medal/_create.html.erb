@@ -1,0 +1,30 @@
+<% cache(activity) do %>
+<% owner = activity.owner %>
+<% medal = activity.trackable %>
+<% title = t("medals.medal.titles.#{medal.key}", score: medal.score) %>
+
+<div id="notification_<%= activity.id %>" class="notification <%=  unread_class(activity)%>" data-id="<%= activity.id %>">
+  <div class="badge">
+    <%= render('medals/medal', medal: medal) if medal %>
+  </div>
+	<div class="text-body-notifications">
+    <span class="author">
+      <%= render 'public_activity/game', game: owner if owner.is_a? Game %>
+    </span>
+    <span><%= owner.is_a?(User) ? t('activity.medal.create').lstrip.capitalize : t('activity.medal.create') %></span>
+    <span>"<%= title %>"</span>
+		<div class="hoveron">
+      [<span data-time class="cw-relative-date" timestamp="<%= activity.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>]
+    </div>
+  </div>
+	<div class="links-notifications">
+      <% if owner.is_a? Game %>
+        <%= link_to game_url(owner.slug) do %>
+          <%= image_tag 'Images/icons/view.png' %>
+        <% end %>
+      <% end %>
+  </div>
+  <hr>
+</div>
+
+<% end %>

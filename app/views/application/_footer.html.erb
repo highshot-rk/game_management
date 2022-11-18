@@ -1,0 +1,19 @@
+<div class="Footer">
+	<div class="WidFlo">
+		<%= link_to t('.about'), about_path %>
+		<%= link_to t('.faq'), faq_path %>
+		<%= link_to t('.developers'), developers_path %>
+		<%= link_to t('.language'), edit_language_url, rel: :nofollow, remote: true, data: { language_select: true } %>
+		<%= link_to t('.terms_and_conds'), license_path, data: { load_popup: true, remote: true } %>
+		<%= link_to t('.sitemap'), sitemap_path %>
+	</div>
+	<div class="WidFlo" style="margin-top: 8px; opacity: 0.6;">
+		<a href="https://theindiexpo.blogspot.com" target="_blank"><%= t('.blog') %></a>
+		<a href="https://www.facebook.com/indiexpo/" target="_blank">Facebook</a>
+		<a href="https://www.youtube.com/c/indiexpo?sub_confirmation=1" target="_blank">YouTube</a>
+		<%= link_to t('.contact_us'), 'mailto:info@indiexpo.net' %>
+		<%= link_to t('.feed_rss'), feed_path %>
+		<a>&#xA9; 2011-<%= Time.now.year %> indiexpo.net</a>
+	</div>
+</div>
+<div data-card></div>

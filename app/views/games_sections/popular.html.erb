@@ -1,0 +1,11 @@
+<% content_for :menubar do %>
+  <%= render 'menubar', menu: :popular %>
+<% end %>
+<div data-pjax-container>
+  <%= page_title t("games_sections.filters.#{action_name}.#{@filter}") %>
+  <div class="WrapList">
+    <%= render 'platforms/platforms' %>
+
+    <%= render 'games/games', games: @games %>
+  </div>
+</div>

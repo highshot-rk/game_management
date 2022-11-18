@@ -1,0 +1,66 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">
+				<%= link_to current_user.username, user_path(current_user.username) %>
+				<%= image_tag('Images/icons/verified.png', title: t('.verified')) if current_user.verified? %>
+				<br>
+				<font style="opacity: 0.8"><%= t('.level') %> : <%= current_user.level %></font>
+				<%= link_to faq_path, target: "_blank" do %>
+					<%= image_tag "Images/icons/info.png"%>
+				<% end %>
+			</div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+			<%= link_to '', faq_path, class: 'info-notifications-icon' %>
+		</div>
+		<% if current_user.created_since?(30) %>
+			<div class="Write20 WidFlo textc60" style="margin-top: 0px;"><%= t('.user_chart') %> - <%= t('.last_month') %>: <%= current_user.user_chart_last_days(30) %>°</div>
+		<% end %>
+		<div class="Write20" style="margin-top: 0; margin-bottom: 16px; opacity: 0.6;"><%= current_user.user_title %> - <%= t('.user_chart') %>: <%= current_user.chart %>°</div>
+
+		<div class="notifications_body">
+			<div class="WidFlo">
+				<div style="float: left; margin-right: 10px;">
+					<%= image_tag 'Images/icons/points.png', alt: 'points', class: 'icon' %>
+				</div>
+				<div style="float: left; margin-right: 10px;">
+					<span style="font-size: 20px;"><%= current_user.score %> <%= t('.gems') %></span>
+					<% if current_user.near_to_level_up %>
+						<div style="color: #c60; font-size: 25px;">
+					<% else %>
+						<div style="opacity: 0.4;">
+					<% end %>
+						<%= current_user.next_level %> -> Level Up!
+					</div>
+				</div>
+			</div>
+			<!-- Progress Bar -->
+			<div class="progress_bar">
+				<% if current_user.near_to_level_up %>
+					<span style="width: <%= current_user.level_bar %>%; background-color: #c60;"></span>
+				<% else %>
+					<span style="width: <%= current_user.level_bar %>%"></span>
+				<% end %>
+			</div>
+			<!-- Stats -->
+			<%= render 'stats' %>
+			<!-- Goals -->
+			<%= render 'goals' %>
+			<!-- Trophy Case -->
+			<div class="WidFlo Write20"><%= t('.trophy_case') %></div>
+			<%= render 'badges', user: current_user %>
+			<!-- Level Image -->
+			<div class="WidFlo blank25">
+				<% if current_user.level > 5 %>
+					<%= image_tag "Images/level_up/badge_level_6.png", class: 'level_images' %>
+				<% end %>
+				<% if current_user.level > 25 %>
+					<%= image_tag "Images/level_up/badge_level_26.png", class: 'level_images' %>
+				<% end %>
+				<% (1..current_user.level).each do |n| %>
+					<%= image_tag "Images/level_up/Level_#{n}.png", class: 'level_images'%>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

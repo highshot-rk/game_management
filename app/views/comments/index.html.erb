@@ -1,0 +1,82 @@
+<% content_for(:structured_data) do %>
+	<%= render 'comments/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'comments/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<%= render 'games/details/game_menu', section: 1 %>
+<% end %>
+
+<div data-pjax-container>
+	<%= page_title @game.title + ' - '+ t('games.show.comment') %>
+
+	<div class="div26 padding_right div100">
+		<%= link_to game_url(@game.slug), class: 'box_screen_preview cover_game' do %>
+			<%= image_tag @game.image, alt: "#{@game.title}", class: 'screen_preview' %>
+		<% end %>
+		<%= link_to @game.title, game_url(@game.slug), class: 'Write20 WidFlo' %>
+		<%= link_to @game.author, game_author_page_path(@game), class: 'Write20 WidFlo', style: 'opacity:0.6' %>
+		<div class="Write20 hoveron">
+			<% if policy(@game).update? %>
+				<%= link_to players_list_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Players List'} do %>
+					<%= t('news.index.players') %>: <%= @game.downloads_count %>
+				<% end %>
+			<% else %>
+				<%= t('news.index.players') %>: <%= @game.downloads_count %>
+			<% end %><br>
+			<% if @game.followings_count > 0 %>
+				<%= link_to followers_list_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Followers List'} do %>
+					<%= t('news.index.subscribers') %>: <%= @game.followings_count %>
+				<% end %>
+			<% end %>
+		</div>
+		<hr>
+		<!-- Support -->
+		<% if @game.game.monetisation_enabled? %>
+			<%= link_to support_game_path(@game.slug), id: 'Botton', class: 'download-button WidFlo', data: { load_popup: true, remote: true } do %>
+				<%= image_tag asset_path("Images/icons/support.png") %>
+			<% end %>
+			<br><br>
+		<% end %>
+		<!-- Download Area -->
+		<% if @game.downloadable_links.count < 2 %>
+			<% @game.downloadable_links.each do |download_link| %>
+				<%= render(download_link) %>
+			<% end %>
+		<% else %>
+			<a id="Botton" class="download-button" data-show-fading=".DownloadButtons">
+				<%= image_tag asset_path("Images/icons/download.png") %>
+				<%= t('news.index.download') %>
+			</a>
+		<% end %>
+		<div class="WidFlo DownloadButtons" data-showable>
+			<% @game.downloadable_links.each do |download_link| %>
+				<%= render(download_link) %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="div74 div100">
+		<h1 class="Write30">
+			<%= t('games.show.comment') %>
+			<span class="comments-counter"><%= @game.comments_count %></span>
+		</h1>
+		<div class="WidFlo">
+			<div class="right div100">
+				<!-- Share -->
+				<%= link_to t('games.show.share'), share_game_path(@game.slug), class: 'share-button', data: { load_popup: true, remote: true } %>
+				<!-- Subscribe -->
+				<%= div_for(@game, :favourite, class: following_css(@game), data: { game_id: @game.id }) do %>
+					<%= toggle_button_to t('games.show.subscribe'), t('games.show.subscribed'), game_followings_path(@game.id), on: 'subscribe-button subscribe', off: 'subscribe-button unsubscribe hoveron' %>
+				<% end %>
+			</div>
+			<div id="commentError" class="WidFlo center background900 Write20"></div>
+			<%= render 'comments/form', game: @game %>
+			<div id="commentsContainer">
+				<%= render partial: 'comment', collection: @comments %>
+				<%= paginate @comments %>
+			</div>
+		</div>
+	</div>
+</div>

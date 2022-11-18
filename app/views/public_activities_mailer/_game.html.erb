@@ -1,0 +1,7 @@
+<% if game.present? %>
+  <%= link_to game_url(id: game.slug) do %>
+    <%= game.title %>
+  <% end %>
+<% else %>
+  <%= t('public_activity.game.removed_game') %>
+<% end %>

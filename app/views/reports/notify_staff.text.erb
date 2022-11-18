@@ -1,0 +1,7 @@
+New report from <%= @report.user.username %>
+=============================================
+
+<%= @report.user.username %> reported a "<%= @report.game.title %>" download:
+
+
+<%= admin_report_url(@report.id) %>

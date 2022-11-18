@@ -1,0 +1,9 @@
+<div id="comment:<%= comment.id %>">
+	<div class="Write20">
+		<%= comment.username %>
+		<%= amp_image_tag('Images/icons/verified.png', alt: t('comments.comment.verified'), title: t('comments.comment.verified'), width: '12', height: '12') if comment.user.verified? %>
+	</div>
+	<div id="Window">
+		<%= comment.text %>
+	</div>
+</div>

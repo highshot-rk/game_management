@@ -1,0 +1,940 @@
+---
+fi:
+  active_admin:
+    dashboard: Hallintapaneeli
+  activerecord:
+    attributes:
+      event:
+        description: Kuvaus
+        end_date: Loppuu
+        prizes: Palkinnot
+        rules: Säännöt
+        screen: Kuva
+        start_date: Alkaa
+        title: Nimi
+        website: Verkkosivusto
+      game:
+        author: Kehittäjä
+        description: Kuvaus
+        genre: Lajityyppi
+        title: Nimi
+        website: Verkkosivusto
+      user:
+        username_or_email: Käyttäjätunnus/Sähköposti
+        password: Salasana
+        username: Käyttäjätunnus
+        characters_minimum: "%{minimum_password_length} tai useampia merkkejä"
+        email: Sähköposti
+        terms_of_service: Hyväksyn ehdot
+    errors:
+      messages:
+        exclude_domain: '"%{value}" ei ole sallittu'
+        include_domain: domain must be in %{list}
+        invalid_datetime: ei ole oikea päivämäärä
+        url: ei ole oikea verkko-osoite
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: pitää olla enimmillään %{count}
+            download_links:
+              links_repetition: ei voi olla kopio
+              too_long: pitää olla enimmillään %{count}
+              too_short: pitäisi olla vähintään yksi
+            game_languages:
+              too_short: pitäisi olla vähintään yksi
+            screens:
+              too_long: pitää olla enimmillään %{count}
+            videos:
+              too_long: ei voi olla enemmän kuin yksi
+            base:
+              limit_games_uploaded: you can upload only 2 games in 24 hours
+        user:
+          attributes:
+            username:
+              invalid: voi olla vain kirjaimia ja numeroita (A–Z, 0–9)
+    models:
+      game_languages: Kieli
+  activity:
+    comment:
+      answer: 'vastasi kommenttiisi peliin '
+      create: 'lisäsi kommentin peliin '
+      follower_create: 'lisäsi kommentin peliin '
+      mention: 'mainitsi sinut '
+    event_subscription:
+      create: 'on tilannut pelin '
+    following:
+      create: 'alkoi seurata '
+    game:
+      create: lisäsi uuden pelin!
+      destroy: 'poisti pelinsä '
+      update: päivitti pelinsä
+    medal:
+      create: " ansaitsi mitalin "
+    news:
+      create: 'lisäsi uutisen pelistä '
+    rating:
+      create: 'voted '
+    user:
+      level: Olet noussut tasolle %{level}
+      score: Pisteesi on noussut + %{score}
+      new_title: New Title
+      prizes: Palkinnot
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: Näytä lisää
+      ok: Lähetä
+      setlanguage: Valitse kieli
+    footer:
+      about: Tietoja
+      contact_us: Yhteystiedot
+      language: Kieli (Language)
+      faq: Usein kysytyt kysymykset
+      feed_rss: RSS-syötteet
+      developers: Kehittäjät
+      sitemap: Sivukartta
+      terms_and_conds: Ehdot
+      blog: Blogi
+    markdown_instructions:
+      formatting_help: Muotoiluapu
+      you_type: Mitä kirjoitat
+      you_see: Mitä näet
+      italics: Kursiivi
+      bold: Lihavoitu
+      hashtag: Aihetunniste
+      profile: Profiili
+      item_one: Rivi 1
+      item_two: Rivi 2
+      item_three: Rivi 3
+      spoiler: Spoiler
+    menubar:
+      home: Koti
+      chart: Listat
+      downloaded: Eniten Latauksia
+      events: Tapahtumat
+      language: Kieli
+      news: Uutuudet
+    meta_tags:
+      description: Indiexpo sallii tuhansien ihmisten löytää, seurata ja jakaa ainutlaatuisia indie pelejä.
+      keywords: indiexpo, indie games, Pelit, Lataa, Pelaa, Upload, Pelaajaa, Kehittäjät, Tapahtumat, Haasteet, Tulostaulukkopelit, Listat, Eniten Latauksia, Suosituimmat, Uudet julkaisut, Nouseva pelisisällöntuottaja
+    navbar:
+      register: Rekisteröidy
+      login: Kirjaudu sisään
+      search: "Haku... (Pelit, #Aihetunniste, @Profiili)"
+      upload: Lataa
+      level_up: Nousit tason!
+    slideshow_mobile:
+      show_more: Näytä lisää
+    structured_data:
+      description: Indiexpo sallii tuhansien ihmisten löytää, seurata ja jakaa ainutlaatuisia indie pelejä.
+      keywords: indiexpo, indie games, Pelit, Lataa, Pelaa, Upload, Pelaajaa, Kehittäjät, Tapahtumat, Haasteet, Tulostaulukkopelit, Listat, Eniten Latauksia, Suosituimmat, Uudet julkaisut, Nouseva pelisisällöntuottaja
+      games: Pelit
+    terms:
+      terms_and_conditions: Ehdot
+  comments:
+    answers:
+      more_comments: Näytä lisää
+    comment:
+      answer: Vastaa
+      answers:
+        few: Näytä kaikki %{count} vastausta
+        many: Näytä kaikki %{count} vastausta
+        one: Näytä vastaus
+        other: Näytä kaikki %{count} vastausta
+      destroy: Poista
+      destroy_confirm: Oletko varma?
+      level: Taso
+      new: Uusi
+      verified: Vahvistettu
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: Täällä on paljon nähtävää, monen tyypin luodessa siistiä materiaalia. Kerro heille mitä olet mieltä!
+      now_loading: Now Loading...
+      publish: Julkaise
+  cookie_law: Käytämme evästeitä sisällön yksilöimiseen, mainosten mukauttamiseen, mainosten seurantaan ja turvallisen käytön varmistamiseen.
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short_date: "%-d/%-m"
+  devise:
+    sessions:
+      new:
+        login: Kirjaudu sisään
+        recover_password: Salasanan palautus
+        send_email_again: Lähetä sähköpostiviesti uudelleen
+        details:
+          structured_data:
+            login: Kirjaudu sisään
+            description: Täällä on paljon nähtävää, monen tyypin luodessa siistiä materiaalia. Kerro heille mitä olet mieltä!
+          meta_tags:
+            login: Kirjaudu sisään
+            description: Täällä on paljon nähtävää, monen tyypin luodessa siistiä materiaalia. Kerro heille mitä olet mieltä!
+    confirmations:
+      new:
+        email: Sähköposti
+        send_email_again: Lähetä vahvistusviesti uudelleen
+        details:
+          structured_data:
+            send_email_again: Lähetä vahvistusviesti uudelleen
+            description: Vahvista sähköpostiosoitteesi
+          meta_tags:
+            send_email_again: Lähetä vahvistusviesti uudelleen
+            description: Vahvista sähköpostiosoitteesi
+    mailer:
+      confirmation_instructions:
+        welcome: Liity mukaan ja pidä hauskaa
+        title: 'Vahvista sähköpostiosoitteesi avaamalla seuraava linkki:'
+        confirm_account: Vahvista sähköpostiosoitteesi
+        text_1: Kun olet kirjautunut Indiexpoon, saat kaiken irti kokemuksestasi.
+        text_2: Täällä on paljon nähtävää, monen tyypin luodessa siistiä materiaalia. Kerro heille mitä olet mieltä!
+      reset_password_instructions:
+        change_password: Vaihda salasana
+        ignore_email: Jos et tilannut sähköpostia, älä huomioi tätä viestiä.
+        reset_info: Salasanasi ei muutu ennen kuin klikkaat yllä olevaa linkkiä ja luot uuden.
+        title: Joku on vaatinut linkkiä salasanan muuttamiseen. Voit tehdä sen seuraavaa linkkiä klikkaamalla.
+      unlock_instructions:
+        unlock_account: Poista käyttäjätunnuksen lukitus
+    passwords:
+      new:
+        recover_password: Salasanan palautus
+        email: Sähköposti
+        send: Lähetä
+        details:
+          structured_data:
+            recover_password: Salasanan palautus
+            description: Lisää sähköpostiosoite, josta voit tarkistaa heti
+          meta_tags:
+            recover_password: Salasanan palautus
+            description: Lisää sähköpostiosoite, josta voit tarkistaa heti
+      edit:
+        change_password: Vaihda salasana
+        new_password: Uusi salasana
+        confirm_new_password: Vahvista uusi salasana
+    registrations:
+      new:
+        register: Rekisteröidy
+        details:
+          structured_data:
+            register: Rekisteröidy
+            description: Kun olet kirjautunut Indiexpoon, saat kaiken irti kokemuksestasi.
+          meta_tags:
+            register: Rekisteröidy
+            description: Kun olet kirjautunut Indiexpoon, saat kaiken irti kokemuksestasi.
+      edit:
+        change_password: Vaihda salasana
+        change_email: Vaihda sähköpostiosoite
+        new_password: Uusi salasana
+        confirm_new_password: Vahvista uusi salasana
+        current_password: Nykyinen salasana
+        current_email: Nykyiset sähköpostiosoitteet
+        new_email: Uusi sähköpostiosoite
+        save: Tallenna muutokset
+    shared:
+      menubar:
+        login: Kirjaudu sisään
+        recover_password: Salasanan palautus
+        register: Rekisteröidy
+        send_email_again: Lähetä sähköpostiviesti uudelleen
+  download_links:
+    download_link:
+      download: Lataa
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Tapahtumat & Haasteet
+          description: 'Indie-videopeli : Tapahtumat & Haasteet - Tuleva & Mennyt'
+        structured_data:
+          events: Tapahtumat & Haasteet
+          description: 'Indie-videopeli : Tapahtumat & Haasteet - Tuleva & Mennyt'
+    active_selector:
+      active: Tuleva
+      inactive: Mennyt
+    edit:
+      destroy: Poista
+      destroy_confirm: Oletko varma?
+    end_after_start: should be after start date
+    event_types:
+      all: Kaikki
+      contest: Contest
+      mini_contest: Mini Contest
+      new: Luo tapahtuma
+      other: Muut
+    form:
+      language: Kieli
+      publish: Julkaise
+      type: Lajityyppi
+    menubar:
+      details: Yleiskatsaus
+      edit: Muokkaa
+    index:
+      events: Tapahtumat
+      challenges: Haasteet
+      champions: Mestarien
+      points: Points
+      show_more: Näytä lisää
+    new:
+      event: Tapahtuma
+    share:
+      share: Jaa
+      email: Sähköposti
+      qrcode: QR-koodi
+    show:
+      description: Kuvaus
+      ended: Inactive
+      ends: Loppuu
+      from: Alkaa
+      genre: Lajityyppi
+      language: Kieli
+      prizes: Palkinnot
+      rules: Säännöt
+      share: Jaa
+      subscribers: Tilaajaa
+      to: Loppuu
+      website: Verkkosivusto
+  feeds:
+    index:
+      feed_rss: RSS-syötteet
+      events: 'Indie-videopeli : Tapahtumat'
+      latest: 'Indie-videopeli :  Uudet julkaisut'
+      popular: 'Indie-videopeli : Suosituimmat'
+      last_updated: 'Indie-videopeli :  Tuoreet päivitykset'
+    details:
+      meta_tags:
+        feed_rss: RSS-syötteet
+        description: 'Indie-videopeli : RSS-syötteet - Tapahtumat - Uudet julkaisut - Suosituimmat - Tuoreet päivitykset'
+      structured_data:
+        feed_rss: RSS-syötteet
+        description: 'Indie-videopeli : RSS-syötteet - Tapahtumat - Uudet julkaisut - Suosituimmat - Tuoreet päivitykset'
+  layouts:
+    application:
+      indie_games: Indie-videopeli
+    game:
+      play: Pelaa
+      download: Lataa
+      new: Uusi
+      updates: Uutta
+      show_more: Näytä lisää
+      adult_content_message_html: Sinun tulee olla ainakin 18-vuotias tarkastellaksesi tätä sisältöä.</br> Oletko yli 18-vuotias ja halukas näkemään aikuisille suunnattua sisältöä?
+      yes: Joo
+      no: Ei
+  games:
+    game:
+      play: Pelaa
+      download: Lataa
+      new: Uusi
+      updates: Uutta
+      chart: Listat
+      verified: Vahvistettu
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: Pelaajaa
+      game_menu:
+        comments: Kommenttia
+        details: Yleiskatsaus
+        updates: Uutta
+        edit: Muokkaa
+        statistics: Tilastot
+      structured_data:
+       games: Pelit
+       developer: Kehittäjä
+      index:
+        videogame: Videopeli
+        published_by: 'julkaissut '
+        edit: Muokkaa
+        statistics: Tilastot
+        players: Pelaajaa
+        news: Uutuudet
+        no_news: No news
+        website: Verkkosivusto
+        recommended: Suositellut
+    edit:
+      edit: Muokkaa
+      destroy: Poista
+      destroy_confirm: Oletko varma?
+    embed_popup:
+      embed: Upottaa
+      preview: Esikatselu
+    record_chart:
+      chart: Listat
+      login: Kirjaudu sisään
+      score_system_games: Tulostaulukkopelit
+    followers_list:
+      subscribers: Tilaajaa
+      verified: Vahvistettu
+    players_list:
+      downloads_count: Pelaajaa
+      last_week: Viimeiset 7 päivää
+      no_logged_user: Guest
+      no_result: Ei tuloksia
+      verified: Vahvistettu
+    form:
+      add_external_link: Liitä linkki
+      add_file: Liitä
+      html5_description: 'HTML5/Flash/WebGL pelejä varten: Lataa ZIP-tiedosto, joka sisältää pelin. ZIP tiedoston sisällä tulee olla index.html -tiedosto.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Pitkä kuvaus
+      artworks: Artworks
+      delete: Poista
+      downloads: Downloads
+      genre: Lajityyppi
+      language: Kieli
+      publish: Julkaise
+      remove_file: Poista
+      remove_url: Poista
+      restore: Kumoa
+      screens: Kuvien
+      status: Status
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      tool: Pelimoottori
+      hashtag: Suosittelemme maksimissaan käytettäväksi vain kahta hashtagia.
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      now_loading: Now Loading...
+      video: Videot
+    monetisation:
+      monetisation: Kaupallistaminen
+      players: Pelaajaa
+      level: Taso
+      subscribers: Tilaajaa
+      comments: Kommenttia
+      offensive: Vihamielinen tai loukkaava
+      sexual: Seksuaalista sisältöä
+      spam: Roskasisältöä/harhaanjohtava
+      violent: Väkivaltainen tai kuvottava
+      description: Kuvaus
+      send: Lähetä
+    new:
+      upload: Lataa
+    share:
+      share: Jaa
+      email: Sähköposti
+      qrcode: QR-koodi
+    show:
+      play: Pelaa
+      embed: Upottaa
+      share: Jaa
+      monetisation: Kaupallistaminen
+      download: Lataa
+      subscribe: Tilaa
+      subscribed: Tilattu
+      subscribers: Tilaajaa
+      comment: Kommenttia
+      description: Kuvaus
+      published_on: Julkaistu
+      adult_content: Adults Contents
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      language: Kieli
+      first_to_comment: Lisää julkinen kommentti...
+      mobile_first: Mobile Friendly
+      more_comments: Näytä lisää
+      screens: Kuvien
+      video: Videot
+      top_player: Paras pelaaja
+      epic_win: Epic Win!
+      on_the_rise: Nouseva pelisisällöntuottaja
+      verified: Vahvistettu
+    stats:
+      statistics: Tilastot
+      comments: Kommenttia
+      monetisation: Kaupallistaminen
+      daily: Tänään
+      days: Päivää
+      date: Date
+      downloads: Pelaajaa
+      followings: Tilaajaa
+      chart: Listat
+      most_rated: Eniten Ääniä
+      followings_chart: Eniten seuraajia
+      most_downloaded: Eniten Latauksia
+      last_week: Last week
+      this_week: This week
+      last_6_months: Viimeiset 180 päivää
+      totals: Totals
+      visits: Näyttökertaa
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Muut
+      engagement: Engagement
+      show_more: Näytä lisää
+      qrcode: QR-koodi
+      warning: Varoitus
+    support:
+      prizes: Palkinnot
+      donate: 'Tee Lahjoitus %{price}$'
+    tips:
+      enhancements: Parannukset
+      only_to_you: Näkyy vain sinulle
+  games_sections:
+    chart:
+      last_6_months: Viimeiset 180 päivää
+      details:
+        meta_tags:
+          chart: Listat
+          description: 'Indie-videopeli : Eniten Latauksia - Eniten Ääniä - Eniten seuraajia'
+        structured_data:
+          chart: Listat
+          description: 'Indie-videopeli : Eniten Latauksia - Eniten Ääniä - Eniten seuraajia'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Eniten Latauksia
+          description: 'Indie-videopeli : Eniten Latauksia - Tänään - Viimeiset 7 päivää - Viimeiset 30 päivää - Koko elinkaari'
+        structured_data:
+          downloaded: Eniten Latauksia
+          description: 'Indie-videopeli : Eniten Latauksia - Tänään - Viimeiset 7 päivää - Viimeiset 30 päivää - Koko elinkaari'
+    news:
+      details:
+        meta_tags:
+          news: Uutuudet
+          description: 'Indie-videopeli : Uutuudet - Viimeiset 30 päivää'
+        structured_data:
+          news: Uutuudet
+          description: 'Indie-videopeli : Uutuudet - Viimeiset 30 päivää'
+    filters:
+      chart:
+        most_downloaded: Eniten Latauksia
+        voted: Eniten Ääniä
+        followed: Eniten seuraajia
+      downloaded:
+        everytime: Koko elinkaari
+        last_month: Viimeiset 30 päivää
+        last_week: Viimeiset 7 päivää
+        today: Tänään
+      news:
+        last_commented: Kommenttia
+        last_updated:  Tuoreet päivitykset
+        latest:  Uudet julkaisut
+        popular: Suosituimmat
+  genres:
+    genre:
+      rpg: Roolipeli
+      browsergame: Browser Game
+      platformaction: Toiminta
+      shootemup: Shoot em Up
+      puzzle: Älypeli
+      pointandclick: Point and Click
+      sport: Urheilu
+      fighting: Taistelupeli
+      other: Other
+    genres:
+      all: Kaikki
+    select:
+      genre: Lajityyppi
+  helpers:
+    label:
+      report:
+        broken: Linkki ei toimi
+        copyright: Loukkaa oikeuksiani
+        offensive: Vihamielinen tai loukkaava
+        sexual: Seksuaalista sisältöä
+        spam: Roskasisältöä/harhaanjohtava
+        violent: Väkivaltainen tai kuvottava
+  home:
+    navigation:
+      home: Koti
+      news: Uutuudet
+      chart: Listat
+      events: Tapahtumat
+      downloaded: Eniten Latauksia
+      console: Konsoli
+      subscriptions: Tilaukset
+      your_games: Pelisi
+      history: Historia
+    landing:
+      last_followed_games_updated: Mistä saatoit jäädä paitsi
+      play: Pelaa
+      recommended: Suositellut
+      based_recent_activity: Perustuu äskeisiin toimiisi
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Vuosipäivä
+      query_of_the_day_3: Eniten seuraajia - Viimeiset 180 päivää
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Tulostaulukkopelit
+      query_of_the_day_6: Uutta
+      downloaded: Eniten Latauksia
+      today: Tänään
+      last_week: Viimeiset 7 päivää
+      last_month: Viimeiset 30 päivää
+      latest:  Uudet julkaisut
+      show_more: Näytä lisää
+    console:
+      details:
+        structured_data:
+          console: Konsoli
+          description: 'Indie-videopeli : Pelaa'
+        meta_tags:
+          console: Konsoli
+          description: 'Indie-videopeli : Pelaa'
+    subscriptions:
+      subscriptions: Tilaukset
+      updates: Uutta
+      no_result: Ei tuloksia
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Pelaajaa
+      subscribers: Tilaajaa
+      comments: Kommenttia
+      details: Yleiskatsaus
+      show_more: Näytä lisää
+    your_games:
+      your_games: Pelisi
+      players: Pelaajaa
+      subscribers: Tilaajaa
+      comments: Kommenttia
+      details: Yleiskatsaus
+      show_more: Näytä lisää
+    history:
+      history: Historia
+      score_system_games: Tulostaulukkopelit
+      last_commented: Kommenttia
+      subscriptions: Tilaukset
+      votes: Votes
+  static:
+    about:
+      about: Tietoja
+      app: Sovellukset
+      extension: Laajennukset
+      social_networks: Sosiaalinen verkosto
+      games: Pelit
+      show_more: Näytä lisää
+      details:
+        structured_data:
+          about: Tietoja
+          description: Indiexpo sallii tuhansien ihmisten löytää, seurata ja jakaa ainutlaatuisia indie pelejä.
+        meta_tags:
+          about: Tietoja
+          description: Indiexpo sallii tuhansien ihmisten löytää, seurata ja jakaa ainutlaatuisia indie pelejä.
+    faq:
+      faq: Usein kysytyt kysymykset
+      question_1: Mikä indiexpo on?
+      answer_1: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games. Indiexpo provides an area for people to connect, inform, and inspire others across the globe and acts as a distribution platform for original content creators and advertisers large and small.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: Usein kysytyt kysymykset
+          description: Usein kysytyt kysymykset on lista jotakin aihepiiriä koskevista yleisistä ja toistuvista kysymyksistä vastauksineen.
+        meta_tags:
+          faq: Usein kysytyt kysymykset
+          description: Usein kysytyt kysymykset on lista jotakin aihepiiriä koskevista yleisistä ja toistuvista kysymyksistä vastauksineen.
+    developers:
+      developers: Kehittäjät
+      details:
+        structured_data:
+          developers: Kehittäjät
+          description: Explore our Developer Products. Tilastot, Sovellukset, Laajennukset, Tutorials
+        meta_tags:
+          developers: Kehittäjät
+          description: Explore our Developer Products. Tilastot, Sovellukset, Laajennukset, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: Valitse kieli
+  medals:
+    medal:
+      titles:
+        age: "%{score} Vuosia"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Taso 2
+        level_4: Taso 4
+        level_6: Taso 6
+        level_10: Taso 10
+        level_16: Taso 16
+        level_26: Taso 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Kirjoita jotain.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: Now Loading...
+      publish: Julkaise
+    news:
+      destroy: Poista
+      destroy_confirm: Oletko varma?
+    index:
+      players: Pelaajaa
+      subscribers: Tilaajaa
+      download: Lataa
+  options:
+    index:
+      dashboard: Hallintapaneeli
+      profile: Profiili
+      followed_games: Tilaukset
+      your_games: Pelisi
+      settings: Asetukset
+      logout: Kirjaudu ulos
+  platforms:
+    platforms:
+      all: Kaikki
+    select:
+      platform: Käyttöjärjestelmä
+  public_activities:
+    index:
+      destroy_confirm: Oletko varma?
+      mark_all_as_read: Merkitse kaikki luetuksi
+      notifications: Ilmoitukset
+      see_all: Näytä lisää
+  public_activities_mailer:
+    notify:
+      hello: Hei %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Tilattu
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Following removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: Vahvistettu
+  reports:
+    new:
+      details: 'Notes:'
+      question: What is the issue?
+      send: Lähetä
+      title: 'Tee ilmoitus: %{game}'
+      report_submitted: Kiitos tiedosta.
+      report_submitted_message: Palautteesi auttaa järjestelmäämme tunnistamaan ongelmatapauksia.
+  scores:
+    score:
+      points: Points
+      delete: Poista
+      destroy_confirm: Oletko varma?
+      verified: Vahvistettu
+  search:
+    games:
+      filters: Suodattimet
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      no_result: Ei tuloksia
+      search: Haku
+      search_placeholder: Haku...
+      search_tools: Työkalut
+      language: Kieli
+      genre: Lajityyppi
+      platform: Käyttöjärjestelmä
+      recommended: Suositellut
+      tool: Pelimoottori
+      status: Status
+      games: Pelit
+      score_system_games: Tulostaulukkopelit
+      year: Vuosi
+    details:
+      meta_tags:
+        search: Haku
+        description: "Haku... (Pelit, #Aihetunniste, @Profiili, Työkalut, Kieli, Lajityyppi, Vuosi, Käyttöjärjestelmä, Pelimoottori, Status)"
+      structured_data:
+        search: Haku
+        description: "Haku... (Pelit, #Aihetunniste, @Profiili, Työkalut, Kieli, Lajityyppi, Vuosi, Käyttöjärjestelmä, Pelimoottori, Status)"
+  settings:
+    edit:
+      settings: Asetukset
+    form:
+      language: Kieli (Language)
+      setlanguage: Valitse kieli
+      sounds: Äänet
+      sounds_description: Toista äänimerkki, kun ilmoitus vastaanotetaan
+      adult_content: Adults Contents
+      label_on: 'Käytössä'
+      label_off: 'Pois käytöstä'
+      email_notifications: Sähköposti-ilmoitukset
+      general: Yleiset
+      mail_comment_answer: Joku vastasi kommenttiisi
+      mail_comment_mention: Maininnat
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: Tilaukset
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Pelisi
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I'm followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a medal
+      mail_user_game_dev_leader: New Leader on your game
+      account_data: Tilin Tiedot
+      email: Sähköposti
+      password: Salasana
+      edit: Muokkaa
+      stats: Tilastot
+      comments: Kommenttia
+      subscriptions: Tilaukset
+      show_more: Näytä lisää
+      save: Tallenna muutokset
+      delete_account: Poista käyttäjätili pysyvästi
+  sitemaps:
+    index:
+      active_events: Tuleva
+      inactive_events: Mennyt
+      new_events: Luo tapahtuma
+      recover: Salasanan palautus
+      sign_in: Kirjaudu sisään
+      sign_up: Rekisteröidy
+      sitemap: Sivukartta
+    details:
+      meta_tags:
+        sitemap: Sivukartta
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Sivukartta
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: Tilaa
+    unsubscribe_button:
+      unsubscribe: Tilattu
+  time:
+    formats:
+      default: "%H:%M %Y/%d/%m"
+  tools:
+    select:
+      tool: Pelimoottori
+  users:
+    show:
+      page_title: "%{username} on indiexpoissa"
+      online: Paikalla
+      chart: Käyttäjän sija
+      last_month: Viimeiset 30 päivää
+      level: Taso
+      games: Pelit
+      score_system_games: Tulostaulukkopelit
+      show_more: Näytä lisää
+      subscriptions: Tilaukset
+      last_commented: Kommenttia
+      history: Historia
+      other_players: Muut Pelaajat
+      verified: Vahvistettu
+    details:
+      structured_data:
+        developer: Kehittäjä
+        gamer: Videopelaaja
+      meta_tags:
+        about: Tietoja
+        description: Profiili, Palkinnon Arvoinen Suoritus, Pelit, Tilaukset, Tulostaulukkopelit, Kommenttia & Historia
+  me:
+    menubar:
+      profile: Profiili
+      event_subscriptions: My Events
+      followed_games: Tilaukset
+      your_games: Pelisi
+      settings: Asetukset
+    followed_games:
+      no_result: Ei tuloksia
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Pelisi
+      visits: Näyttökertaa
+      downloads_count: Pelaajaa
+      subscribers: Tilaajaa
+      totals: Totals
+      no_result: Ei tuloksia
+      upload: Lataa
+  levels:
+    index:
+      level: Taso
+      user_chart: Käyttäjän sija
+      last_month: Viimeiset 30 päivää
+      gems: Jalokivet
+      trophy_case: Palkinnon Arvoinen Suoritus
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Vahvistettu
+    goals:
+      goals: Päämäärät
+    stats:
+      stats: Tilastot
+      comments: Kommenttia
+      subscriptions: Tilaukset
+      your_games: Pelisi
+      votes: Votes
+  warning:
+    index:
+      warning: Varoitus
+      destroy: Poista
+      destroy_confirm: Oletko varma?
+      delete_account: Tilisi poistetaan pysyvästi.
+      delete_account_description: Jos poistat indiexpo-tilisi, et voi palauttaa indiexpoissa jakamiasi sisältöjä tai tietoja.

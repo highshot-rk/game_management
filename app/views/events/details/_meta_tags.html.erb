@@ -1,0 +1,23 @@
+<link rel="canonical" href="<%= event_url(id: @event.slug) %>"/>
+
+<meta name="description" content="<%= @event.seo_description %>" />
+<meta name="keywords" content="<%= @event.title %>, <%= @event.event_type.titleize %>, <%= @event.user.username %>, <%= t('application.meta_tags.keywords') %>" />
+<!-- META TAG OG - Facebook-->
+<meta property="fb:app_id" content="<%= Settings.social.facebook.app_id %>" />
+<meta property="fb:admins" content="<%= Settings.social.facebook.admins %>" />
+<meta property="og:title" content="<%= @event.title %> - Free Indie Games" />
+<meta property="og:type" content="event" />
+<meta property="og:url" content="<%= event_url(@event.slug) %>"/>
+<meta property="og:image" content="<%= @event.image(:large) %>"/>
+<meta property="og:description" content="<%= @event.seo_description %>" />
+<meta property="og:site_name" content="www.indiexpo.net" />
+
+<!-- META TAG Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@indiexpo_net">
+<meta name="twitter:creator" content="@indiexpo_net">
+<meta name="twitter:url" content="<%= event_url(@event.slug) %>">
+<meta name="twitter:title" content="<%= @event.title %> - Free Indie Games">
+<meta name="twitter:description" content="<%= @event.seo_description %>">
+<meta name="twitter:image" content="<%= @event.image %>">
+<!-- Fine META -->

@@ -1,0 +1,10 @@
+---
+:verbose: true
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+:concurrency: 1
+:queues:
+  - default
+  - mailers
+  - paperclip
+  - medals

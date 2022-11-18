@@ -1,0 +1,9 @@
+<div class="SlideShow_mobile mobile_only">
+	<div class="slide_preview_container_mobile">
+		<% slides = Slideshow.order(id: :asc).limit(5).to_a %>
+		<% slides.each do |slide| %>
+			<%= link_to '', slide.url, class: 'slide_preview_mobile', style: "background-image: url('#{asset_url(slide.image.url(:normal))}')",  target: '_blank', rel: 'nofollow', data: { analytics_click: "Click on Slide #{slide.id}"} %>
+		<% end %>
+		<%= link_to t('.show_more'), news_games_path, class: 'slide_preview_mobile square', target: '_blank', data: { analytics_click: "Click on Slide Show More"} %>
+	</div>
+</div>

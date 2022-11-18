@@ -1,0 +1,8 @@
+<!-- Cookie -->
+<% if cookies['cookies_accepted'] != 'Y' %>
+	<div id="Cookie">
+		<%= t('cookie_law') %>
+		<%= link_to t('.show_more'), license_path, data: { load_popup: true, remote: true } %>
+		<button id="Botton" class="div100" style="float: none;" onclick="var today = new Date(); var expire = new Date(); expire.setTime(today.getTime() + 3600000*24*365); document.cookie='cookies_accepted=Y; expires=' + expire.toGMTString() + '; path=/';$(this).parent().fadeOut();"><%=t('.ok')%></button>
+	</div>
+<% end if !current_user %>

@@ -1,0 +1,16 @@
+<%= page_title t('.developers') %>
+<% content_for(:structured_data) do %>
+	<%= render 'static/developers/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'static/developers/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<li class="selected">
+		<div class="desktop_only"><%=t('.developers')%></div>
+		<%= image_tag "Images/icons/pages/developers.png", class: 'mobile_only', alt: t(".developers") %>
+	</li>
+<% end %>
+<div class="WrapList">
+	<%= render 'static/developers/body' %>
+</div>

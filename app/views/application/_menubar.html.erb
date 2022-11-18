@@ -1,0 +1,23 @@
+<%# i18n-tasks-use t('.news') %>
+<%# i18n-tasks-use t('.downloaded') %>
+<%# i18n-tasks-use t('.popular') %>
+<%# i18n-tasks-use t('.chart') %>
+<%# i18n-tasks-use t('.events') %>
+<%
+	{
+		home: { url: root_url, h: 1 },
+		news: { url: news_games_url, h: 2 },
+		# downloaded: { url: downloaded_games_url, h: 2 },
+		# popular: { url: popular_games_url, t: t('.popular') },
+		chart: { url: chart_games_url, h: 3 },
+		events: { url: events_url, h: 4 }
+	}.each do |name, data|
+%>
+<li class="<%= menu == name && 'selected' %>">
+	<%= content_tag :"h#{data[:h]}" do %>
+		<%= link_to(data[:url], data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '2' }) do %>
+			<%= image_tag "Images/icons/pages/#{name}.png", alt: t(".#{name}") %>
+		<% end %>
+	<% end %>
+</li>
+<% end %>

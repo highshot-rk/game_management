@@ -1,0 +1,23 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.share') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<%= link_to "Whatsapp", "whatsapp://send?text=#{game_url(@game.slug)}", data: { action: "share/whatsapp/share" }, class: 'Write20 WidFlo Botton whatsapp mobile_only', data: { analytics_click: "Share Game on Whatsapp"}, target: '_blank' %>
+			<%= link_to "Telegram", "https://t.me/share/url?url=#{game_url(@game.slug)}", class: 'Write20 WidFlo Botton twitter mobile_only', data: { analytics_click: "Share Game on Telegram"}, target: '_blank' %>
+			<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_url(@game.slug)}", class: 'Write20 WidFlo Botton facebook', data: { analytics_click: "Share Game on Facebook"}, target: '_blank' %>
+			<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{game_url(@game.slug)}&title=Play%20This%20Game!", class: 'Write20 WidFlo Botton reddit', data: { analytics_click: "Share Game on Reddit"}, target: '_blank' %>
+			<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{game_url(@game.slug)}&text=%23indiegame%20Play%20This%20Game!", class: 'Write20 WidFlo Botton twitter', data: { analytics_click: "Share Game on Twitter"}, target: '_blank' %>
+			<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_url(@game.slug)}", class: 'Write20 WidFlo Botton tumblr', data: { analytics_click: "Share Game on tumblr"}, target: '_blank' %>
+			<%= link_to "VK", "http://vk.com/share.php?url=#{game_url(@game.slug)}", class: 'Write20 WidFlo Botton twitter', data: { analytics_click: "Share Game on VK"}, target: '_blank' %>
+			<%= mail_to "", t('.email'), subject: "Check out this amazing Game!", body: "#{game_url(@game.slug)}", class: 'Write20 WidFlo Botton', data: { analytics_click: "Share Game on Email"} %>
+			<textarea onclick='this.select()' onKeyDown='return false;' class="center Write20" rows='1'><%= game_url(@game) %></textarea>
+			<div class="center Write20">
+				<%= t('.qrcode') %><br>
+				<img class="div100" src="http://chart.apis.google.com/chart?chs=160x160&chld=L|0&cht=qr&chl=<%= game_url(@game) %>&choe=ISO-8859-1%22" />
+			</div>
+		</div>
+	</div>
+</div>

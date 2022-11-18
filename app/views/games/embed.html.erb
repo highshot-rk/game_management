@@ -1,0 +1,11 @@
+<div id="play_online" data-play-online="<%= play_link_url(@game.play_online.id) %>" data-action="player-increment" data-url=<%= counter_api_v1_download_link_url(@game.play_online) %> data-target="#playersCount" data-fullscreen-enabled>
+	<%= image_tag @game.image, alt: "Play #{@game.title} Online" %>
+	<div class="description"><%= t('games.show.play') %><font style="color: #c60;"> &#9658; </font></div>
+</div>
+<%= link_to @game.title, game_url(@game.slug, locale: nil), data: { analytics_click: 'Embed Game Link' }, target: '_blank', class: 'game_name' %>
+<%= link_to game_url(@game.slug, locale: nil), data: { analytics_click: 'Embed Game Link' }, target: '_blank', class: 'logo' do %>
+	indi<font class="logo-font">expo</font>
+<% end %>
+<div class="fullscreen-button">
+	<button class="fullscreen" data-fullscreen></button>
+</div>

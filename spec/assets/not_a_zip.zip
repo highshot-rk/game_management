@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    /* General setups */
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      width:50px;
+      height:50px;
+    }
+
+    /*
+
+      centring a div with two elements that should stay aligned on the same line.
+      Width will adapt on content
+    */
+    .centring-v1 {
+      width: 100%;
+      text-align: center;
+      background-color: red;
+      margin-bottom: 100px;
+    }
+    .centring-v1 .image {
+      display: inline-block;
+      background-color: blue;
+    }
+
+    .centring-v1 .text {
+      background-color: green;
+      display: inline-block;
+    }
+
+    /*
+      Centring a div with two elements that should stay aligned on the same line.
+      Width will adapt on content. It's equivalent to the previous, but more clean
+    */
+    .centring-v2 {
+      width: 100%;
+      text-align: center;
+      background-color: red;
+      margin-bottom: 100px;
+    }
+
+    .centring-v2 .inner-centring {
+      display: inline-block;
+      background-color: violet;
+    }
+
+    .centring-v2 .inner-centring .image {
+      float: left;
+      background-color: blue;
+    }
+
+
+    .centring-v2 .inner-centring .text {
+      background-color: green;
+      float: left;
+    }
+
+    /*
+      Centring when the container has sizes set (% or pixel).
+      Simpy margin: auto;
+    */
+    .centring-v3 {
+      background-color: red;
+    }
+
+    .centring-v3 .inner-centring {
+      background-color: violet;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 100px;
+    }
+
+    /*
+      Vertical and horizontal centring using absolute positioning, when the container
+      has sizes in px.
+    */
+    .centring-v4 {
+      position: relative;
+      background-color: red;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 100px;
+    }
+
+    .centring-v4 .inner-centring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: violet;
+      width: 200px;
+      height: 200px;
+      margin-left: -100px;
+      margin-top: -100px;
+    }
+
+    /*
+      Vertical and horizontal centring using absolute positioning, when the container
+      has sizes in %. Only css3.
+    */
+    .centring-v5 {
+      position: relative;
+      background-color: red;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 100px;
+    }
+
+    .centring-v5 .inner-centring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: violet;
+      width: 70%;
+      height: 70%;
+      transform: translate(-50%, -50%);
+    }
+
+    /*
+      Vertical and horizontal centring using tables. Always works,
+      Doesn't requite to set sizes, but it's a bit tricky.
+    */
+    .centring-v6 {
+      background-color: red;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 100px;
+      display: table;
+    }
+
+    .centring-v6 .cell {
+      background-color: violet;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .centring-v6 .cell .inner-centring {
+      background-color: blue;
+      display: inline-block;
+      /* FIXING WHITESPACE INLINE BLOCK */
+      font-size: 0;
+    }
+
+    .centring-v6 .cell .inner-centring .image {
+      float: left;
+    }
+    .centring-v6 .cell .inner-centring .text {
+      /* FIX WHITESPACE PER INLINE BLOCK, resetting font-size */
+      font-size: 14px;
+      float: left;
+    }
+
+
+    /*
+      Vertical alignment using line-height
+    */
+
+    .centring-v7 {
+      background-color: red;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .centring-v7 .inner-centring {
+      line-height: 500px;
+      background-color: violet;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .centring-v7 .inner-centring .image {
+      float: left;
+    }
+    .centring-v7 .inner-centring .text {
+      float: left;
+    }
+  </style>
+</head>
+<body>
+
+<div class="centring-v1">
+  <div class="image">
+    <img src="http://foto.hrsstatic.com/fotos/0/3/256/256/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F2%2F2%2F542289%2F542289_a_2330048.jpg/7gykoR9kX9ra5mm0XyJmhQ%3D%3D/256,225/6/Panorama_di_Sicilia-Castelmola-Exterior_view-5-542289.jpg">
+  </div>
+  <div class="text">
+    Il mio text
+  </div>
+</div>
+
+<div class="centring-v2">
+  <div class="inner-centring">
+    <div class="image">
+      <img src="http://foto.hrsstatic.com/fotos/0/3/256/256/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F2%2F2%2F542289%2F542289_a_2330048.jpg/7gykoR9kX9ra5mm0XyJmhQ%3D%3D/256,225/6/Panorama_di_Sicilia-Castelmola-Exterior_view-5-542289.jpg">
+    </div>
+    <div class="text">
+      Il mio text
+    </div>
+  </div>
+</div>
+
+<div class="centring-v3">
+  <div class="inner-centring">
+    <div class="image">
+      <img src="http://foto.hrsstatic.com/fotos/0/3/256/256/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F2%2F2%2F542289%2F542289_a_2330048.jpg/7gykoR9kX9ra5mm0XyJmhQ%3D%3D/256,225/6/Panorama_di_Sicilia-Castelmola-Exterior_view-5-542289.jpg">
+    </div>
+    <div class="text">
+      Il mio text
+    </div>
+  </div>
+</div>
+
+<div class="centring-v4">
+  <div class="inner-centring">
+    <div class="image">
+      <img src="http://foto.hrsstatic.com/fotos/0/3/256/256/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F2%2F2%2F542289%2F542289_a_2330048.jpg/7gykoR9kX9ra5mm0XyJmhQ%3D%3D/256,225/6/Panorama_di_Sicilia-Castelmola-Exterior_view-5-542289.jpg">
+    </div>
+    <div class="text">
+      Il mio text
+    </div>
+  </div>
+</div>
+
+<div class="centring-v5">
+  <div class="inner-centring">
+    <div class="image">
+      <img src="http://foto.hrsstatic.com/fotos/0/3/256/256/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F2%2F2%2F542289%2F542289_a_2330048.jpg/7gykoR9kX9ra5mm0XyJmhQ%3D%3D/256,225/6/Panorama_di_Sicilia-Castelmola-Exterior_view-5-542289.jpg">
+    </div>
+    <div class="text">
+      Il mio text
+    </div>
+  </div>
+</div>
+
+<div class="centring-v7">
+  <div class="inner-centring">
+    <div class="image">
+      <img src="http://foto.hrsstatic.com/fotos/0/3/256/256/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F2%2F2%2F542289%2F542289_a_2330048.jpg/7gykoR9kX9ra5mm0XyJmhQ%3D%3D/256,225/6/Panorama_di_Sicilia-Castelmola-Exterior_view-5-542289.jpg">
+    </div>
+    <div class="text">
+      Il mio text
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

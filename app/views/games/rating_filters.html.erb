@@ -1,0 +1,28 @@
+<div class="AreaNotifications">
+	<div class="notifications" style="height: auto">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">Warning</div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<!-- Checking Requirements -->
+			<div class="Write20 center">
+				<% if !current_user.downloaded_games.find_by(id: @game.id) %>
+					<%= image_tag 'Images/icons/mini_x.png' %> You have to download the game first
+				<% elsif current_user.level < 2 %>
+					<font class="hoveron"><%= image_tag 'Images/icons/mini_v.png' %> <del>You have to download the game first</del></font><br>
+					<%= image_tag 'Images/icons/mini_x.png' %> Requered Level 2
+				<% elsif current_user.created_since?(10) %>
+					<font class="hoveron"><%= image_tag 'Images/icons/mini_v.png' %> <del>You have to download the game first</del></font><br>
+					<font class="hoveron"><%= image_tag 'Images/icons/mini_v.png' %> <del>Requered Level 2</del></font><br>
+					<%= image_tag 'Images/icons/mini_x.png' %> Your account has less then 10 days
+				<% else %>
+					<font class="hoveron"><%= image_tag 'Images/icons/mini_v.png' %> <del>You have to download the game first</del></font><br>
+					<font class="hoveron"><%= image_tag 'Images/icons/mini_v.png' %> <del>Requered Level 2</del></font><br>
+					<font class="hoveron"><%= image_tag 'Images/icons/mini_v.png' %> <del>Your account has less then 10 days</del></font><br><br>
+					Please, refresh the page
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

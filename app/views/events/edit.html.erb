@@ -1,0 +1,9 @@
+<% content_for :menubar do %>
+  <%= render 'menubar', section: :edit %>
+<% end %>
+
+<%= render 'terms' %>
+<div id="ListRight" style="max-width: 750px;">
+  <%= render 'form' %>
+  <%= link_to t('.destroy'), event_path(id: @event.id), method: :delete, data: { confirm: t('.destroy_confirm') }, class:'BottonLight' %>
+</div>

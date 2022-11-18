@@ -1,0 +1,105 @@
+<%= page_title t('.page_title', username: @user.username) %>
+<% content_for(:structured_data) do %>
+	<%= render 'users/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'users/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<% if @user == current_user %>
+		<%= render 'me/menubar', menu: :profile %>
+	<% else %>
+		<%= render 'menubar', menu: :profile %>
+	<% end %>
+<% end %>
+<% content_for :head  do %>
+	<link rel="amphtml" href="<%= url_for(format: :amp, only_path: false) %>" >
+<% end %>
+
+<div data-pjax-container>
+	<div class="WrapList">
+		<div class="WidFlo">
+			<div class="Write30 WidFlo"><%= @user.username %>
+			<%= image_tag('Images/icons/verified.png', alt: t('.verified'), title: t('.verified')) if @user.verified? %>
+			<% if @user.online? %>
+				- <font class="backgroundc60"><%= t('.online') %></font>
+			<% end %>
+			</div>
+			<% if @user.created_since?(30) %>
+				<div class="Write20 textc60 WidFlo" style="margin-top: 0px;"><%= t('.chart') %> - <%= t('.last_month') %>: <%= @user.user_chart_last_days(30) %>°</div>
+			<% end %>
+			<div class="Write20 WidFlo" style="opacity: 0.8; margin-top: 0px;"><%= @user.user_title %> - <%= t('.chart') %>: <%= @user.chart %>°</div>
+			<div class="Write20 WidFlo" style="opacity: 0.6; margin-top: 0px;"><%= t('.level') %>: <%= @user.level %></div>
+			<%= render 'levels/badges', user: @user %>
+		</div>
+
+		<!-- last 6 Games with scores played by the user -->
+		<% if @played_score_games.count > 0 %>
+			<div class="Write20 WidFlo"><%= t('.score_system_games') %></div>
+			<div class="circle_container">
+				<div class="circle_sub_container">
+					<% @played_score_games.each do |game| %>
+						<%= link_to game_path(game.slug), class: 'circle' do %>
+							<%= image_tag game.image %>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+
+		<!-- last 6 Games made by the user -->
+		<% if @user_games.count > 0 %>
+			<div class="Write20 WidFlo"><%= t('.games') %> (<%= @user.authored_games.count %>)</div>
+			<div id="game_list">
+				<%= render partial: 'games/game', collection: @user_games %>
+			</div>
+			<!-- Show More -->
+			<% if @user.authored_games.count > 6 %>
+				<%= link_to t('.show_more'), search_path(search: { author: @user.username }), class: 'ShowMore' %>
+			<% end %>
+		<% end %>
+
+		<!-- last 6 Games supported by the user -->
+		<% if @supported_games.count > 0 %>
+			<div class="Write20 textc60 WidFlo">Supported Games</div>
+			<div id="game_list">
+				<%= render partial: 'games/game', collection: @supported_games %>
+			</div>
+		<% end %>
+
+		<!-- last 6 Games followed by the user -->
+		<% if @followed_games.count > 0 %>
+			<div class="Write20 WidFlo"><%= t('.subscriptions') %> (<%= @user.followed_games.count %>)</div>
+			<div id="game_list">
+				<%= render partial: 'games/game', collection: @followed_games %>
+			</div>
+		<% end %>
+
+		<!-- last 3 Games commented by the user -->
+		<% if @commented_games.count > 0 %>
+			<div class="Write20 WidFlo"><%= t('.last_commented') %></div>
+			<div id="game_list">
+				<%= render partial: 'games/game', collection: @commented_games %>
+			</div>
+		<% end %>
+
+		<!-- last 6 Games downloaded by the user -->
+		<% if @downloaded_games.count > 0 %>
+			<div class="Write20 WidFlo"><%= t('.history') %></div>
+			<div id="game_list">
+				<%= render partial: 'games/game', collection: @downloaded_games %>
+			</div>
+		<% end %>
+
+		<hr>
+		<!-- 3 Random Users -->
+		<div class="Write20 center div100"><%= t('.other_players') %></div>
+		<div class="clear"></div>
+		<% @random_users.each_with_index do |user, user_index| %>
+			<%= link_to user_path(user.username), class: 'div33 center div100', data: { analytics_click: "Click on Random User #{user_index +1}"} do %>
+				<%= user.username %><font class="center hoveron"><%= t('.chart') %>: <%= user.chart %>°</font>
+			<% end %>
+		<% end %>
+
+	</div>
+</div>

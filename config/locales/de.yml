@@ -1,0 +1,940 @@
+---
+de:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Beschreibung
+        end_date: Ende
+        prizes: Auszeichnungen
+        rules: Regeln
+        screen: Screen
+        start_date: Anfang
+        title: Titel
+        website: Webseite
+      game:
+        author: Entwickler
+        description: Beschreibung
+        genre: Genre
+        title: Titel
+        website: Webseite
+      user:
+        username_or_email: Name/Email
+        password: Passwort
+        username: Name
+        characters_minimum: mindestens %{minimum_password_length} Zeichen
+        email: Email
+        terms_of_service: Aktzeptiere die lizenz bedingungen
+    errors:
+      messages:
+        exclude_domain: '"%{value}" ist nicht zulässig'
+        include_domain: domain muss in %{list}
+        invalid_datetime: ist kein gültiges Datum
+        url: ist keine gültige URL
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: darf höchstens %{count} betragen
+            download_links:
+              links_repetition: kann nicht dupliziert werden
+              too_long: darf höchstens %{count} betragen
+              too_short: sollte mindestens eins sein
+            game_languages:
+              too_short: sollte mindestens eins sein
+            screens:
+              too_long: darf höchstens %{count} betragen
+            videos:
+              too_long: darf nicht mehr als 1 sein
+            base:
+              limit_games_uploaded: du kannst nur 2 Spiele in 24 Stunden hochladen
+        user:
+          attributes:
+            username:
+              invalid: dürfen nur alphanumerische Zeichen (A–Z, 0–9)
+    models:
+      game_languages: Sprache
+  activity:
+    comment:
+      answer: 'hat auf deinen Kommentar zu '
+      create: 'kommentiert '
+      follower_create: 'kommentiert '
+      mention: 'hat dich in einem Kommentar in '
+    event_subscription:
+      create: 'ist abonniert worden '
+    following:
+      create: 'folgt jetzt '
+    game:
+      create: hat ein neues Spiel hinzugefügt!
+      destroy: 'hat sein Spiel entfernt '
+      update: hat sein Spiel aktualisiert
+    medal:
+      create: " erhielt die Medaille "
+    news:
+      create: 'hat Nachrichten von veröffentlicht '
+    rating:
+      create: 'hat abgestimmt '
+    user:
+      level: Ihr Level wurde auf %{level} erhöht
+      score:  Ihre Punktzahl wurde um + %{score} erhöht
+      new_title: Neuer Titel
+      prizes: Auszeichnungen
+      game_new_leader: Du bist der beste Spieler von %{game}!
+      game_old_leader: Du wurdest übertroffen! %{user} ist der neue führende Spieler von %{game}! Kämpft um den Thron!
+      game_other_leader: "%{user} ist der neue führende Spieler von %{game}! Kämpft um den Thron!"
+      game_dev_leader: "%{user} ist der neue führende Spieler von %{game}!"
+  application:
+    cookie_law:
+      show_more: Mehr Anzeigen
+      ok: Ok
+      setlanguage: Sprache auswählen
+    footer:
+      about: Über indiexpo
+      contact_us: Kontakt
+      language: Sprache (Language)
+      faq: FAQ
+      feed_rss: RSS-Feeds
+      developers: Entwickler
+      sitemap: Sitemap
+      terms_and_conds: Nutzungsbedingungen
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Formatierungshilfe
+      you_type: Du schreibst
+      you_see: Du siehst
+      italics: Kursiv
+      bold: Fett
+      hashtag: Hashtag
+      profile: Profil
+      item_one: Aufzählung 1
+      item_two: Aufzählung 2
+      item_three: Aufzählung 3
+      spoiler: Spoiler
+    menubar:
+      home: Start
+      chart: Rangliste
+      downloaded: Am meisten heruntergeladen
+      events: Veranstaltungen
+      language: Sprache
+      news: Neu
+    meta_tags:
+      description: indiexpo ermöglicht Tausende von Nutzern, Indie Spiele und selbst erstellte Spiele zu entdecken, anzusehen oder mit anderen zu teilen.
+      keywords: indiexpo, indie games, Spiele, Herunterladen, Spielen, Hochladen, Spieler, Entwickler, Veranstaltungen, Anfechtung, Knacke die Highscores, Rangliste, Am meisten heruntergeladen, Beliebteste, Neueste, Aufstrebender Gamer
+    navbar:
+      register: Registrieren
+      login: Anmelden
+      search: "Suchen... (Spiele, #Hashtag, @Profil)"
+      upload: Hochladen
+      level_up: Level Weiter!
+    slideshow_mobile:
+      show_more: Mehr Anzeigen
+    structured_data:
+      description: indiexpo ermöglicht Tausende von Nutzern, Indie Spiele und selbst erstellte Spiele zu entdecken, anzusehen oder mit anderen zu teilen.
+      keywords: indiexpo, indie games, Spiele, Herunterladen, Spielen, Hochladen, Spieler, Entwickler, Veranstaltungen, Anfechtung, Knacke die Highscores, Rangliste, Am meisten heruntergeladen, Beliebteste, Neueste, Aufstrebender Gamer
+      games: Spiele
+    terms:
+      terms_and_conditions: Nutzungsbedingungen
+  comments:
+    answers:
+      more_comments: Weitere laden
+    comment:
+      answer: Antworten
+      answers:
+        few: Alle %{count} Antworten anzeigen
+        many: Alle %{count} Antworten anzeigen
+        one: Sehen die Antwort
+        other: Alle %{count} Antworten anzeigen
+      destroy: Loeschen
+      destroy_confirm: Sind Sie sicher?
+      level: Stufe
+      new: Neu
+      verified: Bestätigt
+    destroy:
+      destroy_failure: Konnte den Kommentar nicht zerstören
+    form:
+      text: Dank unserer zahllosen Entwickler und ihrer fantastischen Ideen gibt es hier eine Menge zu entdecken. Auf indiexpo kannst du deine Ansichten und Gedanken einbringen!
+      now_loading: Wird Geladen...
+      publish: Posten
+  cookie_law: Cookies helfen uns bei der Bereitstellung unserer Dienste. Durch die Nutzung unserer Dienste erklärst du dich mit dem Einsatz von Cookies einverstanden.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Anmelden
+        recover_password: Zurücksetzen deines Passworts
+        send_email_again: E-Mail erneut senden
+        details:
+          structured_data:
+            login: Anmelden
+            description: Dank unserer zahllosen Entwickler und ihrer fantastischen Ideen gibt es hier eine Menge zu entdecken. Auf indiexpo kannst du deine Ansichten und Gedanken einbringen!
+          meta_tags:
+            login: Anmelden
+            description: Dank unserer zahllosen Entwickler und ihrer fantastischen Ideen gibt es hier eine Menge zu entdecken. Auf indiexpo kannst du deine Ansichten und Gedanken einbringen!
+    confirmations:
+      new:
+        email: Email
+        send_email_again: Bestätigungsanweisungen erneut senden
+        details:
+          structured_data:
+            send_email_again: Bestätigungsanweisungen erneut senden
+            description: Bestätige deine E-Mail-Adresse.
+          meta_tags:
+            send_email_again: Bestätigungsanweisungen erneut senden
+            description: Bestätige deine E-Mail-Adresse.
+    mailer:
+      confirmation_instructions:
+        welcome: Mitmachen und Spaß haben
+        title: 'Bestätige deine E-Mail-Adresse, indem du den Link:'
+        confirm_account: Bestätige deine E-Mail-Adresse.
+        text_1: Wenn du bei indiexpo angemeldet bist, kannst du die Plattform optimal nutzen.
+        text_2: Dank unserer zahllosen Entwickler und ihrer fantastischen Ideen gibt es hier eine Menge zu entdecken. Auf indiexpo kannst du deine Ansichten und Gedanken einbringen!
+      reset_password_instructions:
+        change_password: Ändere Dein Passwort
+        ignore_email: Wenn Sie dies nicht angefordert haben, bitte ignorieren Sie diese E-Mail.
+        reset_info: Ihr Passwort ändert sich erst, wenn Sie auf den obigen Link zugreifen und ein neues erstellen.
+        title: Jemand hat einen Link angefordert, um Ihr Passwort zu ändern. Sie können dies über den folgenden Link tun.
+      unlock_instructions:
+        unlock_account: Konto freischalten
+    passwords:
+      new:
+        recover_password: Zurücksetzen deines Passworts
+        email: Email
+        send: Senden
+        details:
+          structured_data:
+            recover_password: Zurücksetzen deines Passworts
+            description: Geben Sie eine E-Mail-Adresse ein, auf die Sie jetzt zugreifen können
+          meta_tags:
+            recover_password: Zurücksetzen deines Passworts
+            description: Geben Sie eine E-Mail-Adresse ein, auf die Sie jetzt zugreifen können
+      edit:
+        change_password: Ändere Dein Passwort
+        new_password: Neues Passwort
+        confirm_new_password: Neues Passwort bestätigen
+    registrations:
+      new:
+        register: Registrieren
+        details:
+          structured_data:
+            register: Registrieren
+            description: Wenn du bei indiexpo angemeldet bist, kannst du die Plattform optimal nutzen.
+          meta_tags:
+            register: Registrieren
+            description: Wenn du bei indiexpo angemeldet bist, kannst du die Plattform optimal nutzen.
+      edit:
+        change_password: Ändere Dein Passwort
+        change_email: Change My Email
+        new_password: Neues Passwort
+        confirm_new_password: Neues Passwort bestätigen
+        current_password: Bisheriges Passwort
+        current_email: Aktuelle E-Mail-Adressen
+        new_email: Neue E-Mail-Adresse
+        save: Änderungen speichern
+    shared:
+      menubar:
+        login: Anmelden
+        recover_password: Zurücksetzen deines Passworts
+        register: Registrieren
+        send_email_again: E-Mail erneut senden
+  download_links:
+    download_link:
+      download: Herunterladen
+  errors:
+    messages:
+      not_saved: Fehler beim Speichern
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Veranstaltungen & Anfechtung
+          description: 'Indie Spiele : Veranstaltungen & Anfechtung - Bevorstehend & Vergangen'
+        structured_data:
+          events: Veranstaltungen & Anfechtung
+          description: 'Indie Spiele : Veranstaltungen & Anfechtung - Bevorstehend & Vergangen'
+    active_selector:
+      active: Bevorstehend
+      inactive: Vergangen
+    edit:
+      destroy: Loeschen
+      destroy_confirm: Sind Sie sicher?
+    end_after_start: sollte nach dem Startdatum liegen
+    event_types:
+      all: Alle
+      contest: Wettbewerb
+      mini_contest: Mini-Wettbewerb
+      new: Veranstaltung erstellen
+      other: Andere
+    form:
+      language: Sprache
+      publish: Posten
+      type: Genre
+    menubar:
+      details: Übersicht
+      edit: Bearbeiten
+    index:
+      events: Veranstaltungen
+      challenges: Anfechtung
+      champions: Die Meister
+      points: Punkte
+      show_more: Mehr Anzeigen
+    new:
+      event: Veranstaltung
+    share:
+      share: Teilen
+      email: Email
+      qrcode: QR-Code
+    show:
+      description: Beschreibung
+      ended: Inaktiv
+      ends: Endet
+      from: Von
+      genre: Genre
+      language: Sprache
+      prizes: Auszeichnungen
+      rules: Regeln
+      share: Teilen
+      subscribers: Abonnenten
+      to: Zu
+      website: Webseite
+  feeds:
+    index:
+      feed_rss: RSS-Feeds
+      events: 'Indie Spiele : Veranstaltungen'
+      latest: 'Indie Spiele : Neueste'
+      popular: 'Indie Spiele : Beliebteste'
+      last_updated: 'Indie Spiele : Kürzlich aktualisiert'
+    details:
+      meta_tags:
+        feed_rss: RSS-Feeds
+        description: 'Indie Spiele : RSS-Feeds - Veranstaltungen - Neueste - Beliebteste - Kürzlich aktualisiert'
+      structured_data:
+        feed_rss: RSS-Feeds
+        description: 'Indie Spiele : RSS-Feeds - Veranstaltungen - Neueste - Beliebteste - Kürzlich aktualisiert'
+  layouts:
+    application:
+      indie_games: Indie Spiele
+    game:
+      play: Spielen
+      download: Herunterladen
+      new: Neu
+      updates: Aktuelles!
+      show_more: Mehr Anzeigen
+      adult_content_message_html: Du musst mindestens achtzehn Jahre alt sein um diese Inhalte zu sehen.</br> Bist du über achtzehn Jahre alt und willst du diese nicht jugendfreien Inhalte sehen?
+      yes: Ja
+      no: Nein
+  games:
+    game:
+      play: Spielen
+      download: Herunterladen
+      new: Neu
+      updates: Aktuelles!
+      chart: Rangliste
+      verified: Bestätigt
+    destroy:
+      destroyed: Zerstört
+    details:
+      game_header:
+        downloads_count: Spieler
+      game_menu:
+        comments: Kommentare
+        details: Übersicht
+        updates: Aktuelles
+        edit: Bearbeiten
+        statistics: Statistik
+      structured_data:
+       games: Spiele
+       developer: Entwickler
+      index:
+        videogame: Videospiel
+        published_by: 'gepostet von '
+        edit: Bearbeiten
+        statistics: Statistik
+        players: Spieler
+        news: Neu
+        no_news: No Neu
+        website: Webseite
+        recommended: Empfohlen
+    edit:
+      edit: Bearbeiten
+      destroy: Loeschen
+      destroy_confirm: Sind Sie sicher?
+    embed_popup:
+      embed: Einbetten
+      preview: Vorschau
+    record_chart:
+      chart: Rangliste
+      login: Anmelden
+      score_system_games: Knacke die Highscores
+    followers_list:
+      subscribers: Abonnenten
+      verified: Bestätigt
+    players_list:
+      downloads_count: Spieler
+      last_week: Letzte 7 Tage
+      no_logged_user: Guest
+      no_result: Keine Ergebnisse
+      verified: Bestätigt
+    form:
+      add_external_link: Externen Link hinzufügen
+      add_file: Datei auswählen
+      html5_description: 'Die Zip Datei mit dem Spiele Paket, kann nur Online gespielt werden. Bitte fügen Sie ein weitere Datei hinzu, welche zum Download angeboten werden kann.'
+      extra: Extra
+      enablable_indiepad: Aktiviere den Indiepad support (Nur für HTML5/WebGL Spiele)
+      indiepad_description: Laden Sie die App auf Ihrem Smartphone herunter und verwenden Sie es wie ein Gamepad für ausgewählte Spiele auf indiexpo. Nur Für Android.
+      long_description: Lange Beschreibung
+      artworks: Kunstwerke
+      delete: Loeschen
+      downloads: Downloads
+      genre: Genre
+      language: Sprache
+      publish: Posten
+      remove_file: Loeschen
+      remove_url: Loeschen
+      restore: Rückgängig
+      screens: Bilder
+      status: Status
+      complete: Vollversion
+      demo: Demo
+      minigame: Minispiel
+      tool: Engine
+      hashtag: Wir empfehlen, höchstens zwei Hashtags zu verwenden
+      adult_content: Sensible Inhalte
+      mobile_first: Optimiert für mobile Geräte
+      now_loading: Wird Geladen...
+      video: Video
+    monetisation:
+      monetisation: Monetarisierung
+      players: Spieler
+      level: Stufe
+      subscribers: Abonnenten
+      comments: Kommentare
+      offensive: Hasserfüllte/beleidigende Inhalte
+      sexual: Pornografische Inhalte
+      spam: Spam oder irreführende Inhalte
+      violent: Gewaltsame/abstoßende Inhalte
+      description: Beschreibung
+      send: Senden
+    new:
+      upload: Hochladen
+    share:
+      share: Teilen
+      email: Email
+      qrcode: QR-Code
+    show:
+      play: Spielen
+      embed: Einbetten
+      share: Teilen
+      monetisation: Monetarisierung
+      download: Herunterladen
+      subscribe: Abonnieren
+      subscribed: Abonniert
+      subscribers: Abonnenten
+      comment: Kommentare
+      description: Beschreibung
+      published_on: Veröffentlicht
+      adult_content: Sensible Inhalte
+      complete: Vollversion
+      demo: Demo
+      minigame: Minispiel
+      language: Sprache
+      first_to_comment: Öffentlichen Kommentar posten...
+      mobile_first: Optimiert für mobile Geräte
+      more_comments: Weitere laden
+      screens: Bilder
+      video: Video
+      top_player: Beste Spieler
+      epic_win: Epic Win!
+      on_the_rise: Aufstrebender Gamer
+      verified: Bestätigt
+    stats:
+      statistics: Statistik
+      comments: Kommentare
+      monetisation: Monetarisierung
+      daily: Von heute
+      days: Tage
+      date: Datum
+      downloads: Spieler
+      followings: Abonnenten
+      chart: Rangliste
+      most_rated: Beste Bewertung
+      followings_chart: Am Meisten Gefolgt
+      most_downloaded: Am meisten heruntergeladen
+      last_week: Letzte Woche
+      this_week: Laufende Woche
+      last_6_months: Letzte 180 Tage
+      totals: Ingesamt
+      visits: Besuche
+      active_views: Aktiv Besuche
+      votes: Stimmen
+      votes_averange: Mittel
+      other: Andere
+      engagement: Interaktionen
+      show_more: Mehr Anzeigen
+      qrcode: QR-Code
+      warning: Warnung
+    support:
+      prizes: Auszeichnungen
+      donate: 'Spenden %{price}$'
+    tips:
+      enhancements: Verbesserungen
+      only_to_you: Nur für mich sichtbar
+  games_sections:
+    chart:
+      last_6_months: Letzte 180 Tage
+      details:
+        meta_tags:
+          chart: Rangliste
+          description: 'Indie Spiele : Am meisten heruntergeladen - Beste Bewertung - Am Meisten Gefolgt'
+        structured_data:
+          chart: Rangliste
+          description: 'Indie Spiele : Am meisten heruntergeladen - Beste Bewertung - Am Meisten Gefolgt'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Am meisten heruntergeladen
+          description: 'Indie Spiele : Am meisten heruntergeladen - Von heute - Letzte 7 Tage - Letzte 30 Tage - Zeitraum seit Erstellung'
+        structured_data:
+          downloaded: Am meisten heruntergeladen
+          description: 'Indie Spiele : Am meisten heruntergeladen - Von heute - Letzte 7 Tage - Letzte 30 Tage - Zeitraum seit Erstellung'
+    news:
+      details:
+        meta_tags:
+          news: Neu
+          description: 'Indie Spiele : Neu - Letzte 30 Tage'
+        structured_data:
+          news: Neu
+          description: 'Indie Spiele : Neu - Letzte 30 Tage'
+    filters:
+      chart:
+        most_downloaded: Am meisten heruntergeladen
+        voted: Beste Bewertung
+        followed: Am Meisten Gefolgt
+      downloaded:
+        everytime: Zeitraum seit Erstellung
+        last_month: Letzte 30 Tage
+        last_week: Letzte 7 Tage
+        today: Von heute
+      news:
+        last_commented: Kommentare
+        last_updated: Kürzlich aktualisiert
+        latest: Neueste
+        popular: Beliebteste
+  genres:
+    genre:
+      rpg: Rollenspiele
+      browsergame: Browser Game
+      platformaction: Platform/Action
+      shootemup: Shoot em Up
+      puzzle: Puzzle
+      pointandclick: Point and Click
+      sport: Sportspiel
+      fighting: Fighting
+      other: Other
+    genres:
+      all: Alle
+    select:
+      genre: Genre
+  helpers:
+    label:
+      report:
+        broken: Defekter Link
+        copyright: Verletzt meine Rechte
+        offensive: Hasserfüllte/beleidigende Inhalte
+        sexual: Pornografische Inhalte
+        spam: Spam oder irreführende Inhalte
+        violent: Gewaltsame/abstoßende Inhalte
+  home:
+    navigation:
+      home: Start
+      news: Neu
+      chart: Rangliste
+      events: Veranstaltungen
+      downloaded: Am meisten heruntergeladen
+      console: Spielkonsole
+      subscriptions: Abos
+      your_games: Deine Spiele
+      history: Verlauf
+    landing:
+      last_followed_games_updated: Falls du es verpasst hast
+      play: Spielen
+      recommended: Empfohlen
+      based_recent_activity: Anhand der letzten Aktivität
+      query_of_the_day_0: Spiele die kürzlich über 1,000 Spieler erreicht haben
+      query_of_the_day_1: Gute Spiele ohne Kommentare
+      query_of_the_day_2: Gedenktag
+      query_of_the_day_3: Am Meisten Gefolgt - Letzte 180 Tage
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Knacke die Highscores
+      query_of_the_day_6: Aktuelles!
+      downloaded: Am meisten heruntergeladen
+      today: Von heute
+      last_week: Letzte 7 Tage
+      last_month: Letzte 30 Tage
+      latest: Neueste
+      show_more: Mehr Anzeigen
+    console:
+      details:
+        structured_data:
+          console: Spielkonsole
+          description: 'Indie Spiele : Spielen'
+        meta_tags:
+          console: Spielkonsole
+          description: 'Indie Spiele : Spielen'
+    subscriptions:
+      subscriptions: Abos
+      updates: Aktuelles!
+      no_result: Keine Ergebnisse
+      no_subscriptions_message: indiexpo macht am meisten Spaß, wenn du 5 Spiele abonniert hast
+      players: Spieler
+      subscribers: Abonnenten
+      comments: Kommentare
+      details: Übersicht
+      show_more: Mehr Anzeigen
+    your_games:
+      your_games: Deine Spiele
+      players: Spieler
+      subscribers: Abonnenten
+      comments: Kommentare
+      details: Übersicht
+      show_more: Mehr Anzeigen
+    history:
+      history: Verlauf
+      score_system_games: Knacke die Highscores
+      last_commented: Kommentare
+      subscriptions: Abos
+      votes: Stimmen
+  static:
+    about:
+      about: Über indiexpo
+      app: Apps
+      extension: Erweiterungen
+      social_networks: Soziales Netzwerk
+      games: Spiele
+      show_more: Mehr Anzeigen
+      details:
+        structured_data:
+          about: Über indiexpo
+          description: indiexpo ermöglicht Tausende von Nutzern, Indie Spiele und selbst erstellte Spiele zu entdecken, anzusehen oder mit anderen zu teilen.
+        meta_tags:
+          about: Über indiexpo
+          description: indiexpo ermöglicht Tausende von Nutzern, Indie Spiele und selbst erstellte Spiele zu entdecken, anzusehen oder mit anderen zu teilen.
+    faq:
+      faq: FAQ
+      question_1: Was ist indiexpo?
+      answer_1: indiexpo ermöglicht Tausende von Nutzern, Indie Spiele und selbst erstellte Spiele zu entdecken, anzusehen oder mit anderen zu teilen. indiexpo bietet ein Bereich, in dem Menschen interagieren, sich informieren und andere Nutzer auf der ganzen Welt inspirieren können. Ersteller von Originalinhalten sowie groﬂe und kleine Werbetreibende können ¸ber diese Plattform ihre Spiele pr‰sentieren.
+      question_2: Wie sammelt man Punkte?
+      answer_2: Hat indiexpo ein Punkte- und Levelsystem. Die Punktezahl, die Sie erhalten, hängt davon ab, was Sie tun. Die folgende Tabelle bietet einen Überblick über die jeweils für eine Aktion vergebenen Punkte.
+      question_3: Wie erreiche ich ein höheres Level?
+      answer_3: Level zeigen auf eine andere Weise, wie aktiv Sie (und andere) waren. Je mehr Punkte Sie sammeln, desto höher Ihr Level. indiexpo anerkennt Ihre Leistungen, wie sie sich an Ihrem Level zeigen, durch eine besondere Art von Dankeschön.
+      details:
+        structured_data:
+          faq: FAQ
+          description: FAQ, sind eine Zusammenstellung von oft gestellten Fragen und den dazugehörigen Antworten zu einem Thema.
+        meta_tags:
+          faq: FAQ
+          description: FAQ, sind eine Zusammenstellung von oft gestellten Fragen und den dazugehörigen Antworten zu einem Thema.
+    developers:
+      developers: Entwickler
+      details:
+        structured_data:
+          developers: Entwickler
+          description: Entdecke unsere Entwicklerprodukte. Statistik, Apps, Erweiterungen, Tutorials
+        meta_tags:
+          developers: Entwickler
+          description: Entdecke unsere Entwicklerprodukte. Statistik, Apps, Erweiterungen, Tutorials
+  languages:
+    edit:
+      note: Hier kannst du die Sprache deiner Seite ändern. Von Nutzern eingegebener Text ändert sich dadurch nicht.
+      setlanguage: Sprache auswählen
+  medals:
+    medal:
+      titles:
+        age: "%{score} Jahre"
+        cg: Commentator
+        d: Über %{score} Downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Über %{score} Abonnenten
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Stufe 2
+        level_4: Stufe 4
+        level_6: Stufe 6
+        level_10: Stufe 10
+        level_16: Stufe 16
+        level_26: Stufe 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Über %{score} Bewertungen
+        king: Das Beste seiner Art
+        vig: Sehr wichtiges Spiel
+  news:
+    form:
+      text: Veröffentliche einen Beitrag, um deine Zielgruppe zu einer Interaktion anzuregen.
+      hashtag: Wir empfehlen, höchstens zwei Hashtags zu verwenden
+      now_loading: Wird Geladen...
+      publish: Posten
+    news:
+      destroy: Loeschen
+      destroy_confirm: Sind Sie sicher?
+    index:
+      players: Spieler
+      subscribers: Abonnenten
+      download: Herunterladen
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Profil
+      followed_games: Abos
+      your_games: Deine Spiele
+      settings: Einstellungen
+      logout: Abmelden
+  platforms:
+    platforms:
+      all: Alle
+    select:
+      platform: Betriebssystem
+  public_activities:
+    index:
+      destroy_confirm: Sind Sie sicher?
+      mark_all_as_read: Alle als gelesen markieren
+      notifications: Benachrichtigungen
+      see_all: Mehr Anzeigen
+  public_activities_mailer:
+    notify:
+      hello: Hallo %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Abo beenden
+  public_activity:
+    base:
+      someone: Jemand
+    comment:
+      answer:
+        comment_removed: Kommentar entfernt
+      create:
+        comment_removed: Kommentar entfernt
+    event_subscription:
+      create:
+        subscription_removed: Abonnement entfernt
+    following:
+      create:
+        following_removed: Folgen entfernt
+    game:
+      removed_game: Spiel entfernt
+    news:
+      create:
+        news_removed: Nachricht entfernt
+    rating:
+      create:
+        missing_rating: Fehlende Bewertung
+    user:
+      missing_user: Fehlender Benutzer
+      verified: Bestätigt
+  reports:
+    new:
+      details: 'Beschreibung:'
+      question: Wo liegt das Problem?
+      send: Senden
+      title: 'Melden: %{game}'
+      report_submitted: Danke, dass du uns das mitteilst.
+      report_submitted_message: Dein Feedback hilft unserem System zu erkennen, wenn etwas nicht in Ordnung ist.
+  scores:
+    score:
+      points: Punkte
+      delete: Loeschen
+      destroy_confirm: Sind Sie sicher?
+      verified: Bestätigt
+  search:
+    games:
+      filters: Filter
+      adult_content: Sensible Inhalte
+      mobile_first: Optimiert für mobile Geräte
+      no_result: Keine Ergebnisse
+      search: Suchen
+      search_placeholder: Suchen...
+      search_tools: Suchwerkzeuge
+      language: Sprache
+      genre: Genre
+      platform: Betriebssystem
+      recommended: Empfohlen
+      tool: Engine
+      status: Status
+      games: Spiele
+      score_system_games: Knacke die Highscores
+      year: Jahr
+    details:
+      meta_tags:
+        search: Suchen
+        description: "Suchen... (Spiele, #Hashtag, @Profil, Suchwerkzeuge, Sprache, Genre, Jahr, Betriebssystem, Engine, Status)"
+      structured_data:
+        search: Suchen
+        description: "Suchen... (Spiele, #Hashtag, @Profil, Suchwerkzeuge, Sprache, Genre, Jahr, Betriebssystem, Engine, Status)"
+  settings:
+    edit:
+      settings: Einstellungen
+    form:
+      language: Sprache (Language)
+      setlanguage: Sprache auswählen
+      sounds: Töne
+      sounds_description: Ton abspielen, wenn eine neue Benachrichtigung eingeht
+      adult_content: Sensible Inhalte
+      label_on: 'Ein'
+      label_off: 'Aus'
+      email_notifications: E-Mail-Benachrichtigungen
+      general: Allgemein
+      mail_comment_answer: Jemand hat auf Ihren Kommentar geantwortet
+      mail_comment_mention: Erwähnungen
+      mail_event_subscription_create: Jemand hat Ihre Veranstaltung abonniert
+      followed_games: Abos
+      mail_comment_follower_create: Jemand hat ein Kommentar bei einem Ihrer gefolgten Spiele hinzugefügt
+      mail_follower_news_create: Jemand hat eines Ihrer gefolgten Spiele aktualisiert
+      mail_news_create: Jemand hat eines Ihrer gefolgten Spiele aktualisiert
+      mail_follower_game_create: Ein von Ihnen gefolgter Nutzer, hat ein neues Spiel erstellt
+      mail_game_create: Ein von Ihnen gefolgter Nutzer, hat ein neues Spiel erstellt
+      mail_user_game_new_leader: Du bist der beste Spieler eines Spiels
+      mail_user_game_old_leader: Du bist nicht mehr der beste Spieler eines Spiels
+      mail_user_game_other_leader: Es gibt einen neuen besten Spieler
+      your_games: Deine Spiele
+      mail_rating_create: Jemand hat eine Bewertung zu deinem Spiel hinzugefügt
+      mail_following_create: mir jemand Neues folgt
+      mail_comment_create: Jemand hat ein Kommentar bei Ihrem Spiel hinzugefügt
+      mail_medal_create: Du hast eine Medaille erhalten
+      mail_user_game_dev_leader: Neuer Bester Spieler deines Spiels
+      account_data: Kontodaten
+      email: Email
+      password: Passwort
+      edit: Bearbeiten
+      stats: Statistik
+      comments: Kommentare
+      subscriptions: Abos
+      show_more: Mehr Anzeigen
+      save: Änderungen speichern
+      delete_account: Konto dauerhaft löschen
+  sitemaps:
+    index:
+      active_events: Bevorstehend
+      inactive_events: Vergangen
+      new_events: Veranstaltung erstellen
+      recover: Zurücksetzen deines Passworts
+      sign_in: Anmelden
+      sign_up: Registrieren
+      sitemap: Sitemap
+    details:
+      meta_tags:
+        sitemap: Sitemap
+        description: Sitemap, wird die vollständige hierarchisch strukturierte Darstellung aller Einzelne Dokumente indiexpo.
+      structured_data:
+        sitemap: Sitemap
+        description: Sitemap, wird die vollständige hierarchisch strukturierte Darstellung aller Einzelne Dokumente indiexpo.
+  subscriptions:
+    subscribe_button:
+      subscribe: Abonnieren
+    unsubscribe_button:
+      unsubscribe: Abo beenden
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Engine
+  users:
+    show:
+      page_title: "%{username} ist auf indiexpo"
+      online: Online
+      chart: Rangliste
+      last_month: Letzte 30 Tage
+      level: Stufe
+      games: Spiele
+      score_system_games: Knacke die Highscores
+      show_more: Mehr Anzeigen
+      subscriptions: Abos
+      last_commented: Kommentare
+      history: Verlauf
+      other_players: Andere Spieler
+      verified: Bestätigt
+    details:
+      structured_data:
+        developer: Entwickler
+        gamer: Gamer
+      meta_tags:
+        about: Über
+        description: Profil, Trophäensammlung, Spiele, Abos, Knacke die Highscores, Kommentare & Verlauf
+  me:
+    menubar:
+      profile: Profil
+      event_subscriptions: Meine Veranstaltungen
+      followed_games: Abos
+      your_games: Deine Spiele
+      settings: Einstellungen
+    followed_games:
+      no_result: Keine Ergebnisse
+      no_subscriptions_message: indiexpo macht am meisten Spaß, wenn du 5 Spiele abonniert hast
+    games:
+      your_games: Deine Spiele
+      visits: Besuche
+      downloads_count: Spieler
+      subscribers: Abonnenten
+      totals: Ingesamt
+      no_result: Keine Ergebnisse
+      upload: Hochladen
+  levels:
+    index:
+      level: Stufe
+      user_chart: Rangliste
+      last_month: Letzte 30 Tage
+      gems: Edelsteine
+      trophy_case: Trophäensammlung
+      title_1: Neuling
+      title_2: Rekrut
+      title_3: Enthusiast
+      title_4: Azubi
+      title_5: Anfänger
+      title_6: Senior
+      title_7: Erfahren
+      title_8: Altes Eisen
+      title_9: Krieger
+      title_10: Spezialist
+      title_11: Experte
+      title_12: Veteran
+      title_13: Profi
+      title_14: Elite
+      title_15: Erleuchteter
+      title_16: Meister
+      title_17: Superstar
+      title_18: Drache
+      title_19: Champion
+      title_20: Legende
+      title_21: Großmeister
+      verified: Bestätigt
+    goals:
+      goals: Zielvorhaben
+    stats:
+      stats: Statistik
+      comments: Kommentare
+      subscriptions: Abos
+      your_games: Deine Spiele
+      votes: Stimmen
+  warning:
+    index:
+      warning: Warnung
+      destroy: Loeschen
+      destroy_confirm: Sind Sie sicher?
+      delete_account: Das Löschen deines Kontos ist dauerhaft.
+      delete_account_description: Wenn du dein indiexpo-Konto löschst, kannst du Content oder Informationen, die du auf indiexpo geteilt hast, nicht mehr abrufen.

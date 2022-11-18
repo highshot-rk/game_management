@@ -1,0 +1,22 @@
+<ul class="desktop_only">
+	<%= link_to new_event_path do %>
+		<li>
+			<%= image_tag "Images/icons/new.png", alt: 'New Event' %>
+			<span><%= t('.new') %></span>
+		</li>
+	<% end if current_user.try(:staff?) %>
+	<%= link_to events_path(@params.except(:event_type)), data: { pjax: true } do %>
+		<li class="<%= !@event_type && 'active' %>">
+			<%= image_tag "Images/icons/all.png", alt: 'All Events' %>
+			<span><%= t('.all') %></span>
+		</li>
+	<% end %>
+	<% elements.each do |filter| %>
+		<%= link_to events_path(@params.merge(event_type: filter.last)), data: { pjax: true } do %>
+			<li class="<%= @event_type == filter.last.to_s && 'active' %>">
+				<%= image_tag "Images/icons/#{filter.first}.png", alt: filter.first.capitalize %>
+				<span><%= t(".#{filter.first}") %></span>
+			</li>
+		<% end %>
+	<% end %>
+</ul>

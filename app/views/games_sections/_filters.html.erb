@@ -1,0 +1,7 @@
+<% elements.each do |element| %>
+<div class="<%= @filter == element ? 'hoveroff' : 'hoveron' %>">
+  <div class="Write20 div50">
+    <%= link_to t(".#{action_name}.#{element}"), url_for(filter: element), data: { pjax: true } %>
+  </div>
+</div>
+<% end %>

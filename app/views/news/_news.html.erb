@@ -1,0 +1,20 @@
+<% if news.created_at.present? %>
+  <div id=<%= dom_id(news) %>>
+    <div class="hoveron">
+      <span data-time class="cw-relative-date" timestamp="<%= news.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>
+    </div>
+    <div class="N_Window"><%= parse_markdown(news.text).html_safe %></div>
+    <!-- Social Buttons -->
+    <div class="hoveron">
+      <%= link_to "Whatsapp", "whatsapp://send?text=#{game_news_url(@game.slug)}+#news.text", data: { action: "share/whatsapp/share", analytics_click: "Shared News on Whatsapp" }, class: 'BottonBorder mobile_only', target: '_blank' %>
+      <%= link_to "Telegram", "https://t.me/share/url?url=#{game_news_url(@game.slug)}&quote=#news.text", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared News on Telegram"}, target: '_blank' %>
+      <%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_news_url(@game.slug)}&quote=#news.text", class: 'BottonBorder', data: { analytics_click: "Shared News on Facebook"}, target: '_blank' %>
+      <%= link_to "Reddit", "https://www.reddit.com/r/devblogs/submit?url=#{game_news_url(@game.slug)}&title=My%20Latest%20News!", class: 'BottonBorder', data: { analytics_click: "Shared News on Reddit"}, target: '_blank' %>
+      <%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{game_news_url(@game.slug)}&text=%23indiedev%20Follow%20Me%20on%20indiexpo!", class: 'BottonBorder', data: { analytics_click: "Shared News on Twitter"}, target: '_blank' %>
+      <%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_news_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared News on tumblr"}, target: '_blank' %>
+      <%= link_to "VK", "http://vk.com/share.php?url=#{game_news_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared News on VK"}, target: '_blank' %>
+    </div>
+    <%= link_to t('.destroy'), game_news_path(game_id: news.game, id: news.id), method: :delete, remote: true, data: { confirm: t('.destroy_confirm') }, class:'BottonLight hoveron' if policy(news).destroy? %>
+    <hr>
+  </div>
+<% end %>

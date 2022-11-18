@@ -1,0 +1,940 @@
+---
+th:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: คำอธิบาย
+        end_date: วันสิ้นสุด
+        prizes: รางวัล
+        rules: กฎ
+        screen: หน้าจอ
+        start_date: วันเริ่ม
+        title: หัวข้อ
+        website: เว็บไซต์
+      game:
+        author: นักพัฒนาซอฟต์แวร์
+        description: คำอธิบาย
+        genre: ประเภท
+        title: หัวข้อ
+        website: เว็บไซต์
+      user:
+        username_or_email: ชื่อผู้ใช้/อีเมล์
+        password: รหัสผ่าน
+        username: ชื่อผู้ใช้
+        characters_minimum: "อย่างน้อย %{minimum_password_length} อักขระ"
+        email: อีเมล์
+        terms_of_service: ฉันยอมรับข้อตกลงลิขสิทธิ์
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: คุณทำกิจกรรมเมื่อสักครู่บ่อยเกินไป ลองใหม่ในอีก %{cooloff} นาที
+        news:
+          attributes:
+            base:
+              check_spam: คุณทำกิจกรรมเมื่อสักครู่บ่อยเกินไป ลองใหม่ในอีก %{cooloff} นาที
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: คุณสามารถอัปโหลดได้เพียง 2 เกมภายใน 24 ชั่วโมง
+        user:
+          attributes:
+            username:
+              invalid: ต้องประกอบด้วยตัวอักษรภาษาอังกฤษหรือตัวเลขเท่านั้น (A–Z, 0–9)
+    models:
+      game_languages: ภาษา
+  activity:
+    comment:
+      answer: 'ได้ตอบกลับความคิดเห็นของคุณใน '
+      create: 'แสดงความคิดเห็นต่อ '
+      follower_create: 'แสดงความคิดเห็นต่อ '
+      mention: 'กล่าวถึงคุณในความคิดเห็นใน '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: เพิ่มเกมใหม่แล้ว!
+      destroy: 'removed his game '
+      update: ได้อัปเดตข้อมูลเกม
+    medal:
+      create: " received the medal "
+    news:
+      create: 'เพิ่มข่าวสารของเกม '
+    rating:
+      create: 'ได้โหวต '
+    user:
+      level: เลเวลของคุณเพิ่มขึ้นเป็น %{level}
+      score: คะแนนของคุณเพิ่มขึ้น + %{score}
+      new_title: New Title
+      prizes: รางวัล
+      game_new_leader: คุณคือผู้เล่นที่ยอดเยี่ยมที่สุดของ %{game}!
+      game_old_leader: คุณถูกโค่นแล้ว! %{user} เป็นผู้นำคนใหม่ของเกม %{game}! ต้องชิงบัลลังก์คืน!
+      game_other_leader: "%{user} เป็นผู้นำคนใหม่ของเกม %{game}! ต้องชิงบัลลังก์คืน!"
+      game_dev_leader: "%{user} เป็นผู้นำคนใหม่ของเกม %{game}!"
+  application:
+    cookie_law:
+      show_more: แสดงเพิ่มเติม
+      ok: Ok
+      setlanguage: เลือกภาษาของคุณ
+    footer:
+      about: เกี่ยวกับ
+      contact_us: ติดต่อเรา
+      language: ภาษา (Language)
+      faq: คำถามที่พบบ่อย
+      feed_rss: ฟีด
+      developers: นักพัฒนาซอฟต์แวร์
+      sitemap: แผนผังเว็บไซต์
+      terms_and_conds: ข้อกำหนด
+      blog: บล็อก
+    markdown_instructions:
+      formatting_help: Formatting Help
+      you_type: คุณพิมพ์
+      you_see: คุณเห็น
+      italics: ตัวเอียง
+      bold: ตัวหนา
+      hashtag: แฮชแท็ก
+      profile: โปรไฟล์
+      item_one: Item 1
+      item_two: Item 2
+      item_three: Item 3
+      spoiler: สปอยเลอร์
+    menubar:
+      home: หน้าหลัก
+      chart: อันดับสูงสุด
+      downloaded: ถูกดาวน์โหลดมากที่สุด
+      events: งานกิจกรรม
+      language: ภาษา
+      news: News
+    meta_tags:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, เกมอินดี้, เกม, ดาวน์โหลดเกม, Play, อัปโหลด, Players, นักพัฒนาซอฟต์แวร์, งานกิจกรรม, ความท้าทาย, เกมลีดเดอร์บอร์ด, นิยมที่สุด, มาใหม่, Gaming Creator on the Rise
+    navbar:
+      register: สมัครสมาชิก
+      login: เข้าสู่ระบบ
+      search: "ค้นหา... (เกม, #แฮชแท็ก, @โปรไฟล์)"
+      upload: อัปโหลด
+      level_up: เลเวลเพิ่มขึ้นแล้ว!
+    slideshow_mobile:
+      show_more: แสดงเพิ่มเติม
+    structured_data:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, เกมอินดี้, เกม, ดาวน์โหลดเกม, Play, อัปโหลด, Players, นักพัฒนาซอฟต์แวร์, งานกิจกรรม, ความท้าทาย, เกมลีดเดอร์บอร์ด, นิยมที่สุด, มาใหม่, Gaming Creator on the Rise
+      games: เกม
+    terms:
+      terms_and_conditions: ข้อกำหนด
+  comments:
+    answers:
+      more_comments: แสดงเพิ่มเติม
+    comment:
+      answer: ตอบกลับ
+      answers:
+        few: ดูการตอบกลับ %{count} รายการ
+        many: ดูการตอบกลับ %{count} รายการ
+        one: ดูการตอบกลับ
+        other: ดูการตอบกลับ %{count} รายการ
+      destroy: ลบ
+      destroy_confirm: คุณแน่ใจหรือไม่?
+      level: เลเวล
+      new: ใหม่
+      verified: ยืนยันแล้ว
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: มีอะไรให้ดูเยอะเลย ผู้สร้างมากมายเผยแพร่ผลงานที่น่าทึ่งเอาไว้ บอกความรู้สึกของคุณให้พวกเขารู้กัน!
+      now_loading: กำลังดาวน์โหลด
+      publish: ส่ง
+  cookie_law: เว็บไซต์นี้มีการใช้คุกกี้เพื่อนำเสนอเนื้อหาและให้บริการกับคุณได้อย่างสะดวกและเต็มที่
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: เข้าสู่ระบบ
+        recover_password: ลืมรหัสผ่าน
+        send_email_again: ส่งอีเมลอีกครั้ง
+        details:
+          structured_data:
+            login: เข้าสู่ระบบ
+            description: มีอะไรให้ดูเยอะเลย ผู้สร้างมากมายเผยแพร่ผลงานที่น่าทึ่งเอาไว้ บอกความรู้สึกของคุณให้พวกเขารู้กัน!
+          meta_tags:
+            login: เข้าสู่ระบบ
+            description: มีอะไรให้ดูเยอะเลย ผู้สร้างมากมายเผยแพร่ผลงานที่น่าทึ่งเอาไว้ บอกความรู้สึกของคุณให้พวกเขารู้กัน!
+    confirmations:
+      new:
+        email: อีเมล์
+        send_email_again: ส่งอีเมลอีกครั้ง
+        details:
+          structured_data:
+            send_email_again: ส่งอีเมลอีกครั้ง
+            description: ยืนยันอีเมล
+          meta_tags:
+            send_email_again: ส่งอีเมลอีกครั้ง
+            description: ยืนยันอีเมล
+    mailer:
+      confirmation_instructions:
+        welcome: เข้าร่วมกับเราแล้วไปสนุกกัน
+        title: 'ยืนยันอีเมลของคุณโดยคลิกที่ลิงค์ด้านล่าง'
+        confirm_account: ยืนยันอีเมล
+        text_1: คุณสามารถสัมผัสประสบการณ์ได้อย่างเต็มที่ เมื่อเข้าสู่ระบบ indiexpo
+        text_2: มีอะไรให้ดูเยอะเลย ผู้สร้างมากมายเผยแพร่ผลงานที่น่าทึ่งเอาไว้ บอกความรู้สึกของคุณให้พวกเขารู้กัน!
+      reset_password_instructions:
+        change_password: เปลี่ยนรหัสผ่านของฉัน
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: ทางเวบได้รับคำขอเปลี่ยนรหัสผ่านของคุณ และคุณสามารถตั้งรหัสผ่านใหม่จากลิงค์ข้างล่างนี้
+      unlock_instructions:
+        unlock_account: ปลดล็อคบัญชีของฉัน
+    passwords:
+      new:
+        recover_password: ลืมรหัสผ่าน
+        email: อีเมล์
+        send: ส่ง
+        details:
+          structured_data:
+            recover_password: ลืมรหัสผ่าน
+            description: กรอกอีเมลที่คุณสามารถตรวจสอบได้ในขณะนี้
+          meta_tags:
+            recover_password: ลืมรหัสผ่าน
+            description: กรอกอีเมลที่คุณสามารถตรวจสอบได้ในขณะนี้
+      edit:
+        change_password: เปลี่ยนรหัสผ่านของฉัน
+        new_password: รหัสผ่านใหม่
+        confirm_new_password: ยืนยันรหัสผ่านใหม่
+    registrations:
+      new:
+        register: สมัครสมาชิก
+        details:
+          structured_data:
+            register: สมัครสมาชิก
+            description: คุณสามารถสัมผัสประสบการณ์ได้อย่างเต็มที่ เมื่อเข้าสู่ระบบ indiexpo
+          meta_tags:
+            register: สมัครสมาชิก
+            description: คุณสามารถสัมผัสประสบการณ์ได้อย่างเต็มที่ เมื่อเข้าสู่ระบบ indiexpo
+      edit:
+        change_password: เปลี่ยนรหัสผ่านของฉัน
+        change_email: Change My Email
+        new_password: รหัสผ่านใหม่
+        confirm_new_password: ยืนยันรหัสผ่านใหม่
+        current_password: รหัสผ่านปัจจุบัน
+        current_email: Current Email Address
+        new_email: New Email Address
+        save: บันทึกการเปลี่ยนแปลง
+    shared:
+      menubar:
+        login: เข้าสู่ระบบ
+        recover_password: ลืมรหัสผ่าน
+        register: สมัครสมาชิก
+        send_email_again: ส่งอีเมลอีกครั้ง
+  download_links:
+    download_link:
+      download: ดาวน์โหลดเกม
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: งานกิจกรรม & ความท้าทาย
+          description: 'เกมอินดี้ : งานกิจกรรม & ความท้าทาย - Upcoming & Past'
+        structured_data:
+          events: งานกิจกรรม & ความท้าทาย
+          description: 'เกมอินดี้ : งานกิจกรรม & ความท้าทาย - Upcoming & Past'
+    active_selector:
+      active: Upcoming
+      inactive: Past
+    edit:
+      destroy: ลบ
+      destroy_confirm: คุณแน่ใจหรือไม่?
+    end_after_start: should be after start date
+    event_types:
+      all: ทั้งหมด
+      contest: การแข่งขัน
+      mini_contest: การแข่งขันขนาดเล็ก
+      new: Create Event
+      other: อื่นๆ
+    form:
+      language: ภาษา
+      publish: ส่ง
+      type: ประเภท
+    menubar:
+      details: ภาพรวม
+      edit: แก้ไข
+    index:
+      events: งานกิจกรรม
+      challenges: ความท้าทาย
+      champions: ผู้ชนะเลิศ
+      points: แต้ม
+      show_more: แสดงเพิ่มเติม
+    new:
+      event: Event
+    share:
+      share: แชร์
+      email: อีเมล์
+      qrcode: รหัสคิวอาร์
+    show:
+      description: คำอธิบาย
+      ended: Inactive
+      ends: ถึง
+      from: จาก
+      genre: ประเภท
+      language: ภาษา
+      prizes: รางวัล
+      rules: กฎ
+      share: แชร์
+      subscribers: Subscribers
+      to: To
+      website: เว็บไซต์
+  feeds:
+    index:
+      feed_rss: ฟีด
+      events: 'เกมอินดี้ : งานกิจกรรม'
+      latest: 'เกมอินดี้ : มาใหม่'
+      popular: 'เกมอินดี้ : นิยมที่สุด'
+      last_updated: 'เกมอินดี้ : อัพเดทล่าสุด'
+    details:
+      meta_tags:
+        feed_rss: ฟีด
+        description: 'เกมอินดี้ : ฟีด - งานกิจกรรม - มาใหม่ - นิยมที่สุด - อัพเดทล่าสุด'
+      structured_data:
+        feed_rss: ฟีด
+        description: 'เกมอินดี้ : ฟีด - งานกิจกรรม - มาใหม่ - นิยมที่สุด - อัพเดทล่าสุด'
+  layouts:
+    application:
+      indie_games: เกมอินดี้
+    game:
+      play: Play
+      download: ดาวน์โหลดเกม
+      new: ใหม่
+      updates: อัปเดต!
+      show_more: แสดงเพิ่มเติม
+      adult_content_message_html: You must be at least eighteen years old to view this content.</br> Are you over eighteen and willing to see adult content?
+      yes: Yes
+      no: No
+  games:
+    game:
+      play: Play
+      download: ดาวน์โหลดเกม
+      new: ใหม่
+      updates: อัปเดต!
+      chart: อันดับสูงสุด
+      verified: ยืนยันแล้ว
+    destroy:
+      destroyed: Deleted
+    details:
+      game_header:
+        downloads_count: Players
+      game_menu:
+        comments: Comments
+        details: ภาพรวม
+        updates: Updates
+        edit: แก้ไข
+        statistics: สถิติ
+      structured_data:
+       games: เกม
+       developer: นักพัฒนาซอฟต์แวร์
+      index:
+        videogame: วิดีโอเกม
+        published_by: 'เผยแพร่โดย '
+        edit: แก้ไข
+        statistics: สถิติ
+        players: Players
+        news: News
+        no_news: No news
+        website: เว็บไซต์
+        recommended: ไฮไลท์
+    edit:
+      edit: แก้ไข
+      destroy: ลบ
+      destroy_confirm: คุณแน่ใจหรือไม่?
+    embed_popup:
+      embed: ฝังโค้ด
+      preview: Preview
+    record_chart:
+      chart: อันดับสูงสุด
+      login: เข้าสู่ระบบ
+      score_system_games: เกมลีดเดอร์บอร์ด
+    followers_list:
+      subscribers: Subscribers
+      verified: ยืนยันแล้ว
+    players_list:
+      downloads_count: Players
+      last_week: 7 วันที่ผ่านมา
+      no_logged_user: ผู้เยี่ยมชม
+      no_result: ไม่พบผลลัพธ์
+      verified: ยืนยันแล้ว
+    form:
+      add_external_link: Add external link
+      add_file: Add file
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: คำอธิบายแบบยาว
+      artworks: Artworks
+      delete: ลบ
+      downloads: Downloads
+      genre: ประเภท
+      language: ภาษา
+      publish: ส่ง
+      remove_file: ลบ
+      remove_url: ลบ
+      restore: ยกเลิก
+      screens: หน้าจอ
+      status: Status
+      complete: เสร็จสิ้น
+      demo: ตัวทดลอง
+      minigame: Minigame
+      tool: เครื่องมือ
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      adult_content: Adults Contents
+      mobile_first: เหมาะสำหรับโทรศัพท์มือถือ
+      now_loading: กำลังดาวน์โหลด
+      video: วิดีโอ
+    monetisation:
+      monetisation: Monetisation
+      players: Players
+      level: เลเวล
+      subscribers: Subscribers
+      comments: Comments
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: คำอธิบาย
+      send: ส่ง
+    new:
+      upload: อัปโหลด
+    share:
+      share: แชร์
+      email: อีเมล์
+      qrcode: รหัสคิวอาร์
+    show:
+      play: Play
+      embed: ฝังโค้ด
+      share: แชร์
+      monetisation: Monetisation
+      download: ดาวน์โหลดเกม
+      subscribe: ติดตาม
+      subscribed: ติดตามแล้ว
+      subscribers: Subscribers
+      comment: Comments
+      description: คำอธิบาย
+      published_on: Published on
+      adult_content: Adults Contents
+      complete: เสร็จสิ้น
+      demo: ตัวทดลอง
+      minigame: Minigame
+      language: ภาษา
+      first_to_comment: เพิ่มความคิดเห็นสาธารณะ...
+      mobile_first: เหมาะสำหรับโทรศัพท์มือถือ
+      more_comments: แสดงเพิ่มเติม
+      screens: หน้าจอ
+      video: วิดีโอ
+      top_player: ผู้เล่นอันดับสูง
+      epic_win: Epic Win!
+      on_the_rise: Gaming Creator on the Rise
+      verified: ยืนยันแล้ว
+    stats:
+      statistics: สถิติ
+      comments: Comments
+      monetisation: Monetisation
+      daily: วันนี้
+      days: วัน
+      date: Date
+      downloads: Players
+      followings: Subscribers
+      chart: อันดับสูงสุด
+      most_rated: ถูกโหวตมากที่สุด
+      followings_chart: ถูกติดตามมากที่สุด
+      most_downloaded: ถูกดาวน์โหลดมากที่สุด
+      last_week: Last week
+      this_week: This week
+      last_6_months: Last 6 Months
+      totals: Totals
+      visits: Visits
+      active_views: Active Views
+      votes: โหวต
+      votes_averange: Average
+      other: อื่นๆ
+      engagement: Engagement
+      show_more: แสดงเพิ่มเติม
+      qrcode: รหัสคิวอาร์
+      warning: คำเตือน
+    support:
+      prizes: รางวัล
+      donate: 'Donate %{price}$'
+    tips:
+      enhancements: การเพิ่มประสิทธิภาพ
+      only_to_you: มีเพียงคุณเท่านั้นที่เห็นข้อความเหล่านี้
+  games_sections:
+    chart:
+      last_6_months: Last 6 Months
+      details:
+        meta_tags:
+          chart: อันดับสูงสุด
+          description: 'เกมอินดี้ : ถูกดาวน์โหลดมากที่สุด - ถูกโหวตมากที่สุด - ถูกติดตามมากที่สุด'
+        structured_data:
+          chart: อันดับสูงสุด
+          description: 'เกมอินดี้ : ถูกดาวน์โหลดมากที่สุด - ถูกโหวตมากที่สุด - ถูกติดตามมากที่สุด'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: ถูกดาวน์โหลดมากที่สุด
+          description: 'เกมอินดี้ : ถูกดาวน์โหลดมากที่สุด - วันนี้ - 7 วันที่ผ่านมา - 30 วันที่ผ่านมา - ตลอดอายุ'
+        structured_data:
+          downloaded: ถูกดาวน์โหลดมากที่สุด
+          description: 'เกมอินดี้ : ถูกดาวน์โหลดมากที่สุด - วันนี้ - 7 วันที่ผ่านมา - 30 วันที่ผ่านมา - ตลอดอายุ'
+    news:
+      details:
+        meta_tags:
+          news: News
+          description: 'เกมอินดี้ : News - 30 วันที่ผ่านมา'
+        structured_data:
+          news: News
+          description: 'เกมอินดี้ : News - 30 วันที่ผ่านมา'
+    filters:
+      chart:
+        most_downloaded: ถูกดาวน์โหลดมากที่สุด
+        voted: ถูกโหวตมากที่สุด
+        followed: ถูกติดตามมากที่สุด
+      downloaded:
+        everytime: ตลอดอายุ
+        last_month: 30 วันที่ผ่านมา
+        last_week: 7 วันที่ผ่านมา
+        today: วันนี้
+      news:
+        last_commented: Comments
+        last_updated: อัพเดทล่าสุด
+        latest: มาใหม่
+        popular: นิยมที่สุด
+  genres:
+    genre:
+      rpg: บทบาทสมมติ
+      browsergame: Browser Game
+      platformaction: แอ็คชั่น
+      shootemup: Shoot em Up
+      puzzle: ปริศนา
+      pointandclick: Point and Click
+      sport: กีฬา
+      fighting: Fighting
+      other: อื่นๆ
+    genres:
+      all: ทั้งหมด
+    select:
+      genre: ประเภท
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: ละเมิดสิทธิ์ของฉัน
+        offensive: เนื้อหาแสดงความเกลียดชังหรือการล่วงละเมิด
+        sexual: เนื้อหาเกี่ยวกับเรื่องเพศ
+        spam: สแปมหรือทำให้เข้าใจผิด
+        violent: เนื้อหารุนแรงหรือน่ารังเกียจ
+  home:
+    navigation:
+      home: หน้าหลัก
+      news: News
+      chart: อันดับสูงสุด
+      events: งานกิจกรรม
+      downloaded: ถูกดาวน์โหลดมากที่สุด
+      console: Console
+      subscriptions: การติดตาม
+      your_games: เกมของคุณ
+      history: ประวัติการเข้าชม
+    landing:
+      last_followed_games_updated: In case you missed it
+      play: Play
+      recommended: ไฮไลท์
+      based_recent_activity: ตามกิจกรรมล่าสุดของคุณ
+      query_of_the_day_0: เกมล่าสุดที่มีผู้เล่นถึง 1000 คน
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Anniversary
+      query_of_the_day_3: ถูกติดตามมากที่สุด - Last 6 Months
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: เกมลีดเดอร์บอร์ด
+      query_of_the_day_6: อัปเดต!
+      downloaded: ถูกดาวน์โหลดมากที่สุด
+      today: วันนี้
+      last_week: 7 วันที่ผ่านมา
+      last_month: 30 วันที่ผ่านมา
+      latest: มาใหม่
+      show_more: แสดงเพิ่มเติม
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'เกมอินดี้ : Play'
+        meta_tags:
+          console: Console
+          description: 'เกมอินดี้ : Play'
+    subscriptions:
+      subscriptions: การติดตาม
+      updates: อัปเดต!
+      no_result: ไม่พบผลลัพธ์
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Players
+      subscribers: Subscribers
+      comments: Comments
+      details: ภาพรวม
+      show_more: แสดงเพิ่มเติม
+    your_games:
+      your_games: เกมของคุณ
+      players: Players
+      subscribers: Subscribers
+      comments: Comments
+      details: ภาพรวม
+      show_more: แสดงเพิ่มเติม
+    history:
+      history: ประวัติการเข้าชม
+      score_system_games: เกมลีดเดอร์บอร์ด
+      last_commented: Comments
+      subscriptions: การติดตาม
+      votes: โหวต
+  static:
+    about:
+      about: เกี่ยวกับ
+      app: Apps
+      extension: Extensions
+      social_networks: Social Networks
+      games: เกม
+      show_more: แสดงเพิ่มเติม
+      details:
+        structured_data:
+          about: เกี่ยวกับ
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+        meta_tags:
+          about: เกี่ยวกับ
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+    faq:
+      faq: คำถามที่พบบ่อย
+      question_1: indiexpo คืออะไร?
+      answer_1: indiexpo ช่วยให้ผู้คนมากมายได้ค้นพบสิ่งใหม่ๆ แบ่งปันและสร้างสรรค์ เกมอินดี้ และเกมที่สร้างขึ้นเองไปด้วยกัน. indiexpo คือพื้นที่เชื่อมต่อ แบ่งปันข้อมูล และสร้างแรงบันดาลใจให้กับนักสร้างสรรค์ทั่วโลก เราทำหน้าที่เปรียบเสมือนแพลตฟอร์มออนไลน์ที่มีไว้สำหรับผู้สร้างคอนเทนต์รวมถึงนักโฆษณาไม่ว่าจะขนาดเล็กหรือใหญ่ก็ตาม
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: คำถามที่พบบ่อย
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+        meta_tags:
+          faq: คำถามที่พบบ่อย
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+    developers:
+      developers: นักพัฒนาซอฟต์แวร์
+      details:
+        structured_data:
+          developers: นักพัฒนาซอฟต์แวร์
+          description: Explore our Developer Products. สถิติ, Apps, Extensions, Tutorials
+        meta_tags:
+          developers: นักพัฒนาซอฟต์แวร์
+          description: Explore our Developer Products. สถิติ, Apps, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: เลือกภาษาของคุณ
+  medals:
+    medal:
+      titles:
+        age: "%{score} ปีที่"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: นักพัฒนาซอฟต์แวร์
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: เลเวล 2
+        level_4: เลเวล 4
+        level_6: เลเวล 6
+        level_10: เลเวล 10
+        level_16: เลเวล 16
+        level_26: เลเวล 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: กำลังดาวน์โหลด
+      publish: ส่ง
+    news:
+      destroy: ลบ
+      destroy_confirm: คุณแน่ใจหรือไม่?
+    index:
+      players: Players
+      subscribers: Subscribers
+      download: ดาวน์โหลดเกม
+  options:
+    index:
+      dashboard: Dashboard
+      profile: โปรไฟล์
+      followed_games: การติดตาม
+      your_games: เกมของคุณ
+      settings: การตั้งค่า
+      logout: ออกจากระบบ
+  platforms:
+    platforms:
+      all: ทั้งหมด
+    select:
+      platform: Operating System
+  public_activities:
+    index:
+      destroy_confirm: คุณแน่ใจหรือไม่?
+      mark_all_as_read: ทำเครื่องหมายทั้งหมดว่าอ่านแล้ว
+      notifications: การแจ้งเตือน
+      see_all: แสดงเพิ่มเติม
+  public_activities_mailer:
+    notify:
+      hello: สวัสดี %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: เลิกติดตาม
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: ยืนยันแล้ว
+  reports:
+    new:
+      details: 'คำอธิบาย:'
+      question: What is the issue?
+      send: ส่ง
+      title: 'รายงาน: %{game}'
+      report_submitted: Thanks for letting us know.
+      report_submitted_message: Your feedback helps our system learn when something isn't right.
+  scores:
+    score:
+      points: แต้ม
+      delete: ลบ
+      destroy_confirm: คุณแน่ใจหรือไม่?
+      verified: ยืนยันแล้ว
+  search:
+    games:
+      filters: ตัวกรอง
+      adult_content: Adults Contents
+      mobile_first: เหมาะสำหรับโทรศัพท์มือถือ
+      no_result: ไม่พบผลลัพธ์
+      search: ค้นหา
+      search_placeholder: ค้นหา...
+      search_tools: Search tools
+      language: ภาษา
+      genre: ประเภท
+      platform: Operating System
+      recommended: ไฮไลท์
+      tool: เครื่องมือ
+      status: Status
+      games: เกม
+      score_system_games: เกมลีดเดอร์บอร์ด
+      year: ปี
+    details:
+      meta_tags:
+        search: ค้นหา
+        description: "ค้นหา... (เกม, #แฮชแท็ก, @โปรไฟล์, Search tools, ภาษา, ประเภท, ปี, Operating System, Tool, Status)"
+      structured_data:
+        search: ค้นหา
+        description: "ค้นหา... (เกม, #แฮชแท็ก, @โปรไฟล์, Search tools, ภาษา, ประเภท, ปี, Operating System, Tool, Status)"
+  settings:
+    edit:
+      settings: การตั้งค่า
+    form:
+      language: ภาษา (Language)
+      setlanguage: เลือกภาษาของคุณ
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: การแจ้งเตือนทางอีเมล
+      general: ทั่วไป
+      mail_comment_answer: การตอบกลับความคิดเห็นของฉัน
+      mail_comment_mention: การพูดถึง
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: การติดตาม
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: เกมของคุณ
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Account Data
+      email: อีเมล์
+      password: รหัสผ่าน
+      edit: แก้ไข
+      stats: สถิติ
+      comments: Comments
+      subscriptions: การติดตาม
+      show_more: แสดงเพิ่มเติม
+      save: บันทึกการเปลี่ยนแปลง
+      delete_account: Permanently Delete Account
+  sitemaps:
+    index:
+      active_events: Upcoming
+      inactive_events: Past
+      new_events: Create Event
+      recover: ลืมรหัสผ่าน
+      sign_in: เข้าสู่ระบบ
+      sign_up: สมัครสมาชิก
+      sitemap: แผนผังเว็บไซต์
+    details:
+      meta_tags:
+        sitemap: แผนผังเว็บไซต์
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: แผนผังเว็บไซต์
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: ติดตาม
+    unsubscribe_button:
+      unsubscribe: เลิกติดตาม
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: เครื่องมือ
+  users:
+    show:
+      page_title: "%{username} is on indiexpo"
+      online: ออนไลน์
+      chart: อันดับ
+      last_month: 30 วันที่ผ่านมา
+      level: เลเวล
+      games: เกม
+      score_system_games: เกมลีดเดอร์บอร์ด
+      show_more: แสดงเพิ่มเติม
+      subscriptions: การติดตาม
+      last_commented: Comments
+      history: ประวัติการเข้าชม
+      other_players: Other Players
+      verified: ยืนยันแล้ว
+    details:
+      structured_data:
+        developer: นักพัฒนาซอฟต์แวร์
+        gamer: Gamer
+      meta_tags:
+        about: เกี่ยวกับ
+        description: โปรไฟล์, ชั้นเก็บรางวัล, เกม, การติดตาม, เกมลีดเดอร์บอร์ด, Comments & ประวัติการเข้าชม
+  me:
+    menubar:
+      profile: โปรไฟล์
+      event_subscriptions: My Events
+      followed_games: การติดตาม
+      your_games: เกมของคุณ
+      settings: การตั้งค่า
+    followed_games:
+      no_result: ไม่พบผลลัพธ์
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: เกมของคุณ
+      visits: Visits
+      downloads_count: Players
+      subscribers: Subscribers
+      totals: Totals
+      no_result: ไม่พบผลลัพธ์
+      upload: อัปโหลด
+  levels:
+    index:
+      level: เลเวล
+      user_chart: อันดับ
+      last_month: 30 วันที่ผ่านมา
+      gems: Gems
+      trophy_case: ชั้นเก็บรางวัล
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: ยืนยันแล้ว
+    goals:
+      goals: Goals
+    stats:
+      stats: สถิติ
+      comments: Comments
+      subscriptions: การติดตาม
+      your_games: เกมของคุณ
+      votes: โหวต
+  warning:
+    index:
+      warning: คำเตือน
+      destroy: ลบ
+      destroy_confirm: คุณแน่ใจหรือไม่?
+      delete_account: Deleting your account is permanent.
+      delete_account_description: When you delete your indiexpo account, you won't be able to retrieve the content or information you've shared on indiexpo.

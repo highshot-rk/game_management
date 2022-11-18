@@ -1,0 +1,20 @@
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+asset 'uri.js', '1.16.1'
+asset 'jquery', '2.1.4'
+asset 'jquery-ui', '1.11.4'
+asset 'jquery-ujs', '1.1.0'
+asset 'moment', '2.10.6' do
+  main_files [
+    './locale/en.js',
+    './locale/it.js',
+    './locale/pt.js',
+    './locale/fr.js',
+    './locale/de.js',
+    './locale/es.js'
+  ]
+end
+asset 'moment-timezone'
+asset 'jquery.rateit', '1.0.22+3'
+asset 'jqueryui-timepicker-addon', '1.6.1'

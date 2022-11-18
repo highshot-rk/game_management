@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+
+docker-compose up -d web_clone
+
+echo "Waiting clone to be up..."
+until curl --head localhost:8083 &> /dev/null; do
+    echo -n '.'
+    sleep 1;
+done
+
+echo "done!"
+
+git checkout Gemfile.lock
+git pull origin master
+
+docker-compose restart web
+docker-compose restart worker
+
+echo "Waiting server to be up..."
+until curl --head localhost:8082 &> /dev/null; do
+    echo -n '.'
+    sleep 1;
+done
+
+echo "done!"
+
+docker-compose stop web_clone
+
+# container_name=`docker-compose ps -q web`
+# docker exec -it $container_name rake critical_path_css:generate

@@ -1,0 +1,36 @@
+<% game = find_game(@activity.trackable) %>
+<% event = find_event(@activity.trackable) %>
+<% medal = find_medal(@activity.trackable) %>
+
+<div>
+	<%= t('.hello', username: @activity.recipient.username) %>,
+</div>
+<div>
+  <span class="author">
+    <% if @activity.key == 'rating.create' %>
+      <%= t('public_activity.base.someone') %>
+    <% elsif @activity.owner.is_a?(User) %>
+      <%= render 'user', user: @activity.owner if !@activity.key.include?('leader') %>
+    <% elsif @activity.owner.is_a?(Game) %>
+      <%= render 'game', game: @activity.owner %>
+    <% end %>
+  </span>
+  <span><%= t("activity.#{@activity.key}", game: @activity.parameters[:game_title], user: @activity.parameters[:leader]) %></span>
+  <span>
+    <%  if game && !@activity.owner.is_a?(Game) %>
+      <%= render 'game', game: game %>
+    <% elsif event %>
+      <%= render 'event', event: event %>
+    <% elsif medal %>
+      <%= render 'medal', medal: medal %>
+    <% else %>
+      ...
+    <% end %>
+  </span>
+</div>
+
+<hr>
+
+<div>
+	<%= t('.not_interested_emails') %> <%= link_to t('.unsubscribe'), edit_user_settings_url %>
+</div>

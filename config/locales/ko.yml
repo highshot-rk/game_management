@@ -1,0 +1,940 @@
+---
+ko:
+  active_admin:
+    dashboard: 대시보드
+  activerecord:
+    attributes:
+      event:
+        description: 설명
+        end_date: 종료
+        prizes: 상품
+        rules: 규칙
+        screen: Screen
+        start_date: 시작
+        title: 제목
+        website: 웹사이트
+      game:
+        author: 개발자
+        description: 설명
+        genre: 장르
+        title: 제목
+        website: 웹사이트
+      user:
+        username_or_email: 아이디/이메일
+        password: 비밀번호
+        username: 아이디
+        characters_minimum: "최소 길이 %{minimum_password_length} 자"
+        email: 이메일
+        terms_of_service: I accept the license terms
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: should be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: 24시간 동안 업로드 할 수 있는 게임은 2개로 제한한다
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: 언어
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Your level was raised to %{level}
+      score: Your score was raised by + %{score}
+      new_title: New Title
+      prizes: 상품
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: 더보기
+      ok: Ok
+      setlanguage: 언어를 선택하세요
+    footer:
+      about: 정보
+      contact_us: 문의하기
+      language: 언어 (Language)
+      faq: FAQ
+      feed_rss: RSS 피드
+      developers: 개발자
+      sitemap: 사이트 맵
+      terms_and_conds: 이용약관
+      blog: 블로그
+    markdown_instructions:
+      formatting_help: 서식 도움
+      you_type: 이렇게 입력하면
+      you_see: 화면에 이렇게 보입니다
+      italics: 기울여 쓰기
+      bold: 굵은 글씨로 쓰기
+      hashtag: 해시태그
+      profile: 프로필
+      item_one: 항목 1
+      item_two: 항목 2
+      item_three: 항목 3
+      spoiler: 스포일러
+    menubar:
+      home: 홈
+      chart: 순위
+      downloaded: 가장 많이 다운로드된
+      events: 이벤트
+      language: 언어
+      news: 새로운 기능
+    meta_tags:
+      description: indiexpo는 수천 명의 사람들이 인디 게임과 자체 개발 게임을 발견하고 공유할 수 있게 합니다.
+      keywords: indiexpo, indie games, 게임, 다운로드, 게임하기, 업로드, 플레이어, 개발자, 이벤트, 도전, 리더보드 게임, 순위, 가장 많이 다운로드된, 인기 게임, 신규 출시 제품, 인기 상승 중인 게임 크리에이터
+    navbar:
+      register: 가입하기
+      login: 로그인
+      search: "검색... (게임, #해시태그, @프로필)"
+      upload: 업로드
+      level_up: 레벨업
+    slideshow_mobile:
+      show_more: 더보기
+    structured_data:
+      description: Indiexpo는 수천 명의 사람들이 인디 게임과 자체 개발 게임을 발견하고 공유할 수 있게 합니다.
+      keywords: indiexpo, indie games, 게임, 다운로드, 게임하기, 업로드, 플레이어, 개발자, 이벤트, 도전, 리더보드 게임, 순위, 가장 많이 다운로드된, 인기 게임, 신규 출시 제품, 인기 상승 중인 게임 크리에이터
+      games: 게임
+    terms:
+      terms_and_conditions: 이용약관
+  comments:
+    answers:
+      more_comments: 더보기
+    comment:
+      answer: 답글
+      answers:
+        few: 답글 %{count}개 모두 보기
+        many: 답글 %{count}개 모두 보기
+        one: 답글 보기
+        other: 답글 %{count}개 모두 보기
+      destroy: 삭제
+      destroy_confirm: 확실합니까?
+      level: Level
+      new: 새로운
+      verified: 인증됨
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: 로딩 중...
+      publish: 제출
+  cookie_law: indiexpo 에서는 콘텐츠의 관련성을 높이고, 광고를 맞춤 제작하고 측정하며, 더욱 안전한 환경을 제공하기 위해 쿠키를 사용합니다.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-d/%-m"
+  devise:
+    sessions:
+      new:
+        login: 로그인
+        recover_password: 이메일을 잊으셨나요?
+        send_email_again: 이메일 재전송
+        details:
+          structured_data:
+            login: 로그인
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: 로그인
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: 이메일
+        send_email_again: 이메일 재전송
+        details:
+          structured_data:
+            send_email_again: 이메일 재전송
+            description: Confirm Your Email Address
+          meta_tags:
+            send_email_again: 이메일 재전송
+            description: Confirm Your Email Address
+    mailer:
+      confirmation_instructions:
+        welcome: Join in and have fun
+        title: 'Confirm your email by opening the link below:'
+        confirm_account: Confirm Your Email Address
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: 비밀번호 변경
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: 누군가 당신의 비밀번호를 변경하는 링크를 요청했으며, 다음의 링크에서 비밀번호 변경이 가능합니다.
+      unlock_instructions:
+        unlock_account: 본인 계정 잠금 해제
+    passwords:
+      new:
+        recover_password: 이메일을 잊으셨나요?
+        email: 이메일
+        send: 제출
+        details:
+          structured_data:
+            recover_password: 이메일을 잊으셨나요?
+            description: 지금 확인이 가능한 이메일을 입력하세요.
+          meta_tags:
+            recover_password: 이메일을 잊으셨나요?
+            description: 지금 확인이 가능한 이메일을 입력하세요.
+      edit:
+        change_password: 비밀번호 변경
+        new_password: 새 비밀번호
+        confirm_new_password: 새 비밀번호 확인
+    registrations:
+      new:
+        register: 가입하기
+        details:
+          structured_data:
+            register: 가입하기
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: 가입하기
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: 비밀번호 변경
+        change_email: 이메일 변경
+        new_password: 새 비밀번호
+        confirm_new_password: 새 비밀번호 확인
+        current_password: 현재 비밀번호
+        current_email: 현재 이메일
+        new_email: 새 이메일
+        save: 변경 내용 저장
+    shared:
+      menubar:
+        login: 로그인
+        recover_password: 이메일을 잊으셨나요?
+        register: 가입하기
+        send_email_again: 이메일 재전송
+  download_links:
+    download_link:
+      download: 다운로드
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: 이벤트 & 도전
+          description: '인디 게임 : 이벤트 & 도전 - 다가오는 이벤트 & 지난 이벤트'
+        structured_data:
+          events: 이벤트 & 도전
+          description: '인디 게임 : 이벤트 & 도전 - 다가오는 이벤트 & 지난 이벤트'
+    active_selector:
+      active: 다가오는 이벤트
+      inactive: 지난 이벤트
+    edit:
+      destroy: 삭제
+      destroy_confirm: 확실합니까?
+    end_after_start: should be after start date
+    event_types:
+      all: 모든것
+      contest: Contest
+      mini_contest: Mini Contest
+      new: 이벤트 만들기
+      other: Other
+    form:
+      language: 언어
+      publish: 제출
+      type: 장르
+    menubar:
+      details: 정보
+      edit: 수정
+    index:
+      events: 이벤트
+      challenges: 도전
+      champions: 챔피언
+      points: Points
+      show_more: 더보기
+    new:
+      event: 이벤트
+    share:
+      share: 공유
+      email: 이메일
+      qrcode: QR 코드
+    show:
+      description: 설명
+      ended: Inactive
+      ends: 종료
+      from: 시작
+      genre: 장르
+      language: 언어
+      prizes: 상품
+      rules: 규칙
+      share: 공유
+      subscribers: 구독자
+      to: to
+      website: 웹사이트
+  feeds:
+    index:
+      feed_rss: RSS 피드
+      events: '인디 게임 : 이벤트'
+      latest: '인디 게임 : 신규 출시 제품'
+      popular: '인디 게임 : 인기 게임'
+      last_updated: '인디 게임 : 최근에 업데이트됨'
+    details:
+      meta_tags:
+        feed_rss: RSS 피드
+        description: '인디 게임 : RSS 피드 - 이벤트 - 신규 출시 제품 - 인기 게임 - 최근에 업데이트됨'
+      structured_data:
+        feed_rss: RSS 피드
+        description: '인디 게임 : RSS 피드 - 이벤트 - 신규 출시 제품 - 인기 게임 - 최근에 업데이트됨'
+  layouts:
+    application:
+      indie_games: 인디 게임
+    game:
+      play: 게임하기
+      download: 다운로드
+      new: 새로운
+      updates: 업데이트
+      show_more: 더보기
+      adult_content_message_html: You must be at least eighteen years old to view this content.</br> Are you over eighteen and willing to see adult content?
+      yes: 예
+      no: 아니
+  games:
+    game:
+      play: 게임하기
+      download: 다운로드
+      new: 새로운
+      updates: 업데이트
+      chart: 순위
+      verified: 인증됨
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: 플레이어
+      game_menu:
+        comments: 댓글
+        details: 정보
+        updates: 업데이트
+        edit: 수정
+        statistics: 통계
+      structured_data:
+       games: 게임
+       developer: 개발자
+      index:
+        videogame: 비디오 게임
+        published_by: '게시자 '
+        edit: 수정
+        statistics: 통계
+        players: 플레이어
+        news: 새로운 기능
+        no_news: No news
+        website: 웹사이트
+        recommended: 추천 목록
+    edit:
+      edit: 수정
+      destroy: 삭제
+      destroy_confirm: 확실합니까?
+    embed_popup:
+      embed: 소스 코드 복사
+      preview: 미리보기
+    record_chart:
+      chart: 순위
+      login: 로그인
+      score_system_games: 리더보드 게임
+    followers_list:
+      subscribers: 구독자
+      verified: 인증됨
+    players_list:
+      downloads_count: 플레이어
+      last_week: 지난 7일
+      no_logged_user: 게스트
+      no_result: 검색결과가 없습니다.
+      verified: 인증됨
+    form:
+      add_external_link: 외부링크 추가
+      add_file: 파일 올리기
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: 자세한 설명
+      artworks: Artworks
+      delete: 삭제
+      downloads: Downloads
+      genre: 장르
+      language: 언어
+      publish: 제출
+      remove_file: 삭제
+      remove_url: 삭제
+      restore: 실행취소
+      screens: 이미지
+      status: Status
+      complete: 풀버전
+      demo: 체험판
+      minigame: 미니게임
+      tool: 게임 엔진
+      hashtag: 2개 이상의 해쉬태그 추가를 자제하는걸 권장합니다
+      adult_content: 민감한 콘텐츠
+      mobile_first: 모바일 친화적
+      now_loading: 로딩 중...
+      video: 비디오
+    monetisation:
+      monetisation: 수익 창출
+      players: 플레이어
+      level: Level
+      subscribers: 구독자
+      comments: 댓글
+      offensive: 증오 또는 악의적인 콘텐츠
+      sexual: 성적인 콘텐츠
+      spam: 스팸 또는 사용자를 현혹하는 콘텐츠
+      violent: 폭력적 또는 혐오스러운 콘텐츠
+      description: 설명
+      send: 제출
+    new:
+      upload: 업로드
+    share:
+      share: 공유
+      email: 이메일
+      qrcode: QR 코드
+    show:
+      play: 게임하기
+      embed: 소스 코드 복사
+      share: 공유
+      monetisation: 수익 창출
+      download: 다운로드
+      subscribe: 구독
+      subscribed: 구독중
+      subscribers: 구독자
+      comment: 댓글
+      description: 설명
+      published_on: 게시일
+      adult_content: 민감한 콘텐츠
+      complete: 풀버전
+      demo: 체험판
+      minigame: 미니게임
+      language: 언어
+      first_to_comment: 공개 댓글 추가…
+      mobile_first: 모바일 친화적
+      more_comments: 더보기
+      screens: 이미지
+      video: 비디오
+      top_player: 최고 선수
+      epic_win: ㅈㅈ
+      on_the_rise: 인기 상승 중인 게임 크리에이터
+      verified: 인증됨
+    stats:
+      statistics: 통계
+      comments: 댓글
+      monetisation: 수익 창출
+      daily: 오늘
+      days: 날
+      date: Date
+      downloads: 플레이어
+      followings: 구독자
+      chart: 순위
+      most_rated: 가장 많이 투표된
+      followings_chart: 가장 많이 팔로우된
+      most_downloaded: 가장 많이 다운로드된
+      last_week: 지난 주
+      this_week: 이번 주
+      last_6_months: 지난 180일
+      totals: 전체
+      visits: 조회수
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Other
+      engagement: Engagement
+      show_more: 더보기
+      qrcode: QR 코드
+      warning: 경고
+    support:
+      prizes: 상품
+      donate: '기부 %{price}$'
+    tips:
+      enhancements: 개선사항
+      only_to_you: 나에게만 표시
+  games_sections:
+    chart:
+      last_6_months: 지난 180일
+      details:
+        meta_tags:
+          chart: 순위
+          description: '인디 게임 : 가장 많이 다운로드된 - 가장 많이 투표된 - 가장 많이 팔로우된'
+        structured_data:
+          chart: 순위
+          description: '인디 게임 : 가장 많이 다운로드된 - 가장 많이 투표된 - 가장 많이 팔로우된'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: 가장 많이 다운로드된
+          description: '인디 게임 : 가장 많이 다운로드된 - 오늘 - 지난 7일- 지난 30일 -  전체'
+        structured_data:
+          downloaded: 가장 많이 다운로드된
+          description: '인디 게임 : 가장 많이 다운로드된 - 오늘 - 지난 7일- 지난 30일 -  전체'
+    news:
+      details:
+        meta_tags:
+          news: 새로운 기능
+          description: '인디 게임 : 새로운 기능 - 지난 30일'
+        structured_data:
+          news: 새로운 기능
+          description: '인디 게임 : 새로운 기능 - 지난 30일'
+    filters:
+      chart:
+        most_downloaded: 가장 많이 다운로드된
+        voted: 가장 많이 투표된
+        followed: 가장 많이 팔로우된
+      downloaded:
+        everytime: 전체
+        last_month: 지난 30일
+        last_week: 지난 7일
+        today: 오늘
+      news:
+        last_commented: 댓글
+        last_updated: 최근에 업데이트됨
+        latest: 신규 출시 제품
+        popular: 인기 게임
+  genres:
+    genre:
+      rpg: RPG/롤플레잉 게임
+      browsergame: Browser Game
+      platformaction: 액션 게임
+      shootemup: 진행형 슈팅 게임
+      puzzle: 퍼즐 게임
+      pointandclick: 마우스 클릭
+      sport: 스포츠 게임
+      fighting: 대전 격투 게임
+      other: Other
+    genres:
+      all: 모든것
+    select:
+      genre: 장르
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: 내 권리 침해
+        offensive: 증오 또는 악의적인 콘텐츠
+        sexual: 성적인 콘텐츠
+        spam: 스팸 또는 사용자를 현혹하는 콘텐츠
+        violent: 폭력적 또는 혐오스러운 콘텐츠
+  home:
+    navigation:
+      home: 홈
+      news: 새로운 기능
+      chart: 순위
+      events: 이벤트
+      downloaded: 가장 많이 다운로드된
+      console: 콘솔
+      subscriptions: 구독
+      your_games: 내 게임
+      history: 기록
+    landing:
+      last_followed_games_updated: 최신 업데이트를 놓친 경우
+      play: 게임하기
+      recommended: 추천 목록
+      based_recent_activity: 내 최근 활동에 따른 추천
+      query_of_the_day_0: 이 게임은 최근에 1000명 이상의 플레이어들이 선택한 게임
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: 기념일
+      query_of_the_day_3: 가장 많이 팔로우된 - 지난 180일
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: 리더보드 게임
+      query_of_the_day_6: 업데이트
+      downloaded: 가장 많이 다운로드된
+      today: 오늘
+      last_week: 지난 7일
+      last_month: 지난 30일
+      latest: 신규 출시 제품
+      show_more: 더보기
+    console:
+      details:
+        structured_data:
+          console: 콘솔
+          description: '인디 게임 : 게임하기'
+        meta_tags:
+          console: 콘솔
+          description: '인디 게임 : 게임하기'
+    subscriptions:
+      subscriptions: 구독
+      updates: 업데이트
+      no_result: 검색결과가 없습니다.
+      no_subscriptions_message: 당신은 최소 5개의 구독했을 때, 인디엑스포(indiexpo) 는 잘 작동합니다.
+      players: 플레이어
+      subscribers: 구독자
+      comments: 댓글
+      details: 정보
+      show_more: 더보기
+    your_games:
+      your_games: 내 게임
+      players: 플레이어
+      subscribers: 구독자
+      comments: 댓글
+      details: 정보
+      show_more: 더보기
+    history:
+      history: 기록
+      score_system_games: 리더보드 게임
+      last_commented: 댓글
+      subscriptions: 구독
+      votes: Votes
+  static:
+    about:
+      about: 정보
+      app: 앱
+      extension: 확장 프로그램
+      social_networks: 사회 연결망
+      games: 게임
+      show_more: 더보기
+      details:
+        structured_data:
+          about: 정보
+          description: Indiexpo는 수천 명의 사람들이 인디 게임과 자체 개발 게임을 발견하고 공유할 수 있게 합니다.
+        meta_tags:
+          about: 정보
+          description: Indiexpo는 수천 명의 사람들이 인디 게임과 자체 개발 게임을 발견하고 공유할 수 있게 합니다.
+    faq:
+      faq: FAQ
+      question_1: What is indiexpo?
+      answer_1: Indiexpo는 수천 명의 사람들이 인디 게임과 자체 개발 게임을 발견하고 공유할 수 있게 합니다. Indiexpo는 사람들이 전 세계의 다른 사람들과 소통하고, 정보를 제공하고, 영감을 줄 수 있는 공간을 제공하며 크고 작은 독창적인 콘텐츠 제작자 및 광고주를 위한 배포 플랫폼의 역할을 합니다.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: FAQ
+          description: FAQ 는 자주 묻는 질문을 뜻하는 말이며, 질문과 대답이 나열된 것이다.
+        meta_tags:
+          faq: FAQ
+          description: FAQ 는 자주 묻는 질문을 뜻하는 말이며, 질문과 대답이 나열된 것이다.
+    developers:
+      developers: 개발자
+      details:
+        structured_data:
+          developers: 개발자
+          description: Explore our Developer Products. Statistics - 앱 - 확장 프로그램 - 자습서
+        meta_tags:
+          developers: 개발자
+          description: Explore our Developer Products. Statistics - 앱 - 확장 프로그램 - 자습서
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: 언어를 선택하세요
+  medals:
+    medal:
+      titles:
+        age: "%{score} 연령"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: 글쓰기
+      hashtag: 2개 이상의 해쉬태그 추가를 자제하는걸 권장합니다
+      now_loading: 로딩 중...
+      publish: 제출
+    news:
+      destroy: 삭제
+      destroy_confirm: 확실합니까?
+    index:
+      players: 플레이어
+      subscribers: 구독자
+      download: 다운로드
+  options:
+    index:
+      dashboard: 대시보드
+      profile: 프로필
+      followed_games: 구독
+      your_games: 내 게임
+      settings: 설정
+      logout: 로그아웃
+  platforms:
+    platforms:
+      all: 모든것
+    select:
+      platform: 운영체제
+  public_activities:
+    index:
+      destroy_confirm: Destroy confirm
+      mark_all_as_read: 모두 읽은 상태로 표시
+      notifications: 알림
+      see_all: 더보기
+  public_activities_mailer:
+    notify:
+      hello: 안녕 %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Unsubscribe
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Following removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: 인증됨
+  reports:
+    new:
+      details: '설명:'
+      question: What is the issue?
+      send: 제출
+      title: '신고: %{game}'
+      report_submitted: 알려주셔서 감사합니다.
+      report_submitted_message: 회원님의 소중한 의견은 시스템에서 문제를 파악하는 데 큰 도움이 됩니다.
+  scores:
+    score:
+      points: Points
+      delete: 삭제
+      destroy_confirm: 확실합니까?
+      verified: 인증됨
+  search:
+    games:
+      filters: 필터
+      adult_content: 민감한 콘텐츠
+      mobile_first: 모바일 친화적
+      no_result: 검색결과가 없습니다.
+      search: 검색
+      search_placeholder: 검색...
+      search_tools: 검색 설정
+      language: 언어
+      genre: 장르
+      platform: 운영체제
+      recommended: 추천 목록
+      tool: 게임 엔진
+      status: Status
+      games: 게임
+      score_system_games: 리더보드 게임
+      year: 년도
+    details:
+      meta_tags:
+        search: 검색
+        description: "검색... (게임, #해시태그, @프로필, 검색 설정, 언어, 장르, 년도, 운영체제, 게임 엔진, Status)"
+      structured_data:
+        search: 검색
+        description: "검색... (게임, #해시태그, @프로필, 검색 설정, 언어, 장르, 년도, 운영체제, 게임 엔진, Status)"
+  settings:
+    edit:
+      settings: 설정
+    form:
+      language: 언어 (Language)
+      setlanguage: 언어를 선택하세요
+      sounds: 소리
+      sounds_description: 새로운 알림을 받을 때마다 소리 재생
+      adult_content: 민감한 콘텐츠
+      label_on: '설정'
+      label_off: '해제'
+      email_notifications: 이메일 알림
+      general: 일반
+      mail_comment_answer: 내 댓글에 달린 답글
+      mail_comment_mention: 멘션
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: 구독
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: 내 게임
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I'm followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a medal
+      mail_user_game_dev_leader: New Leader on your game
+      account_data: 계정 데이터
+      email: 이메일
+      password: 비밀번호
+      edit: 수정
+      stats: 통계
+      comments: 댓글
+      subscriptions: 구독
+      show_more: 더보기
+      save: 변경 내용 저장
+      delete_account: 계정 영구 삭제
+  sitemaps:
+    index:
+      active_events: 다가오는 이벤트
+      inactive_events: 지난 이벤트
+      new_events: 이벤트 만들기
+      recover: 이메일을 잊으셨나요?
+      sign_in: 로그인
+      sign_up: 가입하기
+      sitemap: 사이트 맵
+    details:
+      meta_tags:
+        sitemap: 사이트 맵
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: 사이트 맵
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: 구독
+    unsubscribe_button:
+      unsubscribe: Unsubscribe
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: 게임 엔진
+  users:
+    show:
+      page_title: "%{username} 님이 indiexpo을 사용 중입니다"
+      online: 온라인
+      chart: 순위
+      last_month: 지난 30일
+      level: Level
+      games: 게임
+      score_system_games: 리더보드 게임
+      show_more: 더보기
+      subscriptions: 구독
+      last_commented: 댓글
+      history: 기록
+      other_players: 다른 플레이어
+      verified: 인증됨
+    details:
+      structured_data:
+        developer: 개발자
+        gamer: 게이머
+      meta_tags:
+        about: 정보
+        description: 프로필, 트로피 케이스, 게임, 구독, 리더보드 게임, 댓글 & 기록
+  me:
+    menubar:
+      profile: 프로필
+      event_subscriptions: My Events
+      followed_games: 구독
+      your_games: 내 게임
+      settings: 설정
+    followed_games:
+      no_result: 검색결과가 없습니다.
+      no_subscriptions_message: 당신은 최소 5개의 구독했을 때, 인디엑스포(indiexpo) 는 잘 작동합니다.
+    games:
+      your_games: 내 게임
+      visits: 조회수
+      downloads_count: 플레이어
+      subscribers: 구독자
+      totals: 전체
+      no_result: 검색결과가 없습니다.
+      upload: 업로드
+  levels:
+    index:
+      level: Level
+      user_chart: 순위
+      last_month: 지난 30일
+      gems: Gems
+      trophy_case: 트로피 케이스
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: 인증됨
+    goals:
+      goals: Goals
+    stats:
+      stats: 통계
+      comments: 댓글
+      subscriptions: 구독
+      your_games: 내 게임
+      votes: Votes
+  warning:
+    index:
+      warning: 경고
+      destroy: 삭제
+      destroy_confirm: 확실합니까?
+      delete_account: 계정 삭제는 영구적입니다.
+      delete_account_description: indiexpo 계정을 삭제하면 indiexpo에 공유한 콘텐츠나 정보를 가져올 수 있습니다.

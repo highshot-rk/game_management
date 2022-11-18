@@ -1,0 +1,12 @@
+<% content_for :menubar do %>
+	<%= menu_element selected: true do %>
+		<div class="desktop_only"><%= t('.edit') %></div>
+		<%= image_tag "Images/icons/pages/edit.png", class: 'mobile_only' %>
+	<% end %>
+<% end %>
+
+<%= render 'terms' %>
+<div id="ListRight" style="max-width: 750px;">
+	<%= render 'form' %>
+	<%= link_to t('.destroy'), game_path(id: @game.slug), method: :delete, data: { confirm: t('.destroy_confirm') }, class:'BottonLight right' %>
+</div>

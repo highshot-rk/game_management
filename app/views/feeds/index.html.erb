@@ -1,0 +1,32 @@
+<%= page_title t('.feed_rss') %>
+<% content_for(:structured_data) do %>
+	<%= render 'feeds/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'feeds/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<li class="selected">
+		<div class="desktop_only"><%=t('.feed_rss')%></div>
+		<%= image_tag 'Images/icons/pages/feedrss.png', class: 'mobile_only', alt: t(".feed_rss") %>
+	</li>
+<% end %>
+<div class="WrapList">
+	<h1 class="Write30 WidFlo">indiexpo - <%=t('.feed_rss')%></h1>
+	<h2 class="Write20 WidFlo">
+		<%= link_to t('.popular'), feed_popular_path(format: :xml, locale: nil), target: '_blank' %>
+	</h2>
+	<h3 class="Write20 WidFlo">
+		<%= link_to t('.last_updated'), feed_last_updated_path(format: :xml, locale: nil), target: '_blank' %>
+	</h3>
+	<h4 class="Write20 WidFlo">
+		<%= link_to t('.latest'), feed_all_path(format: :xml, locale: nil), target: '_blank' %>
+	</h4>
+	<h5 class="Write20 WidFlo">
+		<%= link_to t('.events'), feed_events_path(format: :xml, locale: nil), target: '_blank' %>
+	</h5>
+	<h6 class="Write20 WidFlo">
+		<%= link_to 'Blog Feed', 'https://theindiexpo.blogspot.com/feeds/posts/default', target: '_blank' %>
+	</h6>
+	<%= image_tag 'Images/Sprites/feedrss.png', class: 'right' %>
+</div>

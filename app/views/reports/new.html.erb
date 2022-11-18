@@ -1,0 +1,28 @@
+<div class="AreaNotifications">
+	<div id="reports_popup" class="notifications">
+  <%= form_for [@download_link, @report], data: { remote: true } do |f| %>
+			<div class="WidFlo">
+				<div class="Write30" style="margin-top: 0px;"><%= t('.title', game: @download_link.game.title) %></div>
+				<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+			</div>
+    <div class="input_container">
+      <div class="Write20 label"><%= t('.question') %></div>
+				<div class="WidFlo">
+        <% Report.reasons.keys.each do |reason| %>
+        <div>
+          <%= f.radio_button :reason, reason, id: "report_#{reason}" %>
+          <%= f.label reason.to_sym %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+			<div class="input_container">
+				<div class="Write20 label"><%= t('.details') %></div>
+				<%= f.text_area :message, maxlength: '380', class: 'WidFlo', data: { character_counter: "report_message_length" } %>
+				<span id="report_message_length" class="WidFlo">380</span>
+			</div>
+			<%= f.submit t('.send'), class: 'Botton right div100' %>
+		<% end %>
+	</div>
+</div>

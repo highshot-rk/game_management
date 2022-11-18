@@ -1,0 +1,38 @@
+<% user_profile_url = user_url(score.user.username) %>
+<% if current_user&.username == score.user.username %>
+	<div class="WidFlo" style="border:1px dotted #ccc; border-radius: 4px; margin: 8px 0; padding: 1%;">
+<% else %>
+	<div class="WidFlo">
+<% end %>
+	<div class="badge">
+		<%= image_tag "Images/icons/points.png", class: 'icon', alt: 'Points' %>
+	</div>
+	<div>
+		<%= link_to user_profile_url, class: 'author' do %>
+			<%= score_index + 1 %>.
+			<u><%= score.user.username %></u>
+			<%= image_tag('Images/icons/verified_mini.png', alt: t('.verified'), title: t('.verified')) if score.user.verified? %>
+			<% if score_index == 0 %>
+				<!-- icon for the first player -->
+				<%= image_tag "Images/icons/crown.png", alt: 'The King' %>
+			<% end %>
+		<% end %>
+		<div class="hoveron"><%= score.value %> <%= t('.points') %></div>
+	</div>
+	<!-- Date -->
+	<div class="right hoveron">[<%= score.updated_at.to_date %>]</div>
+	<!-- Delete Button -->
+	<%= link_to t('.delete'), destroy_score_path(score), method: :delete, class: "BottonLight right", data: { confirm: t('.destroy_confirm') } if policy(@game).update? %>
+
+	<% if current_user&.username == score.user.username %>
+		<div class="WidFlo hoveron">
+			<%= link_to "Whatsapp", "whatsapp://send?text=#{user_profile_url}", data: { action: "share/whatsapp/share", analytics_click: "Shared Score on Whatsapp" }, class: 'BottonBorder mobile_only', target: '_blank' %>
+			<%= link_to "Telegram", "https://t.me/share/url?url=#{user_profile_url}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Score on Telegram"}, target: '_blank' %>
+			<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{user_profile_url}", class: 'BottonBorder', data: { analytics_click: "Shared Score on Facebook"}, target: '_blank' %>
+			<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{user_profile_url}&title=I%20am%20the%20Best!", class: 'BottonBorder', data: { analytics_click: "Shared Score on Reddit"}, target: '_blank' %>
+			<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{user_profile_url}&text=%23indiegaming%20I%20am%20the%20Best!", class: 'BottonBorder', data: { analytics_click: "Shared Score on Twitter"}, target: '_blank' %>
+			<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{user_profile_url}", class: 'BottonBorder', data: { analytics_click: "Shared Score on tumblr"}, target: '_blank' %>
+			<%= link_to "VK", "http://vk.com/share.php?url=#{user_profile_url}", class: 'BottonBorder', data: { analytics_click: "Shared Score on VK"}, target: '_blank' %>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,15 @@
+	<div id="SlideShow" class="desktop_only">
+		<div class="slide_preview_container">
+			<% slides = Slideshow.order(id: :asc).limit(5).to_a %>
+			<% slides.each do |slide| %>
+				<%= link_to '', slide.url, class: 'slide_preview', style: "background-image: url('#{asset_url(slide.image.url(:normal))}')",  target: '_blank', rel: 'nofollow', data: { analytics_click: "Click on Slide #{slide.id}"} %>
+			<% end %>
+		</div>
+		<% [:slideshow, :slideshow_copy].each do |klass| %>
+			<div class="<%= klass %>">
+				<% slides.each do |slide| %>
+					<%= link_to '', slide.url, id: 'Slide', style: "background-image: url('#{asset_url(slide.image.url(:normal))}')",  target: '_blank', rel: 'nofollow', data: { analytics_click: "Click on Slide #{slide.id}"} %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>

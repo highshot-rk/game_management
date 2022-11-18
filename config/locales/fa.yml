@@ -1,0 +1,940 @@
+---
+fa:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: توضیحات
+        end_date: End Date
+        prizes: Prizes
+        rules: Rules
+        screen: Screen
+        start_date: Start Date
+        title: عنوان
+        website: وب‌سایت
+      game:
+        author: توسعه‌دهنده
+        description: توضیحات
+        genre: سبک
+        title: عنوان
+        website: وب‌سایت
+      user:
+        username_or_email:  نام کاربری/پست الکترونیک
+        password: گذرواژه
+        username:  نام کاربری
+        characters_minimum: "حداقل %{minimum_password_length} حرف"
+        email: پست الکترونیک
+        terms_of_service: همه قوانین مربوط به شرایط مجوز را قبول دارم.
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: you can upload only 2 games in 24 hours
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: Languages
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Your level was raised to %{level}
+      score: Your score was raised by + %{score}
+      new_title: New Title
+      prizes: Prizes
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: بیشتر ببینید
+      ok: Ok
+      setlanguage: زبانتان را انتخاب کنید
+    footer:
+      about: درباره
+      contact_us: تماس با ما
+      language: زبان (Language)
+      faq: پرسش‌های رایج
+      feed_rss: ار اس اس فید
+      developers: توسعه‌دهندگان
+      sitemap: Site Map
+      terms_and_conds: شرایط
+      blog: وبلاگ
+    markdown_instructions:
+      formatting_help: Formatting Help
+      you_type: تايپ شما
+      you_see: شما مي بينيد
+      italics: مورب
+      bold: كلفت
+      hashtag: Hashtag
+      profile: نمایه
+      item_one: 1 آيتم
+      item_two: 2 آيتم
+      item_three: 3 آيتم
+      spoiler: افشاساز
+    menubar:
+      home: صفحه اصلی
+      chart: چارت
+      downloaded: بیشترین دانلود شده‌ها
+      events: رویدادها
+      language: زبان
+      news: اخبار
+    meta_tags:
+      description: ایندی‌اکسپو به هزاران نفر امکان دسترسی، بازدید و به اشتراک‌گذاری بازی‌های سازندگان مستقل و اوریجینال را می‌دهد.
+      keywords: indiexpo, بازی ویدئویی مستقل, بازی‌ها, بارگیری, بازی کنید, آپلود, بازیکن ها, توسعه‌دهندگان, رویدادها, چالش ها, بازی های رقابتی دارای تابلو پیشروه, چارت, بیشترین دانلود شده‌ها, سازندگان در حال پیشرفت
+    navbar:
+      register: نام‌‌نویسی
+      login: ورود به سیستم
+      search: "جستجو... (بازی‌ها, #Hashtags, @Profiles)"
+      upload: آپلود
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: بیشتر ببینید
+    structured_data:
+      description: ایندی‌اکسپو به هزاران نفر امکان دسترسی، بازدید و به اشتراک‌گذاری بازی‌های سازندگان مستقل و اوریجینال را می‌دهد.
+      keywords: indiexpo, بازی ویدئویی مستقل, بازی‌ها, بارگیری, بازی کنید, آپلود, بازیکن ها, توسعه‌دهندگان, رویدادها, چالش ها, بازی های رقابتی دارای تابلو پیشروه, چارت, بیشترین دانلود شده‌ها, سازندگان در حال پیشرفت
+      games: بازی‌ها
+    terms:
+      terms_and_conditions: شرایط
+  comments:
+    answers:
+      more_comments: بیشتر ببینید
+    comment:
+      answer: پاسخ
+      answers:
+        few: مشاهده %{count} پاسخ
+        many: مشاهده %{count} پاسخ
+        one: مشاهده پاسخ
+        other: مشاهده %{count} پاسخ
+      destroy: حذف
+      destroy_confirm: آیا مطمئن هستید؟
+      level: مرحله
+      new: جدید
+      verified: تأیید شده
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: اینجا افراد مختلفی وجود دارند که چیزهای جالبی میسازند و خیلی چیزا برای بازدید هست. بزارید نظراتتون رو بدونند و بهشون بگید!
+      now_loading: Now Loading...
+      publish: پست
+  cookie_law: کوکی‌ها به ما کمک می‌کنند که خدماتمون رو ارائه‌کنیم. با استفاده کردن از خدمات ما شما موافقت خودتون رو در استفاده از کوکی‌ها اعلام کردید.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: ورود به سیستم
+        recover_password: ایمیلتان را فراموش کرده‌اید؟
+        send_email_again: ارسال مجدد پست الکترونیکی
+        details:
+          structured_data:
+            login: ورود به سیستم
+            description: اینجا افراد مختلفی وجود دارند که چیزهای جالبی میسازند و خیلی چیزا برای بازدید هست. بزارید نظراتتون رو بدونند و بهشون بگید!
+          meta_tags:
+            login: ورود به سیستم
+            description: اینجا افراد مختلفی وجود دارند که چیزهای جالبی میسازند و خیلی چیزا برای بازدید هست. بزارید نظراتتون رو بدونند و بهشون بگید!
+    confirmations:
+      new:
+        email: پست الکترونیک
+        send_email_again: ارسال مجدد پست الکترونیکی
+        details:
+          structured_data:
+            send_email_again: ارسال مجدد پست الکترونیکی
+            description: آدرس پست الکترونیکی خود را تایید کنید
+          meta_tags:
+            send_email_again: ارسال مجدد پست الکترونیکی
+            description: آدرس پست الکترونیکی خود را تایید کنید
+    mailer:
+      confirmation_instructions:
+        welcome: Join in and have fun
+        title: 'Confirm your email by opening the link below:'
+        confirm_account: آدرس پست الکترونیکی خود را تایید کنید
+        text_1: با ورود به ایندی‌اکسپو بهترین تجربه استفاده از امکانات سایت را خواهید داشت.
+        text_2: اینجا افراد مختلفی وجود دارند که چیزهای جالبی میسازند و خیلی چیزا برای بازدید هست. بزارید نظراتتون رو بدونند و بهشون بگید!
+      reset_password_instructions:
+        change_password: رمز عبور خود را تغییر دهید
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: شخصی درخواست تغییر رمز عبور شما را داده و شما می توانید این کار را از طریق لینک زیر انجام دهید.
+      unlock_instructions:
+        unlock_account: حساب مرا باز کن
+    passwords:
+      new:
+        recover_password: ایمیلتان را فراموش کرده‌اید؟
+        email: پست الکترونیک
+        send: Send
+        details:
+          structured_data:
+            recover_password: ایمیلتان را فراموش کرده‌اید؟
+            description: Enter an email that you can check now
+          meta_tags:
+            recover_password: ایمیلتان را فراموش کرده‌اید؟
+            description: Enter an email that you can check now
+      edit:
+        change_password: رمز عبور خود را تغییر دهید
+        new_password: رمز عبور جدید
+        confirm_new_password: رمز عبور جدید را تایید کنید
+    registrations:
+      new:
+        register: نام‌‌نویسی
+        details:
+          structured_data:
+            register: نام‌‌نویسی
+            description: با ورود به ایندی‌اکسپو بهترین تجربه استفاده از امکانات سایت را خواهید داشت.
+          meta_tags:
+            register: نام‌‌نویسی
+            description: با ورود به ایندی‌اکسپو بهترین تجربه استفاده از امکانات سایت را خواهید داشت.
+      edit:
+        change_password: رمز عبور خود را تغییر دهید
+        change_email: تغییر ایمیل
+        new_password: رمز عبور جدید
+        confirm_new_password: رمز عبور جدید را تایید کنید
+        current_password: رمز عبور فعلی
+        current_email: ایمیل‌های کنونی
+        new_email: ایمیل جدید
+        save: ذخیره
+    shared:
+      menubar:
+        login: ورود به سیستم
+        recover_password: ایمیلتان را فراموش کرده‌اید؟
+        register: نام‌‌نویسی
+        send_email_again: ارسال مجدد پست الکترونیکی
+  download_links:
+    download_link:
+      download: بارگیری
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: رویدادها و رقابت‌ها
+          description: 'بازی ویدئویی مستقل : رویدادها و رقابت‌ها - Upcoming & Past'
+        structured_data:
+          events: رویدادها و رقابت‌ها
+          description: 'بازی ویدئویی مستقل : رویدادها و رقابت‌ها - Upcoming & Past'
+    active_selector:
+      active: Upcoming
+      inactive: Past
+    edit:
+      destroy: حذف
+      destroy_confirm: آیا مطمئن هستید؟
+    end_after_start: should be after start date
+    event_types:
+      all: همه
+      contest: مسابقه
+      mini_contest: Mini Contest
+      new: Create Event
+      other: Other
+    form:
+      language: زبان
+      publish: پست
+      type: سبک
+    menubar:
+      details: بررسی
+      edit: ویرایش
+    index:
+      events: رویدادها
+      challenges: چالش ها
+      champions: قهرمانان
+      points: امتیازها
+      show_more: بیشتر ببینید
+    new:
+      event: Event
+    share:
+      share: هم‌رسانی
+      email: پست الکترونیک
+      qrcode: کیوآر کد
+    show:
+      description: توضیحات
+      ended: Inactive
+      ends: Ends
+      from: From
+      genre: سبک
+      language: زبان
+      prizes: Prizes
+      rules: Rules
+      share: هم‌رسانی
+      subscribers: دنبال کننده ها
+      to: To
+      website: وب‌سایت
+  feeds:
+    index:
+      feed_rss: ار اس اس فید
+      events: 'بازی ویدئویی مستقل : رویدادها'
+      latest: 'بازی ویدئویی مستقل : جدیدترین ها'
+      popular: 'بازی ویدئویی مستقل : محبوب ترین ها'
+      last_updated: 'بازی ویدئویی مستقل : اخیرا بروزرسانی شده'
+    details:
+      meta_tags:
+        feed_rss: ار اس اس فید
+        description: 'بازی ویدئویی مستقل : ار اس اس فید - رویدادها - جدیدترین ها - محبوب ترین ها - اخیرا بروزرسانی شده'
+      structured_data:
+        feed_rss: ار اس اس فید
+        description: 'بازی ویدئویی مستقل : ار اس اس فید - رویدادها - جدیدترین ها - محبوب ترین ها - اخیرا بروزرسانی شده'
+  layouts:
+    application:
+      indie_games: بازی ویدئویی مستقل
+    game:
+      play: بازی کنید
+      download: بارگیری
+      new: جدید
+      updates: بروزرسانی‌ها
+      show_more: بیشتر ببینید
+      adult_content_message_html: برای دیدن این محتوا باید بالای 18 سال سن داشته باشید </br> آیا شما بالای 18 سال سن دارید و مایل به دیدن متحوای بزرگسالان هستید ؟
+      yes: بله
+      no: خیر
+  games:
+    game:
+      play: بازی کنید
+      download: بارگیری
+      new: جدید
+      updates: بروزرسانی‌ها
+      chart: چارت
+      verified: تأیید شده
+    destroy:
+      destroyed: Deleted
+    details:
+      game_header:
+        downloads_count: بازیکن ها
+      game_menu:
+        comments: نظر
+        details: بررسی
+        updates: بروزرسانی‌ها
+        edit: ویرایش
+        statistics: آمار
+      structured_data:
+       games: بازی‌ها
+       developer: توسعه‌دهنده
+      index:
+        videogame: Videogame
+        published_by: 'منتشر شده توسط '
+        edit: ویرایش
+        statistics: آمار
+        players: بازیکن ها
+        news: اخبار
+        no_news: No news
+        website: وب‌سایت
+        recommended: توصیه می‌شود
+    edit:
+      edit: ویرایش
+      destroy: حذف
+      destroy_confirm: آیا مطمئن هستید؟
+    embed_popup:
+      embed: تعبیه کردن
+      preview: Preview
+    record_chart:
+      chart: چارت
+      login: ورود به سیستم
+      score_system_games: بازی های رقابتی دارای تابلو پیشروه
+    followers_list:
+      subscribers: دنبال کننده ها
+      verified: تأیید شده
+    players_list:
+      downloads_count: بازیکن ها
+      last_week: ۷ روز گذشته
+      no_logged_user: مهمان
+      no_result: نتیجه‌ای یافت نشد
+      verified: تأیید شده
+    form:
+      add_external_link: اضافی کردن لینک خارجی
+      add_file: اضافی کردن فایل
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: اپلیکیشن را روی تلفن هوشمند خود نصب نموده و از آن مانند یک گیم پد با بازی‌های فراوان در ایندی‌اکسپو استفاده نمایید. (فقط برای اندروید)
+      long_description: توضیحات کامل
+      artworks: Artworks
+      delete: حذف
+      downloads: دانلود ها
+      genre: سبک
+      language: زبان
+      publish: پست
+      remove_file: حذف
+      remove_url: حذف
+      restore: Undo
+      screens: تصاویر
+      status: وضعیت
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      tool: ابزارها
+      hashtag: پیشنهاد می‌کنیم برای کارایی بیشتر، ماکسیمم از 2 هشتگ استفاده نمایید.
+      adult_content: محتوای بزرگسالانه
+      mobile_first: متناسب موبایل
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: بازیکن ها
+      level: مرحله
+      subscribers: دنبال کننده ها
+      comments: نظر
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: توضیحات
+      send: Send
+    new:
+      upload: آپلود
+    share:
+      share: هم‌رسانی
+      email: پست الکترونیک
+      qrcode: کیوآر کد
+    show:
+      play: بازی کنید
+      embed: تعبیه کردن
+      share: هم‌رسانی
+      monetisation: Monetisation
+      download: بارگیری
+      subscribe: مشترک شدن
+      subscribed: مشترک
+      subscribers: دنبال کننده ها
+      comment: نظر
+      description: توضیحات
+      published_on: Published on
+      adult_content: محتوای بزرگسالانه
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      language: زبان
+      first_to_comment: افزودن نظر عمومی…
+      mobile_first: متناسب موبایل
+      more_comments: بیشتر ببینید
+      screens: تصاویر
+      video: Video
+      top_player: بهترین بازیکن
+      epic_win: پیروزی حماسی !
+      on_the_rise: سازندگان در حال پیشرفت
+      verified: تأیید شده
+    stats:
+      statistics: آمار
+      comments: نظر
+      monetisation: Monetisation
+      daily: امروز
+      days: روزها
+      date: Date
+      downloads: بازیکن ها
+      followings: دنبال کننده ها
+      chart: چارت
+      most_rated: بیشترین امتیاز داده شده‌ها
+      followings_chart: بیشترین دنبال شده‌ها
+      most_downloaded: بیشترین دانلود شده‌ها
+      last_week: Last week
+      this_week: This week
+      last_6_months: 6 ماه گذشته
+      totals: Totals
+      visits: هزار بازدید
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Other
+      engagement: Engagement
+      show_more: بیشتر ببینید
+      qrcode: کیوآر کد
+      warning: هشدار دهنده
+    support:
+      prizes: Prizes
+      donate: 'Donate %{price}$'
+    tips:
+      enhancements: Enhancements
+      only_to_you: قابل‌مشاهده فقط برای شما
+  games_sections:
+    chart:
+      last_6_months: 6 ماه گذشته
+      details:
+        meta_tags:
+          chart: چارت
+          description: 'بازی ویدئویی مستقل : بیشترین دانلود شده‌ها - بیشترین امتیاز داده شده‌ها - بیشترین دنبال شده‌ها'
+        structured_data:
+          chart: چارت
+          description: 'بازی ویدئویی مستقل : بیشترین دانلود شده‌ها - بیشترین امتیاز داده شده‌ها - بیشترین دنبال شده‌ها'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: بیشترین دانلود شده‌ها
+          description: 'بازی ویدئویی مستقل : بیشترین دانلود شده‌ها - Today - ۷ روز گذشته - Last 30 Days - طول عمر'
+        structured_data:
+          downloaded: بیشترین دانلود شده‌ها
+          description: 'بازی ویدئویی مستقل : بیشترین دانلود شده‌ها - Today - ۷ روز گذشته - Last 30 Days - طول عمر'
+    news:
+      details:
+        meta_tags:
+          news: اخبار
+          description: 'بازی ویدئویی مستقل : اخبار - Last 30 Days'
+        structured_data:
+          news: اخبار
+          description: 'بازی ویدئویی مستقل : اخبار - Last 30 Days'
+    filters:
+      chart:
+        most_downloaded: بیشترین دانلود شده‌ها
+        voted: بیشترین امتیاز داده شده‌ها
+        followed: بیشترین دنبال شده‌ها
+      downloaded:
+        everytime: طول عمر
+        last_month: Last 30 Days
+        last_week: ۷ روز گذشته
+        today: امروز
+      news:
+        last_commented: نظر
+        last_updated: اخیرا بروزرسانی شده
+        latest: جدیدترین ها
+        popular: محبوب ترین ها
+  genres:
+    genre:
+      rpg: Rpg
+      browsergame: Browser Game
+      platformaction: سکویی/اکشن
+      shootemup: تیراندازی
+      puzzle: پازلی
+      pointandclick: اشاره و کلیکی
+      sport: Sport
+      fighting: مبارزه ای
+      other: دیگر
+    genres:
+      all: همه
+    select:
+      genre: سبک
+  helpers:
+    label:
+      report:
+        broken: لینک خراب
+        copyright: حقوق من را نقض می‌کند
+        offensive: محتوای توهین‌آمیز و مشوق تنفر
+        sexual: محتوای جنسی
+        spam: هرزنامه یا گمراه‌کننده
+        violent: محتوای زننده یا خشونت‌آمیز
+  home:
+    navigation:
+      home: صفحه اصلی
+      news: اخبار
+      chart: چارت
+      events: رویدادها
+      downloaded: بیشترین دانلود شده‌ها
+      console: Console
+      subscriptions: اشتراک‌ها
+      your_games: Your Games
+      history: سابقه
+    landing:
+      last_followed_games_updated: اگر جا موندید و ندیدیدش
+      play: بازی کنید
+      recommended: توصیه می‌شود
+      based_recent_activity: بر اساس فعالیت‌های اخیر شما
+      query_of_the_day_0: بازی‌هایی که اخیراً بیش از 1000 بازی‌کننده داشته‌اند
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: سالگرد
+      query_of_the_day_3: 6 ماه گذشته - بیشترین دنبال شده‌ها
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: بازی های رقابتی دارای تابلو پیشروه
+      query_of_the_day_6: بروزرسانی‌ها
+      downloaded: بیشترین دانلود شده‌ها
+      today: امروز
+      last_week: ۷ روز گذشته
+      last_month: Last 30 Days
+      latest: جدیدترین ها
+      show_more: بیشتر ببینید
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'بازی ویدئویی مستقل : بازی کنید'
+        meta_tags:
+          console: Console
+          description: 'بازی ویدئویی مستقل : بازی کنید'
+    subscriptions:
+      subscriptions: اشتراک‌ها
+      updates: بروزرسانی‌ها
+      no_result: نتیجه‌ای یافت نشد
+      no_subscriptions_message: بهترین کارکرد ایندی‌اکسپو زمانیست که حداقل 5 بازی را دنبال ‌کنید.
+      players: بازیکن ها
+      subscribers: دنبال کننده ها
+      comments: نظر
+      details: بررسی
+      show_more: بیشتر ببینید
+    your_games:
+      your_games: Your Games
+      players: بازیکن ها
+      subscribers: دنبال کننده ها
+      comments: نظر
+      details: بررسی
+      show_more: بیشتر ببینید
+    history:
+      history: سابقه
+      score_system_games: بازی های رقابتی دارای تابلو پیشروه
+      last_commented: نظر
+      subscriptions: اشتراک‌ها
+      votes: Votes
+  static:
+    about:
+      about: درباره
+      app: Apps
+      extension: Extensions
+      social_networks: Social Networks
+      games: بازی‌ها
+      show_more: بیشتر ببینید
+      details:
+        structured_data:
+          about: درباره
+          description: ایندی‌اکسپو به هزاران نفر امکان دسترسی، بازدید و به اشتراک‌گذاری بازی‌های سازندگان مستقل و اوریجینال را می‌دهد.
+        meta_tags:
+          about: درباره
+          description: ایندی‌اکسپو به هزاران نفر امکان دسترسی، بازدید و به اشتراک‌گذاری بازی‌های سازندگان مستقل و اوریجینال را می‌دهد.
+    faq:
+      faq: پرسش‌های رایج
+      question_1: ایندی اکسپو چیست ؟
+      answer_1: ایندی اکسپو به هزاران نفر دسترسی می دهد تا بازی های مستقل و اورجینال را کشف ، تماشا و به اشتراک بگذارند . ایندی اکسپو منطقه ای را برای ارتباط و اطلاع رسانی و الهام بخشیدن به دیگران در سراسر جهان فراهم می کند و به عنوان بستری برای توزیع محتواسازان بزرگ و تبلیغ کنندگان بزرگ و کوچک عمل می کند.
+      question_2: چگونه امتیاز کسب کنیم ؟
+      answer_2: ایندی اکسپو دارای یک سیستم متشکل از امتیاز و سطح بندی است. تعداد امتیازات شما به عمل خاصی که انجام می دهید بستگی دارد. جدول زیر خلاصه می کند که چه اعمالی چه امتیاز هایی رو دارند
+      question_3: چگونه سطح خود را افزایش دهیم ؟
+      answer_3: سطح بندی روش دیگری برای پیگیری میزان فعالیت شما (و دیگران) است. هرچه امتیاز بیشتری جمع کنید ، سطح شما بالاتر می رود. ایندی اکسپو سطح و دستاورد های شما را عادلانه تشخیص می دهد
+      details:
+        structured_data:
+          faq: پرسش‌های رایج
+          description: پرسشگان، فهرستی از پرسش و پاسخ‌های رایج در زمینه‌ای خاص و در ارتباط با موضوعی مشخص است.
+        meta_tags:
+          faq: پرسش‌های رایج
+          description: پرسشگان، فهرستی از پرسش و پاسخ‌های رایج در زمینه‌ای خاص و در ارتباط با موضوعی مشخص است.
+    developers:
+      developers: توسعه‌دهندگان
+      details:
+        structured_data:
+          developers: توسعه‌دهندگان
+          description: Explore our Developer Products. آمار, Apps, Extensions, Tutorials
+        meta_tags:
+          developers: توسعه‌دهندگان
+          description: Explore our Developer Products. آمار, Apps, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: زبانتان را انتخاب کنید
+  medals:
+    medal:
+      titles:
+        age: "سال ها %{score}"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: مرحله 2
+        level_4: مرحله 4
+        level_6: مرحله 6
+        level_10: مرحله 10
+        level_16: مرحله 16
+        level_26: مرحله 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: پیشنهاد می‌کنیم برای کارایی بیشتر، ماکسیمم از 2 هشتگ استفاده نمایید.
+      now_loading: Now Loading...
+      publish: پست
+    news:
+      destroy: حذف
+      destroy_confirm: آیا مطمئن هستید؟
+    index:
+      players: بازیکن ها
+      subscribers: دنبال کننده ها
+      download: بارگیری
+  options:
+    index:
+      dashboard: Dashboard
+      profile: نمایه
+      followed_games: اشتراک‌ها
+      your_games: Your Games
+      settings: تنظیمات
+      logout: Logout
+  platforms:
+    platforms:
+      all: همه
+    select:
+      platform: پلتفورم
+  public_activities:
+    index:
+      destroy_confirm: آیا مطمئن هستید؟
+      mark_all_as_read: Mark all as read
+      notifications: آگاه‌سازی‌ها
+      see_all: بیشتر ببینید
+  public_activities_mailer:
+    notify:
+      hello: '%{username} سلام'
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: عدم دنبال
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: تأیید شده
+  reports:
+    new:
+      details: 'توضیحات:'
+      question: What is the issue?
+      send: Send
+      title: 'گزارش تخلف: %{game}'
+      report_submitted: از اینکه ما را آگاه کردید، سپاسگزاریم.
+      report_submitted_message: بازخوردتان به سیستم‌ ما کمک می‌کند وقتی مشکلی رخ می‌دهد متوجه شود.
+  scores:
+    score:
+      points: امتیازها
+      delete: حذف
+      destroy_confirm: آیا مطمئن هستید؟
+      verified: تأیید شده
+  search:
+    games:
+      filters: فیلترها
+      adult_content: محتوای بزرگسالانه
+      mobile_first: متناسب موبایل
+      no_result: نتیجه‌ای یافت نشد
+      search: جستجو
+      search_placeholder: ...جستجو
+      search_tools: Search tools
+      language: زبان
+      genre: سبک
+      platform: پلتفورم
+      recommended: توصیه می‌شود
+      tool: ابزارها
+      status: وضعیت
+      games: بازی‌ها
+      score_system_games: بازی های رقابتی دارای تابلو پیشروه
+      year: سال
+    details:
+      meta_tags:
+        search: جستجو
+        description: "(بازی‌ها, #Hashtags, @Profiles, Search tools, زبان, سبک, پلتفورم, سال, Tool, وضعیت)...جستجو"
+      structured_data:
+        search: جستجو
+        description: "(بازی‌ها, #Hashtags, @Profiles, Search tools, زبان, سبک, پلتفورم, سال, Tool, وضعیت)...جستجو"
+  settings:
+    edit:
+      settings: تنظیمات
+    form:
+      language: زبان (Language)
+      setlanguage: زبانتان را انتخاب کنید
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: محتوای بزرگسالانه
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: آگاه‌سازی‌های ایمیلی
+      general: موارد کلی
+      mail_comment_answer: پاسخ به نظرات من
+      mail_comment_mention: نامبرده‌ها
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: اشتراک‌ها
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Your Games
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Account Data
+      email: پست الکترونیک
+      password: گذرواژه
+      edit: ویرایش
+      stats: آمار
+      comments: نظر
+      subscriptions: اشتراک‌ها
+      show_more: بیشتر ببینید
+      save: ذخیره
+      delete_account: حذف دائم حساب
+  sitemaps:
+    index:
+      active_events: Upcoming
+      inactive_events: Past
+      new_events: Create Event
+      recover: ایمیلتان را فراموش کرده‌اید؟
+      sign_in: ورود به سیستم
+      sign_up: نام‌‌نویسی
+      sitemap: Site Map
+    details:
+      meta_tags:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: مشترک شدن
+    unsubscribe_button:
+      unsubscribe: عدم دنبال
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: ابزارها
+  users:
+    show:
+      page_title: "%{username} is on indiexpo"
+      online: برخط
+      chart: رتبه
+      last_month: Last 30 Days
+      level: مرحله
+      games: بازی‌ها
+      score_system_games: بازی های رقابتی دارای تابلو پیشروه
+      show_more: بیشتر ببینید
+      subscriptions: اشتراک‌ها
+      last_commented: نظر
+      history: سابقه
+      other_players: Other Players
+      verified: تأیید شده
+    details:
+      structured_data:
+        developer: توسعه‌دهنده
+        gamer: Gamer
+      meta_tags:
+        about: درباره
+        description: نمایه, افتخارات, بازی‌ها, اشتراک‌ها, بازی های رقابتی دارای تابلو پیشروه, نظر & سابقه
+  me:
+    menubar:
+      profile: نمایه
+      event_subscriptions: رویدادهای شما
+      followed_games: اشتراک‌ها
+      your_games: Your Games
+      settings: تنظیمات
+    followed_games:
+      no_result: نتیجه‌ای یافت نشد
+      no_subscriptions_message: بهترین کارکرد ایندی‌اکسپو زمانیست که حداقل 5 بازی را دنبال ‌کنید.
+    games:
+      your_games: Your Games
+      visits: هزار بازدید
+      downloads_count: بازیکن ها
+      subscribers: دنبال کننده ها
+      totals: Totals
+      no_result: نتیجه‌ای یافت نشد
+      upload: آپلود
+  levels:
+    index:
+      level: مرحله
+      user_chart: رتبه
+      last_month: Last 30 Days
+      gems: Gems
+      trophy_case: افتخارات
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: تأیید شده
+    goals:
+      goals: اهداف
+    stats:
+      stats: آمار
+      comments: نظر
+      subscriptions: اشتراک‌ها
+      your_games: Your Games
+      votes: Votes
+  warning:
+    index:
+      warning: هشدار دهنده
+      destroy: حذف
+      destroy_confirm: آیا مطمئن هستید؟
+      delete_account: حذف دائم حساب
+      delete_account_description: When you delete your indiexpo account, you won't be able to retrieve the content or information you've shared on indiexpo.

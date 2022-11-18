@@ -1,0 +1,14 @@
+<% content_for :menubar do %>
+  <%= render 'menubar', menu: :event_subscriptions %>
+<% end %>
+
+<div data-pjax-container>
+  <div class="WrapList">
+    <div id="tab_yourgames">
+      <div id="game_list">
+        <%= render partial: 'events/event', collection: @events %>
+        <%= paginate @events, remote: true %>
+      </div>
+    </div>
+  </div>
+</div>

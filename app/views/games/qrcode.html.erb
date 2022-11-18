@@ -1,0 +1,43 @@
+<div id="indiepad" class="AreaNotifications desktop_only" style="z-index: 9999; display: none">
+  <div class="notifications">
+    <%= image_tag 'Images/Sprites/indiepad_Prev_1.png', class: 'desktop_only', style: 'position: fixed; bottom: 0; left: 0;' %>
+    <%= image_tag 'Images/Sprites/indiepad_Prev_2.png', class: 'desktop_only', style: 'position: fixed; bottom: 0; right: 0;' %>
+    <div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">indiepad
+        <%= link_to developers_path, target: "_blank" do %>
+          <%= image_tag "Images/icons/info.png", alt:'Scan with the indiepad app'%>
+        <% end %>
+      </div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true">
+				<%= image_tag "Images/icons/x.png" %>
+			</div>
+    </div>
+		<div class="notifications_body" style="text-align: center; font-size: 16px;">
+			Your smartphones are the gamepads.
+			<br>This website is your own console.
+			<br><a href="https://play.google.com/store/apps/details?id=net.indiexpo.indiepad" target="_blank" class="textc60"><u>Download the app indiepad</u></a> and connect your smartphones scanning this QRcode:
+			<div id="QRCODE"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile_only" style="position: fixed;width: 100%; margin-bottom: 10%; bottom: 0; left: 0; z-index: 9999;">
+	<div style="width: 30%; margin-right: 16%; float: left;">
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/up-left.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 0, 0); indiepadManager.currentIndiepad.trigger('keydown', 1, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 0, 0); indiepadManager.currentIndiepad.trigger('keyup', 1, 0);"></div> <!-- LEFT/UP key -->
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/up.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 1, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 1, 0);"></div> <!-- UP key -->
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/up-right.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 2, 0); indiepadManager.currentIndiepad.trigger('keydown', 1, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 2, 0); indiepadManager.currentIndiepad.trigger('keyup', 1, 0);"></div> <!-- RIGHT/UP key -->
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/left.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 0, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 0, 0);"></div> <!-- LEFT key -->
+		<div class="imgcont" style="opacity: 0"></div>
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/right.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 2, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 2, 0);"></div> <!-- RIGHT key -->
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/down-left.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 0, 0); indiepadManager.currentIndiepad.trigger('keydown', 3, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 0, 0); indiepadManager.currentIndiepad.trigger('keyup', 3, 0);"></div> <!-- LEFT/DOWN key -->
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/down.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 3, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 3, 0);"></div> <!-- DOWN key -->
+		<div class="imgcont" style="background-image:url(<%= asset_url('Images/indiepad_buttons/down-right.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 2, 0); indiepadManager.currentIndiepad.trigger('keydown', 3, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 2, 0); indiepadManager.currentIndiepad.trigger('keyup', 3, 0);"></div> <!-- RIGHT/DOWN key -->
+	</div>
+	<div style="width: 13%; float: left;">
+		<div class="imgcont" style="width: 100%; padding-bottom: 100%; margin-top: 90%; background-image:url(<%= asset_url('Images/indiepad_buttons/start.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 6, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 6, 0);"></div> <!-- MENU key -->
+	</div>
+	<div style="width: 40%; float: left;">
+		<div class="imgcont" style="float: right; background-image:url(<%= asset_url('Images/indiepad_buttons/B.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 5, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 5, 0);"></div> <!-- B key -->
+		<div class="imgcont" style="float: right; margin-top: 30%; background-image:url(<%= asset_url('Images/indiepad_buttons/A.png') %>)" draggable="false" ontouchstart="indiepadManager.currentIndiepad.trigger('keydown', 4, 0);" ontouchend="indiepadManager.currentIndiepad.trigger('keyup', 4, 0);"></div> <!-- A key -->
+	</div>
+</div>

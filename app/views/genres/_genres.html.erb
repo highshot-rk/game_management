@@ -1,0 +1,13 @@
+<div class="desktop_only">
+	<%= link_to url_for({ page: 1 }.merge!(@params.except(:genre))), data: { pjax: true, analytics_click: 'filter genre All' }, class: !@genre ? 'active filters' : 'filters' do %>
+		<%= image_tag 'genres/all.png' %>
+		<span><%= t('.all') %></span>
+	<% end %>
+	<%= render Genre.all %>
+</div>
+<select class="liselect mobile_only js-ready" data-navigate-on-select="true">
+	<option value="<%= url_for({ page: 1 }.merge!(@params.except(:genre))) %>"<%= @genre ? '' : ' selected="selected"' %>>
+		<%= t('.all') %>
+	</option>
+	<%= render partial: 'genres/genre_mobile', collection: Genre.all, as: :genre %>
+</select>

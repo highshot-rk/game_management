@@ -1,0 +1,16 @@
+<% if @comment.parent_id %>
+
+  <%# Rendered when a User creates a new Comment / Reply through games#show %>
+  $("#comment-<%= @comment.parent_id %>-answers").prepend("<%== escape_javascript(render(partial: @comment)) %>");
+
+<% else %>
+
+  <%# Rendered when a User creates a new Comment through either games#show or comments#index %>
+  $(".comments-counter").html(<%== @comments_count %>);
+  $("#commentsContainer").prepend("<%== escape_javascript(render(partial: @comment)) %>");
+
+<% end %>
+
+<% if @comment.errors.present? %>
+  $("#commentError").html(`<%== @comment.errors.full_messages.to_sentence %>`)
+<% end %>

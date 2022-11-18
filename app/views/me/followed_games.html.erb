@@ -1,0 +1,21 @@
+<% content_for :menubar do %>
+  <%= render 'menubar', menu: :followed_games %>
+<% end %>
+
+<div data-pjax-container>
+	<div class="WrapList" >
+	<% if !current_user.followed_games.any? %>
+		<div class="Write20 center">
+			<%= t('.no_result') %><hr>
+			<%= t('.no_subscriptions_message') %><br>
+			<%= image_tag 'Images/icons/fav_on.png' %>
+		</div>
+	<% end %>
+    <div id="tab_yourgames">
+      <div id="game_list">
+        <%= render partial: 'games/game', collection: @games %>
+        <%= paginate @games %>
+      </div>
+    </div>
+  </div>
+</div>

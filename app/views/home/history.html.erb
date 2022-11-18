@@ -1,0 +1,29 @@
+<%= page_title t('.history') %>
+<% content_for :menubar do %>
+  <%= render 'menubar', menu: :home %>
+<% end %>
+<div data-pjax-container>
+  <%= render 'navigation', section: :history %>
+  <div id="ListRight">
+		<div class="WidFlo Write20"><%= t('.history') %></div>
+		<% if @downloaded_games.count > 0 %>
+			<%= render 'games/games', games: @downloaded_games, skip_pages: true %>
+		<% end %>
+		<% if @played_score_games.count > 0 %>
+			<div class="WidFlo Write20"><%= t('.score_system_games') %></div>
+			<%= render 'games/games', games: @played_score_games, skip_pages: true %>
+		<% end %>
+		<% if @commented_games.count > 0 %>
+			<div class="WidFlo Write20"><%= t('.last_commented') %></div>
+			<%= render 'games/games', games: @commented_games, skip_pages: true %>
+		<% end %>
+		<% if @followed_games.count > 0 %>
+			<div class="WidFlo Write20"><%= t('.subscriptions') %></div>
+			<%= render 'games/games', games: @followed_games, skip_pages: true %>
+		<% end %>
+		<% if @rated_games.count > 0 %>
+			<div class="WidFlo Write20"><%= t('.votes') %></div>
+			<%= render 'games/games', games: @rated_games, skip_pages: true %>
+		<% end %>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<%= page_title t('.your_games') %>
+<% content_for :menubar do %>
+  <%= render 'menubar', menu: :home %>
+<% end %>
+<div data-pjax-container>
+  <%= render 'navigation', section: :your_games %>
+  <div id="ListRight">
+    <div class="WidFlo Write20"><%= t('.your_games') %></div>
+    <% @games.each do |game| %>
+			<div class="div26 padding_right div100">
+        <%= link_to game_path(game.slug), class: 'box_screen_preview desktop_only' do %>
+          <%= image_tag game.image, alt: "#{game.title}", class: 'screen_preview' %>
+        <% end %>
+        <%= link_to game.title, game_url(game.slug), class: 'Write20 WidFlo' %>
+        <div class="WidFlo hoveron">
+          <%= t('.players') %>: <%= game.downloads_count %>
+          <br>
+          <%= link_to followers_list_game_path(game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Followers List'} do %>
+            <%= t('.subscribers') %>: <%= game.followings_count %>
+          <% end %>
+        </div>
+      </div>
+      <div class="div45 Window div100">
+        <% if game.news.any? %>
+          <div class="WidFlo hoveron">
+            <span data-time class="cw-relative-date" timestamp="<%= game.last_news.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>
+          </div>
+          <div id="newsLatestContainer"><%= parse_markdown(truncate(game.last_news.text, length: 380, separator: ' ')).html_safe %></div>
+          <hr class="blank25">
+        <% end %>
+        <%= render 'news/form', game: game %>
+        <div class="WidFlo">
+          <%= link_to t('.details'), game_path(game.slug), class: 'Window_options' %>
+          <%= link_to t('.comments'), game_comments_path(game.slug), class: 'Window_options' %>
+          <%= link_to t('.show_more'), game_news_path(game.slug), class: 'Window_options' %>
+        </div>
+      </div>
+      <div class="blank25 WidFlo">
+      <% end %>
+    </div>
+  </div>

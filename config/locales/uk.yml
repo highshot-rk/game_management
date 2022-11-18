@@ -1,0 +1,940 @@
+---
+uk:
+  active_admin:
+    dashboard: Інформаційна панель
+  activerecord:
+    attributes:
+      event:
+        description: Опис
+        end_date: Дата Завершення
+        prizes: Призи
+        rules: Правила
+        screen: Скріншот
+        start_date: Дата Початку
+        title: Назва
+        website: Веб-сайт
+      game:
+        author: Розробник
+        description: Опис
+        genre: Жанр
+        title: Назва
+        website: Веб-сайт
+      user:
+        username_or_email: Ім’я користувача/Адреса ел. пошти
+        password: Пароль
+        username: Ім’я користувача
+        characters_minimum: "%{minimum_password_length} або більше символів"
+        email: Адреса ел. пошти
+        terms_of_service: Я приймаю умови користування
+    errors:
+      messages:
+        exclude_domain: '"%{value}" заборонено'
+        include_domain: домен повинен бути в %{list}
+        invalid_datetime: невірна дата
+        url: невірний url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: максимум може бути %{count}
+            download_links:
+              links_repetition: не може повторюватися
+              too_long: максимум може бути %{count}
+              too_short: має бути хоча б 1
+            game_languages:
+              too_short: має бути хоча б 1
+            screens:
+              too_long: максимум може бути %{count}
+            videos:
+              too_long: має бути хоча б 1
+            base:
+              limit_games_uploaded: ви можете завантажити лише 2 гри за кожні 24 години
+        user:
+          attributes:
+            username:
+              invalid: може містити лише буквено-цифрові знаки (A–Z, 0–9)
+    models:
+      game_languages: Мова
+  activity:
+    comment:
+      answer: 'відповів на ваш коментар '
+      create: 'додав новий коментар до '
+      follower_create: 'додав новий коментар до '
+      mention: 'згадав вас у коментарі в '
+    event_subscription:
+      create: 'підписався на '
+    following:
+      create: 'почав стежити за '
+    game:
+      create: додав нову гру!
+      destroy: 'вилучив свою гру '
+      update: оновив свою гру
+    medal:
+      create: " отримав медаль "
+    news:
+      create: 'додав новини про '
+    rating:
+      create: 'проголосував '
+    user:
+      level: Твій рівень прокачався до %{level}
+      score: Нараховано + %{score} балів
+      new_title: New Title
+      prizes: Призи
+      game_new_leader: Ви найкращий гравець в %{game}!
+      game_old_leader: Вас перевершили! %{user} тепер лідирує в %{game}! Боріться за трон!
+      game_other_leader: "%{user} тепер лідирує в %{game}! Боріться за трон!"
+      game_dev_leader: "%{user} тепер лідирує в %{game}!"
+  application:
+    cookie_law:
+      show_more: Показати більше
+      ok: Ok
+      setlanguage: Виберіть мову
+    footer:
+      about: Інфо
+      contact_us: Контакти
+      language: Мова (Language)
+      faq: Поширені питання
+      feed_rss: RSS потоки
+      developers: Розробники
+      sitemap: Мапа Сайту
+      terms_and_conds: Умови Користування
+      blog: Блог
+    markdown_instructions:
+      formatting_help: допомога у форматуванні
+      you_type: Ви пишете
+      you_see: Ви бачите
+      italics: Kурсив
+      bold: Жирний
+      hashtag: Хештег
+      profile: Профіль
+      item_one: Eлемент 1
+      item_two: Eлемент 2
+      item_three: Eлемент 3
+      spoiler: Спойлер
+    menubar:
+      home: Головна
+      chart: Чарти
+      downloaded: По кількості завантажень
+      events: Події
+      language: Мова
+      news: Новинки
+    meta_tags:
+      description: indiexpo дозволяє тисячам людей ділитися своїми досягненнями, та відстежувати оригінальні інді-ігри від інших незалежних розробників
+      keywords: indiexpo, indie games, Ігри, Завантажити, Грати, Upload, Гравців, Розробники, Події, Змагання, Ігри на встановлення рекордів, Чарти, По кількості завантажень, Найбільш популярні, Новинки, Новий популярний автор ігрового каналу
+    navbar:
+      register: Зареєструйтесь
+      login: Увійти
+      search: "Пошук... (Ігри, #Хештег, @Профіль)"
+      upload: Завантажити
+      level_up: Новий рівень
+    slideshow_mobile:
+      show_more: Показати більше
+    structured_data:
+      description: indiexpo дозволяє тисячам людей ділитися своїми досягненнями, та відстежувати оригінальні інді-ігри від інших незалежних розробників
+      keywords: indiexpo, indie games, Ігри, Завантажити, Грати, Upload, Гравців, Розробники, Події, Змагання, Ігри на встановлення рекордів, Чарти, По кількості завантажень, Найбільш популярні, Новинки, Новий популярний автор ігрового каналу
+      games: Ігри
+    terms:
+      terms_and_conditions: Умови Користування
+  comments:
+    answers:
+      more_comments: Показати більше
+    comment:
+      answer: Відповісти
+      answers:
+        few: Переглянути всі відповіді %{count}
+        many: Переглянути всі відповіді %{count}
+        one: Переглянути відповідь
+        other: Переглянути всі відповіді %{count}
+      destroy: Видалити
+      destroy_confirm: Ви впевнені?
+      level: Рівень
+      new: Нове
+      verified: Підтверджено
+    destroy:
+      destroy_failure: Не вийшло видалити коментар
+    form:
+      text: Купа людей створює тут неймовірно круті штуки. Дайте їм знати, що у вас на думці!
+      now_loading: Now Loading...
+      publish: Опублікувати
+  cookie_law: Cookies дозволяють функціонувати нашому сайту. Використовуючи наш веб-сайт, ви погоджуєтеся з використанням файлів cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Увійти
+        recover_password: Змінити пароль
+        send_email_again: Надіслати електронного листа ще раз
+        details:
+          structured_data:
+            login: Увійти
+            description: Купа людей створює тут неймовірно круті штуки. Дайте їм знати, що у вас на думці! Автори та інші користувачі раді відгукам.
+          meta_tags:
+            login: Увійти
+            description: Купа людей створює тут неймовірно круті штуки. Дайте їм знати, що у вас на думці! Автори та інші користувачі раді відгукам.
+    confirmations:
+      new:
+        email: Адреса ел. пошти
+        send_email_again: Надіслати електронного листа ще раз
+        details:
+          structured_data:
+            send_email_again: Надіслати електронного листа ще раз
+            description: Підтвердіть Вашу електронну адресу
+          meta_tags:
+            send_email_again: Надіслати електронного листа ще раз
+            description: Підтвердіть Вашу електронну адресу
+    mailer:
+      confirmation_instructions:
+        welcome: Приєднуйтесь і насолоджуйтесь
+        title: 'Підтвердіть свою електронну пошту, відкривши посилання нижче:'
+        confirm_account: Підтвердіть Вашу електронну адресу
+        text_1: Рекомендуємо зареєструватись/увійти, щоб ваше перебування на indiexpo було максимально комфортним.
+        text_2: 'Купа людей створює тут неймовірно круті штуки. Дайте їм знати, що у вас на думці! Автори та інші користувачі раді відгукам.'
+      reset_password_instructions:
+        change_password: Змінити пароль
+        ignore_email: Якщо ви цього не хотіли, сміливо ігноруйте цей лист. Просимо вибачення за незручності.
+        reset_info: Ваш пароль не змінюватиметься, доки ви не перейдете по наведеному вище посиланню і не створите новий пароль.
+        title: Хтось запросив зміну пароля. Ви можете зробити це за посиланням нижче.
+      unlock_instructions:
+        unlock_account: Розблокувати мій профіль
+    passwords:
+      new:
+        recover_password: Змінити пароль
+        email: Адреса ел. пошти
+        send: Надіслати
+        details:
+          structured_data:
+            recover_password: Змінити пароль
+            description: Введіть електронну адресу, яку зможете зараз перевірити
+          meta_tags:
+            recover_password: Змінити пароль
+            description: Введіть електронну адресу, яку зможете зараз перевірити
+      edit:
+        change_password: Змінити пароль
+        new_password: Новий пароль
+        confirm_new_password: Підтвердьте новий пароль
+    registrations:
+      new:
+        register: Зареєструйтесь
+        details:
+          structured_data:
+            register: Зареєструйтесь
+            description: Увійшовши в профіль на indiexpo, ви зможете отримати максимум вражень від користування сайтом.
+          meta_tags:
+            register: Зареєструйтесь
+            description: Увійшовши в профіль на indiexpo, ви зможете отримати максимум вражень від користування сайтом.
+      edit:
+        change_password: Змінити пароль
+        change_email: Змінити адресу електронної пошти
+        new_password: Новий пароль
+        confirm_new_password: Підтвердьте новий пароль
+        current_password: Поточний пароль
+        current_email: Поточні електронні адреси
+        new_email: Нова електронна адреса
+        save: Зберегти зміни
+    shared:
+      menubar:
+        login: Увійти
+        recover_password: Змінити пароль
+        register: Зареєструйтесь
+        send_email_again: Надіслати електронного листа ще раз
+  download_links:
+    download_link:
+      download: Завантажити
+  errors:
+    messages:
+      not_saved: Не вийшло зберегти
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Події & Змагання
+          description: 'Інді-ігри : Події & Змагання - Незабаром & Минулі'
+        structured_data:
+          events: Події & Змагання
+          description: 'Інді-ігри : Події & Змагання - Незабаром & Минулі'
+    active_selector:
+      active: Незабаром
+      inactive: Минулі
+    edit:
+      destroy: Видалити
+      destroy_confirm: Ви впевнені?
+    end_after_start: має бути після дати початку
+    event_types:
+      all: Усі
+      contest: Конкурс
+      mini_contest: Міні-конкурс
+      new: Створити подію
+      other: Інше
+    form:
+      language: Мова
+      publish: Опублікувати
+      type: Жанр
+    menubar:
+      details: Огляд
+      edit: Редагувати
+    index:
+      events: Події
+      challenges: Змагання
+      champions: Чемпіони
+      points: Бали
+      show_more: Показати більше
+    new:
+      event: Подія
+    share:
+      share: Поділитися
+      email: Адреса ел. пошти
+      qrcode: QR-код
+    show:
+      description: Опис
+      ended: Завершена
+      ends: Завершується
+      from: Від
+      genre: Жанр
+      language: Мова
+      prizes: Призи
+      rules: Правила
+      share: Поділитися
+      subscribers: Підписників
+      to: До
+      website: Веб-сайт
+  feeds:
+    index:
+      feed_rss: RSS потоки
+      events: 'Інді-ігри : Події'
+      latest: 'Інді-ігри : Новинки'
+      popular: 'Інді-ігри : Найбільш популярні'
+      last_updated: 'Інді-ігри : Нещодавно оновлені'
+    details:
+      meta_tags:
+        feed_rss: RSS потоки
+        description: 'Інді-ігри : RSS потоки - Події - Новинки - Найбільш популярні - Нещодавно оновлені'
+      structured_data:
+        feed_rss: RSS потоки
+        description: 'Інді-ігри : RSS потоки - Події - Новинки - Найбільш популярні - Нещодавно оновлені'
+  layouts:
+    application:
+      indie_games: Інді-ігри
+    game:
+      play: Грати
+      download: Завантажити
+      new: Нове
+      updates: Що нового
+      show_more: Показати більше
+      adult_content_message_html: Вам має бути більше вісімнадцяти для перегляду цього вмісту.</br> Вам більше вісімнадцяти і хочете дивитись матеріали для дорослих?
+      yes: Так
+      no: Ні
+  games:
+    game:
+      play: Грати
+      download: Завантажити
+      new: Нове
+      updates: Що нового
+      chart: Чарти
+      verified: Підтверджено
+    destroy:
+      destroyed: Видалено
+    details:
+      game_header:
+        downloads_count: Гравців
+      game_menu:
+        comments: Коментарів
+        details: Огляд
+        updates: Що нового
+        edit: Редагувати
+        statistics: Статистика
+      structured_data:
+       games: Ігри
+       developer: Розробник
+      index:
+        videogame: Відеогра
+        published_by: 'Опубліковано '
+        edit: Редагувати
+        statistics: Статистика
+        players: Гравців
+        news: Що нового
+        no_news: Нема новин
+        website: Веб-сайт
+        recommended: Рекомендовано
+    edit:
+      edit: Редагувати
+      destroy: Видалити
+      destroy_confirm: Ви впевнені?
+    embed_popup:
+      embed: Вставка
+      preview: Передогляд
+    record_chart:
+      chart: Чарти
+      login: Увійти
+      score_system_games: Ігри на встановлення рекордів
+    followers_list:
+      subscribers: Підписників
+      verified: Підтверджено
+    players_list:
+      downloads_count: Гравців
+      last_week: Останні 7 днів
+      no_logged_user: Гість
+      no_result: Результати не знайдено
+      verified: Підтверджено
+    form:
+      add_external_link: Додати посилання
+      add_file: Прикріпити
+      html5_description: 'Для HTML5/Flash/WebGL ігор завантажте ZIP архів зі своєю грою. Архів повинен містити index.html файл.'
+      extra: Додатково
+      enablable_indiepad: Увімкнути підтримку indiepad  (Тільки для HTML5/WebGL ігор)
+      indiepad_description: Завантажте Android додаток, щоб використовувати телефон як джойстик для деяких ігор на indiexpo
+      long_description: Повний опис
+      artworks: Арти
+      delete: Видалити
+      downloads: Завантаження
+      genre: Жанр
+      language: Мова
+      publish: Опублікувати
+      remove_file: Видалити
+      remove_url: Видалити
+      restore: Відмінити
+      screens: Скріншоти
+      status: Стан
+      complete: Повна версія
+      demo: Демо-версія
+      minigame: Міні-гра
+      tool: Інструмент
+      hashtag: Ми рекомендуємо використовувати не більше 2-х хештегів
+      adult_content: Контент для дорослих
+      mobile_first: Сумісно з мобільними пристроями
+      now_loading: Now Loading...
+      video: Відео
+    monetisation:
+      monetisation: Монетизація
+      players: Гравців
+      level: Рівень
+      subscribers: Підписників
+      comments: Коментарів
+      offensive: Розпалювання ненависті або образливий контент
+      sexual: Сексуальний контент
+      spam: Спам або шахрайство
+      violent: Жорстокий або відразливий контент
+      description: Опис
+      send: Надіслати
+    new:
+      upload: Завантажити
+    share:
+      share: Поділитися
+      email: Адреса ел. пошти
+      qrcode: QR-код
+    show:
+      play: Грати
+      embed: Вставка
+      share: Поділитися
+      monetisation: Монетизація
+      download: Завантажити
+      subscribe: Підписатися
+      subscribed: Ви підписалися
+      subscribers: Підписників
+      comment: Коментарів
+      description: Опис
+      published_on: Опубліковано
+      adult_content: Контент для дорослих
+      complete: Повна версія
+      demo: Демо-версія
+      minigame: Міні-гра
+      language: Мова
+      first_to_comment: Поділіться думками...
+      mobile_first: Сумісно з мобільними пристроями
+      more_comments: Показати більше
+      screens: Скріншоти
+      video: Відео
+      top_player: Найкращий Гравець
+      epic_win: Епічна Переможенька!
+      on_the_rise: Новий популярний автор ігрового каналу
+      verified: Підтверджено
+    stats:
+      statistics: Статистика
+      comments: Коментарів
+      monetisation: Монетизація
+      daily: Сьогодні
+      days: Днів
+      date: Date
+      downloads: Гравців
+      followings: Підписників
+      chart: Чарти
+      most_rated: Найбільш популярні
+      followings_chart: За кількістю фанатів
+      most_downloaded: По кількості завантажень
+      last_week: Минулого тижня
+      this_week: Цього тижня
+      last_6_months: Останні 180 днів
+      totals: Загалом
+      visits: Перегляди
+      active_views: Активні перегляди
+      votes: Голосування
+      votes_averange: В середньому
+      other: Інше
+      engagement: Взаємодій
+      show_more: Показати більше
+      qrcode: QR-код
+      warning: Увага
+    support:
+      prizes: Призи
+      donate: 'Пожертвувати %{price}$'
+    tips:
+      enhancements: Покращення
+      only_to_you: Бачите лише ви
+  games_sections:
+    chart:
+      last_6_months: Останні 180 днів
+      details:
+        meta_tags:
+          chart: Чарти
+          description: 'Інді-ігри : По кількості завантажень - Найбільш популярні - За кількістю фанатів'
+        structured_data:
+          chart: Чарти
+          description: 'Інді-ігри : По кількості завантажень - Найбільш популярні - За кількістю фанатів'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: По кількості завантажень
+          description: 'Інді-ігри : По кількості завантажень - Сьогодні - Останні 7 днів - Останні 30 днів - За весь час'
+        structured_data:
+          downloaded: По кількості завантажень
+          description: 'Інді-ігри : По кількості завантажень - Сьогодні - Останні 7 днів - Останні 30 днів - За весь час'
+    news:
+      details:
+        meta_tags:
+          news: Новинки
+          description: 'Інді-ігри : Новинки - Останні 30 днів'
+        structured_data:
+          news: Новинки
+          description: 'Інді-ігри : Новинки - Останні 30 днів'
+    filters:
+      chart:
+        most_downloaded: По кількості завантажень
+        voted: Найбільш популярні
+        followed: За кількістю фанатів
+      downloaded:
+        everytime: За весь час
+        last_month: Останні 30 днів
+        last_week: Останні 7 днів
+        today: Сьогодні
+      news:
+        last_commented: Коментарі
+        last_updated: Нещодавно оновлені
+        latest: Новинки
+        popular: Найбільш популярні
+  genres:
+    genre:
+      rpg: Рольові
+      browsergame: Браузерні
+      platformaction: Платформери/Пригоди
+      shootemup: Стрілялки
+      puzzle: Головоломки
+      pointandclick: Квести
+      sport: Спорт
+      fighting: Файтінги
+      other: Інші
+    genres:
+      all: Усі
+    select:
+      genre: Жанр
+  helpers:
+    label:
+      report:
+        broken: Неробоче посилання
+        copyright: Порушує мої права
+        offensive: Розпалювання ненависті або образливий контент
+        sexual: Сексуальний контент
+        spam: Спам або шахрайство
+        violent: Жорстокий або відразливий контент
+  home:
+    navigation:
+      home: Головна
+      news: Новинки
+      chart: Чарти
+      events: Події
+      downloaded: По кількості завантажень
+      console: Консоль
+      subscriptions: Підписки
+      your_games: Ваші ігри
+      history: Історія
+    landing:
+      last_followed_games_updated: Ви могли пропустити
+      play: Грати
+      recommended: Рекомендовано
+      based_recent_activity: На основі ваших останніх дій
+      query_of_the_day_0: Ігри, які недавно набрали більше 1000 гравців
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Роковини
+      query_of_the_day_3: За кількістю фанатів - Останні 180 днів
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Ігри на встановлення рекордів
+      query_of_the_day_6: Що нового
+      downloaded: По кількості завантажень
+      today: Сьогодні
+      last_week: Останні 7 днів
+      last_month: Останні 30 днів
+      latest: Новинки
+      show_more: Показати більше
+    console:
+      details:
+        structured_data:
+          console: Консоль
+          description: 'Інді-ігри : Грати'
+        meta_tags:
+          console: Консоль
+          description: 'Інді-ігри : Грати'
+    subscriptions:
+      subscriptions: Підписки
+      updates: Що нового
+      no_result: Результати не знайдено
+      no_subscriptions_message: indiexpo видає кращі рекомендації, якщо ви підписані хоча би на 5 ігор.
+      players: Гравців
+      subscribers: Підписників
+      comments: Коментарів
+      details: Огляд
+      show_more: Показати більше
+    your_games:
+      your_games: Ваші ігри
+      players: Гравців
+      subscribers: Підписників
+      comments: Коментарів
+      details: Огляд
+      show_more: Показати більше
+    history:
+      history: Історія
+      score_system_games: Ігри на встановлення рекордів
+      last_commented: Коментарі
+      subscriptions: Підписки
+      votes: Голосування
+  static:
+    about:
+      about: Інфо
+      app: Додатки
+      extension: Розширення
+      social_networks: Соціальні мережі
+      games: Ігри
+      show_more: Показати більше
+      details:
+        structured_data:
+          about: Інфо
+          description: indiexpo дозволяє тисячам людей ділитися своїми досягненнями, та відстежувати оригінальні інді-ігри від інших незалежних розробників
+        meta_tags:
+          about: Інфо
+          description: indiexpo дозволяє тисячам людей ділитися своїми досягненнями, та відстежувати оригінальні інді-ігри від інших незалежних розробників
+    faq:
+      faq: Поширені питання
+      question_1: Що таке indiexpo?
+      answer_1: indiexpo дозволяє тисячам людей ділитися своїми досягненнями, та відстежувати оригінальні інді-ігри від інших незалежних розробників. indiexpo - це простір для спілкування, де ви можете поширити інформацію про свої розробки та надихати людей у всьому світі. Компанія чи одна особа - ми раді всім, хто обере нас для поширення свого продукту.
+      question_2: Як отримувати Бали?
+      answer_2: indiexpo має систему балів та рівнів. У наведеній нижче таблиці приведено список дій що винагороджуються балами, та розмір винагороди.
+      question_3: Як підняти рівень?
+      answer_3: Ваші рівні - це ще один спосіб відслідковувати вашу активність, та активність інших стосовно вас. Чим більше очок ви накопичуєте, тим вище ваш рівень. indiexpo визнає досягнення за допомогою спеціальних відзнак подяки.
+      details:
+        structured_data:
+          faq: Поширені питання
+          description: FAQ підбірка часто задаваних питань на певну тему та відповідей на них, яка створюється переважно для того, щоб не треба було постійно відповідати на одні й ті ж запитання, часто нудні для того, хто відповідає.
+        meta_tags:
+          faq: Поширені питання
+          description: FAQ підбірка часто задаваних питань на певну тему та відповідей на них, яка створюється переважно для того, щоб не треба було постійно відповідати на одні й ті ж запитання, часто нудні для того, хто відповідає.
+    developers:
+      developers: Розробники
+      details:
+        structured_data:
+          developers: Розробники
+          description: Спробуйте наші продукти для розробників. Статистика, Додатки, Розширення, Уроки
+        meta_tags:
+          developers: Розробники
+          description: Спробуйте наші продукти для розробників. Статистика, Додатки, Розширення, Уроки
+  languages:
+    edit:
+      note: Ви міняєте мову сайту. Текст введений користувачами залишиться без змін.
+      setlanguage: Виберіть мову
+  medals:
+    medal:
+      titles:
+        age: "%{score} років"
+        cg: Коментатор
+        d: Понад %{score} завантажень
+        dg: Колекціонер
+        e: Ось Він Я
+        fans: Понад %{score} фанатів
+        fg: Спостерігач
+        g: Я - Розробник
+        gm1: Перша Медаль
+        gm10: Розробник Герой
+        level_2: Рівень 2
+        level_4: Рівень 4
+        level_6: Рівень 6
+        level_10: Рівень 10
+        level_16: Рівень 16
+        level_26: Рівень 26
+        life: Як Бос
+        rg: Громадянський Обов'язок
+        t: Топ %{score}
+        ud: 1000 завантажень
+        ug: Коваль
+        v: Понад %{score} оцінок
+        king: Краще в Своєму Роді
+        vig: Дуже Важлива Гра
+  news:
+    form:
+      text: Напишіть щось
+      hashtag: Ми рекомендуємо використовувати не більше 2-х хештегів
+      now_loading: Now Loading...
+      publish: Опублікувати
+    news:
+      destroy: Видалити
+      destroy_confirm: Ви впевнені?
+    index:
+      players: Гравців
+      subscribers: Підписників
+      download: Завантажити
+  options:
+    index:
+      dashboard: Інформаційна панель
+      profile: Профіль
+      followed_games: Підписки
+      your_games: Ваші ігри
+      settings: Налаштування
+      logout: Вийти
+  platforms:
+    platforms:
+      all: Усі
+    select:
+      platform: Операційна Система
+  public_activities:
+    index:
+      destroy_confirm: Ви впевнені?
+      mark_all_as_read: Позначити всі як прочитані
+      notifications: Сповіщення
+      see_all: Показати більше
+  public_activities_mailer:
+    notify:
+      hello: Привіт %{username}
+      not_interested_emails: Не зацікавлені в цих повідомленнях?
+      unsubscribe: Відписатися
+  public_activity:
+    base:
+      someone: Хтось
+    comment:
+      answer:
+        comment_removed: Коментар видалено
+      create:
+        comment_removed: Коментар видалено
+    event_subscription:
+      create:
+        subscription_removed: Підписку скасовано
+    following:
+      create:
+        following_removed: Слідування скасовано
+    game:
+      removed_game: Гра видалена
+    news:
+      create:
+        news_removed: Новина видалена
+    rating:
+      create:
+        missing_rating: Оцінку не знайдено
+    user:
+      missing_user: Користувача не знайдено
+      verified: Підтверджено
+  reports:
+    new:
+      details: 'Примітки:'
+      question: В чому проблема?
+      send: Надіслати
+      title: 'Поскаржитися на: %{game}'
+      report_submitted: Дякуємо, що повідомили.
+      report_submitted_message: Ваші відгуки допомагають нашим системам дізнаватися, коли щось не так.
+  scores:
+    score:
+      points: Бали
+      delete: Видалити
+      destroy_confirm: Ви впевнені?
+      verified: Підтверджено
+  search:
+    games:
+      filters: Фільтри
+      adult_content: Контент для дорослих
+      mobile_first: Сумісно з мобільними пристроями
+      no_result: Результати не знайдено
+      search: Пошук
+      search_placeholder: Пошук...
+      search_tools: Інструменти
+      language: Мова
+      genre: Жанр
+      platform: Операційна Система
+      recommended: Рекомендовано
+      tool: Інструмент
+      status: Стан
+      games: Ігри
+      score_system_games: Ігри на встановлення рекордів
+      year: Рік
+    details:
+      meta_tags:
+        search: Пошук
+        description: "Пошук... (Ігри, #Хештег, @Профіль, Інструменти, Мова, Жанр, Рік, Операційна Система, Інструмент, Стан)"
+      structured_data:
+        search: Пошук
+        description: "Пошук... (Ігри, #Хештег, @Профіль, Інструменти, Мова, Жанр, Рік, Операційна Система, Інструмент, Стан)"
+  settings:
+    edit:
+      settings: Налаштування
+    form:
+      language: Мова (Language)
+      setlanguage: Виберіть мову
+      sounds: Звуки
+      sounds_description: Відтворювати звук при отриманні кожного нового сповіщення
+      adult_content: Контент для дорослих
+      label_on: 'Увімкнено'
+      label_off: 'Вимкнено'
+      email_notifications: Сповіщення ел. поштою
+      general: Загальне
+      mail_comment_answer: Хтось відповів на ваш коментар
+      mail_comment_mention: Згадки
+      mail_event_subscription_create: Хтось підписався на ваші події
+      followed_games: Підписки
+      mail_comment_follower_create: Хтось прокоментував гру, за якою ви стежите
+      mail_follower_news_create: Хтось оновив гру, за якою ви стежите
+      mail_follower_game_create: Користувач, за яким ви стежите, створив нову гру
+      mail_game_create: Користувач, за яким ви стежите, створив нову гру
+      mail_news_create: Користувач, за яким ви стежите, створив нову гру
+      mail_user_game_new_leader: Ви найкращий гравець у грі
+      mail_user_game_old_leader: Ви більше не найкращий гравець у грі
+      mail_user_game_other_leader: З'явився новий найкращий гравець
+      your_games: Ваші ігри
+      mail_rating_create: Хтось проголосував за вашу гру
+      mail_following_create: З'явився новий послідовник
+      mail_comment_create: Хтось прокоментував вашу гру
+      mail_medal_create: Ви отримали медаль
+      mail_user_game_dev_leader: Новий лідер у вашій грі
+      account_data: Дані облікового запису
+      email: Адреса ел. пошти
+      password: Пароль
+      edit: Редагувати
+      stats: Статистика
+      comments: Коментарі
+      subscriptions: Підписки
+      show_more: Показати більше
+      save: Зберегти зміни
+      delete_account: Видалення облікового запису без можливості відновлення
+  sitemaps:
+    index:
+      active_events: Незабаром
+      inactive_events: Минулі
+      new_events: Створити подію
+      recover: Змінити пароль
+      sign_in: Увійти
+      sign_up: Зареєструйтесь
+      sitemap: Мапа Сайту
+    details:
+      meta_tags:
+        sitemap: Мапа Сайту
+        description: Мапа сайту це список сторінок indiexpo, доступний для роботів і користувачів.
+      structured_data:
+        sitemap: Мапа Сайту
+        description: Мапа сайту це список сторінок indiexpo, доступний для роботів і користувачів.
+  subscriptions:
+    subscribe_button:
+      subscribe: Підписатися
+    unsubscribe_button:
+      unsubscribe: Відписатися
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Інструмент
+  users:
+    show:
+      page_title: "%{username} є в indiexpo"
+      online: В мережі
+      chart: Таблиця користувачів
+      last_month: Останні 30 днів
+      level: Рівень
+      games: Ігри
+      score_system_games: Ігри на встановлення рекордів
+      show_more: Показати більше
+      subscriptions: Підписки
+      last_commented: Коментарі
+      history: Історія
+      other_players: Інші гравці
+      verified: Підтверджено
+    details:
+      structured_data:
+        developer: Розробник
+        gamer: Геймер
+      meta_tags:
+        about: Інфо
+        description: Профіль, Трофеї, Ігри, Підписки, Ігри на встановлення рекордів, Коментарі & Історія
+  me:
+    menubar:
+      profile: Профіль
+      event_subscriptions: Мої події
+      followed_games: Підписки
+      your_games: Ваші ігри
+      settings: Налаштування
+    followed_games:
+      no_result: Результати не знайдено
+      no_subscriptions_message: indiexpo видає кращі рекомендації, якщо ви підписані хоча би на 5 ігор.
+    games:
+      your_games: Ваші ігри
+      visits: Перегляд
+      downloads_count: Гравців
+      subscribers: Підписників
+      totals: Загалом
+      no_result: Результати не знайдено
+      upload: Завантажити
+  levels:
+    index:
+      level: Рівень
+      user_chart: Таблиця користувачів
+      last_month: Останні 30 днів
+      gems: Діаманти
+      trophy_case: Трофеї
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Підтверджено
+    goals:
+      goals: Цілі
+    stats:
+      stats: Статистика
+      comments: Коментарі
+      subscriptions: Підписки
+      your_games: Ваші ігри
+      votes: Голосування
+  warning:
+    index:
+      warning: Увага
+      destroy: Видалити
+      destroy_confirm: Ви впевнені?
+      delete_account: Видалення облікового запису без можливості відновлення
+      delete_account_description: When you delete your indiexpo account, you won't be able to retrieve the content or information you've shared on indiexpo.

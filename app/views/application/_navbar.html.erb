@@ -1,0 +1,65 @@
+<div class="Menu_large desktop_only"></div>
+<div id="Menu">
+	<!-- Logo -->
+	<%= link_to root_path, class:'Logo' do %>
+		<% logo_url = Homepage.last&.logo&.presence&.url(:normal) %>
+		<% logo_description = Homepage.last&.presence&.logo_description %>
+		<div class="LogoTitle" <%= logo_url ? "title =\"#{logo_description}\" style=\"background-image: url(#{logo_url})\"".html_safe : '' %>></div>
+	<% end %>
+	<%= link_to edit_language_url, rel: :nofollow, remote: true, data: { language_select: true }, class: 'website_language desktop_only' do %>
+		<%= I18n.locale %>
+	<% end %>
+
+	<!-- SearchBar -->
+	<%= form_for :search, url: search_path, html: { class: 'navbar-menu' }, method: :get, authenticity_token: false do |f| %>
+		<%= f.text_field :q, placeholder: t('.search'), class: 'navbar-menu-search', value: @query %>
+		<%= f.submit('', name: nil, class: 'adv_search desktop_only') %>
+	<% end %>
+
+	<!-- Options -->
+	<div class="Options">
+		<!-- Sign Up -->
+		<%= link_to(t('.register'), new_user_registration_path, class: 'Botton') unless current_user %>
+
+		<!-- Logged -->
+		<% if current_user %>
+			<!-- Upload -->
+			<%= link_to(t('.upload'), new_game_path, class: 'Botton desktop_only') %>
+
+			<!-- Options -->
+			<%= link_to user_options_path, remote: true, data: { load_popup: true }, class: 'OptionsIcons' do %>
+				<%= image_tag 'Images/icons/options.png', alt:'Options' %>
+			<% end %>
+
+			<!-- UserArea -->
+			<%= link_to(user_path(current_user.username), class: 'OptionsIcons') do %>
+				<%= image_tag 'Images/icons/mygames.png', alt:'My Profile' %>
+			<% end %>
+
+			<!-- UserLevel -->
+			<%= link_to user_levels_path, remote: true, data: { load_popup: true }, class: 'OptionsIcons' do %>
+				<%= current_user.score %>
+				<%= image_tag 'Images/icons/level.png', alt: 'Level' %>
+				<% if current_user.just_level_up %>
+					<div class="tag">
+						<%= t('.level_up') %>
+					</div>
+				<% end %>
+			<% end %>
+
+			<!-- Notification -->
+			<%= link_to notifications_path, remote: true, data: { load_notifications: true }, class: 'OptionsIcons notifications-icon' do %>
+				<%= image_tag 'Images/icons/notifications.png', alt: 'Notifications' %>
+				<div class="notific_count"></div>
+			<% end %>
+
+		<!--No Logged -->
+		<% else %>
+			<!-- Upload -->
+			<%= link_to(t('.upload'), new_game_path, class: 'BottonLight desktop_only') %>
+
+			<!--- Login -->
+			<%= link_to(t('.login'), new_user_session_url, class: 'BottonLight right') %>
+		<% end %>
+	</div>
+</div>

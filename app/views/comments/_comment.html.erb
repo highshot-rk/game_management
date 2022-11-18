@@ -1,0 +1,34 @@
+<% if comment.created_at.present? %>
+	<div id=<%= dom_id(comment) %>>
+		<div class="Write20 WidFlo <%= (comment.username == comment.game.author) ? "comments_author" : "" %>">
+			<%= link_to comment.username, user_path(comment.username), data: { game_card: card_game_path(comment.username) } %>
+			<%= image_tag('Images/icons/verified.png', alt: t('.verified'), title: t('.verified')) if comment.user.verified? %>
+			<span class="Write20_details">
+				<% if comment.user.created_since?(30) %>
+					<font class="backgroundc60"><%= t('.new') %></font>
+				<% end %>
+				(<%= t('.level') %> <%= comment.user.level %>)
+				<%= comment.created_at.to_date %>
+			</span>
+		</div>
+		<!-- Body Comment -->
+		<div class="N_Window <%= policy(comment).destroy? ? "border_dashed" : "" %>">
+			<%== parse_markdown(comment.text) %>
+			<div class="WidFlo">
+				<% if comment.children.count > 0 %>
+					<%= link_to t('.answers', count: comment.children.count), comment_answers_path(comment.id), data: { remote: true, load_comments: comment.id }, class: "textc60" %> -
+				<% end %>
+
+				<%= link_to t('.answer'), '#', data: { toggle_visibility: "form-new-comment-#{comment.id}" }, class: "hoveron" %>
+
+				<% if policy(comment).destroy? %>
+					- <%= link_to t('.destroy'), game_comments_path(game_id: comment.game, id: comment.id), method: :delete, remote: true, data: { confirm: t('.destroy_confirm') }, class: "hoveron" %>
+				<% end %>
+			</div>
+			<div id="form-new-comment-<%= comment.id %>" style="display: none">
+					<%= render 'comments/form', comment_id: comment.id, game: comment.game %>
+			</div>
+			<div class="answers" id="comment-<%= comment.id %>-answers"></div>
+		</div>
+	</div>
+<% end %>

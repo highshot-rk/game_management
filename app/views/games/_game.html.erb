@@ -1,0 +1,48 @@
+<div class="box_preview div100">
+<%= link_to game_url(game.slug), class: 'box_screen_preview' do %>
+	<!-- Preview Image -->
+	<%= image_tag game.image, alt: "#{t('.play')} #{game.title}", class: 'screen_preview' %>
+	<!-- Stickers -->
+	<% if game.online_links.any? %>
+		<% if game.indiepad %>
+			<div class="sticker">indiepad<%= image_tag 'Images/icons/indiepad_White.png', alt: "#{t('.play')} #{game.title} with the indiepad" %></div>
+		<% else %>
+			<div class="sticker"><%= t('.play') %><%= image_tag 'Images/icons/play_online.png', alt: "#{t('.play')} #{game.title} Online" %></div>
+		<% end %>
+	<% else %>
+		<div class="sticker_play"><%= image_tag 'Images/icons/play.png', alt: "#{t('.download')} #{game.title}" %></div>
+	<% end %>
+	<% if game.max_score %>
+		<%= image_tag "Images/icons/record.png", class: 'sticker_score', alt: t('.chart') %>
+	<% end %>
+	<% if game.created_since?(30) %>
+		<div class="sticker_new"><%= t('.new') %></div>
+		<% elsif game.updated_since?(30) %>
+		<div class="sticker_new" style="right:0"><%= t('.updates') %></div>
+	<% end %>
+<% end %>
+
+<!-- Favourite, Game Name and Author-->
+<div class="caption">
+	<% if current_user %>
+	<%= div_for(game, :favourite, class: "#{following_css(game)} follow", data: { game_id: game.id }) do %>
+		<%= toggle_button_to '', '', game_followings_path(game.id), on: 'favourite-button favourite', off: 'favourite-button unfavourite' %>
+	<% end %>
+		<% else %>
+			<div class="favourite_game follow">
+				<%= link_to '', new_user_session_url, class: 'favourite-button favourite' %>
+			</div>
+		<% end %>
+	<%= link_to game_url(game.slug) do %>
+		<%= local_assigns[:position] ? "#{local_assigns[:position] + (game_counter + 1)} - " : '' %><%= game.title %>
+	<% end %>
+	<br>
+	<span>
+		<% if game.author == game.user.username %>
+			<%= link_to game.author, user_path(game.author) %>
+		<% else %>
+			<%= link_to game.author, search_path(search: { author: game.author }) %>
+		<% end %>
+	</span>
+</div>
+</div>

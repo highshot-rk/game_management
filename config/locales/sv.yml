@@ -1,0 +1,940 @@
+---
+sv:
+  active_admin:
+    dashboard: Översikt
+  activerecord:
+    attributes:
+      event:
+        description: Beskrivning
+        end_date: Sluttid
+        prizes: Priser
+        rules: Regler
+        screen: Skärmdump
+        start_date: Start Datum
+        title: Titel
+        website: Webbplats
+      game:
+        author: Utvecklare
+        description: Beskrivning
+        genre: Genre
+        title: Titel
+        website: Webbplats
+      user:
+        username_or_email: Förnamn/E-post
+        password: Lösenord
+        username: Förnamn
+        characters_minimum: "minst %{minimum_password_length} tecken"
+        email: E-post
+        terms_of_service: Godkänner användarvillkor
+    errors:
+      messages:
+        exclude_domain: '"%{value}" är inte tillåten'
+        include_domain: domän måste vara i %{list}
+        invalid_datetime: är inte ett giltigt datum
+        url: är inte ett giltigt url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: måste vara högst %{count}
+            download_links:
+              links_repetition: kan ej duplikeras
+              too_long: vara högst %{count}
+              too_short: borde vara åtminstone ett/en.
+            game_languages:
+              too_short: måste vara åtminstone ett/en
+            screens:
+              too_long: måste vara högst %{count}
+            videos:
+              too_long: får ej vara mer än ett/en.
+            base:
+              limit_games_uploaded: you can upload only 2 games in 24 hours
+        user:
+          attributes:
+            username:
+              invalid: får bara innehålla alfanumeriska tecken (A–Z, 0–9)
+    models:
+      game_languages: Språk
+  activity:
+    comment:
+      answer: 'har besvarat en kommentar på '
+      create: 'har kommenterat '
+      follower_create: 'har kommenterat '
+      mention: 'har nämnt dig i en kommentar i '
+    event_subscription:
+      create: 'har prenumererat till '
+    following:
+      create: 'började följa '
+    game:
+      create: la till ett nytt spel!
+      destroy: 'tog bort deras spel '
+      update: har uppdaterat deras spel
+    medal:
+      create: " har fått medaljen "
+    news:
+      create: 'har lagt upp nyheter om '
+    rating:
+      create: 'har röstat på '
+    user:
+      level: Din level har höjts till %{level}
+      score: Dina poäng har höjts med + %{score}
+      new_title: New Title
+      prizes: Priser
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: Visa Mer
+      ok: Ok
+      setlanguage: Välj språk
+    footer:
+      about: Om
+      contact_us: Kontakta oss
+      language: Språk (Language)
+      faq: Vanliga frågor
+      feed_rss: RSS-flöden
+      developers: Utvecklare
+      sitemap: Webbplatskarta
+      terms_and_conds: Villkor
+      blog: Blogg
+    markdown_instructions:
+      formatting_help: Formateringshjälp
+      you_type: Du skriver
+      you_see: Du ser
+      italics: Kursiv
+      bold: Fetstil
+      hashtag: Hashtag
+      profile: Profil
+      item_one: Sak 1
+      item_two: Sak 2
+      item_three: Sak 3
+      spoiler: Spoiler
+    menubar:
+      home: Hem
+      chart: Topplistor
+      downloaded: Mest Nerladdade
+      events: Evenemang
+      language: Språk
+      news: Nyheter
+    meta_tags:
+      description: Indiexpo kan tusentals människor upptäcka, titta på och dela original spel och Indiespel.
+      keywords: indiexpo, indie games, Spel, Ladda ned, Spela, Ladda upp, Spelare, Utvecklare, Evenemang, Utmaningar, Spel på topplistan, Topplistor, Mest Nerladdade, Populärast, Nya Releaser, Spelinnehållsskapare på väg upp
+    navbar:
+      register: Gå med
+      login: Logga in
+      search: "Sök... (Spel, #Hashtag, @Profil)"
+      upload: Ladda upp
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Visa Mer
+    structured_data:
+      description: Indiexpo kan tusentals människor upptäcka, titta på och dela original spel och Indiespel.
+      keywords: indiexpo, indie games, Spel, Ladda ned, Spela, Ladda upp, Spelare, Utvecklare, Evenemang, Utmaningar, Spel på topplistan, Topplistor, Mest Nerladdade, Populärast, Nya Releaser, Spelinnehållsskapare på väg upp
+      games: Spel
+    terms:
+      terms_and_conditions: Villkor
+  comments:
+    answers:
+      more_comments: Läs in fler
+    comment:
+      answer: Svara
+      answers:
+        few: Visa alla %{count} svar
+        many: Visa alla %{count} svar
+        one: Visa svaret
+        other: Visa alla %{count} svar
+      destroy: Ta bort
+      destroy_confirm: Är du säker?
+      level: Nivå
+      new: Nytt
+      verified: Verifierat
+    destroy:
+      destroy_failure: Kunde inte ta bort kommentaren.
+    form:
+      text: Det finns mycket att se här, och många bidrar med otroliga saker. Tala om för andra vad du tycker!
+      now_loading: Now Loading...
+      publish: Lägg upp
+  cookie_law: Cookies hjälper oss tillhandahålla, skydda och förbättra indiexpos tjänster. Genom att fortsätta använda vår webbplats godkänner du vår cookiepolicy.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-d/%-m"
+  devise:
+    sessions:
+      new:
+        login: Logga in
+        recover_password: Återställ lösenor
+        send_email_again: Skicka meddelandet igen
+        details:
+          structured_data:
+            login: Logga in
+            description: Det finns mycket att se här, och många bidrar med otroliga saker. Tala om för andra vad du tycker!
+          meta_tags:
+            login: Logga in
+            description: Det finns mycket att se här, och många bidrar med otroliga saker. Tala om för andra vad du tycker!
+    confirmations:
+      new:
+        email: E-post
+        send_email_again: Skicka om bekräftelse instruktioner.
+        details:
+          structured_data:
+            send_email_again: Skicka om bekräftelse instruktioner.
+            description: Bekräfta e-postadressen.
+          meta_tags:
+            send_email_again: Skicka om bekräftelse instruktioner.
+            description: Bekräfta e-postadressen.
+    mailer:
+      confirmation_instructions:
+        welcome: Var med och ha kul
+        title: 'Bekräfta din e-postadress genom att öppna länken:'
+        confirm_account: Bekräfta e-postadressen.
+        text_1: Indiexpo-upplevelsen blir som bäst när du är inloggad.
+        text_2: Det finns mycket att se här, och många bidrar med otroliga saker. Tala om för andra vad du tycker!
+      reset_password_instructions:
+        change_password: Ändra ditt lösenord
+        ignore_email: Om det inte var du som skickade efter denna information kan du ignorera detta email.
+        reset_info: Ditt lösenord kommer inte ändras förens ni har klickat på länken ovan och skapat ett nytt.
+        title: Någon har bett om en länk för att ändra erat lösenord. Ni kan göra detta genom länken nedanför.
+      unlock_instructions:
+        unlock_account: Lås upp mitt konto
+    passwords:
+      new:
+        recover_password: Återställ lösenor
+        email: E-post
+        send: Skicka
+        details:
+          structured_data:
+            recover_password: Återställ lösenord
+            description: Ange en e-postadress som du kan kontrollera nu
+          meta_tags:
+            recover_password: Återställ lösenord
+            description: Ange en e-postadress som du kan kontrollera nu
+      edit:
+        change_password: Ändra ditt lösenord
+        new_password: Nytt lösenord
+        confirm_new_password: Bekräfta nytt lösenord
+    registrations:
+      new:
+        register: Gå med
+        details:
+          structured_data:
+            register: Gå med
+            description: Indiexpo-upplevelsen blir som bäst när du är inloggad.
+          meta_tags:
+            register: Gå med
+            description: Indiexpo-upplevelsen blir som bäst när du är inloggad.
+      edit:
+        change_password: Ändra ditt lösenord
+        change_email: Ändra e-post
+        new_password: Nytt lösenord
+        confirm_new_password: Bekräfta nytt lösenord
+        current_password: Nuvarande lösenord
+        current_email: Nuvarande e-postadresser
+        new_email: Ny e-postadress
+        save: Spara ändringar
+    shared:
+      menubar:
+        login: Logga in
+        recover_password: Återställ lösenord
+        register: Gå med
+        send_email_again: Skicka meddelandet igen
+  download_links:
+    download_link:
+      download: Ladda ned
+  errors:
+    messages:
+      not_saved: Kunde ej spara
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Evenemang & Utmaningar
+          description: 'Indiespel : Evenemang & Utmaningar - Kommande & Tidigare'
+        structured_data:
+          events: Evenemang & Utmaningar
+          description: 'Indiespel : Evenemang & Utmaningar - Kommande & Tidigare'
+    active_selector:
+      active: Kommande
+      inactive: Tidigare
+    edit:
+      destroy: Ta bort
+      destroy_confirm: Är du säker?
+    end_after_start: bör vara efter startdatumet
+    event_types:
+      all: Alla
+      contest: Tävling
+      mini_contest: Minitävling
+      new: Skapa evenemang
+      other: Fler
+    form:
+      language: Språk
+      publish: Lägg upp
+      type: Genre
+    menubar:
+      details: Översikt
+      edit: Redigera
+    index:
+      events: Evenemang
+      challenges: Utmaningar
+      champions: Vinnarna
+      points: Punkter
+      show_more: Visa Mer
+    new:
+      event: Event
+    share:
+      share: Dela
+      email: E-post
+      qrcode: QR-kod
+    show:
+      description: Beskrivning
+      ended: Inaktiv
+      ends: Slut
+      from: från
+      genre: Genre
+      language: Språk
+      prizes: Priser
+      rules: Regler
+      share: Dela
+      subscribers: Prenumeranter
+      to: till
+      website: Webbplats
+  feeds:
+    index:
+      feed_rss: RSS-flöden
+      events: 'Indiespel : Evenemang'
+      latest: 'Indiespel : Nya Releaser'
+      popular: 'Indiespel : Populärast'
+      last_updated: 'Indiespel : Nya uppdateringar'
+    details:
+      meta_tags:
+        feed_rss: RSS-flöden
+        description: 'Indiespel : RSS-flöden - Evenemang - Nya Releaser - Populärast - Nya uppdateringar'
+      structured_data:
+        feed_rss: RSS-flöden
+        description: 'Indiespel : RSS-flöden - Evenemang - Nya Releaser - Populärast - Nya uppdateringar'
+  layouts:
+    application:
+      indie_games: Indiespel
+    game:
+      play: Spela
+      download: Ladda ned
+      new: Nytt
+      updates: Uppdateringar!
+      show_more: Visa Mer
+      adult_content_message_html: Du måste vara minst 18 år gammal för att se det här innehållet.</br> Är du 18 eller äldre och vill se vuxet innehåll?
+      yes: Ja
+      no: Nej
+  games:
+    game:
+      play: Spela
+      download: Ladda ned
+      new: Nytt
+      updates: Uppdateringar!
+      chart: Topplistor
+      verified: Verifierat
+    destroy:
+      destroyed: Borttaget
+    details:
+      game_header:
+        downloads_count: Spelare
+      game_menu:
+        comments: Kommentarer
+        details: Översikt
+        updates: Uppdateringar
+        edit: Redigera
+        statistics: Statistik
+      structured_data:
+       games: Spel
+       developer: Utvecklare
+      index:
+        videogame: Datorspel
+        published_by: 'publicerat av '
+        edit: Redigera
+        statistics: Statistik
+        players: Spelare
+        news: Nyheter
+        no_news: Inga Nyheter
+        website: Webbplats
+        recommended: Rekommenderat
+    edit:
+      edit: Redigera
+      destroy: Ta bort
+      destroy_confirm: Är du säker?
+    embed_popup:
+      embed: Bädda in
+      preview: Förhandsvisning
+    record_chart:
+      chart: Topplistor
+      login: Logga in
+      score_system_games: Spel på topplistan
+    followers_list:
+      subscribers: Prenumeranter
+      verified: Verifierat
+    players_list:
+      downloads_count: Spelare
+      last_week: Senaste 7 dagarna
+      no_logged_user: Guest
+      no_result: Det gick inte att hitta några resultat
+      verified: Verifierat
+    form:
+      add_external_link: Lägg till extern länk
+      add_file: Välj fil
+      html5_description: 'För HTML5/Flash/WebGL spel krävs en ZIP som innehåller spelets filer. Det måste finnas en index.html fil i ZIPen.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Ladda ner appen på din smartphone och använd den som en gamepad med flertal spel på Indiexpo. Endast via Andriod
+      long_description: Lång Beskrivning
+      artworks: Konst
+      delete: Ta bort
+      downloads: Download
+      genre: Genre
+      language: Språk
+      publish: Lägg upp
+      remove_file: Ta bort
+      remove_url: Ta bort
+      restore: Ångra
+      screens: Skärmdumpar
+      status: Status
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      tool: Spelmotor
+      hashtag: Vi rekommenderar att du använder högst 2 hashtags
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      now_loading: Now Loading...
+      video: Videoklipp
+    monetisation:
+      monetisation: Intäktsgenerering
+      players: Spelare
+      level: Nivå
+      subscribers: Prenumeranter
+      comments: Kommentarer
+      offensive: Hatiskt/kränkande innehåll
+      sexual: Innehåll av sexuell karaktär
+      spam: Spam/vilseledande innehåll
+      violent: Våldsamt/frånstötande innehåll
+      description: Beskrivning
+      send: Skicka
+    new:
+      upload: Ladda upp
+    share:
+      share: Dela
+      email: E-post
+      qrcode: QR-kod
+    show:
+      play: Spela
+      embed: Bädda in
+      share: Dela
+      monetisation: Intäktsgenerering
+      download: Ladda ned
+      subscribe: Prenumerera
+      subscribed: Prenumererar
+      subscribers: Prenumeranter
+      comment: Kommentarer
+      description: Beskrivning
+      published_on: Publicerades den
+      adult_content: Adults Contents
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      language: Språk
+      first_to_comment: Skriv en kommentar...
+      mobile_first: Mobile Friendly
+      more_comments: Läs in fler
+      screens: Skärmdumpar
+      video: Videoklipp
+      top_player: Bästa Spelare
+      epic_win: Epic Win!
+      on_the_rise: Spelinnehållsskapare på väg upp
+      verified: Verifierat
+    stats:
+      statistics: Statistik
+      comments: Kommentarer
+      monetisation: Intäktsgenerering
+      daily: Idag
+      days: Dagar
+      date: Datum
+      downloads: Spelare
+      followings: Prenumeranter
+      chart: Topplistor
+      most_rated: Högst Rankade
+      followings_chart: Mest Följda
+      most_downloaded: Mest Nerladdade
+      last_week: Förra veckan
+      this_week: Den här veckan
+      last_6_months: De senaste 180 dagarna
+      totals: Summa
+      visits: Visningar
+      active_views: Aktiva Visningar
+      votes: Röster
+      votes_averange: Genomsnitt
+      other: Fler
+      engagement: Interaktion
+      show_more: Visa Mer
+      qrcode: QR-kod
+      warning: Varning
+    support:
+      prizes: Priser
+      donate: 'Donera %{price}$'
+    tips:
+      enhancements: Förbättringar
+      only_to_you: Visas bara för dig
+  games_sections:
+    chart:
+      last_6_months: De senaste 180 dagarna
+      details:
+        meta_tags:
+          chart: Topplistor
+          description: 'Indiespel : Mest Nerladdade - Högst Rankade - Mest Följda'
+        structured_data:
+          chart: Topplistor
+          description: 'Indiespel : Mest Nerladdade - Högst Rankade - Mest Följda'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Mest Nerladdade
+          description: 'Indiespel : Mest Nerladdade - Idag - Senaste 7 dagarna - De senaste 30 dagarna - Livstid'
+        structured_data:
+          downloaded: Mest Nerladdade
+          description: 'Indiespel : Mest Nerladdade - Idag - Senaste 7 dagarna - De senaste 30 dagarna - Livstid'
+    news:
+      details:
+        meta_tags:
+          news: Nyheter
+          description: 'Indiespel : Nyheter - De senaste 30 dagarna'
+        structured_data:
+          news: Nyheter
+          description: 'Indiespel : Nyheter - De senaste 30 dagarna'
+    filters:
+      chart:
+        most_downloaded: Mest Nerladdade
+        voted: Högst Rankade
+        followed: Mest Följda
+      downloaded:
+        everytime: Livstid
+        last_month: De senaste 30 dagarna
+        last_week: Senaste 7 dagarna
+        today: Idag
+      news:
+        last_commented: Kommentarer
+        last_updated: Nya uppdateringar
+        latest: Nya Releaser
+        popular: Populärast
+  genres:
+    genre:
+      rpg: Rollspel
+      browsergame: Browser Game
+      platformaction: Åtgärd
+      shootemup: Shoot em Up
+      puzzle: Pussel
+      pointandclick: Point and Click
+      sport: Sport
+      fighting: Fightingspel
+      other: Other
+    genres:
+      all: Alla
+    select:
+      genre: Genre
+  helpers:
+    label:
+      report:
+        broken: Trasig Länk
+        copyright: Gör intrång i mina rättigheter
+        offensive: Hatiskt/kränkande innehåll
+        sexual: Innehåll av sexuell karaktär
+        spam: Spam/vilseledande innehåll
+        violent: Våldsamt/frånstötande innehåll
+  home:
+    navigation:
+      home: Hem
+      news: Nyheter
+      chart: Topplistor
+      events: Evenemang
+      downloaded: Mest Nerladdade
+      console: Spelskonsol
+      subscriptions: Prenumerationer
+      your_games: Dina spel
+      history: Historik
+    landing:
+      last_followed_games_updated: Uppdateringar du kan ha missat
+      play: Spela
+      recommended: Rekommenderat
+      based_recent_activity: Utifrån din senaste aktivitet
+      query_of_the_day_0: Spel som nyligen fått över 1000 spelningar
+      query_of_the_day_1: Bra spel utan kommentarer
+      query_of_the_day_2: Årsdag
+      query_of_the_day_3: Mest Följda - De senaste 180 dagarna
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Spel på topplistan
+      query_of_the_day_6: Uppdateringar!
+      downloaded: Mest Nerladdade
+      today: Idag
+      last_week: Senaste 7 dagarna
+      last_month: De senaste 30 dagarna
+      latest: Nya Releaser
+      show_more: Visa Mer
+    console:
+      details:
+        structured_data:
+          console: Spelskonsol
+          description: 'Indiespel : Spela'
+        meta_tags:
+          console: Spelskonsol
+          description: 'Indiespel : Spela'
+    subscriptions:
+      subscriptions: Prenumerationer
+      updates: Uppdateringar!
+      no_result: Det gick inte att hitta några resultat
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Spelare
+      subscribers: Prenumeranter
+      comments: Kommentarer
+      details: Översikt
+      show_more: Visa Mer
+    your_games:
+      your_games: Dina spel
+      players: Spelare
+      subscribers: Prenumeranter
+      comments: Kommentarer
+      details: Översikt
+      show_more: Visa Mer
+    history:
+      history: Historik
+      score_system_games: Spel på topplistan
+      last_commented: Kommentarer
+      subscriptions: Prenumerationer
+      votes: Röster
+  static:
+    about:
+      about: Om
+      app: Appar
+      extension: Tillägg
+      social_networks: Socialt nätverk
+      games: Spel
+      show_more: Visa Mer
+      details:
+        structured_data:
+          about: Om
+          description: Indiexpo kan tusentals människor upptäcka, titta på och dela original spel och Indiespel.
+        meta_tags:
+          about: Om
+          description: Indiexpo kan tusentals människor upptäcka, titta på och dela original spel och Indiespel.
+    faq:
+      faq: Vanliga frågor
+      question_1: Vad är indiexpo?
+      answer_1: Indiexpo kan  tusentals människor upptäcka, titta på och dela original spel och <strong>Indiespel</strong>. Indiexpo har ett forum där användare kan få kontakt med varandra och informera och inspirera andra över hela världen. Forumet fungerar som en distributionsplattform för skapare av originalinnehåll och annonsörer, stora som små.
+      question_2: How to earn Points?
+      answer_2: Indiexpo har ett system med punkter och nivåer. Antalet poäng du får beror på den specifika åtgärder du tar. Tabellen punkterna nedan sammanfattar punktvärden för olika åtgärder.
+      question_3: How to Level Up?
+      answer_3: Nivåerna är ett annat sätt att hålla koll på hur aktiv du (och andra) har varit. Ju fler poäng du samlar, desto högre nivå. Indiexpo känner igen din nivå prestationer med vår speciella märke tacka dig.
+      details:
+        structured_data:
+          faq: Vanliga frågor
+          description: FAQ är en samling ofta ställda frågor och deras svar.
+        meta_tags:
+          faq: Vanliga frågor
+          description: FAQ är en samling ofta ställda frågor och deras svar.
+    developers:
+      developers: Utvecklare
+      details:
+        structured_data:
+          developers: Utvecklare
+          description: Utforska våra utvecklares produkter. Statistik, Appar, Tillägg, Handledningar
+        meta_tags:
+          developers: Utvecklare
+          description: Utforska våra utvecklares produkter. Statistik, Appar, Tillägg, Handledningar
+  languages:
+    edit:
+      note: Här kan du ändra språk på webbplatsen. Text som användare skriver ändras inte.
+      setlanguage: Välj språk
+  medals:
+    medal:
+      titles:
+        age: "%{score} År"
+        cg: Commentator
+        d: Över %{score} nerladdningar
+        dg: The Collector
+        e: I Am Here
+        fans: Över %{score} prenumeranter
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Nivå 2
+        level_4: Nivå 4
+        level_6: Nivå 6
+        level_10: Nivå 10
+        level_16: Nivå 16
+        level_26: Nivå 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Högst %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Över %{score} betygsättningar
+        king: Bästa av sin sort
+        vig: Väldigt viktigt spel
+  news:
+    form:
+      text: Publicera ett inlägg för att engagera din målgrupp.
+      hashtag: Vi rekommenderar att du använder högst 2 hashtags
+      now_loading: Now Loading...
+      publish: Lägg upp
+    news:
+      destroy: Ta bort
+      destroy_confirm: Är du säker?
+    index:
+      players: Spelare
+      subscribers: Prenumeranter
+      download: Ladda ned
+  options:
+    index:
+      dashboard: Översikt
+      profile: Profil
+      followed_games: Prenumerationer
+      your_games: Dina spel
+      settings: Inställningar
+      logout: Logga ut
+  platforms:
+    platforms:
+      all: Alla
+    select:
+      platform: Operativsystem
+  public_activities:
+    index:
+      destroy_confirm: Är du säker?
+      mark_all_as_read: Markera alla som lästa
+      notifications: Aviseringar
+      see_all: Visa Mer
+  public_activities_mailer:
+    notify:
+      hello: Hej %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Ångra
+  public_activity:
+    base:
+      someone: Någon
+    comment:
+      answer:
+        comment_removed: Kommentar borttagen
+      create:
+        comment_removed: Kommentar borttagen
+    event_subscription:
+      create:
+        subscription_removed: Prenumerering borttagen
+    following:
+      create:
+        following_removed: Följning borttagen
+    game:
+      removed_game: Borttaget spel
+    news:
+      create:
+        news_removed: Nyheter borttagna
+    rating:
+      create:
+        missing_rating: Saknar betyg
+    user:
+      missing_user: Användaren fattas
+      verified: Verifierat
+  reports:
+    new:
+      details: 'Flera detailjer:'
+      question: Vad är problemet?
+      send: Skicka
+      title: 'Rapportera: %{game}'
+      report_submitted: Tack för att du meddelat oss.
+      report_submitted_message: Din feedback hjälper vårt system att lära sig när något är fel.
+  scores:
+    score:
+      points: Punkter
+      delete: Ta bort
+      destroy_confirm: Är du säker?
+      verified: Verifierat
+  search:
+    games:
+      filters: Filter
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      no_result: Det gick inte att hitta några resultat
+      search: Sök
+      search_placeholder: Sök...
+      search_tools: Sökverktyg
+      language: Språk
+      genre: Genre
+      platform: Operativsystem
+      recommended: Rekommenderat
+      tool: Spelmotor
+      status: Status
+      games: Spel
+      score_system_games: Spel på topplistan
+      year: År
+    details:
+      meta_tags:
+        search: Sök
+        description: "Sök... (Spel, #Hashtag, @Profil, Sökverktyg, Språk, Genre, År, Operativsystem, Spelmotor, Status)"
+      structured_data:
+        search: Sök
+        description: "Sök... (Spel, #Hashtag, @Profil, Sökverktyg, Språk, Genre, År, Operativsystem, Spelmotor, Status)"
+  settings:
+    edit:
+      settings: Inställningar
+    form:
+      language: Språk (Language)
+      setlanguage: Välj språk
+      sounds: Ljud
+      sounds_description: Spela upp ett ljud när du får en ny avisering
+      adult_content: Adults Contents
+      label_on: 'På'
+      label_off: 'Av'
+      email_notifications: E-postaviseringar
+      general: Allmänt
+      mail_comment_answer: Någon har svarat på er kommentar
+      mail_comment_mention: Omnämnanden
+      mail_event_subscription_create: Någon prenumererar på er
+      followed_games: Prenumerationer
+      mail_comment_follower_create: Någon har kommenterat ett spel ni följer
+      mail_follower_news_create: Någon har updaterat ett spel ni följer
+      mail_news_create: Någon har updaterat ett spel ni följer
+      mail_follower_game_create: En användare ni följer har skapat ett nytt spel
+      mail_game_create: En användare ni följer har skapat ett nytt spel
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Dina spel
+      mail_rating_create: Någon har röstat på erat spel
+      mail_following_create: En ny användare följer mig
+      mail_comment_create: Någon har kommenterat på erat spel
+      mail_medal_create: Du har fått en medalj
+      mail_user_game_dev_leader: New Leader on your game
+      account_data: Kontodata
+      email: E-post
+      password: Lösenord
+      edit: Redigera
+      stats: Statistik
+      comments: Kommentarer
+      subscriptions: Prenumerationer
+      show_more: Visa Mer
+      save: Spara ändringar
+      delete_account: Ta bort kontot permanent
+  sitemaps:
+    index:
+      active_events: Kommande
+      inactive_events: Tidigare
+      new_events: Skapa evenemang
+      recover: Återställ lösenord
+      sign_in: Logga in
+      sign_up: Gå med
+      sitemap: Webbplatskarta
+    details:
+      meta_tags:
+        sitemap: Webbplatskarta
+        description: Webbplatskartan är en index för alla sidor på indiexpo.
+      structured_data:
+        sitemap: Webbplatskarta
+        description: Webbplatskartan är en index för alla sidor på indiexpo.
+  subscriptions:
+    subscribe_button:
+      subscribe: Prenumerera
+    unsubscribe_button:
+      unsubscribe: Ångra
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Spelmotor
+  users:
+    show:
+      page_title: "%{username} finns på indiexpo"
+      online: Online
+      chart: Användare Topplista
+      last_month: De senaste 30 dagarna
+      level: Nivå
+      games: Spel
+      score_system_games: Spel på topplistan
+      show_more: Visa Mer
+      subscriptions: Prenumerationer
+      last_commented: Kommentarer
+      history: Historik
+      other_players: Andra Spelare
+      verified: Verifierat
+    details:
+      structured_data:
+        developer: Utvecklare
+        gamer: Gamer
+      meta_tags:
+        about: Om
+        description: Profil, Troféhylla, Spel, Prenumerationer, Spel på topplistan, Kommentarer & Historik
+  me:
+    menubar:
+      profile: Profil
+      event_subscriptions: Mina evenemang
+      followed_games: Prenumerationer
+      your_games: Dina spel
+      settings: Inställningar
+    followed_games:
+      no_result: Det gick inte att hitta några resultat
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Dina spel
+      visits: Visningar
+      downloads_count: Spelare
+      subscribers: Prenumeranter
+      totals: Summa
+      no_result: Det gick inte att hitta några resultat
+      upload: Ladda upp
+  levels:
+    index:
+      level: Nivå
+      user_chart: Användare Topplista
+      last_month: De senaste 30 dagarna
+      gems: Ädelstenar
+      trophy_case: Troféhylla
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Mästare
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Stormästare
+      verified: Verifierat
+    goals:
+      goals: Mål
+    stats:
+      stats: Statistik
+      comments: Kommentarer
+      subscriptions: Prenumerationer
+      your_games: Dina spel
+      votes: Röster
+  warning:
+    index:
+      warning: Varning
+      destroy: Ta bort
+      destroy_confirm: Är du säker?
+      delete_account: Borttagning av kontot är permanent.
+      delete_account_description: När du tar bort ditt indiexpo-konto kan du inte få tillbaka innehållet eller den information du har delat på indiexpo.

@@ -1,0 +1,13 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.embed') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body" style="text-align: center;">
+			<textarea style="max-width: 100%; width: 560px; height: 60px"><iframe width="560" height="315" src="<%= embed_game_url(@game.slug) %>" frameborder="0" allowfullscreen></iframe></textarea>
+			<div class="Write20"><%= t('.preview') %></div>
+			<iframe width="560" height="315" src="<%= embed_game_url(@game.slug) %>" frameborder="0" loading="lazy" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>

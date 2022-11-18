@@ -1,0 +1,49 @@
+<%= page_title t('.register') %>
+<% content_for(:structured_data) do %>
+	<%= render 'devise/registrations/new/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'devise/registrations/new/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<%= render 'devise/shared/menubar', menu: :register %>
+<% end %>
+
+<%= render 'terms' %>
+<div id="ListRight" style="max-width: 750px;">
+	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		<div class="WidFlo center background900 Write20"><%= devise_error_messages! %></div>
+		<br>
+    <div class="Window2">
+      <div class="Write20"><%= f.label :username %></div>
+      <%= f.text_field :username, autofocus: true, style: "width: 100%", maxlength: 15, required: true, placeholder: true %>
+    </div>
+    <div class="Window2">
+      <div class="Write20"><%= f.label :password %></div>
+      <div class="Write20">
+      <% if @minimum_password_length %>
+      <em>(<%= t('activerecord.attributes.user.characters_minimum', minimum_password_length: @minimum_password_length) %>)</em>
+      <% end %>
+      </div>
+      <%= f.password_field :password, pattern: ".{6,}", autocomplete: "off", style: "width: 100%", maxlength: "255", required: true, placeholder: true %>
+    </div>
+    <div class="Window2">
+      <div class="Write20"><%= f.label :password_confirmation %></div>
+      <%= f.password_field :password_confirmation, autocomplete: "off", style: "width: 100%", maxlength: "255", required: true, placeholder: true %>
+    </div>
+    <div class="Window2">
+      <div class="Write20"><%= f.label :email %></div>
+      <%= f.email_field :email, style: "width: 100%", maxlength: "255", required: true, placeholder: true %>
+    </div>
+    <div class="Window2">
+      <div class="Write20">
+        <%= link_to license_path, data: { load_popup: true, remote: true } do %>
+          <u><%= f.label :terms_of_service %></u>
+        <% end %>
+        &nbsp;&nbsp;
+        <%= f.check_box :terms_of_service %>
+      </div>
+    </div>
+		<%= f.submit t('.register'), class: 'Botton div100', data: { analytics_click: 'Submit Registration' } %>
+  <% end %>
+</div>

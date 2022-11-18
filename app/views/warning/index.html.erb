@@ -1,0 +1,18 @@
+<div class="AreaNotifications">
+	<div class="notifications" style="height: auto">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">
+				<%= t('.warning') %>
+			</div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+
+		<div class="notifications_body center Write20">
+			<% if params[:type] == 'delete_account' %>
+				<div class="Write20 center"><%= t('.delete_account') %></div>
+				<div class="center"><%= t('.delete_account_description') %></div>
+				<%= link_to t('.destroy'), registration_path(resource_name), data: { confirm: t('.destroy_confirm') }, method: :delete, data: { analytics_click: 'Account Deleted' }, class: 'ShowMore background900' %>
+			<% end %>
+		</div>
+	</div>
+</div>

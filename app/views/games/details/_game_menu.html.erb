@@ -1,0 +1,30 @@
+<%= menu_element selected: (section == 0) do %>
+	<%= link_to t('.details'), game_path(@game.slug), data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' }, class: 'desktop_only'%>
+	<%= link_to game_path(@game.slug), data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' }, class: 'mobile_only' do %>
+		<%= image_tag "Images/icons/pages/game_page.png" %>
+	<% end %>
+<% end %>
+
+<!-- Comments -->
+<%= menu_element selected: (section == 1) do %>
+	<%= link_to game_comments_path(@game.slug), data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' }, class: 'desktop_only' do %>
+    <%= t('.comments') %>: <%= @game.comments_count %>
+  <% end %>
+<% end %>
+<!-- Updates -->
+<%= menu_element selected: (section == 2) do %>
+	<%= link_to game_news_path(@game.slug), data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' }, class: 'desktop_only' do %>
+    <%= t('.updates') %>: <%= @game.news_count %>
+  <% end %>
+<% end %>
+<!-- EXTRA OPTIONS -->
+<!-- Statistics -->
+<%= menu_element selected: (section == 3) do %>
+	<%= link_to t('.statistics'), stats_game_path(@game.slug), data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' }, class: 'desktop_only' %>
+<% end if policy(@game).stats? %>
+
+<!-- Edit -->
+<%= menu_element selected: (section == 4) do %>
+	<%= link_to t('.edit'), edit_game_path(@game.slug), class: 'desktop_only' %>
+	<%= image_tag "Images/icons/pages/edit.png", class: 'mobile_only' %>
+<% end if policy(@game).edit? %>

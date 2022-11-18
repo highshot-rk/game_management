@@ -1,0 +1,34 @@
+<% content_for(:structured_data) do %>
+	<%= render 'games_sections/news/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'games_sections/news/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+  <%= render 'menubar', menu: :news %>
+<% end %>
+<div data-pjax-container>
+  <%= page_title t("games_sections.filters.#{action_name}.#{@filter}") %>
+	<%= render 'home/navigation', section: :news, class: 'desktop_only' %>
+
+	<div id="ListRight">
+		<%= render 'genres/genres', section: @section %>
+		<!-- Last 6 Games Updated -->
+		<% if @last_6_updated && @last_6_updated.length > 0 %>
+			<div class="Write20 WidFlo"><%= t('games_sections.filters.news.last_updated') %></div>
+			<div class="circle_container">
+				<div class="circle_sub_container">
+					<% @last_6_updated.each do |game| %>
+						<%= link_to game_news_path(game.slug), class: 'circle' do %>
+							<%= image_tag game.image, alt: "#{game.title}" %>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		<div class="WidFlo">
+			<%= render 'filters', elements: [:popular, :latest] %>
+		</div>
+  <%= render 'games/games', games: @games, genres: true %>
+  </div>
+</div>

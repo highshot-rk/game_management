@@ -1,0 +1,28 @@
+<% content_for :menubar do %>
+	<li class="selected">
+		<div class="desktop_only"><%=t('.change_password')%></div>
+		<%= image_tag "Images/icons/pages/recover_password.png", class: 'mobile_only' %>
+	</li>
+<% end %>
+<%= render 'terms' %>
+<div id="ListRight" style="max-width: 750px;">
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+		<div class="WidFlo center background900 Write20"><%= devise_error_messages! %></div>
+		<%= f.hidden_field :reset_password_token %>
+
+		<div class="Window2">
+			<%= f.label :password, t('.new_password'), class: 'Write20 WidFlo' %>
+			<% if @minimum_password_length %>
+				<em>(<%= @minimum_password_length %> characters minimum)</em>
+			<% end %>
+			<%= f.password_field :password, autofocus: true, class: 'WidFlo', required: true, placeholder: true, autocomplete: "off" %>
+		</div>
+
+		<div class="Window2">
+			<%= f.label :password_confirmation, t('.confirm_new_password'), class: 'Write20 WidFlo' %>
+			<%= f.password_field :password_confirmation, class: 'WidFlo', required: true, placeholder: true, autocomplete: "off" %>
+		</div>
+
+		<%= f.submit t('.change_password'), class: 'Botton div100' %>
+	<% end %>
+</div>

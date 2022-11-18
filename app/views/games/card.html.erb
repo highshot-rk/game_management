@@ -1,0 +1,13 @@
+<%= link_to user_path(@user.username), class: 'Write20' do %>
+	<%= @user.username %>
+	<%= image_tag 'Images/icons/verified.png' if @user.verified? %>
+<% end %>
+<% if @user.online? %>
+	<font class="backgroundc60 Write20"><%= t('users.show.online') %></font>
+<% end %>
+<div class="WidFlo hoveron"><%= t('users.show.level') %>: <%= @user.level %> - <%= @user.user_title %></div>
+<div class="class="WidFlo blank25""></div>
+<div class="div45"><%= t('users.show.last_commented') %>: <%= @user.comments.count %></div>
+<div class="div45"><%= t('users.show.subscriptions') %>: <%= @user.followed_games.count %></div>
+<%= link_to t('users.show.games'), user_url(@user.username), class: 'Botton blank25 WidFlo' if @user.games.count > 0 %>
+<%= link_to t('users.show.show_more'), user_url(@user.username), class: 'ShowMore' %>

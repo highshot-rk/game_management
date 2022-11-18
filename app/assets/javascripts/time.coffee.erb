@@ -1,0 +1,24 @@
+$(document).on 'ready page:load', ()->
+  locale = window.location.pathname.split("/")[1]
+  if <%= I18n.available_locales.to_json %>.indexOf(locale) != -1
+    moment.locale(locale)
+  else
+    moment.locale('en')
+
+  updateAllRelativeDates = ()->
+    $('[data-time]').each (i, e)->
+      if $(e).attr("class") == 'cw-relative-date'
+        time = moment($(e).attr('timestamp'), 'YYYY/MM/DD hh:mm:ss Z').fromNow();
+        $(e).html('<span>' + time + '</span>');
+
+  # Update all dates initially
+  updateAllRelativeDates()
+
+  # Register the timer to call it again every minute
+  setInterval(updateAllRelativeDates, 1000)
+
+  $('[data-time-in-zone]').each (i, e)->
+    console.log($(e).text());
+    time = moment.utc($(e).text(), "YYYY-MM-DD HH:mm:ss").local().format('LLL')
+    $(e).text(time)
+

@@ -1,0 +1,11 @@
+<%# Rendered when a User creates a new News article through games#show %>
+$(".news-counter").html(<%== @news_count %>);
+$("#newsLatestContainer").html("<%== truncate(@news.text, length: 380, separator: ' ') %>");
+
+<%# Rendered when a User creates a new News artcile through news#show %>
+$(".no-records").remove();
+$("#newsContainer").prepend("<%== escape_javascript(render(partial: @news)) %>");
+
+<% if @news.errors.present? %>
+   $("#newsError").html(`<%== @news.errors.full_messages.to_sentence %>`)
+<% end %>

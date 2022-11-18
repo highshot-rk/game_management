@@ -1,0 +1,23 @@
+<% user = activity.parameters[:game_title] %>
+<% game = Game.find_by_title(activity.parameters[:game_title]) %>
+	<div id="notification_<%= activity.id %>" class="notification <%=  unread_class(activity)%>" data-id="<%= activity.id %>">
+		<div class="badge">
+			<%= image_tag "Images/icons/challenges.png", class: 'icon', alt: 'Points' %>
+		</div>
+		<div class="text-body-notifications">
+			<span><%= t('activity.user.game_dev_leader', game: activity.parameters[:game_title], user: activity.parameters[:leader]) %></span>
+			<div class="hoveron">
+				[<span data-time class="cw-relative-date" timestamp="<%= activity.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>]
+			</div>
+		</div>
+
+		<div class="links-notifications">
+			<% if game %>
+				<%= link_to game_url(game.slug) do %>
+					<%= image_tag 'Images/icons/view.png' %>
+				<% end %>
+			<% end %>
+		</div>
+
+		<hr>
+	</div>

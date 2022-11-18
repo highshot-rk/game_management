@@ -1,0 +1,41 @@
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
+
+nginx:
+  image: jwilder/nginx-proxy
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+  ports:
+    - "80:80"
+
+db:
+  image: postgres:9.4.1
+  ports:
+    - "5432:5432"
+  volumes:
+    - ./backups:/backups
+
+web:
+  build: .
+  command: ./web.sh
+  ports:
+    - "8082:8082"
+  links:
+    - db
+    - redis
+  volumes:
+    - .:/myapp
+  env_file:
+    - .env.test
+
+worker:
+  build: .
+  command: ./worker.sh
+  links:
+    - db
+    - redis
+  volumes:
+    - .:/myapp
+  env_file: .env.test

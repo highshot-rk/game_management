@@ -1,0 +1,24 @@
+<link rel="canonical" href="<%= about_url %>"/>
+
+<meta name="description" content="<%= t('.description') %>" />
+<meta name="keywords" content="<%=t('.about')%>, <%= t('application.meta_tags.keywords') %>" />
+
+<!-- META TAG OG - Facebook-->
+<meta property="fb:app_id" content="<%= Settings.social.facebook.app_id %>" />
+<meta property="fb:admins" content="<%= Settings.social.facebook.admins %>">
+<meta property="og:title" content="<%=t('.about')%>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= about_url %>"/>
+<meta property="og:image" content="<%= asset_path('Images/LogoMask.png') %>"/>
+<meta property="og:description" content="<%= t('.description') %>" />
+<meta property="og:site_name" content="www.indiexpo.net" />
+
+<!-- META TAG Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@indiexpo_net">
+<meta name="twitter:creator" content="@indiexpo_net">
+<meta name="twitter:url" content="<%= about_url %>">
+<meta name="twitter:title" content="<%=t('.about')%>">
+<meta name="twitter:description" content="<%= t('.description') %>">
+<meta name="twitter:image" content="<%= asset_path('Images/LogoMask.png') %>">
+<!-- End META -->

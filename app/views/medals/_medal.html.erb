@@ -1,0 +1,3 @@
+<% title = t("medals.medal.titles.#{medal.key}", score: medal.score) %>
+
+<%= image_tag "medals/#{medal.score}#{medal.key}.png", class: "icon", alt: title, title: title %>

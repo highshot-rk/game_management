@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+
+checksum=$(ruby -e "require 'digest'" -e "print Digest::MD5.hexdigest(File.read('Gemfile.lock'))")
+installed=$(cat .bundle_checksum 2>> /dev/null) || true
+if [[ ! -d '.bundle' ]]; then
+    mkdir '.bundle' >> /dev/null 2>&1
+fi
+
+# TODO: this may not be enough, for instance, if you switch to branch with a
+# different version of the same ruby gem. Better if you `bundle check` instead?
+if [[ "$checksum" != "$installed" ]]; then
+  bundle install --without development test --jobs 3
+  echo $checksum > .bundle_checksum
+fi
+
+rake assets:precompile

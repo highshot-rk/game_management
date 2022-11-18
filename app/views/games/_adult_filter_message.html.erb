@@ -1,0 +1,7 @@
+<div class="List" id="adult-message">
+	<div class="Write30 center">
+		<%= image_tag 'Images/Sprites/adult_content.png', class: 'div50' %><hr>
+		<%= t('layouts.game.adult_content_message_html') %><br><br>
+		<%= link_to t('layouts.game.yes'), game_path(id: @game.game.slug), id: "adult-confirm", remote: true %>/<%= link_to t('layouts.game.no'), root_path %>
+	</div>
+</div>

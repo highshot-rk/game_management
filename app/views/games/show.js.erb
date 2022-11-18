@@ -1,0 +1,5 @@
+$('#adult-message').remove()
+$('#game-container').append("<div class='AreaLeft'></div>")
+$('#game-container .AreaLeft').append("<%= escape_javascript render(template: 'games/show.html.erb') %>")
+$('#game-container').append("<%= escape_javascript render(partial: 'games/game_area_right') %>")
+$('.rateit').rateit()

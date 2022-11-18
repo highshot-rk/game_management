@@ -1,0 +1,81 @@
+<div>
+	<div class="Write20 WidFlo">
+		<%= t('.enhancements') %>
+		<span class="Write20_details">(BOT)</span>
+	</div>
+	<div class="N_Window">
+
+	<% if @game.description.size < 120 %>
+		<!-- Controllo Lunghezza descrizione -->
+		[TIPS-BETA] Short description! Improve it! Speak about the plot, the gameplay and the features.
+
+	<% elsif @game.downloads_count < 10 %>
+		<!-- Controllo Download -->
+		[TIPS-BETA] Your game have few download. Share it on your Social Network with your friends. You can use the buttons on the right to do it easily and fasty. The players usually, download games that already have several downloads
+			<br/><br/>
+		<%= link_to "Whatsapp", "whatsapp://send?text=#{game_url(@game.slug)}", data: { action: "share/whatsapp/share" }, class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game on Whatsapp"}, target: '_blank' %>
+		<%= link_to "Telegram", "https://t.me/share/url?url=#{game_url(@game.slug)}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game on Telegram"}, target: '_blank' %>
+		<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on Facebook"}, target: '_blank' %>
+		<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{game_url(@game.slug)}&title=Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game on Reddit"}, target: '_blank' %>
+		<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{game_url(@game.slug)}&text=%23indiegame%20Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game on Twitter"}, target: '_blank' %>
+		<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on tumblr"}, target: '_blank' %>
+		<%= link_to "VK", "http://vk.com/share.php?url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on VK"}, target: '_blank' %>
+
+	<% elsif @game.comments_count == 0 %>
+		[TIPS-BETA] No one commented your game. Contact your friends and invite them to comment your game. The players usually, download games with several comments
+			<br/><br/>
+		<%= link_to "Whatsapp", "whatsapp://send?text=#{game_url(@game.slug)}", data: { action: "share/whatsapp/share" }, class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game on Whatsapp"}, target: '_blank' %>
+		<%= link_to "Telegram", "https://t.me/share/url?url=#{game_url(@game.slug)}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game on Telegram"}, target: '_blank' %>
+		<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on Facebook"}, target: '_blank' %>
+		<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{game_url(@game.slug)}&title=Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game on Reddit"}, target: '_blank' %>
+		<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{game_url(@game.slug)}&text=%23indiegame%20Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game on Twitter"}, target: '_blank' %>
+		<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on tumblr"}, target: '_blank' %>
+		<%= link_to "VK", "http://vk.com/share.php?url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on VK"}, target: '_blank' %>
+
+	<% elsif @game.downloads_count.between?(95, 125) || @game.downloads_count.between?(210, 250) || @game.downloads_count.between?(450, 500) || @game.downloads_count.between?(700, 750) || @game.downloads_count.between?(940, 1000) %>
+		<!-- Share for Download -->
+		[TIPS-BETA] Your game is near to recive a new "Download Medal" ! Share it now on your Socials!
+		<div class="progress_bar">
+			<span style="width: 90%"></span>
+		</div>
+			<br/><br/>
+		<%= link_to "Whatsapp", "whatsapp://send?text=#{game_url(@game.slug)}", data: { action: "share/whatsapp/share" }, class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game on Whatsapp"}, target: '_blank' %>
+		<%= link_to "Telegram", "https://t.me/share/url?url=#{game_url(@game.slug)}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game on Telegram"}, target: '_blank' %>
+		<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on Facebook"}, target: '_blank' %>
+		<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{game_url(@game.slug)}&title=Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game on Reddit"}, target: '_blank' %>
+		<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{game_url(@game.slug)}&text=%23indiegame%20Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game on Twitter"}, target: '_blank' %>
+		<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on tumblr"}, target: '_blank' %>
+		<%= link_to "VK", "http://vk.com/share.php?url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game on VK"}, target: '_blank' %>
+
+	<% elsif @game.user.game_medals.count == 9 %>
+		[TIPS-BETA] 
+		Just another Badge and you will reach 10 Badges!
+		<div class="progress_bar">
+			<span style="width: 90%"></span>
+		</div>
+
+	<% elsif @game.videos.empty? %>
+		<!-- Check Video Area -->
+		[TIPS-BETA] Add a trailer or a gameplay about your game in Video Area.
+
+	<% elsif @game.user.game_medals.count == 0 %>
+		[TIPS-BETA] Work to obtain your first Medal!
+
+	<% elsif @game.user.games.count == 9 %>
+		[TIPS-BETA] 
+		If you will upload a new game... you will have 10 games on indiexpo! Expand your domain!
+		<div class="progress_bar">
+			<span style="width: 90%"></span>
+		</div>
+
+	<% elsif @stats.active_views < 8 %>
+		<!-- Controllo Active Views -->
+		[TIPS-BETA] <font class="textc60">The Active Views is low</font> (check out the Stats Area). It suggests how many users that visit your page, then download your game. To boost up it... add news!
+
+	<% elsif @stats.active_views >= 8 %>
+		[TIPS-BETA] Your game is going very good!
+
+	<% end %>
+		<div class="WidFlo hoveron"><%= t('.only_to_you') %></div>
+	</div>
+</div>

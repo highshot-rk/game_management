@@ -1,0 +1,8 @@
+[data-form-destroy-button] {
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+  [data-form-restore-message], [data-form-destroy-message] {
+    display: none;
+  }
+}

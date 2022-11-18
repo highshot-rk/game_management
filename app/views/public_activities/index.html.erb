@@ -1,0 +1,27 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.notifications') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+			<%= link_to '', edit_user_settings_url, class: 'settings-notifications-icon' %>
+			<!--
+			<%= link_to(notification_path(id: 'all'), remote: true, method: :delete, data: { confirm: t('.destroy_confirm') }) do %>
+				<div class="clear-notifications-icon"><%= t('.mark_all_as_read') %></div>
+			<% end %>
+			-->
+			<!-- <div class="Write20 WidFlo" style="margin-top: -10px; margin-bottom: 8px; opacity: 0.8;">Your Score today are: +20</div> -->
+		</div>
+		<div class="notifications_body">
+			<div class="notifications-list">
+				<%= render_activities @unread_activities %>
+				<%= render_activities @activities %>
+			</div>
+			<% if params[:id] != 'all' %>
+				<div class="ShowMore">
+					<%= image_tag "loader.gif", class: "loading-gif" %>
+					<%= link_to(t('.see_all'), notifications_load_more_path, remote: true, method: :get, class: 'see-all') %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

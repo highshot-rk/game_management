@@ -1,0 +1,6 @@
+<div class="<%= !@platform.try(:id) ? 'hoveroff' : 'hoveron' %>">
+  <div class="Write20">
+    <%= link_to t('.all'), send("#{action_name}_games_path", @params.except(:platform)) %>
+  </div>
+</div>
+<%= render Platform.all %>

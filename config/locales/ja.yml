@@ -1,0 +1,940 @@
+---
+ja:
+  active_admin:
+    dashboard: クリエイター ツール
+  activerecord:
+    attributes:
+      event:
+        description: 説明
+        end_date: End Date
+        prizes: 褒賞
+        rules: Rules
+        screen: Screen
+        start_date: Start Date
+        title: タイトル
+        website: ウェブサイト
+      game:
+        author: 開発元
+        description: 説明
+        genre: ジャンル
+        title: タイトル
+        website: ウェブサイト
+      user:
+        username_or_email: ユーザー名/電子メイル
+        password: パスワード
+        username: ユーザー名
+        characters_minimum: "%{minimum_password_length} 字以上"
+        email: 電子メイル
+        terms_of_service: 個人情報保護方針に同意してログイン
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: should be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: 24時間にアップロードできるゲームは2本までです
+        user:
+          attributes:
+            username:
+              invalid: には英数字のみを使用できます。(A-Z, 0-9)
+    models:
+      game_languages: 言語
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: "%{level}レベルに上がりました。"
+      score: あなたのスコアは%{score}点上昇しました。
+      new_title: 新しい称号
+      prizes: 褒賞
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: やったね！　%{user}は%{game}の新しいリーダーです！　王座をかけて戦え!
+      game_other_leader: "%{user}は%{game}の新しいリーダーです！　王座をかけて戦え!"
+      game_dev_leader: "%{user}は%{game}の新しいリーダーです！"
+  application:
+    cookie_law:
+      show_more: もっと見る
+      ok: Ok
+      setlanguage: 言語を選択
+    footer:
+      about: indiexpo について
+      contact_us: お問い合わせ
+      language: 言語 (Language)
+      faq: FAQ
+      feed_rss: RSSフィード
+      developers: 開発者向け
+      sitemap: サイトマップ
+      terms_and_conds: 利用規約
+      blog: ブログ
+    markdown_instructions:
+      formatting_help: フォーマットに関してのヘルプ
+      you_type: 入力したもの
+      you_see: 表示されるもの
+      italics: イタリック
+      bold: ボールド
+      hashtag: ハッシュタグ
+      profile: プロフィール
+      item_one: 項目 1
+      item_two: 項目 2
+      item_three: 項目 3
+      spoiler: ネタバレ
+    menubar:
+      home: ホーム
+      chart: ランキング表
+      downloaded: 最も多くダウンロードされた
+      events: イベント
+      language: 言語
+      news: ニュース
+    meta_tags:
+      description: Indexpoではインディーゲームやフリーゲームをたくさんの人にプレイ・共有してもらうための活動をしています。
+      keywords: indiexpo, indie games, ゲーム, ダウンロード, プレイ, アップロード, 利用者, 開発者向け, イベント, 挑戦, スコアを競うゲーム, ランキング表, 最も多くダウンロードされた, 人気, 新作, 急上昇ゲームクリエイター
+    navbar:
+      register: アカウント登録
+      login: ログイン
+      search: "検索... (ゲーム・#ハッシュタグ・@プロフィール)"
+      upload: アップロード
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: もっと見る
+    structured_data:
+      description: Indexpoではインディーゲームやフリーゲームをたくさんの人にプレイ・共有してもらうための活動をしています。
+      keywords: indiexpo, indie games, ゲーム, ダウンロード, プレイ, アップロード, 利用者, 開発者向け, イベント, 挑戦, スコアを競うゲーム, ランキング表, 最も多くダウンロードされた, 人気, 新作, 急上昇ゲームクリエイター
+      games: ゲーム
+    terms:
+      terms_and_conditions: 利用規約
+  comments:
+    answers:
+      more_comments: もっと読み込む
+    comment:
+      answer: 返信
+      answers:
+        few: "%{count} 件すべての返信を表示"
+        many: "%{count} 件すべての返信を表示"
+        one: 返信を表示
+        other: "%{count} 件すべての返信を表示"
+      destroy: 削除
+      destroy_confirm: お間違いないですか？
+      level: レベル
+      new: 新着
+      verified: 確認済み
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: 読み込み中...
+      publish: 公開
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: ログイン
+        recover_password: パスワードを変更
+        send_email_again: メールを再送信
+        details:
+          structured_data:
+            login: ログイン
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: ログイン
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: 電子メイル
+        send_email_again: メールを再送信
+        details:
+          structured_data:
+            send_email_again: メールを再送信
+            description: メールアドレスの確認
+          meta_tags:
+            send_email_again: メールを再送信
+            description: メールアドレスの確認
+    mailer:
+      confirmation_instructions:
+        welcome: indiexpoのご登録ありがとうございます。
+        title: 'Eメールアドレスを認証するために以下のリンクをクリックしてください。'
+        confirm_account: メールアドレスの確認
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: パスワードを変更
+        ignore_email: このメールに覚えがない場合は、破棄してください。
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: パスワード再設定の依頼を受けたため、メールを送信しています。下のリンクからパスワードの再設定ができます。
+      unlock_instructions:
+        unlock_account: アカウントのロック解除
+    passwords:
+      new:
+        recover_password: パスワードを変更
+        email: 電子メイル
+        send: 送信
+        details:
+          structured_data:
+            recover_password: パスワードを変更
+            description: indiexpoユーザ名と、パスワードをリセットするためのリンクを記載したEメールをお送りします。
+          meta_tags:
+            recover_password: パスワードを変更
+            description: indiexpoユーザ名と、パスワードをリセットするためのリンクを記載したEメールをお送りします。
+      edit:
+        change_password: パスワードを変更
+        new_password: 新しいパスワード
+        confirm_new_password: 確認用新しいパスワード
+    registrations:
+      new:
+        register: アカウント登録
+        details:
+          structured_data:
+            register: アカウント登録
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: アカウント登録
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: パスワードを変更
+        change_email: メールアドレスを変更
+        new_password: 新しいパスワード
+        confirm_new_password: 確認用新しいパスワード
+        current_password: 現在のパスワード
+        current_email: 現在のメールアドレス
+        new_email: 新しいメールアドレス
+        save: 変更を保存
+    shared:
+      menubar:
+        login: ログイン
+        recover_password: パスワードのリセット
+        register: アカウント登録
+        send_email_again: メールを再送信
+  download_links:
+    download_link:
+      download: ダウンロード
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: イベント & 挑戦
+          description: '同人ゲーム : イベント & 挑戦 ・近日予定 & 過去'
+        structured_data:
+          events: イベント & 挑戦
+          description: '同人ゲーム : イベント & 挑戦・近日予定 & 過去'
+    active_selector:
+      active: 近日予定
+      inactive: 過去
+    edit:
+      destroy: 削除
+      destroy_confirm: お間違いないですか？
+    end_after_start: should be after start date
+    event_types:
+      all: すべて
+      contest: Contest
+      mini_contest: Mini Contest
+      new: イベントを作成
+      other: その他
+    form:
+      language: 言語
+      publish: 公開
+      type: ジャンル
+    menubar:
+      details: 概要
+      edit: 編集
+    index:
+      events: イベント
+      challenges: 挑戦
+      champions: チャンピオンズ
+      points: Points
+      show_more: もっと見る
+    new:
+      event: Event
+    share:
+      share: 共有
+      email: 電子メイル
+      qrcode: QRコード
+    show:
+      description: 説明
+      ended: Inactive
+      ends: 次の日付以前
+      from: 次の日付以降
+      genre: ジャンル
+      language: 言語
+      prizes: 褒賞
+      rules: Rules
+      share: 共有
+      subscribers: チャンネル登録者
+      to: To
+      website: ウェブサイト
+  feeds:
+    index:
+      feed_rss: RSSフィード
+      events: '同人ゲーム : イベント'
+      latest: '同人ゲーム : 新作'
+      popular: '同人ゲーム : 人気'
+      last_updated: '同人ゲーム : 最近のアップデート'
+    details:
+      meta_tags:
+        feed_rss: RSSフィード
+        description: '同人ゲーム : RSSフィード - イベント - 新作 - 人気 - 最近のアップデート'
+      structured_data:
+        feed_rss: RSSフィード
+        description: '同人ゲーム : RSSフィード - イベント - 新作 - 人気 - 最近のアップデート'
+  layouts:
+    application:
+      indie_games: 同人ゲーム
+    game:
+      play: プレイ
+      download: ダウンロード
+      new: 新着
+      updates: アップデート
+      show_more: もっと見る
+      adult_content_message_html: このコンテンツは18歳以上しか閲覧できません。</br>あなたは18歳以上でアダルトコンテンツを見る意思がありますか？
+      yes: はい
+      no: いいえ
+  games:
+    game:
+      play: プレイ
+      download: ダウンロード
+      new: 新着
+      updates: アップデート
+      chart: ランキング表
+      verified: 確認済み
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: 利用者
+      game_menu:
+        comments: コメント数
+        details: 概要
+        updates: アップデート
+        edit: 編集
+        statistics: 統計
+      structured_data:
+       games: ゲーム
+       developer: 開発元
+      index:
+        videogame: コンピュータゲーム
+        published_by: '作成者 '
+        edit: 編集
+        statistics: 統計
+        players: 利用者
+        news: ニュース
+        no_news: No news
+        website: ウェブサイト
+        recommended: あなたへのおすすめ
+    edit:
+      edit: 編集
+      destroy: 削除
+      destroy_confirm: お間違いないですか？
+    embed_popup:
+      embed: 埋め込み
+      preview: Preview
+    record_chart:
+      chart: ランキング表
+      login: ログイン
+      score_system_games: スコアを競うゲーム
+    followers_list:
+      subscribers: チャンネル登録者
+      verified: 確認済み
+    players_list:
+      downloads_count: 利用者
+      last_week: 過去 7 日間
+      no_logged_user: ゲスト
+      no_result: 一致する検索結果はありませんでした
+      verified: 確認済み
+    form:
+      add_external_link: リンクを添付ファイルとして追加
+      add_file: 添付
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Long Description
+      artworks: Artworks
+      delete: 削除
+      downloads: Downloads
+      genre: ジャンル
+      language: 言語
+      publish: 公開
+      remove_file: 削除
+      remove_url: 削除
+      restore: Undo
+      screens: 作品
+      status: Status
+      complete: コンプリート
+      demo: デモ
+      minigame: ミニゲーム
+      tool: ゲームエンジン
+      hashtag: 2つ以上のハッシュタグを使用することを推奨します
+      adult_content: 要注意コンテンツ
+      mobile_first: スマホ対応
+      now_loading: 読み込み中...
+      video: 動画
+    monetisation:
+      monetisation: 収益受け取り
+      players: 利用者
+      level: レベル
+      subscribers: チャンネル登録者
+      comments: コメント数
+      offensive: 差別的または攻撃的な内容
+      sexual: 性的な内容
+      spam: スパムや誤解を招く説明
+      violent: 暴力的または不快な内容
+      description: 説明
+      send: 送信
+    new:
+      upload: アップロード
+    share:
+      share: 共有
+      email: 電子メイル
+      qrcode: QRコード
+    show:
+      play: プレイ
+      embed: 埋め込み
+      share: 共有
+      monetisation: 収益受け取り
+      download: ダウンロード
+      subscribe: フォローする
+      subscribed: 登録済み
+      subscribers: チャンネル登録者
+      comment: コメント数
+      description: 説明
+      published_on: に公開
+      adult_content: 要注意コンテンツ
+      complete: コンプリート
+      demo: デモ
+      minigame: ミニゲーム
+      language: 言語
+      first_to_comment: 公開コメントを追加...
+      mobile_first: スマホ対応
+      more_comments: もっと読み込む
+      screens: 作品
+      video: 動画
+      top_player: トッププレーヤー
+      epic_win: Epic Win!
+      on_the_rise: 急上昇ゲームクリエイター
+      verified: 確認済み
+    stats:
+      statistics: 統計
+      comments: コメント数
+      monetisation: 収益受け取り
+      daily: 今日
+      days: 日々
+      date: Date
+      downloads: 利用者
+      followings: チャンネル登録者
+      chart: ランキング表
+      most_rated: ベスト評価
+      followings_chart: Most Followed
+      most_downloaded: 最も多くダウンロードされた
+      last_week: 前週
+      this_week: 今週
+      last_6_months: 過去 180 日間
+      totals: Totals
+      visits: 視聴回数
+      active_views: Active Views
+      votes: Votes
+      votes_averange: 平均
+      other: その他
+      engagement: Engagement
+      show_more: もっと見る
+      qrcode: QRコード
+      warning: 警告
+    support:
+      prizes: 褒賞
+      donate: '寄付する %{price}$'
+    tips:
+      enhancements: 拡張
+      only_to_you: これらはあなただけに表示されています
+  games_sections:
+    chart:
+      last_6_months: 過去 180 日間
+      details:
+        meta_tags:
+          chart: ランキング表
+          description: '同人ゲーム : 最も多くダウンロードされた・ベスト評価・Most Followed'
+        structured_data:
+          chart: ランキング表
+          description: '同人ゲーム : 最も多くダウンロードされた・ベスト評価・Most Followed'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: 最も多くダウンロードされた
+          description: '同人ゲーム : 最も多くダウンロードされた・今日・過去 7 日間・過去 30 日間・全期間'
+        structured_data:
+          downloaded: 最も多くダウンロードされた
+          description: '同人ゲーム : 最も多くダウンロードされた・今日・過去 7 日間・過去 30 日間・全期間'
+    news:
+      details:
+        meta_tags:
+          news: ニュース
+          description: '同人ゲーム : ニュース・過去 30 日間'
+        structured_data:
+          news: ニュース
+          description: '同人ゲーム : ニュース・過去 30 日間'
+    filters:
+      chart:
+        most_downloaded: 最も多くダウンロードされた
+        voted: ベスト評価
+        followed: Most Followed
+      downloaded:
+        everytime: 全期間
+        last_month: 過去 30 日間
+        last_week: 過去 7 日間
+        today: 今日
+      news:
+        last_commented: コメント数
+        last_updated: 最近のアップデート
+        latest: 新作
+        popular: 人気
+  genres:
+    genre:
+      rpg: RPG/ロールプレイングゲーム
+      browsergame: Browser Game
+      platformaction: アクションゲーム
+      shootemup: Shoot em Up
+      puzzle: パズルゲーム
+      pointandclick: ポイント・アンド・クリック
+      sport: スポーツゲーム
+      fighting: 対戦型格闘ゲーム
+      other: Other
+    genres:
+      all: すべて
+    select:
+      genre: ジャンル
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: 権利の侵害
+        offensive: 差別的または攻撃的な内容
+        sexual: 性的な内容
+        spam: スパムや誤解を招く説明
+        violent: 暴力的または不快な内容
+  home:
+    navigation:
+      home: ホーム
+      news: ニュース
+      chart: ランキング表
+      events: イベント
+      downloaded: 最も多くダウンロードされた
+      console: ゲーム機
+      subscriptions: フォロー
+      your_games: あなたのゲーム
+      history: 履歴
+    landing:
+      last_followed_games_updated: 最近のハイライト
+      play: プレイ
+      recommended: あなたへのおすすめ
+      based_recent_activity: 最近の操作に基づくおすすめ
+      query_of_the_day_0: 最近1000人以上のプレイヤーが遊んだゲーム
+      query_of_the_day_1: コメントされていない高評価ゲーム
+      query_of_the_day_2: 記念日
+      query_of_the_day_3: Most Followed - 過去 180 日間
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: スコアを競うゲーム
+      query_of_the_day_6: アップデート
+      downloaded: 最も多くダウンロードされた
+      today: 今日
+      last_week: 過去 7 日間
+      last_month: 過去 30 日間
+      latest: 新作
+      show_more: もっと見る
+    console:
+      details:
+        structured_data:
+          console: ゲーム機
+          description: '同人ゲーム : プレイ'
+        meta_tags:
+          console: ゲーム機
+          description: '同人ゲーム : プレイ'
+    subscriptions:
+      subscriptions: フォロー
+      updates: アップデート
+      no_result: 一致する検索結果はありませんでした
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: 利用者
+      subscribers: チャンネル登録者
+      comments: コメント数
+      details: 概要
+      show_more: もっと見る
+    your_games:
+      your_games: あなたのゲーム
+      players: 利用者
+      subscribers: チャンネル登録者
+      comments: コメント数
+      details: 概要
+      show_more: もっと見る
+    history:
+      history: 履歴
+      score_system_games: スコアを競うゲーム
+      last_commented: コメント数
+      subscriptions: フォロー
+      votes: Votes
+  static:
+    about:
+      about: indiexpo について
+      app: アプリケーシ
+      extension: 拡張機能
+      social_networks: ソーシャルネットワーク
+      games: ゲーム
+      show_more: もっと見る
+      details:
+        structured_data:
+          about: indiexpo について
+          description: Indexpoではインディーゲームやフリーゲームをたくさんの人にプレイ・共有してもらうための活動をしています。
+        meta_tags:
+          about: indiexpo について
+          description: Indexpoではインディーゲームやフリーゲームをたくさんの人にプレイ・共有してもらうための活動をしています。
+    faq:
+      faq: FAQ
+      question_1: indiexpoって何？
+      answer_1: Indexpoではインディーゲームやフリーゲームをたくさんの人にプレイ・共有してもらうための活動をしています。さらにindexpoでは、クリエイターと広告主の規模の大小や国境に関わらずお互いの情報を共有したり、インスパイアを与えたりするための配信用プラットフォームを設営しています。
+      question_2: ポイントを貯めるには？
+      answer_2: indiexpoにはポイントとレベルというシステムがあります。行動によって得られるポイント数は異なります。 下記のポイント表は、それぞれの行動のポイント数をまとめたものです。
+      question_3: レベルを上げるためには？
+      answer_3: レベルとは自分(もしくは他の人)がどれだけアクティブだったかを記録する方法のひとつです。ポイントが貯れば貯まるほどレベルが高くなります。indiexpoは、あなたのレベルアップに特別な感謝の意を表します。
+      details:
+        structured_data:
+          faq: FAQ
+          description: FAQとは、よくある(あるいはあると想定される)質問とその回答とを集めたもののことである。
+        meta_tags:
+          faq: FAQ
+          description: FAQとは、よくある(あるいはあると想定される)質問とその回答とを集めたもののことである。
+    developers:
+      developers: 開発者向け
+      details:
+        structured_data:
+          developers: 開発者向け
+          description: Explore our Developer Products. 統計・アプリケーシ・拡張機能・チュートリアル
+        meta_tags:
+          developers: 開発者向け
+          description: Explore our Developer Products. 統計・アプリケーシ・拡張機能・チュートリアル
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: 言語を選択
+  medals:
+    medal:
+      titles:
+        age: "%{score} 年"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: レベル 2
+        level_4: レベル 4
+        level_6: レベル 6
+        level_10: レベル 10
+        level_16: レベル 16
+        level_26: レベル 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: テキストを入力
+      hashtag: 2つ以上のハッシュタグを使用することを推奨します
+      now_loading: 読み込み中...
+      publish: 公開
+    news:
+      destroy: 削除
+      destroy_confirm: お間違いないですか？
+    index:
+      players: 利用者
+      subscribers: チャンネル登録者
+      download: ダウンロード
+  options:
+    index:
+      dashboard: クリエイター ツール
+      profile: プロフィール
+      followed_games: フォロー
+      your_games: あなたのゲーム
+      settings: 設定
+      logout: ログアウト
+  platforms:
+    platforms:
+      all: すべて
+    select:
+      platform: オペレーティングシステム
+  public_activities:
+    index:
+      destroy_confirm: Destroy confirm
+      mark_all_as_read: すべて既読にする
+      notifications: お知らせ
+      see_all: もっと見る
+  public_activities_mailer:
+    notify:
+      hello: こんにちは、 %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: 解除
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Following removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: 確認済み
+  reports:
+    new:
+      details: '説明:'
+      question: 問題を選択してください。
+      send: 送信
+      title: '報告: %{game}'
+      report_submitted: フィードバックをお寄せいただきありがとうございました。
+      report_submitted_message: いただいたフィードバックは、システムによる問題検出の改善に役立てさせていただきます。
+  scores:
+    score:
+      points: Points
+      delete: 削除
+      destroy_confirm: お間違いないですか？
+      verified: 確認済み
+  search:
+    games:
+      filters: フィルタ
+      adult_content: 要注意コンテンツ
+      mobile_first: スマホ対応
+      no_result: 一致する検索結果はありませんでした
+      search: 検索
+      search_placeholder: 検索...
+      search_tools: ツール
+      language: 言語
+      genre: ジャンル
+      platform: オペレーティングシステム
+      recommended: あなたへのおすすめ
+      tool: ゲームエンジン
+      status: Status
+      games: ゲーム
+      score_system_games: スコアを競うゲーム
+      year: 年
+    details:
+      meta_tags:
+        search: 検索
+        description: "検索... (ゲーム・#ハッシュタグ・@プロフィール・ツール・言語・ジャンル・年・オペレーティングシステム・ゲームエンジン・Status)"
+      structured_data:
+        search: 検索
+        description: "検索... (ゲーム・#ハッシュタグ・@プロフィール・ツール・言語・ジャンル・年・オペレーティングシステム・ゲームエンジン・Status)"
+  settings:
+    edit:
+      settings: 設定
+    form:
+      language: 言語 (Language)
+      setlanguage: 言語を選択
+      sounds: 通知音
+      sounds_description: 新しいお知らせが届いたときにサウンドを鳴らす
+      adult_content: 要注意コンテンツ
+      label_on: 'オン'
+      label_off: 'オフ'
+      email_notifications: メール通知
+      general: 一般
+      mail_comment_answer: 誰かがあなたのコメントに返信しました
+      mail_comment_mention: 誰かがあなたにメンションしました
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: フォロー
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: あなたはゲームで最上位のプレイヤーです
+      mail_user_game_old_leader: 最早あなたはゲームで最上位のプレイヤーではありません
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: あなたのゲーム
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I'm followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a medal
+      mail_user_game_dev_leader: New Leader on your game
+      account_data: アカウントデータ
+      email: 電子メイル
+      password: パスワード
+      edit: 編集
+      stats: 統計
+      comments: コメント数
+      subscriptions: フォロー
+      show_more: もっと見る
+      save: 変更を保存
+      delete_account: アカウントを完全に削除
+  sitemaps:
+    index:
+      active_events: 近日予定
+      inactive_events: 過去
+      new_events: イベントを作成
+      recover: パスワードのリセット
+      sign_in: ログイン
+      sign_up: アカウント登録
+      sitemap: サイトマップ
+    details:
+      meta_tags:
+        sitemap: サイトマップ
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: サイトマップ
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: フォローする
+    unsubscribe_button:
+      unsubscribe: 解除
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: ゲームエンジン
+  users:
+    show:
+      page_title: "%{username} はindiexpoを利用しています"
+      online: オンライン
+      chart: ランク
+      last_month: 過去 30 日間
+      level: レベル
+      games: ゲーム
+      score_system_games: スコアを競うゲーム
+      show_more: もっと見る
+      subscriptions: フォロー
+      last_commented: コメント数
+      history: 履歴
+      other_players: 他のプレイヤー
+      verified: 確認済み
+    details:
+      structured_data:
+        developer: 開発元
+        gamer: ゲーマー
+      meta_tags:
+        about: について
+        description: プロフィール・トロフィーケース・ゲーム・スコアを競うゲーム・フォロー・コメント数・履歴
+  me:
+    menubar:
+      profile: プロフィール
+      event_subscriptions: マイイベント
+      followed_games: フォロー
+      your_games: あなたのゲーム
+      settings: 設定
+    followed_games:
+      no_result: 一致する検索結果はありませんでした
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: あなたのゲーム
+      visits: 視聴回数
+      downloads_count: 利用者
+      subscribers: チャンネル登録者
+      totals: Totals
+      no_result: 一致する検索結果はありませんでした
+      upload: アップロード
+  levels:
+    index:
+      level: レベル
+      user_chart: ランク
+      last_month: 過去 30 日間
+      gems: 宝石
+      trophy_case: トロフィーケース
+      title_1: 入門者
+      title_2: 初心者
+      title_3: 熱狂者
+      title_4: 実習生
+      title_5: 新人
+      title_6: 上級生
+      title_7: タレント
+      title_8: 熟練者
+      title_9: 戦士
+      title_10: スペシャリスト
+      title_11: 専門家
+      title_12: ベテラン
+      title_13: プロ
+      title_14: エリート
+      title_15: 天才
+      title_16: マスター
+      title_17: スーパースター
+      title_18: ドラゴン
+      title_19: チャンピオン
+      title_20: レジェンド
+      title_21: グランドマスター
+      verified: 確認済み
+    goals:
+      goals: 目標
+    stats:
+      stats: 統計
+      comments: コメント数
+      subscriptions: フォロー
+      your_games: あなたのゲーム
+      votes: Votes
+  warning:
+    index:
+      warning: 警告
+      destroy: 削除
+      destroy_confirm: お間違いないですか？
+      delete_account: アカウントを完全に削除
+      delete_account_description: indiexpoアカウントを削除すると、indiexpoでシェアしたコンテンツや情報を取得できなくなります。

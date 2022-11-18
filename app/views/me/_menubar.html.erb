@@ -1,0 +1,15 @@
+<%
+{
+  profile: { url: user_url(current_user.username), t: t('.profile') },
+  followed_games: { url: user_followed_games_url, t: t('.followed_games') },
+  your_games: { url: user_games_url, t: t('.your_games') },
+  settings: { url: edit_user_settings_url, t: t('.settings') }
+}.each do |name, data|
+%>
+<li class="<%= menu == name && 'selected' %>">
+	<%= link_to data[:t], data[:url], data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' }, class: 'desktop_only' %>
+	<%= link_to data[:url], class: 'mobile_only' do %>
+		<%= image_tag "Images/icons/pages/#{name}.png" %>
+	<% end %>
+</li>
+<% end %>

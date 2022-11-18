@@ -1,0 +1,96 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;">How to add the Leaderboard</div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<a href="#id_RpgMaker" class="BottonBorder">RpgMaker</a>
+			<a href="#id_Construct" class="BottonBorder">Construct</a>
+			<a href="#id_Unity" class="BottonBorder">Unity</a>
+			<a href="#id_Javascript" class="BottonBorder">Javascript</a>
+			<a href="#id_Web" class="BottonBorder">Html5/WebGL/Flash Version</a>
+			<a href="#id_Desktop" class="BottonBorder">Desktop</a>
+			<hr>
+			<div id="id_Desktop" class="Write20">Desktop Version</div>
+			<div class="WidFlo" style="padding: 2%">
+				Here's your code: <%= @game.token %>
+			</div>
+			<hr>
+
+			<div id="id_Web" class="Write20">Html5/WebGL/Flash Version</div>
+			<div class="WidFlo" style="padding: 2%">
+				To send the final score use
+				<font class="textc60 subWindow">IndiexpoAPI.sendScore(X).done(function(result) {});</font>
+				<br>Where <font class="textc60">X</font> is the final score that you're sending.
+				<br>To check if the users is logged, you can use an <u>if condition</u> with
+				<font class="textc60 subWindow">window.IndiexpoAPI</font>
+				<br>or
+				<font class="textc60 subWindow">IndiexpoAPI</font>
+			</div>
+			<hr>
+
+			<div id="id_Javascript" class="Write20">Javascript</div>
+			<div class="WidFlo" style="padding: 2%">
+				<font class="textc60 subWindow">
+					var score = 1000;
+					<br><br>if(window.IndiexpoAPI){
+					<br>&nbsp;&nbsp;IndiexpoAPI.sendScore(score).done(function(result) {});
+					<br>&nbsp;&nbsp;console.log("Success");
+					<br>}else{
+					<br>&nbsp;&nbsp;console.log("Error");
+					<br>}
+				</font>
+			<br><br>Where <font class="textc60">var score</font> is the name of the variable used to save the score of the player.
+			</div>
+			<hr>
+
+			<div id="id_Unity" class="Write20">Unity</div>
+			<div class="WidFlo" style="padding: 2%">
+				With this plugin <a class="textc60" href="https://github.com/indiexpo/UnityPlugin" target="_blank">(DOWNLOAD)</a> you'll be able to send user's score to the Indiexpo's server, it work only for WebGl builds.
+				<br><br>To install this plugin simply import <font class="textc60">IndiexpoAPI_WebGL.unitypackage</font> in Unity or run <font class="textc60">IndiexpoAPI_WebGL.unitypackage</font> and follow the instructions;
+				<br><br>After the installation make sure that the file <font class="textc60">IndiexpoAPI_Plugin.jslib</font> is correctly placed in: <font class="textc60">your_project_folder\Assets\Plugins</font>
+				<br><br>To send score you only need to use this code: 
+				<font class="textc60 subWindow">IndiexpoAPI_WebGL.SendScore(100); </font>
+				<br>Where <font class="textc60">100</font> is the score of the player.
+			</div>
+			<hr>
+
+			<div id="id_Construct" class="Write20">Using Construct 2/3 (for Html5 Games)</div>
+			<div class="WidFlo" style="padding: 2%">
+				Add action... -> Browser -> Execute Javascript -> <font class="textc60 subWindow">"IndiexpoAPI.sendScore(" & ScoreGlobalVariable &").done(function(result) {});"</font>
+				<br><br>Where <font class="textc60">ScoreGlobalVariable</font> is the name of the global variable in Construct 2 used to save the score of the player.
+			</div>
+			<%= image_tag "Images/API_score_system/API_construct.png", class: 'grid', style: 'margin: 2%' %>
+			<div class="WidFlo" style="padding: 2%">
+				P.S. If you are using <font class="textc60">Construct 3</font>, remember to disable the <font class="textc60">"worker"</font>.
+				<br>How to do?
+				<font class="subWindow">Properties >> Project Properties >> Advanced >> Use worker >> <b>No</b></font>
+			</div>
+			<div class="WidFlo" style="padding: 2%">
+				<br><br><b>Extra</b>
+				<br>Do you want to know the Gamer's Name?
+				<br>Create a Global Variable "Indiexpo_Username"
+				<br>Add action... -> Browser -> Execute Javascript -> <font class="textc60 subWindow">"IndiexpoAPI.getUser().done((data) => {window.IEusername = data.username})"</font>
+				<br>then Add action... -> System -> Set Value -> As Variable select Indiexpo_Username and as Value add <font class="textc60 subWindow">browser.execJS("window.IEusername")</font>
+				<br>and at the end you can add a Wait 1.0 second.
+				<br>In this way now, the variable Indiexpo_Username is the Gamer's Name! Try it! It's easy!
+			</div>
+			<%= image_tag "Images/API_score_system/API_construct_username.png", class: 'grid', style: 'margin: 2%' %>
+			<hr>
+
+			<div id="id_RpgMaker" class="Write20">Using RpgMaker MV (for Html5 Games)</div>
+			<div class="WidFlo" style="padding: 2%">
+				Create Event -> Conditional Branch -> Script -> <font class="textc60">window.IndiexpoAPI</font> -> Check the box "Set handing when conditions do not apply"
+				<br><br>In the Conditional Branch insert... -> Script (page 3) -> <font class="textc60 subWindow">IndiexpoAPI.sendScore($gameVariables.value(01)).done(function(result) {});</font>
+				<br><br>Where <font class="textc60">$gameVariables.value(01)</font> is the number of the variable that you're using to save the score of the player.
+				<br><br>In the Else insert... -> Show Text -> "Log in to indiexpo to send your score"
+				<br><br><b>Extra</b>
+				<br>Do you want to know the Gamer's Name?
+				<br>In the Event you can add a new Script (as previously) where to add <font class="textc60 subWindow">IndiexpoAPI.getUser().done(function(data) {$gameVariables.setValue(2, data.username);});</font>
+				<br>In this way now, the variable 02 is the Gamer's Name! Try it! It's easy!
+			</div>
+			<hr>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,126 @@
+<div class="Write20"><%= t('.goals') %></div>
+<div class="WidFlo">
+				<!-- User Badges -->
+	<% if current_user.comments.count < 25 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_comments.png', alt: 'Badge Comments', class: 'icon' %>
+						</div>
+						<div class="center">
+				Commentator
+				<span class="WidFlo hoveron">Leave 25 or more Comments</span>
+						</div>
+					</div>
+				<% end %>
+
+				<% if current_user.followed_games.count < 25 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_follow.png', alt: 'Badge Follow', class: 'icon' %>
+						</div>
+					<div class="center">
+				The Watcher
+				<span class="WidFlo hoveron">You follow 25 Games or more</span>
+						</div>
+					</div>
+				<% end %>
+
+				<% if current_user.rated_games.count < 50 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_rates.png', alt: 'Badge Votes', class: 'icon' %>
+						</div>
+						<div class="center">
+				Civic Duty
+				<span class="WidFlo hoveron">Vote 50 or more times</span>
+						</div>
+					</div>
+				<% end %>
+
+				<% if current_user.downloaded_games.count < 100 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_downloads.png', alt: 'Badge Downloads', class: 'icon' %>
+						</div>
+						<div class="center">
+				The Collector
+				<span class="WidFlo hoveron">You Have and You Know. Downloaded over 100 Games</span>
+						</div>
+					</div>
+				<% end %>
+
+				<% if current_user.event_subscriptions.count < 10 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_event.png', alt: 'Badge Events', class: 'icon' %>
+						</div>
+						<div class="center">
+				I Am Here
+				<span class="WidFlo hoveron">You joined 10 Events or more</span>
+						</div>
+					</div>
+				<% end %>
+
+	<% if current_user.comments.count < 50 || current_user.followed_games.count < 50 || current_user.rated_games.count < 100 || current_user.downloaded_games.count < 250 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_through_life.png', alt: 'Badge Through Life', class: 'icon' %>
+						</div>
+						<div class="center">
+				????????
+				<span class="WidFlo hoveron">??? ???? ??? ???????? ???? ? ????</span>
+						</div>
+					</div>
+				<% end %>
+
+				<!-- Developer Badges -->
+				<% if current_user.games.count > 0 %>
+
+				<% if current_user.game_medals.count < 1 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_first_medal.png', alt: 'First Medal', class: 'icon' %>
+						</div>
+						<div class="center">
+					First Medal!
+					<span class="WidFlo hoveron">You obtained the first medal!</span>
+						</div>
+					</div>
+				<% elsif current_user.game_medals.count < 10 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_medals.png', alt: 'Badge of the Badges', class: 'icon' %>
+						</div>
+						<div class="center">
+					Hero Developer
+					<span class="WidFlo hoveron">You have 10 Medals or more</span>
+						</div>
+					</div>
+				<% end %>
+
+				<% if current_user.games.count < 10 %>
+					<div class="div33 div100">
+						<div class="center">
+							<%= image_tag 'medals/User/Badge_blacksmith.png', alt: 'BlackSmith', class: 'icon' %>
+						</div>
+						<div class="center">
+					BlackSmith
+					<span class="WidFlo hoveron">You made 10 Games or more!</span>
+						</div>
+					</div>
+				<% end %>
+
+					<% if current_user.downloads.count < 1000 %>
+						<div class="div33 div100">
+							<div class="center">
+								<%= image_tag 'medals/User/Badge_1000D.png', alt: 'Badge of 1000 Downloads', class: 'icon' %>
+							</div>
+							<div class="center">
+					1000 Download
+					<span class="WidFlo hoveron">Over 1000 Downloads or more</span>
+							</div>
+						</div>
+					<% end %>
+					<!-- End Developer Badges -->
+				<% end %>
+</div>

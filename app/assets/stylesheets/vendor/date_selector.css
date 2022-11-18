@@ -1,0 +1,14 @@
+/* Events Date Table */
+
+#ui-datepicker-div {
+  background-color: #0c1925;
+}
+.ui-datepicker table {
+  color: #ccc;
+}
+.ui-datepicker .ui-datepicker-title {
+  color: black;
+}
+.ui-widget-content {
+  background: #0c1925;
+}

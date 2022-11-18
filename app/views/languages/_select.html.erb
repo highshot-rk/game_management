@@ -1,0 +1,1 @@
+<%= form.collection_select local_assigns[:name] || :language, Language.all, :id, :name, include_blank: 'language', selected: search_params[:language] %>

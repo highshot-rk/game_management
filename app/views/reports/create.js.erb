@@ -1,0 +1,4 @@
+$('body').removeClass('progress')
+$('#reports_popup form').replaceWith(
+	$('<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div><div class="Write20 center"><%= t('reports.new.report_submitted') %></div><div class="hoveron center"><%= t('reports.new.report_submitted_message') %></div>')
+)

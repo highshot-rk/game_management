@@ -1,0 +1,940 @@
+---
+zh:
+  active_admin:
+    dashboard: 控制面板
+  activerecord:
+    attributes:
+      event:
+        description: 说明
+        end_date: 结束日期
+        prizes: 奖励
+        rules: 规则
+        screen: 图片
+        start_date: 开始日期
+        title: 标题
+        website: 网站
+      game:
+        author: 开发者
+        description: 说明
+        genre: 类别
+        title: 标题
+        website: 网站
+      user:
+        username_or_email: 用户名/电子邮件
+        password: 密码
+        username: 用户名
+        characters_minimum: "最小密码长度为 %{minimum_password_length}"
+        email: 电子邮件
+        terms_of_service: 我同意该服务协议
+    errors:
+      messages:
+        exclude_domain: '"不能包括 %{value}"'
+        include_domain: 必须包含 %{list}
+        invalid_datetime: 日期格式不正确
+        url: 不正确的 url 格式
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: 尝试次数多过。请在%{cooloff}分钟后重试
+        news:
+          attributes:
+            base:
+              check_spam: 尝试次数多过。请在%{cooloff}分钟后重试
+        game:
+          attributes:
+            artworks:
+              too_long: 最长不超过 %{count}
+            download_links:
+              links_repetition: 不能使用复制
+              too_long: 最长不超过 %{count}
+              too_short: 至少为一
+            game_languages:
+              too_short: 至少为一
+            screens:
+              too_long: 最长不超过 %{count}
+            videos:
+              too_long: 至多为一
+            base:
+              limit_games_uploaded: 您在24小时内最多只能上传2部游戏
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: 语言
+  activity:
+    comment:
+      answer: '回复了你的评论 '
+      create: '增加一条评论 '
+      follower_create: '增加一条评论 '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: '已被订阅 '
+    following:
+      create: '开始关注 '
+    game:
+      create: 添加新游戏！
+      destroy: '删除他的游戏 '
+      update: 更新他的游戏
+    medal:
+      create: " 收到奖章 "
+    news:
+      create: '增加一条消息 '
+    rating:
+      create: '投票 '
+    user:
+      level: 你的等级已升至 %{level}
+      score: 你的积分已增加 %{score}
+      new_title: New Title
+      prizes: 奖励
+      game_new_leader: 你是 %{game} 的最佳玩家！
+      game_old_leader: 你被超越了！ %{user} 是 %{game} 的新领导者！ 争夺王位！
+      game_other_leader: "%{user} 是 %{game} 的新领导者！ 争夺王位！"
+      game_dev_leader: "%{user} 是 %{game} 的新领导者！"
+  application:
+    cookie_law:
+      show_more: 加载更多
+      ok: Ok
+      setlanguage: 选择您的语言
+    footer:
+      about: 关于
+      contact_us: 联系我们
+      language: 语言 Language
+      faq: 常见问题解答
+      feed_rss: RSS 訂閱
+      developers: 开发者
+      sitemap: 网站导航
+      terms_and_conds: 条款
+      blog: 網誌
+    markdown_instructions:
+      formatting_help: 格式帮助
+      you_type: 你输入的
+      you_see: 你看见的
+      italics: 斜体
+      bold: 粗体
+      hashtag: 主題標籤
+      profile: 个人资料
+      item_one: 項目 1
+      item_two: 項目 2
+      item_three: 項目 3
+      spoiler: 劇透
+    menubar:
+      home: 首页
+      chart: 图表
+      downloaded: 最多下载
+      events: 事件
+      language: 语言
+      news: 消息
+    meta_tags:
+      description: Indiexpo 让成千上万的人在此探索、观看、分享独立游戏以及原创游戏
+      keywords: indiexpo, indie games, 游戏, 下载, 玩, 上传, 玩家, 开发者, 事件, 挑战, 排行榜游戏, 图表, 最多下载, 最热, 最新, 游戏创作者新星
+    navbar:
+      register: 注册
+      login: 登录
+      search: "搜索... (游戏, #主題標籤, @个人资料)"
+      upload: 上传
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: 加载更多
+    structured_data:
+      description: Indiexpo 让成千上万的人在此探索、观看、分享独立游戏以及原创游戏
+      keywords: indiexpo, indie games, 游戏, 下载, 玩, 上传, 玩家, 开发者, 事件, 挑战, 排行榜游戏, 图表, 最多下载, 最热, 最新, 游戏创作者新星
+      games: 游戏
+    terms:
+      terms_and_conditions: 条款
+  comments:
+    answers:
+      more_comments: 加载更多
+    comment:
+      answer: 回复
+      answers:
+        few: 查看所有 %{count} 条回复
+        many: 查看所有 %{count} 条回复
+        one: View the reply
+        other: 查看所有 %{count} 条回复
+      destroy: 删除
+      destroy_confirm: 你确定吗？
+      level: 等级
+      new: 新
+      verified: 已验证
+    destroy:
+      destroy_failure: 无法删除这条评论
+    form:
+      text: 这里有十分丰富的内容，许多人在此有精彩的创作。也让大家见识见识你的！
+      now_loading: 正在加载中…
+      publish: 发布
+  cookie_law: Cookies有助于实现我们的服务。使用我们的服务代表您接收我们的cookies
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: 登录
+        recover_password: 重设密码
+        send_email_again: 再次傳送電子郵件
+        details:
+          structured_data:
+            login: 登录
+            description: 这里有十分丰富的内容，许多人在此有精彩的创作。也让大家见识见识你的！
+          meta_tags:
+            login: 登录
+            description: 这里有十分丰富的内容，许多人在此有精彩的创作。也让大家见识见识你的！
+    confirmations:
+      new:
+        email: 电子邮件
+        send_email_again: 重新发送验证码
+        details:
+          structured_data:
+            send_email_again: 重新发送验证码
+            description: 验证您的邮箱地址
+          meta_tags:
+            send_email_again: 重新发送验证码
+            description: 验证您的邮箱地址
+    mailer:
+      confirmation_instructions:
+        welcome: 加入我们，玩的开心
+        title: '打开以下链接以验证您的邮箱'
+        confirm_account: 验证您的邮箱地址
+        text_1: 当您加入了indiexpo，您可获得非凡的体验
+        text_2: 这里有十分丰富的内容，许多人在此有精彩的创作。也让大家见识见识你的！
+      reset_password_instructions:
+        change_password: 修改密码
+        ignore_email: 如果这并非您的请求，请忽略本邮件
+        reset_info: 若要修改密码，您可以通过上面这条链接设置一个新密码
+        title: 您可通过下面这条链接修改您的密码
+      unlock_instructions:
+        unlock_account: 解锁账号
+    passwords:
+      new:
+        recover_password: 重设密码
+        email: 电子邮件
+        send: 提交
+        details:
+          structured_data:
+            recover_password: 重设密码
+            description: 請輸入您現可立即查看的電郵地址
+          meta_tags:
+            recover_password: 重设密码
+            description: 請輸入您現可立即查看的電郵地址
+      edit:
+        change_password: 修改密码
+        new_password: 新密碼
+        confirm_new_password: 再次輸入新密碼
+    registrations:
+      new:
+        register: 注册
+        details:
+          structured_data:
+            register: 注册
+            description: 当您加入了indiexpo，您可获得非凡的体验
+          meta_tags:
+            register: 注册
+            description: 当您加入了indiexpo，您可获得非凡的体验
+      edit:
+        change_password: 修改密码
+        change_email: 更改电子邮件
+        new_password: 新密碼
+        confirm_new_password: 再次輸入新密碼
+        current_password: 当前密码
+        current_email: 当前邮箱
+        new_email: 新邮箱
+        save: 保存更改
+    shared:
+      menubar:
+        login: 登录
+        recover_password: 重设密码
+        register: 注册
+        send_email_again: 再次傳送電子郵件
+  download_links:
+    download_link:
+      download: 下载
+  errors:
+    messages:
+      not_saved: 保存失败
+  events:
+    events:
+      details:
+        meta_tags:
+          events: 活动 & 挑战
+          description: '独立游戏 : 活动 & 挑战 - 即将到来 & 过往'
+        structured_data:
+          events: 活动 & 挑战
+          description: '独立游戏 : 活动 & 挑战 - 即将到来 & 过往'
+    active_selector:
+      active: 即将到来
+      inactive: 过往
+    edit:
+      destroy: 删除
+      destroy_confirm: 你确定吗？
+    end_after_start: 应该晚于开始日期
+    event_types:
+      all: 全部
+      contest: 竞赛
+      mini_contest: 迷你竞赛
+      new: 创建事件
+      other: 展开
+    form:
+      language: 语言
+      publish: 发布
+      type: 类别
+    menubar:
+      details: 概览
+      edit: 编辑
+    index:
+      events: 活动
+      challenges: 挑战
+      champions: 冠军们
+      points: 比分
+      show_more: 展开
+    new:
+      event: 事件
+    share:
+      share: 分享
+      email: 电子邮件
+      qrcode: QR碼
+    show:
+      description: 说明
+      ended: 过往
+      ends: 截止日期
+      from: 从
+      genre: 类别
+      language: 语言
+      prizes: 奖励
+      rules: 规则
+      share: 分享
+      subscribers: 位订阅者
+      to: 到
+      website: 网站
+  feeds:
+    index:
+      feed_rss: RSS 訂閱
+      events: '独立游戏 : 活动'
+      latest: '独立游戏 : 最新'
+      popular: '独立游戏 : 最热'
+      last_updated: '独立游戏 : 最近更新'
+    details:
+      meta_tags:
+        feed_rss: RSS 訂閱
+        description: '独立游戏 : RSS 訂閱 - 活动 - 最新 - 最热 - 最近更新'
+      structured_data:
+        feed_rss: RSS 訂閱
+        description: '独立游戏 : RSS 訂閱 - 活动 - 最新 - 最热 - 最近更新'
+  layouts:
+    application:
+      indie_games: 独立游戏
+    game:
+      play: 玩
+      download: 下载
+      new: 新
+      updates: 更新
+      show_more: 展开
+      adult_content_message_html: 您必须年满 18 岁才能观看此内容 。</br>您是否已年满 18 岁并愿意免费观看成人内容？
+      yes: 是
+      no: 没有
+  games:
+    game:
+      play: 玩
+      download: 下载
+      new: 新
+      updates: 更新
+      chart: 图表
+      verified: 已验证
+    destroy:
+      destroyed: 删除
+    details:
+      game_header:
+        downloads_count: 玩家
+      game_menu:
+        comments: 评论
+        details: 概览
+        updates: 更新
+        edit: 编辑
+        statistics: 统计
+      structured_data:
+       games: 游戏
+       developer: 开发者
+      index:
+        videogame: 电子游戏
+        published_by: '发布者 '
+        edit: 编辑
+        statistics: 统计
+        players: 玩家
+        news: 消息
+        no_news: 没有消息
+        website: 网站
+        recommended: 推荐视频
+    edit:
+      edit: 编辑
+      destroy: 删除
+      destroy_confirm: 你确定吗？
+    embed_popup:
+      embed: 嵌入
+      preview: 预习
+    record_chart:
+      chart: 图表
+      login: 登录
+      score_system_games: 排行榜游戏
+    followers_list:
+      subscribers: 位订阅者
+      verified: 已验证
+    players_list:
+      downloads_count: 玩家
+      last_week: 最近7天
+      no_logged_user: Guest
+      no_result: 无结果
+      verified: 已验证
+    form:
+      add_external_link: 新增外部链接
+      add_file: 增加文件
+      html5_description: '对于 HTML5/Flash/WebGL Games: 上传包含您游戏的ZIP文件。 ZIP中必须有一个index.html文件。'
+      extra: Extra
+      enablable_indiepad: 启动 indiepad 支持 (限 HTML5/WebGL 游戏)
+      indiepad_description: 在智能手机上下载该应用程序并将其用作游戏手柄，并在indiexpo上玩几款游戏。仅适用于Android。
+      long_description: 详细描述
+      artworks: 艺术品
+      delete: 删除
+      downloads: 下载
+      genre: 类别
+      language: 语言
+      publish: 发布
+      remove_file: 删除
+      remove_url: 删除
+      restore: 撤销
+      screens: 图片
+      status: 状态
+      complete: 完整版
+      demo: 试玩版
+      minigame: 小游戏
+      tool: 工具
+      hashtag: 我们建议您使用不超过两个标签
+      adult_content: 浏览器游戏
+      mobile_first: Mobile Friendly
+      now_loading: 正在加载中…
+      video: 个视频
+    monetisation:
+      monetisation: 获利
+      players: 玩家
+      level: 等级
+      subscribers: 位订阅者
+      comments: 评论
+      offensive: 仇恨或侮辱他人的内容
+      sexual: 色情内容
+      spam: 垃圾内容或误导性内容
+      violent: 暴力或令人反感的内容
+      description: 说明
+      send: 提交
+    new:
+      upload: 上传
+    share:
+      share: 分享
+      email: 电子邮件
+      qrcode: QR碼
+    show:
+      play: 玩
+      embed: 嵌入
+      share: 分享
+      monetisation: 获利
+      download: 下载
+      subscribe: 订阅
+      subscribed: 已订阅
+      subscribers: 位订阅者
+      comment: 评论
+      description: 说明
+      published_on: 日发布
+      adult_content: 浏览器游戏
+      complete: 完整版
+      demo: 试玩版
+      minigame: 小游戏
+      language: 语言
+      first_to_comment: 发表公开评论...
+      mobile_first: Mobile Friendly
+      more_comments: 加载更多
+      screens: 图片
+      video: 个视频
+      top_player: 顶级玩家
+      epic_win: Epic Win!
+      on_the_rise: 游戏创作者新星
+      verified: 已验证
+    stats:
+      statistics: 统计
+      comments: 评论
+      monetisation: 获利
+      daily: 今天
+      days: 天
+      date: 日期
+      downloads: 玩家
+      followings: 位订阅者
+      chart: 图表
+      most_rated: 最多投票
+      followings_chart: 最多关注
+      most_downloaded: 最多下载
+      last_week: 上周
+      this_week: 本周
+      last_6_months: 最近180天
+      totals: 总计
+      visits: 访问
+      active_views: 有效访问
+      votes: Votes
+      votes_averange: 平均
+      other: 展开
+      engagement: 契约
+      show_more: 展开
+      qrcode: QR碼
+      warning: 警告
+    support:
+      prizes: 奖励
+      donate: '捐款 %{price}$'
+    tips:
+      enhancements: 增强功能
+      only_to_you: 只有您能看到
+  games_sections:
+    chart:
+      last_6_months: 最近180天
+      details:
+        meta_tags:
+          chart: 图表
+          description: '独立游戏 : 最多下载 - 最多投票 - 最多关注'
+        structured_data:
+          chart: 图表
+          description: '独立游戏 : 最多下载 - 最多投票 - 最多关注'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: 最多下载
+          description: '独立游戏 : 最多下载 - 今天 - 最近7天 - 最近30天 - 使用期'
+        structured_data:
+          downloaded: 最多下载
+          description: '独立游戏 : 最多下载 - 今天 - 最近7天 - 最近30天 - 使用期'
+    news:
+      details:
+        meta_tags:
+          news: 消息
+          description: '独立游戏 : 消息 - 最近30天'
+        structured_data:
+          news: 消息
+          description: '独立游戏 : 消息 - 最近30天'
+    filters:
+      chart:
+        most_downloaded: 最多下载
+        voted: 最多投票
+        followed: 最多关注
+      downloaded:
+        everytime: 使用期
+        last_month: 最近30天
+        last_week: 最近7天
+        today: 今天
+      news:
+        last_commented: 评论
+        last_updated: 最近更新
+        latest: 最新
+        popular: 最热
+  genres:
+    genre:
+      rpg: RPG/角色扮演游戏
+      browsergame: 成人内容
+      platformaction: 動作
+      shootemup: 清版射击游戏
+      puzzle: 拼圖
+      pointandclick: 点击式游戏
+      sport: 多人線上戰術競技
+      fighting: 格鬥遊戲
+      other: 其他
+    genres:
+      all: 全部
+    select:
+      genre: 类别
+  helpers:
+    label:
+      report:
+        broken: 破碎的鏈接
+        copyright: 侵犯了我的权利
+        offensive: 仇恨或侮辱他人的内容
+        sexual: 色情内容
+        spam: 垃圾内容或误导性内容
+        violent: 暴力或令人反感的内容
+  home:
+    navigation:
+      home: 首页
+      news: 消息
+      chart: 图表
+      events: 事件
+      downloaded: 最多下载
+      console: 電子遊戲機
+      subscriptions: 订阅内容
+      your_games: 您的游戏
+      history: 历史记录
+    landing:
+      last_followed_games_updated: 最近のハイライト
+      play: 玩
+      recommended: 推荐视频
+      based_recent_activity: 根据您的近期活动
+      query_of_the_day_0: 近期玩家数量突破1000的游戏
+      query_of_the_day_1: 冷门佳作
+      query_of_the_day_2: 紀念日
+      query_of_the_day_3: 最多关注 - 最近180天
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: 排行榜游戏
+      query_of_the_day_6: 更新
+      downloaded: 最多下载
+      today: 今天
+      last_week: 最近7天
+      last_month: 最近30天
+      latest: 最新
+      show_more: 展开
+    console:
+      details:
+        structured_data:
+          console: 電子遊戲機
+          description: '独立游戏 : 玩'
+        meta_tags:
+          console: 電子遊戲機
+          description: '独立游戏 : 玩'
+    subscriptions:
+      subscriptions: 订阅内容
+      updates: 更新
+      no_result: 无结果
+      no_subscriptions_message: 当您订阅至少个5游戏，indiexpo效果最佳。
+      players: 玩家
+      subscribers: 位订阅者
+      comments: 评论
+      details: 概览
+      show_more: 展开
+    your_games:
+      your_games: 您的游戏
+      players: 玩家
+      subscribers: 位订阅者
+      comments: 评论
+      details: 概览
+      show_more: 展开
+    history:
+      history: 历史记录
+      score_system_games: 排行榜游戏
+      last_commented: 评论
+      subscriptions: 订阅内容
+      votes: Votes
+  static:
+    about:
+      about: 关于
+      app: 應用軟件
+      extension: 扩展程序
+      social_networks: 社会网络
+      games: 游戏
+      show_more: 加载更多
+      details:
+        structured_data:
+          about: 关于
+          description: Indiexpo 让成千上万的人在此探索、观看、分享独立游戏以及原创游戏
+        meta_tags:
+          about: 关于
+          description: Indiexpo 让成千上万的人在此探索、观看、分享独立游戏以及原创游戏
+    faq:
+      faq: 常见问题解答
+      question_1: What is indiexpo?
+      answer_1: Indiexpo让成千上万的人在此探索、观看、分享独立游戏以及原创游戏
+      question_2: How to earn Points?
+      answer_2: Indiexpo 採用點數與等級制度。你得到的點數取決於你採取的特定動作。以下點數表整理出不同動作的點數值。
+      question_3: How to Level Up?
+      answer_3: 等級是追蹤你 (與他人) 有多活躍的另一種方法。你累積的點數愈多，你的等級也愈高。
+      details:
+        structured_data:
+          faq: 常见问题解答
+          description: 常見問答集 的產生与製作，多半是在長期或大量接獲特定的疑问、詢問或疑难问题並加以回覆後，從中加以歸納整理成，以最常被詢問的問。
+        meta_tags:
+          faq: 常见问题解答
+          description: 常見問答集 的產生与製作，多半是在長期或大量接獲特定的疑问、詢問或疑难问题並加以回覆後，從中加以歸納整理成，以最常被詢問的問。
+    developers:
+      developers: 开发者
+      details:
+        structured_data:
+          developers: 开发者
+          description: 探索我們的開發人員產品。 统计 - 應用軟件 - 扩展程序 - 教程
+        meta_tags:
+          developers: 开发者
+          description: 探索我們的開發人員產品。 统计 - 應用軟件 - 扩展程序 - 教程
+  languages:
+    edit:
+      note: 此操作会更改本网站界面的显示语言，用户所输文字的语言不会更改。
+      setlanguage: 选择您的语言
+  medals:
+    medal:
+      titles:
+        age: "%{score} 年"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: 等级 2
+        level_4: 等级 4
+        level_6: 等级 6
+        level_10: 等级 10
+        level_16: 等级 16
+        level_26: 等级 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: 本类最佳
+        vig: 重磅游戏
+  news:
+    form:
+      text: 发帖与受众互动吧！
+      hashtag: 我们建议您使用不超过两个标签
+      now_loading: 正在加载中…
+      publish: 发布
+    news:
+      destroy: 删除
+      destroy_confirm: 你确定吗？
+    index:
+      players: 玩家
+      subscribers: 位订阅者
+      download: 下载
+  options:
+    index:
+      dashboard: 控制面板
+      profile: 个人资料
+      followed_games: 订阅内容
+      your_games: 您的游戏
+      settings: 设置
+      logout: 退出帐号
+  platforms:
+    platforms:
+      all: 全部
+    select:
+      platform: 平台
+  public_activities:
+    index:
+      destroy_confirm: 确认删除
+      mark_all_as_read: 标记所有为已读
+      notifications: 通知
+      see_all: 加载更多
+  public_activities_mailer:
+    notify:
+      hello: 你好 %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: 退订
+  public_activity:
+    base:
+      someone: 某人
+    comment:
+      answer:
+        comment_removed: 评论被删除
+      create:
+        comment_removed: 评论被删除
+    event_subscription:
+      create:
+        subscription_removed: 订阅被取消
+    following:
+      create:
+        following_removed: 关注被取消
+    game:
+      removed_game: 游戏被删除
+    news:
+      create:
+        news_removed: 消息被删除
+    rating:
+      create:
+        missing_rating: 评分不存在
+    user:
+      missing_user: 用户不存在
+      verified: 已验证
+  reports:
+    new:
+      details: '说明:'
+      question: 有什么问题？
+      send: 提交
+      title: '举报: %{game}'
+      report_submitted: 感谢告知。
+      report_submitted_message: 你的反馈能帮助系统发现问题。
+  scores:
+    score:
+      points: 比分
+      delete: 删除
+      destroy_confirm: 你确定吗？
+      verified: 已验证
+  search:
+    games:
+      filters: 过滤
+      adult_content: 浏览器游戏
+      mobile_first: Mobile Friendly
+      no_result: 无结果
+      search: 搜索
+      search_placeholder: 搜索...
+      search_tools: 搜索工具
+      language: 语言
+      genre: 类别
+      platform: 平台
+      recommended: 推荐视频
+      tool: 工具
+      status: 状态
+      games: 游戏
+      score_system_games: 排行榜游戏
+      year: 年
+    details:
+      meta_tags:
+        search: 搜索
+        description: "搜索... (游戏, #主題標籤, @个人资料, 搜索工具, 语言, 类别, 年, 平台, 工具, 状态)"
+      structured_data:
+        search: 搜索
+        description: "搜索... (游戏, #主題標籤, @个人资料, 搜索工具, 语言, 类别, 年, 平台, 工具, 状态)"
+  settings:
+    edit:
+      settings: 设置
+    form:
+      language: 语言 (Language)
+      setlanguage: 选择您的语言
+      sounds: 音效
+      sounds_description: 收到新通知時，使用音效提醒
+      adult_content: 浏览器游戏
+      label_on: '開啟'
+      label_off: '關閉'
+      email_notifications: 邮件通知
+      general: 一般
+      mail_comment_answer: 您的评论被回复
+      mail_comment_mention: 提及
+      mail_event_subscription_create: 您的事件被订阅
+      followed_games: 订阅内容
+      mail_comment_follower_create: 您关注的游戏被评论
+      mail_follower_news_create: 您关注的用户更新了游戏
+      mail_news_create: 您关注的用户更新了游戏
+      mail_follower_game_create: 您关注的用户制作了新游戏
+      mail_game_create: 您关注的用户制作了新游戏
+      mail_user_game_new_leader: 你游戏中最好的玩家
+      mail_user_game_old_leader: 你不再是游戏中最好的玩家了
+      mail_user_game_other_leader: 有一个新的最佳玩家
+      your_games: 您的游戏
+      mail_rating_create: 您的游戏收到投票
+      mail_following_create: 我获得了新的关注者
+      mail_comment_create: 您的游戏收到评论
+      mail_medal_create: 你获得了奖章
+      mail_user_game_dev_leader: 你的游戏的新领袖
+      account_data: 帳戶資料
+      email: 电子邮件
+      password: 密码
+      edit: 编辑
+      stats: 统计
+      comments: 历史记录
+      subscriptions: 订阅内容
+      show_more: 加载更多
+      save: 保存更改
+      delete_account: 永久删除帐户
+  sitemaps:
+    index:
+      active_events: 即将到来
+      inactive_events: 过往
+      new_events: 创建事件
+      recover: 重置您的密码
+      sign_in: 登录
+      sign_up: 注册
+      sitemap: 网站导航
+    details:
+      meta_tags:
+        sitemap: 网站导航
+        description: 网站地图描述了一个indiexpo的架构。
+      structured_data:
+        sitemap: 网站导航
+        description: 网站地图描述了一个indiexpo的架构。
+  subscriptions:
+    subscribe_button:
+      subscribe: 订阅
+    unsubscribe_button:
+      unsubscribe: 退订
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: 工具
+  users:
+    show:
+      page_title: "%{username} 加入了 indiexpo"
+      online: 在线
+      chart: 图表
+      last_month: 最近30天
+      level: 等级
+      games: 游戏
+      score_system_games: 排行榜游戏
+      show_more: 加载更多
+      subscriptions: 订阅内容
+      last_commented: 评论
+      history: 历史记录
+      other_players: 其他玩家
+      verified: 已验证
+    details:
+      structured_data:
+        developer: 开发者
+        gamer: 玩家
+      meta_tags:
+        about: 关于
+        description: 个人资料, 战利品陈列柜, 游戏, 订阅内容, 排行榜游戏, 评论 & 历史记录
+  me:
+    menubar:
+      profile: 个人资料
+      event_subscriptions: 我的事件
+      followed_games: 订阅内容
+      your_games: 您的游戏
+      settings: 设置
+    followed_games:
+      no_result: 无结果
+      no_subscriptions_message: 当您订阅至少个5游戏，indiexpo效果最佳。
+    games:
+      your_games: 您的游戏
+      visits: 访问
+      downloads_count: 玩家
+      subscribers: 位订阅者
+      totals: 总计
+      no_result: 无结果
+      upload: 上传
+  levels:
+    index:
+      level: 等级
+      user_chart: 图表
+      last_month: 最近30天
+      gems: 寶石
+      trophy_case: 战利品陈列柜
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: 已验证
+    goals:
+      goals: 目标
+    stats:
+      stats: 统计
+      comments: 历史记录
+      subscriptions: 订阅内容
+      your_games: 您的游戏
+      votes: Votes
+  warning:
+    index:
+      warning: 警告
+      destroy: 删除
+      destroy_confirm: 你确定吗？
+      delete_account: 永久删除帐户
+      delete_account_description: 删除 indiexpo 帐户后，你将无法找回已分享到 indiexpo 的内容或信息。

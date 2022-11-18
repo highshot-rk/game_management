@@ -1,0 +1,39 @@
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.indiexpo.net/",
+      "name": "indiexpo",
+      "image": "<%= asset_path('Images/LogoMask.png') %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "<%= new_user_registration_url %>",
+			"@type": "WebPage",
+      "name": "<%=t('.register')%>",
+      "image": "<%= asset_path('Images/pages/register.png') %>"
+    }
+  }]
+}
+</script>
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "WebPage",
+	"url": "<%= new_user_registration_url %>",
+	"name": "<%=t('.register')%>",
+	"description": "<%= t('.description') %>",
+	"keywords": "<%=t('.register')%>, <%= t('application.meta_tags.keywords') %>",
+	"image": "<%= asset_path('Images/pages/register.png') %>",
+	"inLanguage": "<%= I18n.locale %>"
+}
+</script>
+<!-- META END -->

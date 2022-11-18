@@ -1,0 +1,245 @@
+<% content_for :metadata do %>
+	<%= render_with_format :html, 'games/details/structured_data' %>
+<% end %>
+<% content_for :style do %>
+    <style amp-custom>
+      body {
+		width: 100%;
+        background-color: #09090b;
+        padding-bottom: 50px;
+        font-family: 'Play', sans-serif;
+        color: #ccc;
+        text-align: center;
+		float: left;
+      }
+      a {
+        color: #ccc;
+        text-decoration: none;
+      }
+      .logo {
+        width: 100%;
+		height: 42px;
+        margin-bottom: 4px;
+			background: #041221;
+        background-image: url(<%= asset_url('Images/MiniLogo.png') %>);
+        background-position: center;
+        background-repeat: no-repeat;
+		float: left;
+      }
+      h1 {
+        position: absolute;
+        margin: 45px 10px;
+        z-index: 2;
+      }
+      h2 {
+        position: absolute;
+        margin: 80px 10px;
+			font-size: 20px;
+        z-index: 2;
+      }
+      h3 {
+        position: absolute;
+        margin: 105px 10px;
+        font-size: 16px;
+        z-index: 2;
+        opacity: 0.8;
+      }
+      .clear {
+        clear: both;
+      }
+      amp-img {
+        width: 100%;
+        border: none;
+      }
+      .download {
+        position: fixed;
+        width: 100%;
+        padding: 10px 0px;
+        bottom: 0;
+        left: 0;
+        font-size: 20px;
+        background: #900;
+        z-index: 2;
+      }
+      .font22 {
+        margin-top: 20px;
+		font-size: 22px;
+      }
+	  #Window {
+		width: 94%;
+        margin: 1%;
+        padding: 2%;
+        border-radius: 4px;
+        background-color: #0c1925;
+		float: left;
+      }
+      .subWindow {
+        margin: 1%;
+        padding: 2%;
+        border-left: 2px solid #c60;
+        border-right: 2px solid #c60;
+        border-radius: 4px;
+        background-color: #162737;
+		text-overflow: ellipsis;
+		overflow: hidden;
+      }
+      .ScreenAMP {
+        width: 30%;
+        margin: 1.5%;
+		float: left;
+      }
+	.recommended_game {
+		position: relative;
+		width: 56%;
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 1%;
+		margin-bottom: 5px;
+		padding-bottom: 35%;
+		border: 1px solid #393a3a;
+		overflow: hidden;
+		float: left;
+	}
+	.screen_preview {
+		position: absolute;
+		width: 100%;
+		min-height: 100%;
+		margin: auto;
+		left: -100px;
+		right: -100px;
+		top: -100px;
+		bottom: -100px;
+	}
+.recommended_user{
+		width: 30%;
+		max-height: 38px;
+		margin-top: 10%;
+		padding-left: 2%;
+		padding-right: 5%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		float: left;
+	}
+      .moreinfo {
+        width: 92%;
+        margin: 1%;
+        margin-bottom: 100px;
+        padding: 3%;
+        border-radius: 2px;
+        background: #c60;
+		cursor: pointer;
+		float: left;
+      }
+      .transparent {
+        opacity: 0.5;
+      }
+    </style>
+<% end %>
+
+<amp-analytics type="googleanalytics">
+<script type="application/json">
+{
+  "vars": {
+    "account": "UA-71765582-1"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script>
+</amp-analytics>
+
+<%= link_to '', root_url, class:'logo' %>
+
+<article>
+  <h1><%= @game.title %></h1>
+	<h2>
+		<%= @game.author %>
+		<%= amp_image_tag('Images/icons/verified.png', alt: t('games.show.verified'), title: t('games.show.verified'), width: '17', height: '17') if @game.user.verified? && @game.author == @game.user.username %>
+	</h2>
+  <% if @game.ratings_count > 0 %>
+    <h3><%= '%.1f' % @game.ratings_avg.to_f %>/5</h3>
+  <% end %>
+
+
+  <a class="download" href="<%= game_url(@game.slug) %>"><%= t('games.show.more_comments') %></a>
+
+	<figure>
+		<% if @game.screens.any? %>
+			<%= amp_image_tag @game.image, layout: 'responsive', class: 'transparent', alt: @game.title %>
+		<% else %>
+			<%= amp_image_tag 'Files/NoScreen.png', alt: @game.title, layout: 'responsive', width: '320', height: '240' %>
+		<% end %>
+	</figure>
+  <div class="font22"><%= t('games.show.description') %></div>
+  <div id="Window"><p><%= @game.description %></p>
+    <% if @game.last_news %>
+      <div>
+        <%= link_to game_news_path(@game.slug) do %>
+          <div class="subWindow"><%= truncate(@game.last_news.text, length: 380, separator: ' ') %></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</article>
+
+<% if @game.screens.any? %>
+  <% @game.screens.each do |screen| %>
+  <div class="ScreenAMP">
+    <%= amp_image_tag(screen.file.url(:medium), alt: @game.title, layout: 'responsive') %>
+  </div>
+<% end %>
+<% else %>
+  <div class="ScreenAMP">
+		<%= amp_image_tag 'Files/NoScreen.png', alt: @game.title, layout: 'responsive', width: '320', height: '240' %>
+  </div>
+<% end %>
+<div class="clear"></div>
+<% if @comments.size > 0 %>
+<div class="font22"><%= t('games.show.comment') %> (<%= @game.comments_count %>)</div>
+<% end %>
+
+<% if @comments.size > 0 %>
+  <div id="comments">
+    <%= render @comments %>
+  </div>
+<% end %>
+
+<% if @game.videos.any? %>
+  <div id="Window">
+    <amp-youtube
+      data-videoid="<%= @game.videos.first.try(:url) %>"
+      layout="responsive"
+      width="480" height="270"></amp-youtube>
+  </div>
+<% end %>
+
+<div class="font22"><%= t('games.details.index.recommended') %> :</div>
+<% @suggested_games.each do |game| %>
+	<%= link_to game_url(game.slug), class: 'recommended_game' do %>
+		<%= amp_image_tag game.image, alt: "#{game.title}", class: 'screen_preview', width: '480', height: '240' %>
+	<% end %>
+	<div class="recommended_user">
+		<%= link_to game_url(game.slug) do %>
+			<%= game.title %>
+		<% end %>
+		<br>
+		<span>
+			<% if game.author == game.user.username %>
+				<%= link_to game.author, user_path(game.author) %>
+			<% else %>
+				<%= link_to game.author, search_path(search: { author: game.author }) %>
+			<% end %>
+		</span>
+	</div>
+<% end %>
+<!-- AMP Adsense -->
+<amp-auto-ads type="adsense"
+	data-ad-client="ca-pub-4589575764100828">
+</amp-auto-ads>
+
+<a class="moreinfo" href="<%= game_url(@game.slug, locale: nil) %>"><%= t('games.show.more_comments') %></a>

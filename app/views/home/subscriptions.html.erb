@@ -1,0 +1,52 @@
+<%= page_title t('.subscriptions') %>
+<% content_for :menubar do %>
+	<%= render 'menubar', menu: :home %>
+<% end %>
+<div data-pjax-container>
+	<%= render 'navigation', section: :subscriptions %>
+	<div id="ListRight">
+		<div class="div26 Write20 div50"><%= t('.updates') %></div>
+		<%= link_to user_followed_games_url, class: 'div45 Write20 div50' do %>
+			<%= image_tag 'Images/icons/settings.png', class: 'right' %>
+		<% end if current_user.followed_games.any? %>
+		<div class="clear"></div>
+		<% if !current_user.followed_games.any? %>
+			<div class="Write30 center">
+				<%= t('.no_result') %><hr>
+				<%= t('.no_subscriptions_message') %><br>
+				<%= image_tag 'Images/icons/fav_on.png' %>
+			</div>
+			<div class="Write20 center"><%= t('home.landing.recommended') %></div>
+		<% end %>
+			<% @games.each do |game| %>
+				<div class="div26 padding_right div100" >
+					<%= link_to game_path(game.slug), class: 'box_screen_preview desktop_only' do %>
+						<%= image_tag game.image, alt: "#{game.title}", class: 'screen_preview' %>
+					<% end %>
+					<%= link_to game.title, game_url(game.slug), class: 'Write20 WidFlo' %>
+					<div class="WidFlo hoveron">
+						<%= t('.players') %>: <%= game.downloads_count %>
+						<br>
+						<%= link_to followers_list_game_path(game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Followers List'} do %>
+							<%= t('.subscribers') %>: <%= game.followings_count %>
+						<% end %>
+					</div>
+				</div>
+				<div class="div45 Window div100">
+					<div class="WidFlo hoveron">
+						<span data-time class="cw-relative-date" timestamp="<%= game.last_news.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>
+					</div>
+					<%= parse_markdown(truncate(game.last_news.text, length: 380, separator: ' ')).html_safe %>
+					<hr class="blank25">
+					<%= render 'comments/form', game: game %>
+					<div class="WidFlo">
+						<%= link_to t('.details'), game_path(game.slug), class: 'Window_options' %>
+						<%= link_to t('.comments'), game_comments_path(game.slug), class: 'Window_options' %>
+						<%= link_to t('.show_more'), game_news_path(game.slug), class: 'Window_options' %>
+					</div>
+				</div>
+				<div class="blank25 WidFlo">
+			<% end %>
+			<%= link_to t('.show_more'), user_followed_games_url, class: 'ShowMore' %>
+	</div>
+</div>

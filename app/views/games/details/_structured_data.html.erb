@@ -1,0 +1,108 @@
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.indiexpo.net/search",
+      "name": "<%= t('.games') %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "<%= game_author_page_url(@game) %>",
+      "name": "<%= @game.author %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "<%= game_url(@game.slug, locale: nil) %>",
+      "name": "<%= @game.title %>",
+      "image": "<%= @game.image %>"
+    }
+  }]
+}
+</script>
+<!-- Game Info -->
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "<%= @game.title %>",
+        "image": "<%= @game.image %>",
+        "description": "<%= @game.seo_description %>",
+        "url": "<%= game_url(@game.slug, locale: nil) %>",
+        "brand": {
+          "@type": "Brand",
+          "name": "<%= @game.author %>",
+          "jobTitle": "<%= t('.developer') %>",
+          "url": "<%= game_author_page_url(@game) %>",
+          "image": "<%= asset_url('Images/pages/profile.png') %>"
+        },
+        "category": {
+          "@type": "Game",
+          "description": "Indie Game",
+          "genre": "<%= @game.genre.name %>"
+        },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            <% if @game.ratings_count > 0 %>
+              <% if @game.comments_count > 0 %>
+                "reviewCount": "<%= @game.comments_count %>",
+              <% end %>
+            "ratingValue": "<%= '%.1f' % @game.ratings_avg.to_f %>",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "<%= @game.ratings_count %>"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "<%= '%.1f' % @game.ratings_avg.to_f %>",
+              "bestRating": "5"
+            },
+            <% else %>
+              <% if @game.comments_count > 0 %>
+                "reviewCount": "<%= @game.comments_count %>",
+              <% end %>
+            "ratingValue": "3",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "3",
+              "bestRating": "5"
+            },
+            <% end %>
+            "author": {
+              "@type": "Organization",
+              "name": "indiexpo"
+            }
+          },
+        "sku": "0000<%= @game.id %>",
+        "mpn": "is_bundle",
+        "offers": {
+          "@type": "Offer",
+          "availability": "http://schema.org/InStock",
+          "description": "Free",
+          "priceCurrency": "EUR",
+          "price": "0",
+          "url": "<%= game_url(@game.slug, locale: nil) %>",
+          "priceValidUntil": "<%= Date.current.to_date + 7 %>",
+          "seller": {
+            "@type": "Organization",
+            "name": "indiexpo"
+          }
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+	<head>
+		<title>
+			<%= "(#{current_user.notifications_count})" if current_user&.notifications_count.to_i > 0 %>
+			<% if content_for?(:title) %>
+			  <%= content_for(:title) %> - Free Indie Games
+			<% else %>
+			  <%= @game.title %> - <%= t('games.details.index.videogame') %> <%= t('games.details.index.published_by') %> <%= @game.author %>
+			<% end %>
+		</title>
+		<%= render 'application/head', css_key: '/games/pocket-quest' %>
+		<%= content_for :head %>
+		<%= content_for(:meta_tags) || render('games/details/meta_tags') %>
+		<%= content_for(:structured_data) || render('games/details/structured_data') %>
+	</head>
+	<body>
+		<%= render 'application/navbar' %>
+
+		<div class="List" id="game-container">
+			<% if ((!current_user || !current_user.setting.present? || (current_user.setting.present? && !current_user.setting.adult_content)) && @game.game.adult_content) %>
+				<%= render 'games/adult_filter_message' %>
+			<% else %>
+				<div class="AreaLeft">
+					<%= yield %>
+				</div>
+				<%= render 'games/game_area_right' %>
+			<% end %>
+		</div>
+
+		<%= render 'application/tail' %>
+	</body>
+</html>

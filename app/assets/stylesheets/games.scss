@@ -1,0 +1,24 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.field_with_errors {
+  //background-color: red;
+  input {
+    border-color: #900;
+  }
+  label {
+    color: #900;
+  }
+  textarea {
+    border: 1px solid #900;
+  }
+}
+.label {
+  .field_with_errors {
+    label {
+      font-size: 20px;
+      color: white;
+    }
+  }
+}

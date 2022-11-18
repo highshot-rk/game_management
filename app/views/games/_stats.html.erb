@@ -1,0 +1,92 @@
+<!-- Stats Preview -->
+<div class="WidFlo">
+	<!-- Left Column -->
+	<div class="div26 div100">
+		<div class="Write20"><%= t('.visits') %></div>
+		<div class="Window">
+			<div style="font-size: 25px;">
+				<%= @stats.visits_total %>
+			</div>
+			<%= t('.totals') %>
+		</div>
+		<div style="float: left; padding: 1.5% 3%;">
+			<div style="font-size: 25px;">
+				<font color='<%= stats_color_for(@stats.visits_increases) %>'><%= not_nan @stats.visits_increases %>%</font>
+			</div>
+			<%= t('.this_week') %>
+		</div>
+		<div class="Window">
+			<div style="font-size: 25px;">
+				<font color='<%= stats_color_for(@stats.downloads_increases) %>'><%= not_nan @stats.downloads_increases %>%</font>
+			</div>
+			<%= t('.downloads') %>
+		</div>
+	</div>
+	<!-- Right Column -->
+	<div class="div74 div100">
+		<!-- Google Graph Downloads and Visits  -->
+		<div id="min_chart_div" data-chart="drawMinAreaChart"></div>
+
+		<!-- Google Graph Download IncreaseDecrease -->
+		<script type="text/javascript">
+			function drawMinAreaChart(element) {
+				var data = google.visualization.arrayToDataTable([
+					['<%= t('.date') %>', '<%= t('.visits') %>', '<%= t('.downloads') %>'],
+					<%= stats_list_since(@stats.stats).html_safe %>
+				]);
+				var options = {
+					title: '<%= j "#{@game.title}".html_safe %>',
+					hAxis: {title: '<%= t('.days') %>', titleTextStyle: {color: '#ccc'}, textStyle: {color: '#ccc'}},
+					vAxis: {minValue: 0, textStyle: {color: '#ccc'}},
+					backgroundColor: 'transparent',
+					colors: ['#369', '#900'],
+					titleTextStyle: {color: '#ccc'},
+					legend: { textStyle: { color: '#ccc' } },
+				};
+				var chart = new google.visualization.AreaChart(element);
+				chart.draw(data, options);
+			}
+		</script>
+	</div>
+	<!-- WARNING -->
+	<% if @game.downloads_count < 15 %>
+		<% if @game.created_since?(30) %>
+			<div class="Window background900">
+				<div class="Write20" style="margin-top: 0">
+					<%= t('.warning') %><br>
+					You have to gain <%= 15 - @game.downloads_count %> players in the next <%= 30 - @game.created_for %> days or your page will be deleted.
+				</div>
+				<hr/>
+				<%= link_to "Whatsapp", "whatsapp://send?text=#{game_url(@game.slug)}", data: { action: "share/whatsapp/share" }, class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game under 15 on Whatsapp"}, target: '_blank' %>
+				<%= link_to "Telegram", "https://t.me/share/url?url=#{game_url(@game.slug)}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game under 15 on Telegram"}, target: '_blank' %>
+				<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game under 15 on Facebook"}, target: '_blank' %>
+				<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{game_url(@game.slug)}&title=Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game under 15 on Reddit"}, target: '_blank' %>
+				<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{game_url(@game.slug)}&text=%23indiegame%20Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game under 15 on Twitter"}, target: '_blank' %>
+				<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game under 15 on tumblr"}, target: '_blank' %>
+				<%= link_to "VK", "http://vk.com/share.php?url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Share Game under 15 on VK"}, target: '_blank' %>
+			</div>
+		<% else %>
+			<div class="ShowMore backgroundc60">
+				You had few downloads. The Staff is checking <%= @game.title %>.
+			</div>
+		<% end %>
+	<% elsif @game.created_since?(30) %>
+		<!-- Checking Most Voted Chart Last 30 Days Position -->
+		<div class="center Write20">
+			<% if @stats.rank_last_days == 1 %>
+				= Amazing! <%= @game.title %> is now the most voted game uploaded in the latest 30 days! =
+			<% else %>
+				Great! <%= @game.title %> just passed the first step but in the past 30 days was uploaded other games.
+				<br><font class="textc60">Its position in the Game Chart of the latest 30 days is <%= @stats.rank_last_days %>°</font>
+				<hr/>
+				<%= link_to "Whatsapp", "whatsapp://send?text=#{game_url(@game.slug)}", data: { action: "share/whatsapp/share" }, class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game for the monthly chart on Whatsapp"}, target: '_blank' %>
+				<%= link_to "Telegram", "https://t.me/share/url?url=#{game_url(@game.slug)}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Game for the monthly chart on Telegram"}, target: '_blank' %>
+				<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game for the monthly chart on Facebook"}, target: '_blank' %>
+				<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{game_url(@game.slug)}&title=Play%20My%20Game!", class: 'BottonBorder', data: { analytics_click: "Shared Game for the monthly chart on Reddit"}, target: '_blank' %>
+				<%= link_to "Twitter", "https://twitter.com/home?status=%23indiegame%20Play%20My!%20Game%20#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game for the monthly chart on Twitter"}, target: '_blank' %>
+				<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Shared Game for the monthly chart on tumblr"}, target: '_blank' %>
+				<%= link_to "VK", "http://vk.com/share.php?url=#{game_url(@game.slug)}", class: 'BottonBorder', data: { analytics_click: "Share Game for the monthly chart on VK"}, target: '_blank' %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

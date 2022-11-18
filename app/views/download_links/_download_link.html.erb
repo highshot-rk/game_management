@@ -1,0 +1,28 @@
+<!-- Sub Download Area -->
+<div class="SubDownload">
+	<!-- Download -->
+	<%= link_to_download_link(download_link) do %>
+		<% if download_link.platforms.any? %>
+			<% download_link.platforms.each do |platform| %>
+				<%= image_tag asset_path("Images/System/#{platform.name.parameterize.underscore}_white.png") %>
+			<% end %>
+		<% else %>
+			<%= image_tag asset_path("Images/icons/download.png") %>
+		<% end %>
+			<%= t('.download') %>
+		<% if download_link.url %>
+			<%= image_tag asset_path("Images/icons/external_link.png") %>
+		<% end %>
+	<% end %>
+
+	<!-- File Name or Url -->
+	<% if download_link.url %>
+		<div class="file_name_or_url desktop_only"><%= download_link.url %></div>
+	<% else %>
+		<div class="file_name_or_url desktop_only"><%= download_link.file_file_name %></div>
+	<% end %>
+	<!-- Flag -->
+	<%= link_to new_download_link_report_path(download_link.id), data: { remote: true, popup: '.AreaNotifications' }, class: 'flag-icon' do %>
+		<%= image_tag asset_path("Images/icons/flag.png") %>
+	<% end %>
+</div>

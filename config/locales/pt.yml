@@ -1,0 +1,940 @@
+---
+pt:
+  active_admin:
+    dashboard: Painel
+  activerecord:
+    attributes:
+      event:
+        description: Descrição
+        end_date: Data de término
+        prizes: Prêmios
+        rules: Regras
+        screen: Screen
+        start_date: Data inicial
+        title: Título
+        website: Website
+      game:
+        author: Autor
+        description: Descrição
+        genre: Gênero
+        title: Título
+        website: Website
+      user:
+        username_or_email: Usuário/Email
+        password: Senha
+        username: Usuário
+        characters_minimum: "%{minimum_password_length} ou mais caracteres"
+        email: Email
+        terms_of_service: Eu aceito os termos de serviço
+    errors:
+      messages:
+        exclude_domain: '"%{value}" não permitido'
+        include_domain: domínio deve estar na %{list}
+        invalid_datetime: data inválida
+        url: URL invalido
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: devem ser %{count} no máximo
+            download_links:
+              links_repetition: não pode ser duplicado
+              too_long: devem ser %{count} no máximo
+              too_short: deve se no mínimo um
+            game_languages:
+              too_short: deve se no mínimo um
+            screens:
+              too_long: devem ser %{count} no máximo
+            videos:
+              too_long: não deve ser mais que um
+            base:
+              limit_games_uploaded: você só pode fazer upload de 2 jogos em 24 horas.
+        user:
+          attributes:
+            username:
+              invalid: devem ser formados apenas por caracteres alfanuméricos (A-Z, 0-9)
+    models:
+      game_languages: Idioma
+  activity:
+    comment:
+      answer: 'respondeu ao um comentário em '
+      create: 'comentou '
+      follower_create: 'comentou '
+      mention: 'mencionou você em um comentário no '
+    event_subscription:
+      create: 'se inscreveu no  '
+    following:
+      create: 'começou a seguir o  '
+    game:
+      create: adicionou um  novo jogo!
+      destroy: 'removeu este jogo '
+      update: atualizou este jogo
+    medal:
+      create: " recebeu a medalha "
+    news:
+      create: 'adicionou notícias no jogo '
+    rating:
+      create: 'votou '
+    user:
+      level: Seu nível subiu %{level}
+      score: Sua pontuação subiu + %{score}
+      new_title: Novo Título
+      prizes: Prêmios
+      game_new_leader: Você é o melhor jogador de %{game}!
+      game_old_leader: Voçê foi superado! %{user} é o novo lider of %{game}! Lute pelo trono!
+      game_other_leader: "%{user} é o novo lider of %{game}! Lute pelo trono!"
+      game_dev_leader: "%{user} é o novo lider of %{game}!"
+  application:
+    cookie_law:
+      show_more: Mostrar Mais
+      ok: Ok
+      setlanguage: Selecione seu idioma
+    footer:
+      about: Sobre
+      contact_us: Entre em contato conosco
+      language: Idioma (Language)
+      faq: Perguntas frequentes
+      feed_rss: Feed RSS
+      developers: Desenvolvedores
+      sitemap: Mapa do site
+      terms_and_conds: Termos de Serviço
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Ajuda de formatação
+      you_type: Você digita
+      you_see: Você vê
+      italics: Itálico
+      bold: Negrito
+      hashtag: Hashtag
+      profile: Perfil
+      item_one: Item 1
+      item_two: Item 2
+      item_three: Item 3
+      spoiler: Spoiler
+    menubar:
+      home: Início
+      chart: Classificação
+      downloaded: Mais Baixados
+      events: Eventos
+      language: Idioma
+      news: Novidades
+    meta_tags:
+      description: O indiexpo foi lançado para que milhares de pessoas possam descobrir, assistir e compartilhar os jogos mais originais já criados e Jogos Eletrônicos Independentes.
+      keywords: indiexpo, indie games, Jogos, Baixar, Jogar, Carregar, Jogadores, Desenvolvedores, Eventos, Desafios, Jogos de Placar, Classificação, Mais Baixados, Mais Populares, Mais Recentes, Criador de gaming em ascensão
+    navbar:
+      register: Registrar
+      login: Entrar
+      search: "Pesquisar... (Jogos, #Hashtag, @Perfil)"
+      upload: Carregar
+      level_up: Subiu de Nível!
+    slideshow_mobile:
+      show_more: Mostrar Mais
+    structured_data:
+      description: O indiexpo foi lançado para que milhares de pessoas possam descobrir, assistir e compartilhar os jogos mais originais já criados e Jogos Eletrônicos Independentes.
+      keywords: indiexpo, indie games, Jogos, Baixar, Jogar, Carregar, Jogadores, Desenvolvedores, Eventos, Desafios, Jogos de Placar, Classificação, Mais Baixados, Mais Populares, Mais Recentes, Criador de gaming em ascensão
+      games: Jogos
+    terms:
+      terms_and_conditions: Termos de Serviço
+  comments:
+    answers:
+      more_comments: Carregar Mais
+    comment:
+      answer: Responder
+      answers:
+        few: Ver todas as %{count} respostas
+        many: Ver todas as %{count} respostas
+        one: Ver a resposta
+        other: Ver todas as %{count} respostas
+      destroy: Excluir
+      destroy_confirm: Você tem certeza ?
+      level: Nível
+      new: Novo
+      verified: Validada
+    destroy:
+      destroy_failure: Não pode destruir o comentário
+    form:
+      text: Existe muito para se ver aqui, com várias pessoas criando conteúdo incrível. Conte para todos o que você pensa!
+      now_loading: Now Loading...
+      publish: Postar
+  cookie_law: Os cookies nos ajudam a oferecer nossos serviços. Ao usar nossos serviços, você concorda com nosso uso dos cookies
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Entrar
+        recover_password: Redefinindo sua senha
+        send_email_again: Enviar email novamente
+        details:
+          structured_data:
+            login: Entrar
+            description: Existe muito para se ver aqui, com várias pessoas criando conteúdo incrível. Conte para todos o que você pensa!
+          meta_tags:
+            login: Entrar
+            description: Existe muito para se ver aqui, com várias pessoas criando conteúdo incrível. Conte para todos o que você pensa!
+    confirmations:
+      new:
+        email: Email
+        send_email_again: Reenviar instruções de confirmação
+        details:
+          structured_data:
+            send_email_again: Reenviar instruções de confirmação
+            description: Confirmar endereço de e-mail.
+          meta_tags:
+            send_email_again: Reenviar instruções de confirmação
+            description: Confirmar endereço de e-mail.
+    mailer:
+      confirmation_instructions:
+        welcome: Participe e divirta-se
+        title: 'Confirme o endereço de email abrindo o link:'
+        confirm_account: Confirmar endereço de e-mail.
+        text_1: Você pode aprimorar sua experiência ao fazer login no indiexpo.
+        text_2: Existe muito para se ver aqui, com várias pessoas criando conteúdo incrível. Conte para todos o que você pensa!
+      reset_password_instructions:
+        change_password: Altere sua senha
+        ignore_email: Se você não solicitou isto, por favor ignore este e-mail.
+        reset_info: Sua senha não ira alterar até que você acesse o link abaixo e crie uma nova senha.
+        title: Alguém solicitou um link para  mudança de sua senha. Você pode fazer isso através do link abaixo.
+      unlock_instructions:
+        unlock_account: Desbloqueie minha conta
+    passwords:
+      new:
+        recover_password: Redefinindo sua senha
+        email: Email
+        send: Enviar
+        details:
+          structured_data:
+            recover_password: Redefinindo sua senha
+            description: Digite um e-mail que você possa verificar agora
+          meta_tags:
+            recover_password: Redefinindo sua senha
+            description: Digite um e-mail que você possa verificar agora
+      edit:
+        change_password: Altere sua senha
+        new_password: Nova palavra-passe
+        confirm_new_password: Confirme a nova palavra-passe
+    registrations:
+      new:
+        register: Registrar
+        details:
+          structured_data:
+            register: Registrar
+            description: Você pode aprimorar sua experiência ao fazer login no indiexpo.
+          meta_tags:
+            register: Registrar
+            description: Você pode aprimorar sua experiência ao fazer login no indiexpo.
+      edit:
+        change_password: Altere sua senha
+        change_email: Alterar e-mail
+        new_password: Nova palavra-passe
+        confirm_new_password: Confirme a nova palavra-passe
+        current_password: Palavra-passe atual
+        current_email: Emails atuais
+        new_email: Novo Email
+        save: Salvar alterações
+    shared:
+      menubar:
+        login: Entrar
+        recover_password: Redefinindo sua senha
+        register: Registrar
+        send_email_again: Enviar email novamente
+  download_links:
+    download_link:
+      download: Baixar
+  errors:
+    messages:
+      not_saved: Falha ao salvar
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Eventos & Desafios
+          description: 'Jogos Eletrônicos Independentes : Eventos & Desafios - Em Breve & Anteriores'
+        structured_data:
+          events: Eventos & Desafios
+          description: 'Jogos Eletrônicos Independentes : Eventos & Desafios - Em Breve & Anteriores'
+    active_selector:
+      active: Em Breve
+      inactive: Anteriores
+    edit:
+      destroy: Excluir
+      destroy_confirm: Você tem certeza?
+    end_after_start: deve ser após a data inicial
+    event_types:
+      all: Tudo
+      contest: Concurso
+      mini_contest: Mini concurso
+      new: Criar Evento
+      other: Outro
+    form:
+      language: Idioma
+      publish: Postar
+      type: Gênero
+    menubar:
+      details: Visão geral
+      edit: Editar
+    index:
+      events: Eventos
+      challenges: Desafios
+      champions: Campeões
+      points: Pontos
+      show_more: Mostrar Mais
+    new:
+      event: Evento
+    share:
+      share: Compartilhar
+      email: Email
+      qrcode: Código QR
+    show:
+      description: Descrição
+      ended: Ociosos
+      ends: Data de término
+      from: De
+      genre: Gênero
+      language: Idioma
+      prizes: Prêmios
+      rules: Regras
+      share: Compartilhar
+      subscribers: Inscritos
+      to: à
+      website: Website
+  feeds:
+    index:
+      feed_rss: Feed Rss
+      events: 'Jogos Eletrônicos Independentes : Eventos'
+      latest: 'Jogos Eletrônicos Independentes : Mais Recentes'
+      popular: 'Jogos Eletrônicos Independentes : Mais Populares'
+      last_updated: 'Jogos Eletrônicos Independentes : Atualizados Recentemente'
+    details:
+      meta_tags:
+        feed_rss: Feed RSS
+        description: 'Jogos Eletrônicos Independentes : Feed RSS - Eventos - Mais Recentes - Mais Populares - Atualizados Recentemente'
+      structured_data:
+        feed_rss: Feed RSS
+        description: 'Jogos Eletrônicos Independentes : Feed RSS - Eventos - Mais Recentes - Mais Populares - Atualizados Recentemente'
+  layouts:
+    application:
+      indie_games: Jogos Eletrônicos Independentes
+    game:
+      play: Jogar
+      download: Baixar
+      new: Novo
+      updates: Atualizações!
+      show_more: Mostrar Mais
+      adult_content_message_html: Você deve ter no mínimo 18 anos para ver este conteúdo.</br> Você é maior do que 18 anos e quer ver o conteúdo adulto?
+      yes: Sim
+      no: Não
+  games:
+    game:
+      play: Jogar
+      download: Baixar
+      new: Novo
+      updates: Atualizações!
+      chart: Classificação
+      verified: Validada
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: Jogadores
+      game_menu:
+        comments: Comentários
+        details: Visão geral
+        updates: Atualizações
+        edit: Editar
+        statistics: Estatísticas
+      structured_data:
+       games: Jogos
+       developer: Autor
+      index:
+        videogame: Videojogo
+        published_by: 'publicado por '
+        edit: Editar
+        statistics: Estatísticas
+        players: Jogadores
+        news: Novidades
+        no_news: No Novidades
+        website: Website
+        recommended: Recomendados
+    edit:
+      edit: Editar
+      destroy: Excluir
+      destroy_confirm: Você tem certeza?
+    embed_popup:
+      embed: Incorporar
+      preview: Visualização
+    record_chart:
+      chart: Classificação
+      login: Entrar
+      score_system_games: Jogos de Placar
+    followers_list:
+      subscribers: Inscritos
+      verified: Validada
+    players_list:
+      downloads_count: Jogadores
+      last_week: Últimos sete dias
+      no_logged_user: Guest
+      no_result: Nenhum resultado
+      verified: Validada
+    form:
+      add_external_link: Adicione link externo
+      add_file: Escolher arquivo
+      html5_description: 'Para jogos HTML5/Flash/webGL: Faça upload de um arquivo ZIP contendo seu jogo. Deve haver um arquivo index.htlm no ZIP.'
+      extra: Extra
+      enablable_indiepad: Permitir suporte indiepad  (apenas para jogos HTML5/WebGL)
+      indiepad_description: Baixe o aplicativo Indiepad em seu smartphone e use-o como um Gamepad para diversos jogos publicados no indiexpo. Disponível apenas para Android
+      long_description: Longa Descrição
+      artworks: Artes
+      delete: Excluir
+      downloads: Downloads
+      genre: Gênero
+      language: Idioma
+      publish: Postar
+      remove_file: Excluir
+      remove_url: Excluir
+      restore: Desfazer
+      screens: Imagens
+      status: Estado
+      complete: Completo
+      demo: Demo
+      minigame: Mini Jogo
+      tool: Motor
+      hashtag: Recomendamos usar no máximo 2 hashtags como prática recomendada
+      adult_content: Conteúdo sensível
+      mobile_first: Otimizados para dispositivos móveis
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetização
+      players: Jogadores
+      level: Nível
+      subscribers: Inscritos
+      comments: Comentários
+      offensive: Conteúdo abominável ou abusivo
+      sexual: Conteúdo sexual
+      spam: Spam ou enganoso
+      violent: Conteúdo violento ou repulsivo
+      description: Descrição
+      send: Enviar
+    new:
+      upload: Carregar
+    share:
+      share: Compartilhar
+      email: Email
+      qrcode: Código QR
+    show:
+      play: Jogar
+      embed: Incorporar
+      share: Compartilhar
+      monetisation: Monetização
+      download: Baixar
+      subscribe: Subscrever
+      subscribed: Subscrito
+      subscribers: Inscritos
+      comment: Comentários
+      description: Descrição
+      published_on: Publicado em
+      adult_content: Conteúdo sensível
+      complete: Completo
+      demo: Demo
+      minigame: Mini Jogo
+      language: Idioma
+      first_to_comment: Adicionar um comentário público...
+      mobile_first: Otimizados para dispositivos móveis
+      more_comments: Carregar mais
+      screens: Imagens
+      video: Video
+      top_player: Melhor Jogador
+      epic_win: Vitória Épica!
+      on_the_rise: Criador de gaming em ascensão
+      verified: Validada
+    stats:
+      statistics: Estatísticas
+      comments: Comentários
+      monetisation: Monetização
+      daily: Hoje
+      days: Dias
+      date: Data
+      downloads: Jogadores
+      followings: Inscritos
+      chart: Classificação
+      most_rated: Mais Votados
+      followings_chart: Mais Seguidores
+      most_downloaded: Mais Baixados
+      last_week: Semana passada
+      this_week: Esta semana
+      last_6_months: Últimos 180 dias
+      totals: Totais
+      visits: Visualizações
+      active_views: Visualizações Ativos
+      votes: Votos
+      votes_averange: Média
+      other: Outro
+      engagement: Interação
+      show_more: Mostrar Mais
+      qrcode: Código QR
+      warning: Atenção
+    support:
+      prizes: Prêmios
+      donate: 'Doar %{price}$'
+    tips:
+      enhancements: Melhorias
+      only_to_you: Só você pode ver
+  games_sections:
+    chart:
+      last_6_months: Últimos 180 dias
+      details:
+        meta_tags:
+          chart: Classificação
+          description: 'Jogos Eletrônicos Independentes : Mais Baixados - Mais Votados - Mais Seguidores'
+        structured_data:
+          chart: Classificação
+          description: 'Jogos Eletrônicos Independentes : Mais Baixados - Mais Votados - Mais Seguidores'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Mais Baixados
+          description: 'Jogos Eletrônicos Independentes : Mais Baixados - Hoje - Últimos sete dias - Últimos 30 dias - Duração'
+        structured_data:
+          downloaded: Mais Baixados
+          description: 'Jogos Eletrônicos Independentes : Mais Baixados - Hoje - Últimos sete dias - Últimos 30 dias - Duração'
+    news:
+      details:
+        meta_tags:
+          news: Novidades
+          description: 'Jogos Eletrônicos Independentes : Novidades - Últimos 30 dias'
+        structured_data:
+          news: Novidades
+          description: 'Jogos Eletrônicos Independentes : Novidades - Últimos 30 dias'
+    filters:
+      chart:
+        most_downloaded: Mais Baixados
+        voted: Mais Votados
+        followed: Mais Seguidores
+      downloaded:
+        everytime: Duração
+        last_month: Últimos 30 dias
+        last_week: Últimos sete dias
+        today: Hoje
+      news:
+        last_commented: Comentários
+        last_updated: Atualizados Recentemente
+        latest: Mais Recentes
+        popular: Mais Populares
+  genres:
+    genre:
+      rpg: Rpg/Jogo de Representação
+      browsergame: Browser Game
+      platformaction: Ação
+      shootemup: Shoot em Up
+      puzzle: Quebra-Cabeça
+      pointandclick: Apontar-e-carregar
+      sport: Esportes
+      fighting: Briga de Rua
+      other: Outro
+    genres:
+      all: Tudo
+    select:
+      genre: Gênero
+  helpers:
+    label:
+      report:
+        broken: Link quebrado
+        copyright: Infringe meus direitos
+        offensive: Conteúdo abominável ou abusivo
+        sexual: Conteúdo sexual
+        spam: Spam ou enganoso
+        violent: Conteúdo violento ou repulsivo
+  home:
+    navigation:
+      home: Início
+      news: Novidades
+      chart: Classificação
+      events: Eventos
+      downloaded: Mais Baixados
+      console: Consola
+      subscriptions: Inscrições
+      your_games: Os teus Jogos
+      history: Histórico
+    landing:
+      last_followed_games_updated: Caso você tenha perdido
+      play: Jogar
+      recommended: Recomendados
+      based_recent_activity: Com base na sua atividade recente
+      query_of_the_day_0: Jogos que recentemente ganharam mais de 1000 Jogadores
+      query_of_the_day_1: Bons Jogos Nunca Comentados
+      query_of_the_day_2: Aniversário
+      query_of_the_day_3: Mais Seguidores - Últimos 180 dias
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Jogos de Placar
+      query_of_the_day_6: Atualizações!
+      downloaded: Mais Baixados
+      today: Hoje
+      last_month: Últimos 30 dias
+      last_week: Últimos sete dias
+      latest: Mais Recentes
+      show_more: Mostrar Mais
+    console:
+      details:
+        structured_data:
+          console: Consola
+          description: 'Jogos Eletrônicos Independentes : Jogar'
+        meta_tags:
+          console: Consola
+          description: 'Jogos Eletrônicos Independentes : Jogar'
+    subscriptions:
+      subscriptions: Inscrições
+      updates: Atualizações!
+      no_result: Nenhum resultado
+      no_subscriptions_message: indiexpo funciona melhor quando você está inscrito em pelo menos 5 jogos.
+      players: Jogadores
+      subscribers: Inscritos
+      comments: Comentários
+      details: Visão geral
+      show_more: Mostrar Mais
+    your_games:
+      your_games: Os teus Jogos
+      players: Jogadores
+      subscribers: Inscritos
+      comments: Comentários
+      details: Visão geral
+      show_more: Mostrar Mais
+    history:
+      history: Histórico
+      score_system_games: Jogos de Placar
+      last_commented: Comentários
+      subscriptions: Inscrições
+      votes: Votos
+  static:
+    about:
+      about: Sobre
+      app: Aplicação
+      extension: Extensões
+      social_networks: Redes Sociais
+      games: Jogos
+      show_more: Mostrar Mais
+      details:
+        structured_data:
+          about: Sobre
+          description: O indiexpo foi lançado para que milhares de pessoas possam descobrir, assistir e compartilhar os jogos mais originais já criados e Jogos Eletrônicos Independentes.
+        meta_tags:
+          about: Sobre
+          description: O indiexpo foi lançado para que milhares de pessoas possam descobrir, assistir e compartilhar os jogos mais originais já criados e Jogos Eletrônicos Independentes.
+    faq:
+      faq: Perguntas frequentes
+      question_1: O quê é a indiexpo?
+      answer_1: O indiexpo foi lançado para que milhares de pessoas possam descobrir, acompanhar e compartilhar os jogos mais originais já criados e Jogos Eletrônicos Independentes. O indiexpo oferece um área para as pessoas se conectarem, se informarem e inspirarem umas às outras por todo o mundo, bem como atua como plataforma de distribuição para criadores de conteúdo original e anunciantes grandes e pequenos.
+      question_2: Como ganhar Pontos?
+      answer_2: indiexpo tem um sistema de pontos e níveis. O número de pontos que você ganha depende da sua ação específica. A tabela de pontos abaixo resume os valores de pontos para ações diferentes.
+      question_3: Como subir de Nível?
+      answer_3: Os níveis são outra forma de acompanhar sua atividade (e dos outros). Quanto mais pontos você acumular, mais alto é seu nível. O indiexpo reconhece suas realizações de nível com nossa marca especial de agradecimentos.
+      details:
+        structured_data:
+          faq: Perguntas frequentes
+          description: Uma compilação de perguntas frequentes acerca de determinado tema.
+        meta_tags:
+          faq: Perguntas frequentes
+          description: Uma compilação de perguntas frequentes acerca de determinado tema
+    developers:
+      developers: Desenvolvedores
+      details:
+        structured_data:
+          developers: Desenvolvedores
+          description: Conheça nossos produtos para desenvolvedores. Estatísticas, Aplicação, Extensões, Tutoriais
+        meta_tags:
+          developers: Desenvolvedores
+          description: Conheça nossos produtos para desenvolvedores. Estatísticas, Aplicação, Extensões, Tutoriais
+  languages:
+    edit:
+      note: Essa opção altera o idioma do site, não o texto inserido pelos usuários.
+      setlanguage: Selecione seu idioma
+  medals:
+    medal:
+      titles:
+        age: "%{score} Anos"
+        cg: Commentator
+        d: Acima de %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Acima de %{score} inscritos
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Nível 2
+        level_4: Nível 4
+        level_6: Nível 6
+        level_10: Nível 10
+        level_16: Nível 16
+        level_26: Nível 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Acima de %{score} avaliações
+        king: O melhor de seu tipo
+        vig:  Jogo muito importante
+  news:
+    form:
+      text: Faça uma publicação para envolver seu público.
+      hashtag: Recomendamos usar no máximo 2 hashtags como prática recomendada
+      now_loading: Now Loading...
+      publish: Postar
+    news:
+      destroy: Excluir
+      destroy_confirm: Você tem certeza ?
+    index:
+      players: Jogadores
+      subscribers: Inscritos
+      download: Baixar
+  options:
+    index:
+      dashboard: Painel
+      profile: Perfil
+      followed_games: Inscrições
+      your_games: Os teus Jogos
+      settings: Configurações
+      logout: Sair
+  platforms:
+    platforms:
+      all: Tudo
+    select:
+      platform: Sistema operacional
+  public_activities:
+    index:
+      destroy_confirm: Você tem certeza?
+      mark_all_as_read: Marcar todas como lidas
+      notifications: Notificações
+      see_all: Mostrar Mais
+  public_activities_mailer:
+    notify:
+      hello: Olá, %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Cancelar inscrição
+  public_activity:
+    base:
+      someone: Alguém
+    comment:
+      answer:
+        comment_removed: Comentário Removido
+      create:
+        comment_removed: Comentário Removido
+    event_subscription:
+      create:
+        subscription_removed: Inscrição Removida
+    following:
+      create:
+        following_removed: Deixou de seguir
+    game:
+      removed_game:  Jogo Removido
+    news:
+      create:
+        news_removed: Notícia Removida
+    rating:
+      create:
+        missing_rating: Avaliação não encontrada
+    user:
+      missing_user: Usuário não encontrado
+      verified: Validada
+  reports:
+    new:
+      details: 'Descrição:'
+      question: Qual é o problema?
+      send: Enviar
+      title: 'Denunciar: %{game}'
+      report_submitted: Agradecemos por nos avisar.
+      report_submitted_message: Seu feedback ajuda nosso sistema a saber quando algo não está certo.
+  scores:
+    score:
+      points: Pontos
+      delete: Excluir
+      destroy_confirm: Você tem certeza ?
+      verified: Validada
+  search:
+    games:
+      filters: Filtros
+      adult_content: Conteúdo sensível
+      mobile_first: Otimizados para dispositivos móveis
+      no_result: Nenhum resultado
+      search: Pesquisar
+      search_placeholder: Pesquisar...
+      search_tools: Ferramentas de Busca
+      language: Idioma
+      genre: Gênero
+      platform: Sistema operacional
+      recommended: Recomendados
+      tool: Motor
+      status: Estado
+      games: Jogos
+      score_system_games: Jogos de Placar
+      year: Ano
+    details:
+      meta_tags:
+        search: Pesquisar
+        description: "Pesquisar... (Jogos, #Hashtag, @Perfil, Ferramentas de Busca, Idioma, Gênero, Ano, Sistema operacional, Motor, Estado)"
+      structured_data:
+        search: Pesquisar
+        description: "Pesquisar... (Jogos, #Hashtag, @Perfil, Ferramentas de Busca, Idioma, Gênero, Ano, Sistema operacional, Motor, Estado)"
+  settings:
+    edit:
+      settings: Configurações
+    form:
+      language: Idioma (Language)
+      setlanguage: Selecione seu idioma
+      sounds: Sons
+      sounds_description: Reproduzir um som sempre que uma nova notificação é recebida
+      adult_content: Conteúdo sensível
+      label_on: 'Ativado'
+      label_off: 'Desativado'
+      email_notifications: Notificações por e-mail
+      general: Geral
+      mail_comment_answer: Alguém respondeu ao seu comentário
+      mail_comment_mention: Menções
+      mail_event_subscription_create: Alguém se inscreveu em seus eventos
+      followed_games: Inscrições
+      mail_comment_follower_create: Alguém comentou um jogo que você segue
+      mail_follower_news_create: Alguém atualizou um jogo que você segue
+      mail_news_create: Alguém atualizou um jogo que você segue
+      mail_follower_game_create: Um usuário que você segue criou um novo jogo
+      mail_game_create: Um usuário que você segue criou um novo jogo
+      mail_user_game_new_leader: Você é o melhor jogador de um novo jogo
+      mail_user_game_old_leader: Você não é mais o Melhor Jogador de um jogo
+      mail_user_game_other_leader: Há um novo melhor jogador
+      your_games: Os teus Jogos
+      mail_rating_create: Alguém adicionou votos ao seu jogo
+      mail_following_create: Estou sendo seguido por mais alguém
+      mail_comment_create: Alguém comentou seu jogo
+      mail_medal_create: Você recebeu uma medalha
+      mail_user_game_dev_leader: Novo Melhor Jogador em seu jogo
+      account_data: Dados da Conta
+      email: Email
+      password: Senha
+      edit: Editar
+      stats: Estatísticas
+      comments: Comentários
+      subscriptions: Inscrições
+      show_more: Mostrar Mais
+      save: Salvar alterações
+      delete_account: Eliminar cuenta definitivamente
+  sitemaps:
+    index:
+      active_events: Em Breve
+      inactive_events: Anteriores
+      new_events: Criar Evento
+      recover: Redefinindo sua senha
+      sign_in: Entrar
+      sign_up: Registrar
+      sitemap: Mapa do Website
+    details:
+      meta_tags:
+        sitemap: Mapa do Website
+        description: Mapa do Website é uma representação hierárquica da estrutura de indiexpo, composta por páginas web.
+      structured_data:
+        sitemap: Mapa do Website
+        description: Mapa do Website é uma representação hierárquica da estrutura de indiexpo, composta por páginas web.
+  subscriptions:
+    subscribe_button:
+      subscribe: Subscrever
+    unsubscribe_button:
+      unsubscribe: Cancelar inscrição
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Motor
+  users:
+    show:
+      page_title: "%{username} está no indiexpo"
+      online: Disponível
+      chart: Classificação
+      last_month: Últimos 30 dias
+      level: Nível
+      games: Jogos
+      score_system_games: Jogos de Placar
+      show_more: Mostrar Mais
+      subscriptions: Inscrições
+      last_commented: Comentários
+      history: Histórico
+      other_players: Outros Jogadores
+      verified: Validada
+    details:
+      structured_data:
+        developer: Autor
+        gamer: Gamer
+      meta_tags:
+        about: Sobre
+        description: Perfil, Estante de Troféus, Jogos, Inscrições, Jogos de Placar, Comentários & Histórico
+  me:
+    menubar:
+      profile: Perfil
+      event_subscriptions: Os meus eventos
+      followed_games: Inscrições
+      your_games: Os teus Jogos
+      settings: Configurações
+    followed_games:
+      no_result: Nenhum resultado
+      no_subscriptions_message: indiexpo funciona melhor quando você está inscrito em pelo menos 5 jogos.
+    games:
+      your_games: Os teus Jogos
+      visits: Visualizações
+      downloads_count: Jogadores
+      subscribers: Inscritos
+      totals: Totais
+      no_result: Nenhum resultado
+      upload: Carregar
+  levels:
+    index:
+      level: Nível
+      user_chart: Classificação
+      last_month: Últimos 30 dias
+      gems: Gemas
+      trophy_case: Estante de Troféus
+      title_1: Iniciante
+      title_2: Recruta
+      title_3: Entusiasta
+      title_4: Aprendiz
+      title_5: Novato
+      title_6: Sênior
+      title_7: Talentoso
+      title_8: Habilidoso
+      title_9: Guerreiro
+      title_10: Especialista
+      title_11: Perito
+      title_12: Veterano
+      title_13: Profissional
+      title_14: Elite
+      title_15: Gênio
+      title_16: Mestre
+      title_17: Super estrela
+      title_18: Dragão
+      title_19: Campeão
+      title_20: Lenda
+      title_21: Grão-mestre
+      verified: Validada
+    goals:
+      goals: Metas
+    stats:
+      stats: Estatísticas
+      comments: Comentários
+      subscriptions: Inscrições
+      your_games: Os teus Jogos
+      votes: Votos
+  warning:
+    index:
+      warning: Atenção
+      destroy: Excluir
+      destroy_confirm: Você tem certeza ?
+      delete_account: La eliminación de tu cuenta es definitiva.
+      delete_account_description: Si eliminas tu cuenta de indiexpo, no podrás recuperar el contenido ni la información que compartiste en indiexpo.

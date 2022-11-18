@@ -1,0 +1,67 @@
+<% game = find_game(activity.trackable) %>
+<% event = find_event(activity.trackable) %>
+<% comment = find_comment(activity.trackable) %>
+<% following = find_following(activity.trackable) %>
+<% news = find_news(activity.trackable) %>
+<% rating = find_rating(activity.trackable) %>
+<div id="notification_<%= activity.id %>" class="notification <%=  unread_class(activity)%>" data-id="<%= activity.id %>">
+	<div class="badge">
+		<% if comment %>
+			<%= image_tag "Images/icons/comments.png", class: 'icon', alt: 'Comment' %>
+		<% elsif following %>
+			<%= image_tag "Images/icons/fav_on.png", class: 'icon', alt: 'Following' %>
+		<% elsif news %>
+			<%= image_tag "Images/icons/news.png", class: 'icon', alt: 'News' %>
+		<% elsif rating %>
+			<%= image_tag "Images/icons/star.png", class: 'icon', alt: 'Rating' %>
+		<% else %>
+			<%= image_tag "Images/icons/alert.png", class: 'icon', alt: 'Notice' %>
+		<% end %>
+	</div>
+		<div class="text-body-notifications">
+          <span class="author">
+            <% if defined?(hide_name) %>
+              <%= t('.someone') %>
+            <% else %>
+              <%= render 'public_activity/user', user: activity.owner %>
+            <% end %>
+          </span>
+          <span><%= message %></span>
+          <span>
+            <% if game %>
+              <%= render 'public_activity/game', game: game %>
+            <% elsif event %>
+              <%= render 'public_activity/event', event: event %>
+            <% else %>
+              <%= missing %>
+            <% end %>
+          </span>
+			<div class="hoveron">
+            [<span data-time class="cw-relative-date" timestamp="<%= activity.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>]
+          </div>
+        </div>
+
+	<div class="links-notifications">
+		<% if game %>
+			<% if !game.followed_by?(current_user) && !following %>
+				<%= div_for(game, :favourite, class: following_css(game), style: 'margin-right: 2px; margin-top: -8px;', data: { game_id: game.id }) do %>
+					<%= toggle_button_to '', '', game_followings_path(game.id), on: 'favourite-button favourite', off: 'favourite-button unfavourite' %>
+				<% end %>
+			<% end %>
+			<% if news %>
+				<%= link_to game_news_url(game.slug) do %>
+					<%= image_tag 'Images/icons/view.png' %>
+				<% end %>
+			<% else %>
+				<%= link_to game_url(game.slug) do %>
+					<%= image_tag 'Images/icons/view.png' %>
+				<% end %>
+			<% end %>
+		<% elsif event %>
+			<%= link_to event_url(event.slug) do %>
+				<%= image_tag 'Images/icons/view.png' %>
+			<% end %>
+		<% end %>
+	</div>
+	<hr>
+</div>

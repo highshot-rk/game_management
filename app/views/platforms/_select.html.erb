@@ -1,0 +1,1 @@
+<%= form.collection_select defined?(name) || :platform, Platform.all, :id, :name, include_blank: t('.platform'), selected: search_params[:platform] %>

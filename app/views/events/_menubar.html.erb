@@ -1,0 +1,12 @@
+<%= link_to event_path(@event.id) do %>
+	<li class="<%= section == :event && 'selected' || '' %>">
+		<div class="desktop_only"><%= t('.details') %></div>
+		<%= image_tag "Images/icons/pages/event_subscriptions.png", class: 'mobile_only' %>
+	</li>
+<% end %>
+<%= link_to edit_event_path(@event.id) do %>
+	<li class="<%= section == :edit && 'selected' || '' %>">
+		<div class="desktop_only"><%= t('.edit') %></div>
+		<%= image_tag "Images/icons/pages/edit.png", class: 'mobile_only' %>
+	</li>
+<% end if policy(@event).edit? %>

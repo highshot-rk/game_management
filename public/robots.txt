@@ -1,0 +1,42 @@
+#                   ___          _____                      ___           ___           ___         ___     
+#     ___          /__/\        /  /::\       ___          /  /\         /__/|         /  /\       /  /\    
+#    /  /\         \  \:\      /  /:/\:\     /  /\        /  /:/_       |  |:|        /  /::\     /  /::\   
+#   /  /:/          \  \:\    /  /:/  \:\   /  /:/       /  /:/ /\      |  |:|       /  /:/\:\   /  /:/\:\  
+#  /__/::\      _____\__\:\  /__/:/ \__\:| /__/::\      /  /:/ /:/_   __|__|:|      /  /:/~/:/  /  /:/  \:\ 
+#  \__\/\:\__  /__/::::::::\ \  \:\ /  /:/ \__\/\:\__  /__/:/ /:/ /\ /__/::::\____ /__/:/ /:/  /__/:/ \__\:\
+#     \  \:\/\ \  \:\~~\~~\/  \  \:\  /:/     \  \:\/\ \  \:\/:/ /:/    ~\~~\::::/ \  \:\/:/   \  \:\ /  /:/
+#      \__\::/  \  \:\  ~~~    \  \:\/:/       \__\::/  \  \::/ /:/      |~~|:|~~   \  \::/     \  \:\  /:/ 
+#      /__/:/    \  \:\         \  \::/        /__/:/    \  \:\/:/       |  |:|      \  \:\      \  \:\/:/  
+#      \__\/      \  \:\         \__\/         \__\/      \  \::/        |  |:|       \  \:\      \  \::/   
+#                  \__\/                                   \__\/         |__|/         \__\/       \__\/    
+# 
+# 
+# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# To ban all spiders from the entire site uncomment the next two lines:
+# User-agent: *
+# Disallow: /
+
+User-agent: *
+Disallow: /html5/*
+Disallow: /*/comments/*
+Disallow: /comments/*
+Disallow: /*/download/*
+Disallow: /download/*
+Disallow: /*/download_links/*/reports/new
+Disallow: /download_links/*/reports/new
+Disallow: /*/games/*/record_chart
+Disallow: /games/*/record_chart
+Disallow: /*/games/*/followers_list
+Disallow: /games/*/followers_list
+Disallow: /*/games/*/share
+Disallow: /games/*/share
+Disallow: /*/events/*/share
+Disallow: /events/*/share
+Disallow: /*/language/edit
+Disallow: /language/edit
+Disallow: /*/warning/
+Disallow: /warning/
+
+# Sitemap Index
+Sitemap: https://www.indiexpo.net/sitemap.xml

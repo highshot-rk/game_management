@@ -1,0 +1,11 @@
+<% content_for :menubar do %>
+	<%= menu_element selected: true do %>
+		<div class="desktop_only"><%= t('.upload') %></div>
+		<%= image_tag "Images/icons/pages/your_games.png", class: 'mobile_only' %>
+	<% end %>
+<% end %>
+
+<%= render 'terms' %>
+<div id="ListRight" style="max-width: 750px;">
+	<%= render 'form' %>
+</div>

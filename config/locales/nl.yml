@@ -1,0 +1,940 @@
+---
+nl:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Beschrijving
+        end_date: Datum Einde
+        prizes: Prijzen
+        rules: Regels
+        screen: Schermafbeelding
+        start_date: Datum Start
+        title: Titel
+        website: Website
+      game:
+        author: Ontwikkelaar
+        description: Beschrijving
+        genre: Type
+        title: Titel
+        website: Website
+      user:
+        username_or_email: Gebruikersnaam/E-mailadres
+        password: Wachtwoord
+        username: Gebruikersnaam
+        characters_minimum: "%{minimum_password_length} of meer tekens"
+        email: E-mailadres
+        terms_of_service: Ik accepteer de voorwaarden
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: should be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: you can upload only 2 games in 24 hours
+        user:
+          attributes:
+            username:
+              invalid: mogen uitsluitend bestaan uit alfanumerieke tekens (A-Z en 0-9)
+    models:
+      game_languages: Taal
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'heeft je genoemd in een opmerking in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Je level is verhoogd tot %{level}
+      score: Je score is verhoogd met + %{score}
+      new_title: New Title
+      prizes: Prijzen
+      game_new_leader: Jij bent de beste speler van %{game}!
+      game_old_leader: Je bent ingehaald! %{user} staat nu aan de top van %{game}! Strijd voor de troon!
+      game_other_leader: "%{user} staat nu aan de top van %{game}! Strijd voor de troon!"
+      game_dev_leader: "%{user} staat nu aan de top van %{game}!"
+  application:
+    cookie_law:
+      show_more: Meer laden
+      ok: Ok
+      setlanguage: Selecteer je taal
+    footer:
+      about: Over
+      contact_us: Contact
+      language: Taal (Language)
+      faq: Veelgestelde vragen
+      feed_rss: RSS-Feeds
+      developers: Ontwikkelaars
+      sitemap: Site-overzicht
+      terms_and_conds: Voorwaarden
+      blog: Weblog
+    markdown_instructions:
+      formatting_help: Hulp bij opmaken
+      you_type: Je typt
+      you_see: Je ziet
+      italics: Cursief
+      bold: Dikgedrukt
+      hashtag: Hashtag
+      profile: Profiel
+      item_one: Item 1
+      item_two: Item 2
+      item_three: Item 3
+      spoiler: Spoiler
+    menubar:
+      home: Home
+      chart: Ranglijst
+      downloaded: Meest gedownload
+      events: Evenementen
+      language: Taal
+      news: News
+    meta_tags:
+      description: Indiexpo geeft miljarden mensen de mogelijkheid zelfgemaakte spellen's te ontdekken, bekijken en delen.
+      keywords: indiexpo, indie games, Spellen, Downloaden, Spelen, Uploaden, Spelers, Ontwikkelaars, Evenementen, Uitdagingen, Scorebordgames, Ranglijst, Meest gedownload, Meest populair, Meest recent, Gaming Creator on the Rise
+    navbar:
+      register: Registreren
+      login: Inloggen
+      search: "Zoeken... (Spellen, #Hashtag, @Profiel)"
+      upload: Uploaden
+      level_up: Level omhoog!
+    slideshow_mobile:
+      show_more: Meer laden
+    structured_data:
+      description: Indiexpo geeft miljarden mensen de mogelijkheid zelfgemaakte spellen's te ontdekken, bekijken en delen.
+      keywords: indiexpo, indie games, Spellen, Downloaden, Spelen, Uploaden, Spelers, Ontwikkelaars, Evenementen, Uitdagingen, Scorebordgames, Ranglijst, Meest gedownload, Meest populair, Meest recent, Gaming Creator on the Rise
+      games: Spellen
+    terms:
+      terms_and_conditions: Voorwaarden
+  comments:
+    answers:
+      more_comments: Meer laden
+    comment:
+      answer: Beantwoorden
+      answers:
+        few: Alle %{count} antwoorden bekijken
+        many: Alle %{count} antwoorden bekijken
+        one: 1 antwoord
+        other: Alle %{count} antwoorden bekijken
+      destroy: Verwijderen
+      destroy_confirm: Weet je het zeker?
+      level: Level
+      new: Nieuw
+      verified: Geverifieerd
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: Er is hier zo veel te zien, met zo veel mensen, waaronder jijzelf, die geweldige dingen maken. Laat anderen weten wat je vindt!
+      now_loading: Now Loading...
+      publish: Plaatsen
+  cookie_law: We gebruiken cookies om inhoud en advertenties relevanter te maken en je een veiligere ervaring te bieden.
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short_date: "%-d/%-m"
+  devise:
+    sessions:
+      new:
+        login: Inloggen
+        recover_password: Uw wachtwoord opnieuw in te stellen
+        send_email_again: E-mail opnieuw sturen
+        details:
+          structured_data:
+            login: Inloggen
+            description: Er is hier zo veel te zien, met zo veel mensen, waaronder jijzelf, die geweldige dingen maken. Laat anderen weten wat je vindt!
+          meta_tags:
+            login: Inloggen
+            description: Er is hier zo veel te zien, met zo veel mensen, waaronder jijzelf, die geweldige dingen maken. Laat anderen weten wat je vindt!
+    confirmations:
+      new:
+        email: E-mailadres
+        send_email_again: E-mail opnieuw sturen
+        details:
+          structured_data:
+            send_email_again: E-mail opnieuw sturen
+            description: Je e-mailadres bevestigen.
+          meta_tags:
+            send_email_again: E-mail opnieuw sturen
+            description: Je e-mailadres bevestigen.
+    mailer:
+      confirmation_instructions:
+        welcome: Doe mee en geniet ervan
+        title: "Bevestig je e-mailadres door de link:"
+        confirm_account: Je e-mailadres bevestigen.
+        text_1: Als je bent ingelogd bij indiexpo kun je optimaal profiteren van alle indiexpo-functies.
+        text_2: Er is hier zo veel te zien, met zo veel mensen, waaronder jijzelf, die geweldige dingen maken. Laat anderen weten wat je vindt!
+      reset_password_instructions:
+        change_password: Wijzig je wachtwoord
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: Iemand heeft een link gevraagd om uw wachtwoord te wijzigen; dit kan via onderstaande link.
+      unlock_instructions:
+        unlock_account: Ontgrendel mijn account
+    passwords:
+      new:
+        recover_password: Uw wachtwoord opnieuw in te stellen
+        email: E-mailadres
+        send: Verzenden
+        details:
+          structured_data:
+            recover_password: Uw wachtwoord opnieuw in te stellen
+            description: Geef een e-mailadres op dat u nu kunt controleren
+          meta_tags:
+            recover_password: Uw wachtwoord opnieuw in te stellen
+            description: Geef een e-mailadres op dat u nu kunt controleren
+      edit:
+        change_password: Wijzig je wachtwoord
+        new_password: Nieuw wachtwoord
+        confirm_new_password: Bevestig nieuw wachtwoord
+    registrations:
+      new:
+        register: Registreren
+        details:
+          structured_data:
+            register: Registreren
+            description: Als je bent ingelogd bij indiexpo kun je optimaal profiteren van alle indiexpo-functies.
+          meta_tags:
+            register: Registreren
+            description: Als je bent ingelogd bij indiexpo kun je optimaal profiteren van alle indiexpo-functies.
+      edit:
+        change_password: Wijzig je wachtwoord
+        change_email: E-mail wijzigen
+        new_password: Nieuw wachtwoord
+        confirm_new_password: Bevestig nieuw wachtwoord
+        current_password: Huidig wachtwoord
+        current_email: Huidige e-mailadressen
+        new_email: Nieuw e-mailadres
+        save: Wijzigingen opslaan
+    shared:
+      menubar:
+        login: Inloggen
+        recover_password: Uw wachtwoord opnieuw in te stellen
+        register: Registreren
+        send_email_again: E-mail opnieuw sturen
+  download_links:
+    download_link:
+      download: Downloaden
+  errors:
+    messages:
+      not_saved: Kon niet opslaan
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Evenementen & Uitdagingen
+          description: 'Indie (computerspellen) : Evenementen & Uitdagingen - Gepland & Afgelopen'
+        structured_data:
+          events: Evenementen & Uitdagingen
+          description: 'Indie (computerspellen) : Evenementen & Uitdagingen - Gepland & Afgelopen'
+    active_selector:
+      active: Gepland
+      inactive: Afgelopen
+    edit:
+      destroy: Verwijderen
+      destroy_confirm: Weet je het zeker?
+    end_after_start: should be after start date
+    event_types:
+      all: Alle
+      contest: Wedstrijd
+      mini_contest: Mini Wedstrijd
+      new: Evenement maken
+      other: Meer
+    form:
+      language: Taal
+      publish: Plaatsen
+      type: Type
+    menubar:
+      details: Overzicht
+      edit: Bewerken
+    index:
+      events: Evenementen
+      challenges: Uitdagingen
+      champions: De Kampioenen
+      points: Punten
+      show_more: Meer laden
+    new:
+      event: Evenement
+    share:
+      share: Delen
+      email: E-mailadres
+      qrcode: QR-Code
+    show:
+      description: Beschrijving
+      ended: Inactive
+      ends: Aan
+      from: Van
+      genre: Type
+      language: Taal
+      prizes: Prijzen
+      rules: Regels
+      share: Delen
+      subscribers: Abonnees
+      to: al
+      website: Website
+  feeds:
+    index:
+      feed_rss: RSS-Feeds
+      events: 'Indie (computerspellen) : Evenementen'
+      latest: 'Indie (computerspellen) : Meest recent'
+      popular: 'Indie (computerspellen) : Meest populair'
+      last_updated: 'Indie (computerspellen) : Onlangs bijgewerkt'
+    details:
+      meta_tags:
+        feed_rss: RSS-Feeds
+        description: 'Indie (computerspellen) : RSS-Feeds - Evenementen - Meest recent - Meest populair - Onlangs bijgewerkt'
+      structured_data:
+        feed_rss: RSS-Feeds
+        description: 'Indie (computerspellen) : RSS-Feeds - Evenementen - Meest recent - Meest populair - Onlangs bijgewerkt'
+  layouts:
+    application:
+      indie_games: Indie
+    game:
+      play: Spelen
+      download: Downloaden
+      new: Nieuw
+      updates: Updates!
+      show_more: Meer laden
+      adult_content_message_html: Je moet tenminste achttien jaar oud zijn om hier bij te kunnen.</br> Ben je achttien of ouder en bereid om inhoud voor volwassenen te zien?
+      yes: Ja
+      no: Nee
+  games:
+    game:
+      play: Spelen
+      download: Downloaden
+      new: Nieuw
+      updates: Updates!
+      chart: Ranglijst
+      verified: Geverifieerd
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: Spelers
+      game_menu:
+        comments: Reacties
+        details: Overzicht
+        updates: Updates
+        edit: Bewerken
+        statistics: Statistieken
+      structured_data:
+       games: Spellen
+       developer: Ontwikkelaar
+      index:
+        videogame: Videospel
+        published_by: 'gepubliceerd door '
+        edit: Bewerken
+        statistics: Statistieken
+        players: Spelers
+        news: News
+        no_news: No News
+        website: Website
+        recommended: Aanbevolen
+    edit:
+      edit: Bewerken
+      destroy: Verwijderen
+      destroy_confirm: Weet je het zeker?
+    embed_popup:
+      embed: Insluiten
+      preview: Voorvertoning
+    record_chart:
+      chart: Ranglijst
+      login: Inloggen
+      score_system_games: Scorebordgames
+    followers_list:
+      subscribers: Abonnees
+      verified: Geverifieerd
+    players_list:
+      downloads_count: Spelers
+      last_week: Afgelopen 7 dagen
+      no_logged_user: Guest
+      no_result: We hebben niks gevonden
+      verified: Geverifieerd
+    form:
+      add_external_link: Voeg externe link toe
+      add_file: Voeg bestand toe
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Lange Beschrijving
+      artworks: Artworks
+      delete: Verwijderen
+      downloads: Download
+      genre: Type
+      language: Taal
+      publish: Plaatsen
+      remove_file: Verwijderen
+      remove_url: Verwijderen
+      restore: Ongedaan maken
+      screens: Afbeeldingen
+      status: Status
+      complete: Compleet
+      demo: Demo
+      minigame: Minigame
+      tool: Hulpmiddelen
+      hashtag: We raden je als best practice aan niet meer dan 2 hashtags te gebruiken
+      adult_content: Gevoelige content
+      mobile_first: Geoptimaliseerd voor mobiele telefoons
+      now_loading: Now Loading...
+      video: Video's
+    monetisation:
+      monetisation: Inkomsten genereren
+      players: Spelers
+      level: Level
+      subscribers: Abonnees
+      comments: Reacties
+      offensive: Haatdragende of grove content
+      sexual: Seksuele content
+      spam: Spam of misleidend
+      violent: Wrede of afstotende content
+      description: Beschrijving
+      send: Verzenden
+    new:
+      upload: Uploaden
+    share:
+      share: Delen
+      email: E-mailadres
+      qrcode: QR-Code
+    show:
+      play: Spelen
+      embed: Insluiten
+      share: Delen
+      monetisation: Inkomsten genereren
+      download: Downloaden
+      subscribe: Abonneren
+      subscribed: Geabonneerd
+      subscribers: Abonnees
+      comment: Reacties
+      description: Beschrijving
+      published_on: Gepubliceerd op
+      adult_content: Gevoelige content
+      complete: Compleet
+      demo: Demo
+      minigame: Minigame
+      language: Taal
+      first_to_comment: Voeg een openbare reactie toe.
+      mobile_first: Geoptimaliseerd voor mobiele telefoons
+      more_comments: Meer laden
+      screens: Afbeeldingen
+      video: Video's
+      top_player: Beste Speler
+      epic_win: Epic Win!
+      on_the_rise: Gaming Creator on the Rise
+      verified: Geverifieerd
+    stats:
+      statistics: Statistieken
+      comments: Reacties
+      monetisation: Inkomsten genereren
+      daily: Vandaag
+      days: Dagen
+      date: Datum
+      downloads: Spelers
+      followings: Abonnees
+      chart: Ranglijst
+      most_rated: Meeste stemmen
+      followings_chart: Meest gevolgd
+      most_downloaded: Meest gedownload
+      last_week: Vorige week
+      this_week: Deze week
+      last_6_months: Afgelopen 180 dagen
+      totals: Totalen
+      visits: Bezoekers
+      active_views: Actieve weergaven
+      votes: Votes
+      votes_averange: Average
+      other: Meer
+      engagement: Betrokkenheid
+      show_more: Meer laden
+      qrcode: QR-Code
+      warning: Waarschuwing
+    support:
+      prizes: Prijzen
+      donate: 'Doneren %{price}$'
+    tips:
+      enhancements: Optimalisaties
+      only_to_you: Alleen zichtbaar voor u
+  games_sections:
+    chart:
+      last_6_months: Afgelopen 180 dagen
+      details:
+        meta_tags:
+          chart: Ranglijst
+          description: 'Indie (computerspellen) : Meest gedownload - Meeste stemmen - Meest gevolgd'
+        structured_data:
+          chart: Ranglijst
+          description: 'Indie (computerspellen) : Meest gedownload - Meeste stemmen - Meest gevolgd'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Meest gedownload
+          description: 'Indie (computerspellen) : Meest gedownload - Vandaag - Afgelopen 7 dagen - Afgelopen 30 dagen - Altijd'
+        structured_data:
+          downloaded: Meest gedownload
+          description: 'Indie (computerspellen) : Meest gedownload - Vandaag - Afgelopen 7 dagen - Afgelopen 30 dagen - Altijd'
+    news:
+      details:
+        meta_tags:
+          news: News
+          description: 'Indie (computerspellen) : News - Afgelopen 30 dagen'
+        structured_data:
+          news: News
+          description: 'Indie (computerspellen) : News - Afgelopen 30 dagen'
+    filters:
+      chart:
+        most_downloaded: Meest gedownload
+        voted: Meeste stemmen
+        followed: Meest gevolgd
+      downloaded:
+        everytime: Altijd
+        last_month: Afgelopen 30 dagen
+        last_week: Afgelopen 7 dagen
+        today: Vandaag
+      news:
+        last_commented: Reacties
+        last_updated: Onlangs bijgewerkt
+        latest: Meest recent
+        popular: Meest populair
+  genres:
+    genre:
+      rpg: Rpg
+      browsergame: Browser Game
+      platformaction: Platform/Actie
+      shootemup: Shoot em Up
+      puzzle: Puzzel
+      pointandclick: Point en Click
+      sport: Sport
+      fighting: Vechten
+      other: Overige
+    genres:
+      all: Alle
+    select:
+      genre: Type
+  helpers:
+    label:
+      report:
+        broken: Gebroken Link
+        copyright: Maakt inbreuk op mijn rechten
+        offensive: Haatdragende of grove content
+        sexual: Seksuele content
+        spam: Spam of misleidend
+        violent: Wrede of afstotende content
+  home:
+    navigation:
+      home: Home
+      news: News
+      chart: Ranglijst
+      events: Evenementen
+      downloaded: Meest gedownload
+      console: Spelconsole
+      subscriptions: Abonnementen
+      your_games: Jouw Spellen
+      history: Geschiedenis
+    landing:
+      last_followed_games_updated: Voor het geval je het gemist hebt
+      play: Spelen
+      recommended: Aanbevolen
+      based_recent_activity: Op basis van je recente activiteit
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Gedenkdag
+      query_of_the_day_3: Meest gevolgd - Afgelopen 180 dagen
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Scorebordgames
+      query_of_the_day_6: Updates!
+      downloaded: Meest gedownload
+      today: Vandaag
+      last_month: Afgelopen 30 dagen
+      last_week: Afgelopen 7 dagen
+      latest: Meest recent
+      show_more: Meer laden
+    console:
+      details:
+        structured_data:
+          console: Spelconsole
+          description: 'Indie (computerspellen) : Spelen'
+        meta_tags:
+          console: Spelconsole
+          description: 'Indie (computerspellen) : Spelen'
+    subscriptions:
+      subscriptions: Abonnementen
+      updates: Updates!
+      no_result: We hebben niks gevonden
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Spelers
+      subscribers: Abonnees
+      comments: Reacties
+      details: Overzicht
+      show_more: Meer laden
+    your_games:
+      your_games: Jouw Spellen
+      players: Spelers
+      subscribers: Abonnees
+      comments: Reacties
+      details: Overzicht
+      show_more: Meer laden
+    history:
+      history: Geschiedenis
+      score_system_games: Scorebordgames
+      last_commented: Reacties
+      subscriptions: Abonnementen
+      votes: Votes
+  static:
+    about:
+      about: Over
+      app: Apps
+      extension: Extensies
+      social_networks: Sociaal netwerk
+      games: Spellen
+      show_more: Meer laden
+      details:
+        structured_data:
+          about: Over
+          description: Indiexpo geeft miljarden mensen de mogelijkheid zelfgemaakte spellen's te ontdekken, bekijken en delen.
+        meta_tags:
+          about: Over
+          description: Indiexpo geeft miljarden mensen de mogelijkheid zelfgemaakte spellen's te ontdekken, bekijken en delen.
+    faq:
+      faq: Veelgestelde vragen
+      question_1: Wat is indiexpo?
+      answer_1: Indiexpo geeft miljarden mensen de mogelijkheid zelfgemaakte spellen's te ontdekken, bekijken en delen. Indiexpo biedt een forum dat iedereen kan gebruiken om wereldwijd contact te leggen met anderen, mensen te informeren en te inspireren. De site is een distributieplatform voor makers van originele content en voor adverteerders, hoe groot of klein ook.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: Veelgestelde vragen
+          description: Het begrip veelgestelde vragen wordt gebruikt als benaming voor een lijst met vaak voorkomende vragen over een bepaald onderwerp, waarop een antwoord wordt gegeven.
+        meta_tags:
+          faq: Veelgestelde vragen
+          description: Het begrip veelgestelde vragen wordt gebruikt als benaming voor een lijst met vaak voorkomende vragen over een bepaald onderwerp, waarop een antwoord wordt gegeven.
+    developers:
+      developers: Ontwikkelaars
+      details:
+        structured_data:
+          developers: Ontwikkelaars
+          description: Explore our Developer Products. Statistics, Apps, Extensies, Tutorials
+        meta_tags:
+          developers: Ontwikkelaars
+          description: Explore our Developer Products. Statistics, Apps, Extensies, Tutorials
+  languages:
+    edit:
+      note: Dit verandert de taal van de site. Tekst die door gebruikers is ingevoerd, verandert niet.
+      setlanguage: Selecteer je taal
+  medals:
+    medal:
+      titles:
+        age: "%{score} Jaren"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Plaats een bericht om je doelgroep aan te spreken.
+      hashtag: We raden je als best practice aan niet meer dan 2 hashtags te gebruiken
+      now_loading: Now Loading...
+      publish: Plaatsen
+    news:
+      destroy: Verwijderen
+      destroy_confirm: Weet je het zeker?
+    index:
+      players: Spelers
+      subscribers: Abonnees
+      download: Downloaden
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Profiel
+      followed_games: Abonnementen
+      your_games: Jouw Spellen
+      settings: Instellingen
+      logout: Afmelden
+  platforms:
+    platforms:
+      all: Alle
+    select:
+      platform: Besturingssysteem
+  public_activities:
+    index:
+      destroy_confirm: Weet je het zeker?
+      mark_all_as_read: Alles markeren als gelezen
+      notifications: Meldingen
+      see_all: Meer laden
+  public_activities_mailer:
+    notify:
+      hello: Hallo %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Ongedaan maken
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Reactie Verwijderd
+      create:
+        comment_removed: Reactie Verwijderd
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Following removed
+    game:
+      removed_game: Verwijderd Spel
+    news:
+      create:
+        news_removed: Nieuws Verwijderd
+    rating:
+      create:
+        missing_rating: Vermiste Beoordeling
+    user:
+      missing_user: Vermiste Gebruiker
+      verified: Geverifieerd
+  reports:
+    new:
+      details: 'Beschrijving:'
+      question: Wat is het probleem?
+      send: Verzenden
+      title: 'Rapporteren: %{game}'
+      report_submitted: Bedankt voor je bericht.
+      report_submitted_message: Aan de hand van jouw feedback leert ons systeem wanneer iets niet in orde is.
+  scores:
+    score:
+      points: Punten
+      delete: Verwijderen
+      destroy_confirm: Weet je het zeker?
+      verified: Geverifieerd
+  search:
+    games:
+      filters: Filters
+      adult_content: Gevoelige content
+      mobile_first: Geoptimaliseerd voor mobiele telefoons
+      no_result: We hebben niks gevonden
+      search: Zoeken
+      search_placeholder: Zoeken...
+      search_tools: Zoekhulpmiddelen
+      language: Taal
+      genre: Type
+      platform: Besturingssysteem
+      recommended: Aanbevolen
+      tool: Hulpmiddelen
+      status: Status
+      games: Spellen
+      score_system_games: Scorebordgames
+      year: Jaar
+    details:
+      meta_tags:
+        search: Zoeken
+        description: "Zoeken... (Spellen, #Hashtag, @Profiel, Zoekhulpmiddelen, Taal, Type, Jaar, Besturingssysteem, Tool, Status)"
+      structured_data:
+        search: Zoeken
+        description: "Zoeken... (Spellen, #Hashtag, @Profiel, Zoekhulpmiddelen, Taal, Type, Jaar, Besturingssysteem, Tool, Status)"
+  settings:
+    edit:
+      settings: Instellingen
+    form:
+      language: Taal (Language)
+      setlanguage: Selecteer je taal
+      sounds: Geluiden
+      sounds_description: Een geluid afspelen wanneer er een nieuwe melding wordt ontvangen
+      adult_content: Gevoelige content
+      label_on: 'Aan'
+      label_off: 'Uit'
+      email_notifications: Meldingen e-mail
+      general: Algemeen
+      mail_comment_answer: Iemand heeft gereageert op je opmerking
+      mail_comment_mention: Vermeldingen
+      mail_event_subscription_create: Iemand heeft zich geabonneert op je event
+      followed_games: Abonnementen
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Jouw Spellen
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: Ik een nieuwe volger heb
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a medal
+      mail_user_game_dev_leader: New Leader on your game
+      account_data: Accountgegevens
+      email: E-mailadres
+      password: Wachtwoord
+      edit: Bewerken
+      stats: Statistieken
+      comments: Reacties
+      subscriptions: Abonnementen
+      show_more: Meer laden
+      save: Wijzigingen opslaan
+      delete_account: Account permanent verwijderen
+  sitemaps:
+    index:
+      active_events: Gepland
+      inactive_events: Afgelopen
+      new_events: Evenement maken
+      recover: Uw wachtwoord opnieuw in te stellen
+      sign_in: Inloggen
+      sign_up: Registreren
+      sitemap: Site-overzicht
+    details:
+      meta_tags:
+        sitemap: Site-overzicht
+        description: Een sitemap is een pagina waarin links naar alle pagina's van indiexpo staan.
+      structured_data:
+        sitemap: Site-overzicht
+        description: Een sitemap is een pagina waarin links naar alle pagina's van indiexpo staan.
+  subscriptions:
+    subscribe_button:
+      subscribe: Abonneren
+    unsubscribe_button:
+      unsubscribe: Ongedaan maken
+  time:
+    formats:
+      default: "%H:%M %d/%m/%Y"
+  tools:
+    select:
+      tool: Hulpmiddelen
+  users:
+    show:
+      page_title: "%{username} is op indiexpo"
+      online: Online
+      chart: Rang
+      last_month: Afgelopen 30 dagen
+      level: Level
+      games: Spellen
+      score_system_games: Scorebordgames
+      show_more: Meer laden
+      subscriptions: Abonnementen
+      last_commented: Reacties
+      history: Geschiedenis
+      other_players: Andere Spelers
+      verified: Geverifieerd
+    details:
+      structured_data:
+        developer: Ontwikkelaar
+        gamer: Gamer
+      meta_tags:
+        about: Over
+        description: Profiel, Trofeeënkast, Spellen, Abonnementen, Scorebordgames, Reacties & Geschiedenis
+  me:
+    menubar:
+      profile: Profiel
+      event_subscriptions: Mijn evenementen
+      followed_games: Abonnementen
+      your_games: Jouw Spellen
+      settings: Instellingen
+    followed_games:
+      no_result: We hebben niks gevonden
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Jouw Spellen
+      visits: Bezoekers
+      downloads_count: Spelers
+      subscribers: Abonnees
+      totals: Totalen
+      no_result: We hebben niks gevonden
+      upload: Uploaden
+  levels:
+    index:
+      level: Level
+      user_chart: Rang
+      last_month: Afgelopen 30 dagen
+      gems: Edelstenen
+      trophy_case: Trofeeënkast
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Meester
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grootmeester
+      verified: Geverifieerd
+    goals:
+      goals: Doelen
+    stats:
+      stats: Statistieken
+      comments: Reacties
+      subscriptions: Abonnementen
+      your_games: Jouw Spellen
+      votes: Votes
+  warning:
+    index:
+      warning: Waarschuwing
+      destroy: Verwijderen
+      destroy_confirm: Weet je het zeker?
+      delete_account: Het verwijderen van je account is permanent.
+      delete_account_description: Als je je indiexpo-account verwijdert, kun je de inhoud of informatie die je op indiexpo hebt gedeeld niet meer terughalen.

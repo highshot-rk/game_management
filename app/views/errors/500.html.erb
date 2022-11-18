@@ -1,0 +1,20 @@
+<% content_for :menubar do %>
+	<%= render 'errors/menubar' %>
+<% end %>
+
+<div class="WrapList">
+	<div class="Write30 WidFlo">
+		Welcome to Page 500.
+	</div>
+
+	<div class="Write20 WidFlo">
+		The first rule of Page 500 is : you don't talk about this page. <a href="mailto:info@indiexpo.net">Please report this to the boss</a>
+	</div>
+
+	<!-- Image -->
+	<%= image_tag 'Images/Sprites/500.png', class: 'right' %>
+	<div class="clear"></div>
+
+	<!-- Games List -->
+	<%#= render 'games', games: @games, skip_pages: (@filter != :everytime) %>
+</div>

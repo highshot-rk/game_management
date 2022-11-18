@@ -1,0 +1,20 @@
+<% content_for(:structured_data) do %>
+	<%= render 'games_sections/chart/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'games_sections/chart/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<%= render 'menubar', menu: :chart %>
+<% end %>
+<div data-pjax-container>
+	<%= page_title t("games_sections.filters.#{action_name}.#{@filter}") %>
+	<%= render 'home/navigation', section: :chart, class: 'desktop_only' %>
+
+	<div id="ListRight">
+		<%= render 'genres/genres', section: @section %>
+		<%= render 'filters', elements: @available_filters %>
+		<div class="WidFlo hoveron"><%= t('.last_6_months') %></div>
+		<%= render 'games/games', games: @games, positions: ((@games.current_page - 1) * (Game.max_per_page || Kaminari.config.default_per_page)) %>
+	</div>
+</div>

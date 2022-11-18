@@ -1,0 +1,11 @@
+<%= form_for([game, game.news.new], url: game_news_path(game_id: game.slug), remote: true, data: {new_form: true}) do |form| %>
+  <div id="newsError" class="WidFlo center background900 Write20"><%= flash[:error] %></div>
+	<%= form.text_area :text, placeholder: t('.text'), rows: 1, minlength: News::MIN_LENGTH, class: 'form_text_area' %>
+  <div class="WidFlo"><%= t('.hashtag') %></div>
+  <%= render 'application/markdown_instructions' %>
+  <%= form.submit t('.publish'), data: { analytics_click: 'News Posted', load: 'true' }, class: "Botton right div100" %>
+<% end %>
+<div class="background_black center">
+	<div class="Write30 center"><%= t('.now_loading') %></div>
+	<%= image_tag 'loader.gif', alt: t('.now_loading') %>
+</div>

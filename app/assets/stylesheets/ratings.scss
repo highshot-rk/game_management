@@ -1,0 +1,29 @@
+$base-offset: -32px;
+
+.rateit {
+  * {
+    transition: none;
+  }
+  .rateit-range {
+    background: asset-url('Images/icons/Stelle.png');
+  }
+  .rateit-selected {
+    background: asset-url('Images/icons/Stelle.png') left $base-offset * 1;
+  }
+  .rateit-hover {
+      background: asset-url('Images/icons/Stelle.png') left $base-offset * 2;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      -webkit-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+  }
+  .rateit-preset {
+    background: asset-url('Images/icons/Stelle.png') left $base-offset * 3;
+  }
+}
+.rateit
+{
+  button.rateit-reset {
+    background: asset-url('jquery.rateit/src/delete.gif') 0 0;
+  }
+}

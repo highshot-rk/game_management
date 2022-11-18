@@ -1,0 +1,3 @@
+<% cache(activity) do %>
+<%= render 'public_activity/base', activity: activity, message: t('activity.rating.create'), missing: t('.missing_rating'), hide_name: true %>
+<% end %>

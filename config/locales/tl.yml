@@ -1,0 +1,940 @@
+---
+tl:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Description
+        end_date: End Date
+        prizes: Premyo
+        rules: Batas
+        screen: Pikturan
+        start_date: Start Date
+        title: Title
+        website: Website
+      game:
+        author: Developer
+        description: Description
+        genre: Uri
+        title: Title
+        website: Website
+      user:
+        username_or_email: Username/Email
+        password: Password
+        username: Username
+        characters_minimum: "%{minimum_password_length} o higit pang mga karakter"
+        email: Email
+        terms_of_service: Tinatanggap ko ang batas
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: hanggang dalawa lang ang pwedeng i-upload kada 24 oras
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: Languages
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Tumaas ang iyong level sa %{level}
+      score: Tumaas ang iyong grado sa %{score}
+      new_title: New Title
+      prizes: Premyo
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: Magpakita nang higit pa
+      ok: Ok
+      setlanguage: Piliin ang iyong wika
+    footer:
+      about: Tungkol sa
+      contact_us: Makipag-ugnayan sa amin
+      language: Wika (Language)
+      faq: FAQ
+      feed_rss: Feed RSS
+      developers: Mga Developer
+      sitemap: Site Map
+      terms_and_conds: Mga Tuntunin
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Tulong sa format
+      you_type: Ang type mo
+      you_see: Iyong nakikita
+      italics: Italics
+      bold: Bold
+      hashtag: Hashtag
+      profile: Profile
+      item_one: Item 1
+      item_two: Item 2
+      item_three: Item 3
+      spoiler: Spoiler
+    menubar:
+      home: Home
+      chart: Mga nangungunang chart
+      downloaded: Mas dina-download
+      events: Mga Event
+      language: Wika
+      news: News
+    meta_tags:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, indie games, Mga Laro, Download, Maglaro Na, Upload, Manlalaro, Mga Developer, Mga Event, Pagsubok, Mga Leaderboard na Laro, Most Popular, Most Recent, Sumisikat na Gaming Creator
+    navbar:
+      register: Mag-sign Up
+      login: Mag-log In
+      search: "Maghanap... (Mga Laro, #Hashtags, @Profiles)"
+      upload: Upload
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Magpakita nang higit pa
+    structured_data:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, indie games, Mga Laro, Download, Maglaro Na, Upload, Manlalaro, Mga Developer, Mga Event, Pagsubok, Mga Leaderboard na Laro, Most Popular, Most Recent, Sumisikat na Gaming Creator
+      games: Mga Laro
+    terms:
+      terms_and_conditions: Mga Tuntunin
+  comments:
+    answers:
+      more_comments: Magpakita nang higit pa
+    comment:
+      answer: Tumugon
+      answers:
+        few: View all %{count} replies
+        many: View all %{count} replies
+        one: View the reply
+        other: View all %{count} replies
+      destroy: I-delete
+      destroy_confirm: Sigurado ka ba?
+      level: Level
+      new: New
+      verified: Verified
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: Now Loading...
+      publish: Post
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Mag-log In
+        recover_password: Resetting Your Password
+        send_email_again: Magpasa ulit ng email
+        details:
+          structured_data:
+            login: Mag-log In
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: Mag-log In
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: Email
+        send_email_again: Magpasa ulit ng email
+        details:
+          structured_data:
+            send_email_again: Magpasa ulit ng email
+            description: Siguraduhin ang iyong email address
+          meta_tags:
+            send_email_again: Magpasa ulit ng email
+            description: Siguraduhin ang iyong email address
+    mailer:
+      confirmation_instructions:
+        welcome: Sumali na at mag enjoy
+        title: 'Confirm your email by opening the link below:'
+        confirm_account: Siguraduhin ang iyong email address
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: Baguhin ang aking password
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: May isang tao na humiling ng isang link upang baguhin ang iyong password, at magagawa mo ito sa pamamagitan ng link sa ibaba.
+      unlock_instructions:
+        unlock_account: Buksan ang account
+    passwords:
+      new:
+        recover_password: Resetting Your Password
+        email: Email
+        send: Send
+        details:
+          structured_data:
+            recover_password: Resetting Your Password
+            description: Enter an email that you can check now
+          meta_tags:
+            recover_password: Resetting Your Password
+            description: Enter an email that you can check now
+      edit:
+        change_password: Baguhin ang aking password
+        new_password: Bagong password
+        confirm_new_password: Kumpirmahin ang bagong password
+    registrations:
+      new:
+        register: Mag-sign Up
+        details:
+          structured_data:
+            register: Mag-sign Up
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: Mag-sign Up
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: Baguhin ang aking password
+        change_email: Palitan ang email
+        new_password: Bagong password
+        confirm_new_password: Kumpirmahin ang bagong password
+        current_password: Kasalukuyang password
+        current_email: Mga Kasalukuyang Email
+        new_email: Bagong Email
+        save: I-save ang mga Pagbabago
+    shared:
+      menubar:
+        login: Mag-log In
+        recover_password: Resetting Your Password
+        register: Mag-sign Up
+        send_email_again: Magpasa ulit ng email
+  download_links:
+    download_link:
+      download: Download
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Mga Event & Pagsubok
+          description: 'Indie Games : Mga Event & Pagsubok - Upcoming & Past'
+        structured_data:
+          events: Mga Event & Pagsubok
+          description: 'Indie Games : Mga Event & Pagsubok - Upcoming & Past'
+    active_selector:
+      active: Upcoming
+      inactive: Past
+    edit:
+      destroy: I-delete
+      destroy_confirm: Sigurado ka ba?
+    end_after_start: should be after start date
+    event_types:
+      all: Lahat
+      contest: Patimpalak
+      mini_contest: Simpleng Patimpalak
+      new: Create Event
+      other: Iba
+    form:
+      language: Wika
+      publish: Post
+      type: Uri
+    menubar:
+      details: Overview
+      edit: I-edit
+    index:
+      events: Mga Event
+      challenges: Pagsubok
+      champions: Mga panalo
+      points: Puntos
+      show_more: Magpakita nang higit pa
+    new:
+      event: Event
+    share:
+      share: Ibahagi
+      email: Email
+      qrcode: QR Code
+    show:
+      description: Description
+      ended: Inactive
+      ends: Hanggang
+      from: Mula
+      genre: Uri
+      language: Wika
+      prizes: Premyo
+      rules: Batas
+      share: Ibahagi
+      subscribers: Subscribers
+      to: To
+      website: Website
+  feeds:
+    index:
+      feed_rss: Feed RSS
+      events: 'Indie Games : Mga Event'
+      latest: 'Indie Games : Most Recent'
+      popular: 'Indie Games : Most Popular'
+      last_updated: 'Indie Games : Recently Updated'
+    details:
+      meta_tags:
+        feed_rss: Feed RSS
+        description: 'Indie Games : Feed RSS - Mga Event - Most Recent - Most Popular - Recently Updated'
+      structured_data:
+        feed_rss: Feed RSS
+        description: 'Indie Games : Feed RSS - Mga Event - Most Recent - Most Popular - Recently Updated'
+  layouts:
+    application:
+      indie_games: Indie Games
+    game:
+      play: Maglaro Na
+      download: Download
+      new: New
+      updates: Ano'ng Bago
+      show_more: Magpakita nang higit pa
+      adult_content_message_html: You must be at least eighteen years old to view this content.</br> Are you over eighteen and willing to see adult content?
+      yes: Yes
+      no: No
+  games:
+    game:
+      play: Maglaro Na
+      download: Download
+      new: New
+      updates: Ano'ng Bago
+      chart: Mga nangungunang chart
+      verified: Verified
+    destroy:
+      destroyed: Deleted
+    details:
+      game_header:
+        downloads_count: Manlalaro
+      game_menu:
+        comments: Komento
+        details: Overview
+        updates: Updates
+        edit: I-edit
+        statistics: Talaan
+      structured_data:
+       games: Mga Laro
+       developer: Developer
+      index:
+        videogame: Videogame
+        published_by: 'pinublish ni/ng '
+        edit: I-edit
+        statistics: Talaan
+        players: Manlalaro
+        news: News
+        no_news: No news
+        website: Website
+        recommended: Iminumungkahi
+    edit:
+      edit: I-edit
+      destroy: I-delete
+      destroy_confirm: Sigurado ka ba?
+    embed_popup:
+      embed: Embed
+      preview: Preview
+    record_chart:
+      chart: Mga nangungunang chart
+      login: Mag-log In
+      score_system_games: Mga Leaderboard na Laro
+    followers_list:
+      subscribers: Subscribers
+      verified: Verified
+    players_list:
+      downloads_count: Manlalaro
+      last_week: Last 7 Days
+      no_logged_user: Bisita
+      no_result: No results
+      verified: Verified
+    form:
+      add_external_link: Add external link
+      add_file: Add file
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Long Description
+      artworks: Artworks
+      delete: I-delete
+      downloads: Downloads
+      genre: Uri
+      language: Wika
+      publish: Post
+      remove_file: I-delete
+      remove_url: I-delete
+      restore: Undo
+      screens: Mga piktur
+      status: Status
+      complete: Complete
+      demo: Demo
+      minigame: Minigame
+      tool: Mga gamit
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      adult_content: Adults Contents
+      mobile_first: Optimized for Mobile Phones
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: Manlalaro
+      level: Level
+      subscribers: Subscribers
+      comments: Komento
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: Description
+      send: Send
+    new:
+      upload: Upload
+    share:
+      share: Ibahagi
+      email: Email
+      qrcode: QR Code
+    show:
+      play: Maglaro Na
+      embed: Embed
+      share: Ibahagi
+      monetisation: Monetisation
+      download: Download
+      subscribe: Mag-subscribe
+      subscribed: Subscribed
+      subscribers: Subscribers
+      comment: Komento
+      description: Description
+      published_on: Published on
+      adult_content: Adults Contents
+      complete: Complete
+      demo: Demo
+      minigame: Minigame
+      language: Wika
+      first_to_comment: Share your thoughts...
+      mobile_first: Optimized for Mobile Phones
+      more_comments: Magpakita nang higit pa
+      screens: Mga piktur
+      video: Video
+      top_player: Top Player
+      epic_win: Epic Win!
+      on_the_rise: Sumisikat na Gaming Creator
+      verified: Verified
+    stats:
+      statistics: Talaan
+      comments: Komento
+      monetisation: Monetisation
+      daily: Ngayon
+      days: Mga araw
+      date: Date
+      downloads: Manlalaro
+      followings: Subscribers
+      chart: Mga nangungunang chart
+      most_rated: Nasa Itaas
+      followings_chart: Most Followed
+      most_downloaded: Mas dina-download
+      last_week: Last week
+      this_week: This week
+      last_6_months: Last 6 Months
+      totals: Totals
+      visits: Panonood
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Iba
+      engagement: Engagement
+      show_more: Magpakita nang higit pa
+      qrcode: QR Code
+      warning: Warning
+    support:
+      prizes: Premyo
+      donate: 'Donate %{price}$'
+    tips:
+      enhancements: Mga Pagpapahusay
+      only_to_you: Ikaw lang ang nakakakita
+  games_sections:
+    chart:
+      last_6_months: Last 6 Months
+      details:
+        meta_tags:
+          chart: Mga nangungunang chart
+          description: 'Indie Games : Mas dina-download - Nasa Itaas - Most Followed'
+        structured_data:
+          chart: Mga nangungunang chart
+          description: 'Indie Games : Mas dina-download - Nasa Itaas - Most Followed'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Mas dina-download
+          description: 'Indie Games : Mas dina-download - Ngayon - Last 7 Days - Last 30 Days - Lifetime'
+        structured_data:
+          downloaded: Mas dina-download
+          description: 'Indie Games : Mas dina-download - Ngayon - Last 7 Days - Last 30 Days - Lifetime'
+    news:
+      details:
+        meta_tags:
+          news: News
+          description: 'Indie Games : News - Last 30 Days'
+        structured_data:
+          news: News
+          description: 'Indie Games : News - Last 30 Days'
+    filters:
+      chart:
+        most_downloaded: Mas dina-download
+        voted: Nasa Itaas
+        followed: Most Followed
+      downloaded:
+        everytime: Lifetime
+        last_month: Last 30 Days
+        last_week: Last 7 Days
+        today: Ngayon
+      news:
+        last_commented: Komento
+        last_updated: Recently Updated
+        latest: Most Recent
+        popular: Most Popular
+  genres:
+    genre:
+      rpg: Rpg
+      browsergame: Browser Game
+      platformaction: Tema/Bakbakan
+      shootemup: Rat-ratin sila
+      puzzle: Palaisipan
+      pointandclick: Punto at klik
+      sport: Palakasan
+      fighting: Labanan
+      other: Iba
+    genres:
+      all: Lahat
+    select:
+      genre: Uri
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: Infringes my rights
+        offensive: Hateful or abusive content
+        sexual: Sexual content
+        spam: Spam or misleading
+        violent: Violent or repulsive content
+  home:
+    navigation:
+      home: Home
+      news: News
+      chart: Mga nangungunang chart
+      events: Mga Event
+      downloaded: Mas dina-download
+      console: Console
+      subscriptions: Mga Subscription
+      your_games: Your Games
+      history: History
+    landing:
+      last_followed_games_updated: In case you missed it
+      play: Maglaro Na
+      recommended: Iminumungkahi
+      based_recent_activity: Batay sa kamakailang aktibidad
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Anniversary
+      query_of_the_day_3: Most Followed - Last 6 Months
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Mga Leaderboard na Laro
+      query_of_the_day_6: Ano'ng Bago
+      downloaded: Mas dina-download
+      today: Ngayon
+      last_week: Last 7 Days
+      last_month: Last 30 Days
+      latest: Most Recent
+      show_more: Magpakita nang higit pa
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'Indie Games : Maglaro Na'
+        meta_tags:
+          console: Console
+          description: 'Indie Games : Maglaro Na'
+    subscriptions:
+      subscriptions: Mga Subscription
+      updates: Ano'ng Bago
+      no_result: No results
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Manlalaro
+      subscribers: Subscribers
+      comments: Komento
+      details: Overview
+      show_more: Magpakita nang higit pa
+    your_games:
+      your_games: Your Games
+      players: Manlalaro
+      subscribers: Subscribers
+      comments: Komento
+      details: Overview
+      show_more: Magpakita nang higit pa
+    history:
+      history: History
+      score_system_games: Mga Leaderboard na Laro
+      last_commented: Komento
+      subscriptions: Mga Subscription
+      votes: Votes
+  static:
+    about:
+      about: Tungkol sa
+      app: Mga App
+      extension: Extensions
+      social_networks: Social Networks
+      games: Mga Laro
+      show_more: Magpakita nang higit pa
+      details:
+        structured_data:
+          about: Tungkol sa
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+        meta_tags:
+          about: Tungkol sa
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+    faq:
+      faq: FAQ
+      question_1: What is indiexpo?
+      answer_1: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games. Indiexpo provides an area for people to connect, inform, and inspire others across the globe and acts as a distribution platform for original content creators and advertisers large and small.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+        meta_tags:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+    developers:
+      developers: Mga Developer
+      details:
+        structured_data:
+          developers: Mga Developer
+          description: Explore our Developer Products. Talaan, Mga App, Extensions, Tutorials
+        meta_tags:
+          developers: Mga Developer
+          description: Explore our Developer Products. Talaan, Mga App, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: Piliin ang iyong wika
+  medals:
+    medal:
+      titles:
+        age: "%{score} Taon"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: Now Loading...
+      publish: Post
+    news:
+      destroy: I-delete
+      destroy_confirm: Sigurado ka ba?
+    index:
+      players: Manlalaro
+      subscribers: Subscribers
+      download: Download
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Profile
+      followed_games: Mga Subscription
+      your_games: Your Games
+      settings: Mga Setting
+      logout: Mag-log Out
+  platforms:
+    platforms:
+      all: Lahat
+    select:
+      platform: Operating System
+  public_activities:
+    index:
+      destroy_confirm: Sigurado ka ba?
+      mark_all_as_read: Markahan lahat bilang nabasa na
+      notifications: Mga Notification
+      see_all: Magpakita nang higit pa
+  public_activities_mailer:
+    notify:
+      hello: Hello %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Umalis
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: Verified
+  reports:
+    new:
+      details: 'Description:'
+      question: What is the issue?
+      send: Send
+      title: 'Iulat: %{game}'
+      report_submitted: Thanks for letting us know.
+      report_submitted_message: Your feedback helps our system learn when something isn't right.
+  scores:
+    score:
+      points: Puntos
+      delete: I-delete
+      destroy_confirm: Sigurado ka ba?
+      verified: Verified
+  search:
+    games:
+      filters: Mga Filter
+      adult_content: Adults Contents
+      mobile_first: Optimized for Mobile Phones
+      no_result: No results
+      search: Maghanap
+      search_placeholder: Maghanap...
+      search_tools: Search tools
+      language: Wika
+      genre: Uri
+      platform: Operating System
+      recommended: Iminumungkahi
+      tool: Mga gamit
+      status: Status
+      games: Mga Laro
+      score_system_games: Mga Leaderboard na Laro
+      year: Taon
+    details:
+      meta_tags:
+        search: Maghanap
+        description: "Maghanap... (Mga Laro, #Hashtags, @Profiles, Search tools, Wika, Uri, Taon, Operating System, Tool, Status)"
+      structured_data:
+        search: Maghanap
+        description: "Maghanap... (Mga Laro, #Hashtags, @Profiles, Search tools, Wika, Uri, Taon, Operating System, Tool, Status)"
+  settings:
+    edit:
+      settings: Mga Setting
+    form:
+      language: Wika (Language)
+      setlanguage: Piliin ang iyong wika
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: Mga notification sa email
+      general: Pangkalahatan
+      mail_comment_answer: Mga tugon sa mga komento ko
+      mail_comment_mention: Nagbabanggit Kay
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: Mga Subscription
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Your Games
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Account Data
+      email: Email
+      password: Password
+      edit: I-edit
+      stats: Talaan
+      comments: Komento
+      subscriptions: Mga Subscription
+      show_more: Magpakita nang higit pa
+      save: I-save ang mga Pagbabago
+      delete_account: Permanently Delete Account
+  sitemaps:
+    index:
+      active_events: Upcoming
+      inactive_events: Past
+      new_events: Create Event
+      recover: Resetting Your Password
+      sign_in: Mag-log In
+      sign_up: Sign up
+      sitemap: Site Map
+    details:
+      meta_tags:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: Mag-subscribe
+    unsubscribe_button:
+      unsubscribe: Umalis
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Mga gamit
+  users:
+    show:
+      page_title: "%{username} is on indiexpo"
+      online: Online
+      chart: Rank
+      last_month: Last 30 Days
+      level: Level
+      games: Mga Laro
+      score_system_games: Mga Leaderboard na Laro
+      show_more: Magpakita nang higit pa
+      subscriptions: Mga Subscription
+      last_commented: Komento
+      history: History
+      other_players: Other Players
+      verified: Verified
+    details:
+      structured_data:
+        developer: Developer
+        gamer: Gamer
+      meta_tags:
+        about: Tungkol sa
+        description: Profile, Trophy Case, Mga Laro, Mga Subscription, Mga Leaderboard na Laro, Komento & History
+  me:
+    menubar:
+      profile: Profile
+      event_subscriptions: Mga Event Mo
+      followed_games: Mga Subscription
+      your_games: Your Games
+      settings: Mga Setting
+    followed_games:
+      no_result: No results
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Your Games
+      visits: Panonood
+      downloads_count: Manlalaro
+      subscribers: Subscribers
+      totals: Totals
+      no_result: No results
+      upload: Upload
+  levels:
+    index:
+      level: Level
+      user_chart: Rank
+      last_month: Last 30 Days
+      gems: Gems
+      trophy_case: Trophy Case
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Verified
+    goals:
+      goals: Goals
+    stats:
+      stats: Talaan
+      comments: Komento
+      subscriptions: Mga Subscription
+      your_games: Your Games
+      votes: Votes
+  warning:
+    index:
+      warning: Warning
+      destroy: I-delete
+      destroy_confirm: Sigurado ka ba?
+      delete_account: Deleting your account is permanent.
+      delete_account_description: When you delete your indiexpo account, you won't be able to retrieve the content or information you've shared on indiexpo.

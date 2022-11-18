@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+	<head>
+		<title>
+			indieconsole
+		</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+		<%= content_for(:meta_tags) || render('meta_tags') %>
+		<%= content_for(:structured_data) || render('structured_data') %>
+		<style>
+			body {
+				width: 82%;
+				font-family: 'Play', monospace;
+				background: #000;
+				padding-bottom: 4%;
+				color: #ccc;
+				margin: 0 auto;
+			}
+			.AreaNotifications {
+				top: 0;
+			}
+			.box_screen_preview {
+				opacity: 0.5;
+				border: 4px solid #09090b;
+				box-sizing: border-box;
+				width: 19%;
+				padding-bottom: 10.5%;
+				margin-right: 1%;
+				margin-bottom: 44px;
+				overflow: hidden;
+				position: relative;
+				float: left;
+				box-shadow: 4px 4px 5px #000;
+				-moz-box-shadow: 4px 4px 5px #000;
+				-webkit-box-shadow: 4px 4px 5px #000;
+				filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=10);
+			}
+			.screen_preview {
+				position: absolute;
+				width: 100%;
+				min-height: 100%;
+				margin: auto;
+				left: -100px;
+				right: -100px;
+				top: -100px;
+				bottom: -100px;
+			}
+			.caption {
+				width: 18.5%;
+				margin-left: -20%;
+				margin-top: 12%;
+				margin-bottom: 15px;
+				overflow: hidden;
+				font-size: 14px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				float: left;
+			}
+			.caption span {
+				width: 100%;
+				opacity: 0.4;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				float: left;
+			}
+			.sticker_play {
+				visibility: hidden;
+			}
+			.sticker {
+				visibility: hidden;
+			}
+			.follow {
+				display: none;
+			}
+			.title{
+				width: 99%;
+				text-align: right;
+				float: left;
+				font-size: 40px;
+				margin-top: 10px;
+				margin-bottom: 16px;
+			}
+			.title span{
+				float: left;
+				width: 100%;
+				font-size: 24px;
+				opacity: 0.8;
+			}
+			.intro{
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				z-index: 10000;
+				text-align: center;
+				bottom: 0;
+				left: 0;
+				background: #09090b;
+			}
+			.intro img{
+				margin-top: 7%;
+			}
+			.Write20{
+				margin-top: 2%;
+				margin-bottom: 0.5%;
+				float: left;
+				font-size: 20px;
+			}
+			.Write30{
+				margin-bottom: 0.5%;
+				margin-right: 4%;
+				float: left;
+				font-size: 30px;
+			}
+			.WidFlo{
+				width: 100%;
+				list-style: none;
+			}
+			.clear{
+				clear: both;
+			}
+			#play_online_iframe {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: black;
+				border: 5px solid #369;
+				border-left: 10px solid #162737;
+				border-right: 10px solid #162737;
+				z-index: 10;
+			}
+			.AreaNotifications {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				right: 0;
+				background-color: rgba(0,0,0,0.8);
+				z-index: 9999;
+				display: block;
+			}
+			.close-notifications-icon {
+				width: 28px;
+				height: 28px;
+				margin-bottom: 20px;
+				margin-left: 10px;
+				cursor: pointer;
+				float:right;
+			}
+			.notifications {
+				width: 50%;
+				margin-top: 5%;
+				margin-left: 25%;
+				padding: 1%;
+				border-radius: 4px;
+				border: 1px solid #c60;
+				overflow: hidden;
+				background-color: #041221;
+			}
+			.notifications_body {
+				width: 100%;
+				height: 90%;
+				padding-bottom: 10%;
+				padding-right: 14px;
+				overflow: auto;
+				float: left;
+				font-size: 16px;
+				text-align: center;
+			}
+			.textc60 {
+				color: #c60 !important;
+			}
+			#QRCODE img {
+				border: 30px solid white;
+				margin: 2% auto;
+				cursor: none;
+			}
+			.mobile_only {
+				display: none;
+			}
+			@media screen and (max-width: 700px) {
+				.mobile_only {
+					display: block;
+				}
+				.desktop_only {
+					display: none !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<link rel="publisher" href="https://plus.google.com/+indiexpo">
+		<div class="intro"><%= image_tag 'Images/indieconsole.png' %></div>
+		<div class="title">indie<font style="color: #c60;">console</font>
+			<span>by indie<font style="color: #c60;">x</font>po</span>
+		</div>
+
+		<%= yield %>
+
+		<%= javascript_include_tag 'application' %>
+		<script type="text/javascript" async>
+			$(document).ready(function(){
+				$(".intro").delay(2000).fadeOut(2000);
+			});
+
+			var audio = new Audio("<%= audio_path('Intro.mp3') %>");
+			audio.play();
+		</script>
+
+		<script type="text/javascript">
+		(function() {
+			window.INDIEPAD_KEYS = {
+			  ENTER: 90,
+			  LEFT: 37,
+			  RIGHT: 39,
+			  UP: 38,
+			  DOWN: 40,
+			  DELETE: 46,
+			  ESCAPE: 27
+			};
+			window.addEventListener("keydown", switchkeys );
+			var ind = 0;
+
+			var allGames = document.getElementById("all_games").querySelectorAll("a.box_screen_preview");
+
+			var elemento = allGames[ind];
+			elemento.style.border = "4px solid #c60";
+			elemento.style.opacity = "1";
+			function mod(m, n) {
+				return ((m%n)+n)%n;
+			}
+
+			function switchkeys(ev) {
+			  // Meglio non avere errori per il tasto ripetutamente premuto
+			  window.removeEventListener("keydown", switchkeys);
+
+			  if (ev.which >= 37 && ev.which <= 40) {
+			    ev.preventDefault();
+			    if (elemento) {
+			      elemento.style.border = "4px solid #09090b";
+			      elemento.style.opacity = "0.5";
+			    }
+			    switch (ev.which) {
+			    	case INDIEPAD_KEYS.LEFT:
+			        ind--;
+			    	break;
+			    	case INDIEPAD_KEYS.UP:
+			      	ind-=5;
+			    	break;
+			    	case INDIEPAD_KEYS.RIGHT:
+			      	ind++;
+			    	break;
+			    	case INDIEPAD_KEYS.DOWN:
+			      	ind+=5;
+			    	break;
+			    }
+			    ind = mod(ind, allGames.length);
+			    elemento = allGames[ind];
+			    elemento.style.border = "4px solid #c60";
+			    elemento.style.opacity = "1";
+			    elemento.scrollIntoView({
+			      behavior: 'smooth',
+			      block: 'center',
+			      inline: 'center'
+			    })
+			  }
+			  if (ev.which == INDIEPAD_KEYS.ENTER) {
+			    elemento.click();
+			  }
+			  if (ev.which == INDIEPAD_KEYS.DELETE) {
+			    window.location.reload(false);
+			  }
+			  if (ev.which == INDIEPAD_KEYS.ESCAPE) {
+			    if($("#indiepad")[0]){
+				  $('#indiepad').remove();
+				}
+			  }
+			  window.addEventListener("keydown", switchkeys);
+			}
+		})();
+		</script>
+		<%= content_for :javascript %>
+	</body>
+</html>

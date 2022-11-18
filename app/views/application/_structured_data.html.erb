@@ -1,0 +1,31 @@
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"url": "https://www.indiexpo.net/",
+	"sameAs": [
+		"https://www.facebook.com/indiexpo/",
+		"https://www.instagram.com/indiexpo/",
+		"https://www.youtube.com/c/indiexpo",
+		"https://twitter.com/indiexpo_net",
+		"https://plus.google.com/+indiexpo"
+	],
+	"name": "indiexpo",
+	"alternateName": "The Arcade of Internet",
+	"description": "<%= t('.description') %>",
+	"datePublished": "2011-03-01",
+	"copyrightYear": "2011",
+	"genre": "<%= t('.games') %>",
+	"keywords": "<%= t('.keywords') %>",
+	"thumbnailUrl": "<%= asset_path('Images/LogoMask.png') %>",
+	"image": "<%= asset_path('Images/LogoMask.png') %>",
+	"inLanguage": "<%= I18n.locale %>",
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "<%= search_url(search: {q: "query" }).sub('query', '{search_term_string}') %>",
+		"query-input": "required name=search_term_string"
+	}
+}
+</script>
+<!-- META STRUCTURED DATA -->

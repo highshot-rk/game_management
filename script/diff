@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ $1 == 'words' ]]; then
+  git diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+elif [[ $1 == 'nospace' ]]; then
+  git diff --color-words=.
+else
+  git diff --color-words
+fi

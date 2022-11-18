@@ -1,0 +1,3 @@
+<% cache(activity) do %>
+<%= render 'public_activity/base', activity: activity, message: t('activity.following.create'), missing: t('.following_removed') %>
+<% end %>

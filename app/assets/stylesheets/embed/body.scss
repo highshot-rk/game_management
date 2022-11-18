@@ -1,0 +1,123 @@
+html, body, iframe {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Play';
+  font-size: 14px;
+  color: #ccc;
+  background: #041221;
+}
+
+.fullscreen-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+.fullscreen {
+  margin: 2px;
+  height: 28px;
+  width: 28px;
+  background: none;
+  border: 0;
+  background-image: url(asset-path('Images/icons/embed/full_screen.png'));
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  &:hover {
+    background-image: url(asset-path('Images/icons/embed/full_screen_hover.png'));
+    opacity: 1;
+  }
+}
+.game_name {
+	position: fixed;
+	margin: 4px;
+	font-size: 18px;
+	color: #ccc;
+	text-decoration: none;
+}
+.logo {
+	position: fixed;
+	margin: 4px;
+	bottom: 0;
+	left: 0;
+	font-size: 10px;
+	color: #ccc;
+	opacity: 0.8;
+	z-index: 99;
+	&:hover {
+		opacity: 1;
+	}
+}
+.logo:hover .logo-font {
+	background: #c60;
+	color: #ccc;
+}
+.logo-font {
+	background: #ccc;
+	color: black;
+}
+iframe {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#play_online_iframe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 10;
+  @media screen and (max-width: 700px) {
+    border: none;
+  }
+}
+
+#play_online {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=10);
+  .description {
+    position: absolute;
+		padding: 4px 8px;
+    font-size: 60px;
+		border-radius: 10px;
+		background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+	&:hover {
+		font-size: 70px;
+		background-color: rgba(0, 0, 0, 0.8);
+		-moz-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		-webkit-transition: all 0.3s ease-out;
+		-ms-transition: all 0.3s ease-out;
+	}
+  }
+  img {
+	opacity: 0.4;
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	left: -100px;
+	right: -100px;
+	top: -100px;
+	bottom: -100px;
+  }
+}

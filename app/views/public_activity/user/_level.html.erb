@@ -1,0 +1,38 @@
+<% user = activity.trackable %>
+<% level = activity.parameters[:level] %>
+	<div id="notification_<%= activity.id %>" class="notification <%=  unread_class(activity)%>" data-id="<%= activity.id %>">
+		<div class="badge">
+			<%= image_tag "Images/icons/levelup.png", class: 'icon', alt: 'Notice' %>
+		</div>
+		<div class="text-body-notifications">
+			<span style="font-size: 25px;"><%= t('activity.user.level', level: level) %>
+				<% if [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].include? (level) %>
+					<br><%= t('activity.user.new_title') %>: <font class="textc60"><%= user.user_title %>!</font>
+				<% end %>
+			</span>
+			<div class="hoveron">
+				[<span data-time class="cw-relative-date" timestamp="<%= activity.created_at.strftime("%Y/%m/%d %H:%M:%S %z") %>"></span>]
+			</div>
+		</div>
+
+		<!-- Level Image -->
+		<% user_profile_url = user_url(user.username) %>
+		<span class="Write20 WidFlo"><%= t('activity.user.prizes') %>:</span>
+		<%= image_tag "Images/level_up/Level_#{level}.png", class: 'level_images div100' %>
+		<% if [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].include? (level) %>
+			<%= image_tag "Images/level_up/new_title.png", class: 'level_images div100' %>
+		<% end %>
+		<% if [6, 26].include? (level) %>
+			<%= image_tag "Images/level_up/badge_level_#{level}.png", class: 'level_images div100' %>
+		<% end %>
+		<div class="hoveron">
+			<%= link_to "Whatsapp", "whatsapp://send?text=#{user_profile_url}", data: { action: "share/whatsapp/share", analytics_click: "Shared Level on Whatsapp" }, class: 'BottonBorder mobile_only', target: '_blank' %>
+			<%= link_to "Telegram", "https://t.me/share/url?url=#{user_profile_url}", class: 'BottonBorder mobile_only', data: { analytics_click: "Shared Level on Telegram"}, target: '_blank' %>
+			<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{user_profile_url}", class: 'BottonBorder', data: { analytics_click: "Shared Level on Facebook"}, target: '_blank' %>
+			<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{user_profile_url}&title=Level%20Up!", class: 'BottonBorder', data: { analytics_click: "Shared Level on Reddit"}, target: '_blank' %>
+			<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{user_profile_url}&text=%23indiedev%20Level%20Up!", class: 'BottonBorder', data: { analytics_click: "Shared Level on Twitter"}, target: '_blank' %>
+			<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{user_profile_url}", class: 'BottonBorder', data: { analytics_click: "Shared Level on tumblr"}, target: '_blank' %>
+			<%= link_to "VK", "http://vk.com/share.php?url=#{user_profile_url}", class: 'BottonBorder', data: { analytics_click: "Shared Level on VK"}, target: '_blank' %>
+		</div>
+		<hr>
+	</div>

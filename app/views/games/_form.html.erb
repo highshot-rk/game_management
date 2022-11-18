@@ -1,0 +1,276 @@
+<%= form_for @game, validate: true, data: { analytics_submit: 'Game Published' }, html: { multipart: true } do |f| %>
+  <div class="WidFlo center background900 Write20"><%= @game.errors.full_messages.to_sentence %></div>
+  <div class="input_container">
+    <div class="label"><%= f.label :title %></div>
+    <%= f.text_field :title, maxlength: 25 %>
+  </div>
+  <div class="input_container">
+    <div class="label"><%= f.label :author %></div>
+    <%= f.text_field :author %>
+  </div>
+  <div class="input_container">
+    <div class="label"><%= t('.language') %></div>
+    <div class="WidFlo">
+      <%= f.collection_check_boxes :language_ids, Language.order(:name), :id, :name do |cb| %>
+        <%= cb.label class: 'select_checkbox div50' do %>
+          <% if @game.new_record? %>
+            <%= cb.check_box checked: (I18n.locale.to_s == cb.object.locale) %>
+          <% else %>
+            <%= cb.check_box %>
+          <% end %>
+          <%= cb.object.name %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="input_container">
+    <div class="label"><%= t('.genre') %></div>
+    <div class="WidFlo">
+			<%= f.select :genre_id, genre_options %>
+    </div>
+  </div>
+  <div class="input_container">
+    <div class="label"><%= t('.status') %></div>
+    <div class="WidFlo">
+      <% Game.release_types.keys.each do |release_type| %>
+        <%= f.radio_button :release_type, release_type, id: "game_#{release_type}" %>
+				<%= f.label t(".#{release_type.downcase.gsub(/[^a-z]+/, '')}") %>
+      <% end %>
+      <%#= f.select :release_type, Game.release_types.keys.to_a %>
+    </div>
+  </div>
+  <div class="input_container">
+    <div class="label"><%= t('.tool') %></div>
+    <div class="WidFlo">
+      <%= f.collection_select :tool_id, Tool.order(:name), :id, :name %>
+    </div>
+  </div>
+  <div class="input_container">
+    <div class="label"><%= f.label :description %></div>
+    <%= f.text_area :description, maxlength: '380', data: { character_counter: "game_description_length" } %>
+    <div class="WidFlo"><%= t('.hashtag') %></div>
+    <div class="WidFlo">
+      <span id="game_description_length" class="right">380</span>
+    </div>
+    <%= link_to '+' + t('.long_description'), '#', data: { show_element: '#long_description' }, class: 'right' if @game.long_description.blank? %>
+    <div class="WidFlo">
+      <div class="select_checkbox"><label><%= f.check_box :adult_content %><%= t('.adult_content') %></label></div>
+      <div class="select_checkbox"><label><%= f.check_box :mobile_first %><%= t('.mobile_first') %></label></div>
+    </div>
+  </div>
+  <% if @game.long_description.present? %>
+    <div id="long_description">
+    <% else %>
+      <div id="long_description" style="display: none">
+      <% end %>
+      <div class="input_container">
+        <div class="label"><%= f.label :long_description %></div>
+        <%= f.text_area :long_description, maxlength: '2000',  data: { character_counter: "game_long_description_length" } %>
+        <%= render 'application/markdown_instructions' %>
+        <div class="WidFlo">
+          <span id="game_long_description_length" class="right">2000</span>
+        </div>
+      </div>
+    </div>
+    <div class="input_container js-ready">
+      <div class="label" style="float: none"><%= t('.downloads') %></div>
+      <%= f.fields_for :download_links, DownloadLink.new do |df| %>
+        <div data-more-subject="upload" class="WidFlo">
+          <%= df.label :file, 'Max Limit 750 MB', class: 'upload_limit_label' %>
+          <%= df.file_field :file, style: 'margin-bottom: 14px' %>
+          <div class="WidFlo">
+            <%= df.collection_check_boxes :platform_ids, Platform.all, :id, :name do |dpf| %>
+              <%= dpf.label class: 'select_checkbox div50' do %>
+                <%= dpf.check_box %>
+                <%= image_tag "Images/System/#{dpf.object.name.parameterize.underscore}.png" %>
+              <% end %>
+            <% end %>
+          </div>
+          <button class="BottonLight right" type="button" data-more-remove="true"><%= t('.remove_file') %></button>
+        </div>
+      <% end %>
+      <%= f.fields_for :download_links, DownloadLink.new do |df| %>
+        <div data-more-subject="link" class="WidFlo">
+          <%= df.label :url %>
+          <%= df.text_field :url, style: 'margin-bottom: 14px' %>
+          <div class="WidFlo">
+            <%= df.collection_check_boxes :platform_ids, Platform.all, :id, :name do |dpf| %>
+              <%= dpf.label class: 'select_checkbox div50' do %>
+                <%= dpf.check_box %>
+                <%= image_tag "Images/System/#{dpf.object.name.parameterize.underscore}.png" %>
+              <% end %>
+            <% end %>
+          </div>
+          <button class="BottonLight right" type="button" data-more-remove="true"><%= t('.remove_url') %></button>
+        </div>
+      <% end %>
+      <button class="Botton" type="button" style="float: none" data-more="upload" data-more-counter="download"><%= t('.add_file') %></button>  
+      <button class="BottonLight" type="button" style="float: none" data-more="link" data-more-counter="download"><%= t('.add_external_link') %></button>
+      <% @game.download_links.each do |download_link| %>
+        <div>
+          <%= f.fields_for :download_links, download_link do |df| %>
+            <div data-hide-on-destroy>
+              <% if download_link.url %>
+                <%= df.label :url %>
+                <%= df.text_field :url %>
+              <% else %>
+                <% if download_link.persisted? %>
+                  <%= df.text_field :file_file_name, readonly: true %>
+                  <%= link_to t('.downloads'), download_link_url(download_link.id), class: 'WidFlo', rel: 'nofollow', target: '_blank' %>
+                <% else %>
+                  <%= df.label :file %>
+                  <%= df.file_field :file %>
+                <% end %>
+              <% end %>
+              <%= df.collection_check_boxes :platform_ids, Platform.all, :id, :name do |dpf| %>
+                <%= dpf.label class: 'select_checkbox div50' do %>
+                  <%= dpf.check_box %>
+                  <%= image_tag "Images/System/#{dpf.object.name.parameterize.underscore}.png" %>
+                <% end %>
+              <% end %>
+            </div>
+            <% if download_link.persisted? %>
+              <%= df.label :_destroy, data: { form_destroy_button: true } do %>
+                <div class="Botton right" data-form-restore-message><%=t('.restore')%></div>
+                <div class="BottonLight right" data-form-destroy-message><%=t('.delete')%></div>
+                <div class="clear"></div>
+                <%= df.check_box :_destroy %>
+              <% end %>
+            <% else %>
+              <button class="BottonLight right" type="button" data-more-remove="true"><%= t('.remove_file') %></button>
+            <% end %>
+            <div class="clear"></div>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="WidFlo hoveron">*<%= t('.html5_description') %></div>
+    </div>
+    <div class="input_container">
+      <div class="label"><%= t('.extra') %></div>
+      <div class="WidFlo">
+        <label><%= f.check_box :indiepad %><%= t('.enablable_indiepad') %></label>
+        <%= link_to '#', data: { show_element: '#indiepad_description' } do %>
+          <%= image_tag "Images/icons/info.png" %>
+        <% end %>
+        <div id="indiepad_description" class="hoveron" style="display: none"><%= t('.indiepad_description') %></div>
+        <%= image_tag 'Images/Sprites/indiepad_multidevice.png', class: 'right' %>
+      </div>
+      <div class="WidFlo" style="margin-top: 15px;">
+        <% keycodes = Settings.indiepad.keycodes %>
+        <% keycode_vals = keycodes.keys %>
+        <%= f.fields_for :indiepad_config, @game.indiepad_config || IndiepadConfig.new do |ic| %>
+          <%= ic.fields_for :data do |data_field| %>
+            <% 4.times do |i| %>
+              <% current_object = ic.object.data[i] %>
+              <% if current_object %>
+                <fieldset data-fieldset-enablable="<%= i %>">
+                <% else %>
+                  <fieldset disabled style="display: none" data-fieldset-enablable="<%= i %>">
+                  <% end %>
+                  <% current_object ||= Settings.indiepad.default %>
+                  <%= data_field.fields_for :"#{i}" do |data| %>
+                    <div id="WidFlo">Player <%= i + 1 %></div>
+                    <div style="float: left;">
+                      <div style="height:36px; padding-top: 8px;">
+                        <%= data.select :up, keycode_vals, selected: current_object['up'], html: { style: 'width: 100%' } %>
+                      </div>
+                      <div style="height:36px; padding-top: 8px;">
+                        <%= data.select :right, keycode_vals, selected: current_object['right'], html: { style: 'width: 100%' } %>
+                      </div>
+                      <div style="height:36px; padding-top: 8px;">
+                        <%= data.select :left, keycode_vals, selected: current_object['left'], html: { style: 'width: 100%' } %>
+                      </div>
+                      <div style="height:36px; padding-top: 8px;">
+                        <%= data.select :down, keycode_vals, selected: current_object['down'], html: { style: 'width: 100%' } %>
+                      </div>
+                    </div>
+                    <%= image_tag 'Images/Sprites/indiepad_select_control.png', style: 'float: left;' %>
+                    <div style="float: left;">
+                      <div style="height:48px; padding-top: 15px;">
+                        <%= data.select :escape, keycode_vals, selected: current_object['escape'], html: { style: 'width: 100%' } %>
+                      </div>
+                      <div style="height:48px; padding-top: 15px;">
+                        <%= data.select :x, keycode_vals, selected: current_object['x'], html: { style: 'width: 100%' } %>
+                      </div>
+                      <div style="height:48px; padding-top: 15px;">
+                        <%= data.select :z, keycode_vals, selected: current_object['z'], html: { style: 'width: 100%' } %>
+                      </div>
+                    </div>
+                  </fieldset>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <div class="WidFlo">
+            <button type="button" data-fieldset-enabler="4" class="Botton right">Add new Player</button>
+          </div>
+        </div>
+      </div>
+      <div class="input_container">
+        <div class="label"><%= t('.screens') %></div>
+        <div class="clear"></div>
+        <%= f.fields_for :screens do |sf| %>
+          <div>
+            <div data-hide-on-destroy>
+              <%= image_tag sf.object.file.url, class: 'box_screen_preview', style: 'width: 50%; padding: 0; margin-bottom: 2%;' if sf.object.persisted? %>
+              <%= sf.file_field :file %>
+            </div>
+            <% if sf.object.persisted? %>
+              <%= sf.label :_destroy, data: { form_destroy_button: true } do %>
+                <div class="Botton right" data-form-restore-message><%=t('.restore')%></div>
+                <div class="BottonLight right" data-form-destroy-message><%=t('.delete')%></div>
+                <div class="clear"></div>
+                <%= sf.check_box :_destroy %>
+              <% end %>
+            <% end %>
+          </div>
+          <br>
+        <% end %>
+      </div>
+      <div class="input_container">
+        <div class="label"><%= t('.video') %></div>
+        <div class="WidFlo">
+          <%= f.fields_for :videos do |vf| %>
+            <div>
+              <%= vf.text_field :prefix, style: 'width: 49%', readonly: true, value: 'https://www.youtube.com/?v=' %>
+              <%= vf.text_field :url, style: 'width: 49%', data: { destroy_on_empty: true } %>
+              <% if vf.object.persisted? %>
+                <%= vf.check_box :_destroy, style: 'visibility: hidden' %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="input_container">
+        <div class="label"><%= t('.artworks') %></div>
+        <%= f.fields_for :artworks do |af| %>
+          <div class="clear"></div>
+          <div>
+            <div data-hide-on-destroy>
+              <%= image_tag af.object.file.url, class: 'box_screen_preview', style: 'width: 50%; padding: 0; margin-bottom: 2%;' if af.object.persisted? %>
+              <%= af.file_field :file %>
+            </div>
+            <% if af.object.persisted? %>
+              <%= af.label :_destroy, data: { form_destroy_button: true } do %>
+                <div class="Botton right" data-form-restore-message><%=t('.restore')%></div>
+                <div class="BottonLight right" data-form-destroy-message><%=t('.delete')%></div>
+                <div class="clear"></div>
+                <%= af.check_box :_destroy %>
+              <% end %>
+            <% end %>
+          </div>
+          <br>
+        <% end %>
+      </div>
+      <div class="input_container">
+        <div class="label"><%= f.label :website %></div>
+        <div class="WidFlo">
+          <%= f.url_field :website %>
+        </div>
+      </div>
+      <%= f.button t('.publish'), class: 'Botton div100', data: {load: true} %>
+    <% end %>
+<div class="background_black center">
+	<div class="Write30 center"><%= t('.now_loading') %></div>
+	<%= image_tag 'loader.gif', alt: t('.now_loading') %>
+</div>

@@ -1,0 +1,80 @@
+.close-notifications-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background: asset-url('Images/icons/x.png');
+  cursor: pointer;
+  float:right;
+}
+
+.settings-notifications-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background: asset-url('Images/icons/settings.png');
+  cursor: pointer;
+  float:right;
+}
+
+.info-notifications-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background: asset-url('Images/icons/guide.png');
+  cursor: pointer;
+  float:right;
+}
+
+.clear-notifications-icon {
+  height: 28px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-left: 10px;
+  padding: 6px;
+  border: 1px solid #c60;
+  float: right;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    margin-top: -10px;
+    text-align: center;
+  }
+}
+.notification {
+	padding: 4px;
+	margin-bottom: 4px;
+	border-radius: 4px;
+	&:hover {
+		background: #162737;
+	}
+	@media screen and (max-width: 700px) {
+		padding: 2px;
+	}
+}
+
+.unread-notifications {
+	background: #162737;
+}
+
+.links-notifications {
+	float: right;
+	margin-top: 10px;
+	margin-right: 5px;
+	@media screen and (max-width: 700px) {
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+}
+
+.text-body-notifications {
+	float: left;
+	@media screen and (max-width: 700px) {
+		width: 80%;
+	}
+}
+
+.loading-gif {
+  display: none;
+}

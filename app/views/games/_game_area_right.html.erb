@@ -1,0 +1,92 @@
+<div class="AreaRight">
+	<% if !@game.adult_content %>
+		<!-- Adsense Banner -->
+		<div class="Adsense desktop_only" style="margin: 24px 0 0 0; max-height: 222px; overflow: hidden;">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Annuncio Reattiva FE -->
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4589575764100828" data-ad-slot="2160488094" data-ad-format="auto"></ins>
+			<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+		</div>
+	<% end %>
+
+  <!-- Recommended Games -->
+	<div class="Write20 WidFlo" style="margin: 20px 0px 10px"><%= t('games.details.index.recommended') %></div>
+	<div class="WidFlo" style="margin-bottom: 10px;">
+		<%= link_to "#scifi", search_path(search: { q: 'scifi' }), class: 'textc60', data: { analytics_click: 'tag hashtag recommended' } %>, 
+		<%= link_to "#horror", search_path(search: { q: 'horror' }), class: 'textc60', data: { analytics_click: 'tag hashtag recommended' } %>, 
+		<%= link_to "#VisualNovel", search_path(search: { q: 'visualnovel' }), class: 'textc60', data: { analytics_click: 'tag hashtag recommended' } %>
+	</div>
+  <!-- First -->
+  <% @suggested_games.each_with_index do |game, game_index| %>
+		<%= link_to game_url(game.slug), class: 'box_screen_preview recommended_game', data: { analytics_click: "Click on Suggested Game #{game_index +1}"} do %>
+      <%= image_tag game.image, alt: "#{t('layouts.game.play')} #{game.title}", class: 'screen_preview' %>
+      <% if game.online_links.any? %>
+        <% if game.indiepad %>
+          <div class="sticker">indiepad<%= image_tag 'Images/icons/indiepad_White.png', alt: "#{t('layouts.game.play')} #{game.title} with the indiepad" %></div>
+        <% else %>
+          <div class="sticker"><%= t('layouts.game.play') %><%= image_tag 'Images/icons/play_online.png', alt: "#{t('layouts.game.play')} #{game.title} Online" %></div>
+        <% end %>
+      <% else %>
+        <div class="sticker_play"><%= image_tag 'Images/icons/play.png', alt: "#{t('layouts.game.download')} #{game.title}" %></div>
+      <% end %>
+      <% if game.created_since?(30) %>
+        <div class="sticker_new"><%= t('layouts.game.new') %></div>
+			<% elsif game.updated_since?(30) %>
+        <div class="sticker_new" style="right:0"><%= t('layouts.game.updates') %></div>
+      <% end %>
+    <% end %>
+    <div class="caption recommended_user">
+      <%= link_to game_url(game.slug) do %>
+        <%= game.title %>
+      <% end %>
+      <br>
+      <span>
+        <% if game.author == game.user.username %>
+          <%= link_to game.author, user_path(game.author) %>
+        <% else %>
+          <%= link_to game.author, search_path(search: { author: game.author }) %>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
+  <!-- Random -->
+  <% @random_games.each_with_index do |game, game_index| %>
+		<%= link_to game_url(game.slug), class: 'box_screen_preview recommended_game', data: { analytics_click: "Click on Suggested Random Game #{game_index +1}"} do %>
+      <%= image_tag game.image, alt: "#{t('layouts.game.play')} #{game.title}", class: 'screen_preview' %>
+      <% if game.online_links.any? %>
+        <% if game.indiepad %>
+          <div class="sticker">indiepad<%= image_tag 'Images/icons/indiepad_White.png', alt: "#{t('layouts.game.play')} #{game.title} with the indiepad" %></div>
+        <% else %>
+          <div class="sticker"><%= t('layouts.game.play') %><%= image_tag 'Images/icons/play_online.png', alt: "#{t('layouts.game.play')} #{game.title} Online" %></div>
+        <% end %>
+      <% else %>
+        <div class="sticker_play"><%= image_tag 'Images/icons/play.png', alt: "#{t('layouts.game.download')} #{game.title}" %></div>
+      <% end %>
+      <% if game.created_since?(30) %>
+        <div class="sticker_new"><%= t('layouts.game.new') %></div>
+			<% elsif game.updated_since?(30) %>
+        <div class="sticker_new" style="right:0"><%= t('layouts.game.updates') %></div>
+      <% end %>
+    <% end %>
+    <div class="caption recommended_user">
+      <%= link_to game_url(game.slug) do %>
+        <%= game.title %>
+      <% end %>
+      <br>
+      <span>
+        <% if game.author == game.user.username %>
+          <%= link_to game.author, user_path(game.author) %>
+        <% else %>
+          <%= link_to game.author, search_path(search: { author: game.author }) %>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
+	<% if @game.scores.any? %>
+		<%= link_to(t('games.record_chart.score_system_games'), search_path(search: { q: params[:name] }, sc:100), class: 'ShowMore', style: 'border: 1px solid') %>
+	<% elsif @game.indiepad && @game.play_online %>
+		<%= link_to('indiepad Games', search_path(search: { q: params[:name] }, ip:100), class: 'ShowMore', style: 'border: 1px solid; border-radius: 4px;') %>
+	<% elsif @game.play_online %>
+		<%= link_to('Play Online Games', search_path(search: { q: params[:name] }, po:100), class: 'ShowMore', style: 'border: 1px solid; border-radius: 4px;') %>
+	<% end %>
+</div>

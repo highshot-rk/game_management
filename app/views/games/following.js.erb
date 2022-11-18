@@ -1,0 +1,22 @@
+$("#followersCount").html("<%= @followings_count %> <%= t('games.show.subscribers') %>");
+
+<%#
+  NOTE:
+  Had to use css() instead of show() because 'display: inline', which is what show() sets, shifts the UI and looks off
+%>
+
+<% game_id =  @following.game.id %>
+
+<% if @action == :updated %>
+  $('#favourite_game_<%= game_id %> .favourite').hide();
+  $('#favourite_game_<%= game_id %> .unfavourite').css('display', 'block');
+
+  $('.subscribe').hide();
+  $('.unsubscribe').css('display', 'block');
+<% else %>
+  $('#favourite_game_<%= game_id %> .unfavourite').hide();
+  $('#favourite_game_<%= game_id %> .favourite').css('display', 'block');
+
+  $('.unsubscribe').hide();
+  $('.subscribe').css('display', 'block');
+<% end %>

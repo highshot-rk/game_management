@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Event",
+  "name": "<%= @event.title %>",
+  "startDate" : "<%= @event.start.iso8601 %>",
+  "endDate" : "<%= @event.end.iso8601 %>",
+  "url" : "<%= @event.website %>",
+  "image" : "<%= @event.image %>",
+  "description" : "<%= @event.seo_description %>",
+  "location" : {
+    "@type" : "Place",
+    "sameAs" : "https://www.indiexpo.net",
+    "name" : "indiexpo",
+    "address" : "internet"
+  }
+}
+</script>

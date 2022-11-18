@@ -1,0 +1,273 @@
+<% content_for :menubar do %>
+	<%= render 'games/details/game_menu', section: 3 %>
+<% end %>
+
+<div class="Write30 WidFlo"><%= t('.statistics') %></div>
+
+	<!-- Left Column -->
+	<div class="div74 div100">
+		<!--Google Graph Downloads and Visits-->
+		<div id="chart_div" data-chart="drawAreaChart"></div>
+		<div id="donut_single" class="div100 donutchart" data-chart="drawDonutDownloads"></div>
+		<div id="donut_single2" class="div100 donutchart" data-chart="drawDonutVisits"></div>
+		<!--Google Graph Download IncreaseDecrease-->
+		<script type="text/javascript">
+
+			function drawAreaChart(element) {
+			  var data = google.visualization.arrayToDataTable([
+			    ['<%= t('.date') %>', '<%= t('.visits') %>', '<%= t('.downloads') %>'],
+			    <%= stats_list_since(@stats.stats).html_safe %>
+			  ]);
+
+			  var options = {
+			    title: '<%= j "Stats of #{@game.title}".html_safe %>',
+				hAxis: {title: '<%= t('.days') %>', titleTextStyle: {color: '#ccc'}, textStyle: {color: '#ccc'}},
+			    vAxis: {minValue: 0, textStyle: {color: '#ccc'}},
+			    backgroundColor: 'transparent',
+			    colors: ['#369', '#900'],
+			    titleTextStyle: {color: '#ccc'},
+			    legend: { textStyle: { color: '#ccc' } },
+			  };
+
+			  var chart = new google.visualization.AreaChart(element);
+			  chart.draw(data, options);
+			}
+
+			function drawDonutDownloads(element) {
+			  var data = google.visualization.arrayToDataTable([
+			    ['Effort', 'Amount given'],
+			    ['<%= t('.this_week') %>', <%= @stats.downloads_this_week %>],
+			    ['<%= t('.last_week') %>', <%= @stats.downloads_last_week %>],
+			  ]);
+
+			  var options = {
+			    chartArea: {left:4, width: '100%'},
+			    pieHole: 0.2,
+			    backgroundColor: 'transparent',
+			    colors: ['#369', '#900'],
+			    pieSliceTextStyle: {
+			      color: '#ccc',
+			    },
+			    legend: {textStyle: {color: '#ccc'}},
+			    title: '<%= t('.downloads') %>',
+			    titleTextStyle: {fontSize: 20, color: '#ccc'},
+			  };
+
+			  var chart = new google.visualization.PieChart(element);
+			  chart.draw(data, options);
+			}
+
+			function drawDonutVisits(element) {
+			  var data = google.visualization.arrayToDataTable([
+			    ['Effort', 'Amount given'],
+			    ['<%= t('.this_week') %>', <%= @stats.visits_this_week %>],
+			    ['<%= t('.last_week') %>', <%= @stats.visits_last_week %>],
+			  ]);
+
+			  var options = {
+			    chartArea: {left:4, width: '100%'},
+			    pieHole: 0.2,
+			    backgroundColor: 'transparent',
+			    colors: ['#369', '#900'],
+			    pieSliceTextStyle: {
+			      color: '#ccc',
+			    },
+			    legend: {textStyle: {color: '#ccc'}},
+			    title: '<%= t('.visits') %>',
+			    titleTextStyle: {fontSize: 20, color: '#ccc'},
+			  };
+
+			  var chart = new google.visualization.PieChart(element);
+			  chart.draw(data, options);
+			}
+		</script>
+
+		<!--Signature-->
+		<div class="div100 donutchart">
+			<div class="WidFlo">Embed in HTML</div>
+			<textarea onclick='this.select()' onKeyDown='return false;' class="WidFlo" rows='2'><a href='<%= game_url(@game) %>'><img src='https://www.indiexpo.net/signature/<%= @game.id %>.png' /></a></textarea>
+			<div class="WidFlo">BBCode (forum)</div>
+			<textarea onclick='this.select()' onKeyDown='return false;' class="WidFlo" rows='2'>[URL='<%= game_url(@game) %>'][img]https://www.indiexpo.net/signature/<%= @game.id %>.png[/img][/URL]</textarea>
+			<div class="WidFlo">Preview :</div>
+			<img src="/signature/<%= @game.id %>.png" />
+		</div>
+		<div class="div100 donutchart">
+		<div class="Write20 center"><%= t('.qrcode') %></div>
+			<img src="http://chart.apis.google.com/chart?chs=160x160&chld=L|0&cht=qr&chl=<%= game_url(@game) %>&choe=ISO-8859-1%22" />
+		</div>
+
+		<!-- Chart Stats -->
+		<div class="Write20"><%= t('.chart') %></div>
+		<div class="clear"></div>
+		<% if @game.created_since?(30) %>
+			<div class="Window backgroundc60">
+				<div style="font-size: 25px;">
+					<%= @stats.rank_last_days %>°
+				</div>
+				<%= t('.most_rated') %> - Games uploaded in the latest 30 Days
+			</div>
+		<% end %>
+		<div class="Window" style="width:30%; margin-right: 3.3%;">
+			<div style="font-size:25px;">
+				<%= @stats.rank %>°
+			</div>
+			<%= t('.most_rated') %>
+		</div>
+		<div style="float: left; padding: 1.5% 3%; width:30%; margin-right: 3.3%;">
+			<div style="font-size: 25px;">
+				<%= @stats.followings_rank %>°
+			</div>
+			<%= t('.followings_chart') %>
+		</div>
+		<div class="Window" style="width:30%; margin-left: 3.3%;">
+			<div style="font-size:25px;">
+				<%= @stats.downloads_rank %>°
+			</div>
+			<%= t('.most_downloaded') %>
+		</div>
+
+		<!-- Left News -->
+		<div class="Window">
+			<div class="Write20">
+				<%= link_to game_news_path(@game.slug), data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' } do %>
+					<%= t('games.details.index.news') %>: <%= @game.news_count %>
+				<% end %>
+			</div>
+			<!-- Add News -->
+			<%= render 'news/form', game: @game %>
+		</div>
+		<!-- Followers and Comments -->
+		<div class="Window">
+			<div style="font-size: 25px;">
+				<%= t('.followings') %> (<%= @game.followings_count %>)
+			</div>
+			<%= t('.last_6_months') %>: <%= list_users(@game.followings, 6) %>
+			<%= link_to t('.followings'), followers_list_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Followers List'}, class: 'ShowMore' if @game.followings_count > 0 %>
+		</div>
+		<div class="WidFlo" style="padding: 1.5% 3%;">
+			<div style="font-size: 25px;">
+				<%= t('.comments') %> (<%= @game.comments_count %>)
+			</div>
+			 <%= t('.last_6_months') %>: <%= list_users(@game.comments, 6) %>
+			<%= link_to t('.comments'), game_comments_path(@game.slug), class: 'ShowMore' if @game.comments_count > 0 %>
+		</div>
+		<div class="Window">
+			<div class="textc60" style="font-size: 25px;">
+				<%= t('.monetisation') %>
+			</div>
+			<%= t('.last_6_months') %>: <%= list_users(@game.supporters, 6) %>
+		</div>
+		<%= link_to t('.downloads'), players_list_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Players List'}, class: 'ShowMore' %>
+	</div>
+
+	<!-- Right Column -->
+	<div class="div26 div100">
+		<!-- Download Stats -->
+		<div class="WidFlo blank25">
+			<div class="Write20"><%= t('.downloads') %></div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<%= @stats.downloads_total %>
+				</div>
+				<%= t('.totals') %>
+			</div>
+			<div style="float: left; padding: 1.5% 3%;">
+				<div style="font-size: 25px;">
+					<%= @stats.downloads_today %>
+				</div>
+				<%= t('.daily') %>
+			</div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<%= @stats.downloads_this_week %>
+				</div>
+				<%= t('.this_week') %>
+			</div>
+			<div style="float: left; padding: 1.5% 3%;">
+				<div style="font-size: 25px;">
+					<%= @stats.downloads_last_week %>
+				</div>
+				<%= t('.last_week') %>
+			</div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<font color='<%= stats_color_for(@stats.downloads_increases) %>'><%= not_nan @stats.downloads_increases %>%</font>
+				</div>
+				<%= @stats.downloads_this_week %> vs <%= @stats.downloads_last_week %>
+			</div>
+		</div>
+
+		<!-- Visits Stats -->
+		<div class="WidFlo blank25">
+			<div class="Write20"><%= t('.visits') %></div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<%= @stats.visits_total %>
+				</div>
+				<%= t('.totals') %>
+			</div>
+			<div style="float: left; padding: 1.5% 3%;">
+				<div style="font-size: 25px;">
+					<%= @stats.visits_today %>
+				</div>
+				<%= t('.daily') %>
+			</div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<%= @stats.visits_this_week %>
+				</div>
+				<%= t('.this_week') %>
+			</div>
+			<div style="float: left; padding: 1.5% 3%;">
+				<div style="font-size: 25px;">
+					<%= @stats.visits_last_week %>
+				</div>
+				<%= t('.last_week') %>
+			</div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<font color='<%= stats_color_for(@stats.visits_increases) %>'><%= not_nan @stats.visits_increases %>%</font>
+				</div>
+				<%= @stats.visits_this_week %> vs <%= @stats.visits_last_week %>
+			</div>
+		</div>
+
+		<!-- Active Views Stats -->
+		<div class="WidFlo blank25">
+			<div class="Write20"><%= t('.active_views') %></div>
+			<div class="Window">
+				<div style="font-size: 25px;">
+					<%= not_nan @stats.active_views %>%
+				</div>
+				<%= t('.totals') %>
+			</div>
+		</div>
+
+		<!-- Votes Stats -->
+		<div class="WidFlo blank25">
+			<div class="Write20"><%= t('.votes') %></div>
+			<div class="Window">
+				<div style="font-size:25px;">
+					<%= '%.1f' % @game.ratings_avg.to_f %>
+				</div>
+				<%= t('.votes_averange') %>
+			</div>
+			<div style="float: left; padding: 1.5% 3%;">
+				<div style="font-size: 25px;">
+					<%= @game.ratings_count %>
+				</div>
+				<%= t('.totals') %>
+			</div>
+		</div>
+
+		<!-- Other Stats -->
+		<div class="WidFlo blank25">
+			<div class="Write20"><%= t('.other') %></div>
+			<div class="Window">
+				<div style="font-size:25px;">
+					<%= @stats.engagement %>
+				</div>
+				<%= t('.engagement') %>
+			</div>
+		</div>
+	</div>

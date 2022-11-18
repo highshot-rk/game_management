@@ -1,0 +1,2 @@
+$(".subscribe_button").replaceWith('<%=escape_javascript render "subscribe_button", event: @event %>');
+$("[data-event-subscribers]").replaceWith($('<%=escape_javascript render partial: "events/subscribers_list", locals: { users: @event.users } %>'));

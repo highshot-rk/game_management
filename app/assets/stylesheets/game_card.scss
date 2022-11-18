@@ -1,0 +1,39 @@
+$offset-top: 25px;
+
+[data-card] {
+  > div {
+    position: relative;
+    > img {
+      width: 344px;
+      width: 100px;
+    }
+    .favourite_game {
+      width: 36px;
+      height: 30px;
+      margin-right: 4px;
+      margin-bottom: 2px;
+      padding-top: 4px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 16px;
+      float: left;
+      z-index: 1000;
+    }
+  }
+  display: none;
+  position: absolute;
+  margin-top: $offset-top;
+	padding: 4px 16px 8px 16px;
+  width: 344px;
+	border: 1px solid #393a3a;
+	border-radius: 2px;
+  background-color: #0c1925;
+  background-image: url(asset-path('Images/BackgroundColor/backrighe.png'));
+  z-index: 999;
+  box-shadow: 4px 4px 5px #000;
+  -moz-box-shadow: 4px 4px 5px #000;
+  -webkit-box-shadow: 4px 4px 5px #000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=10);
+}

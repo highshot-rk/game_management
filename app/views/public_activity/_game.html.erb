@@ -1,0 +1,7 @@
+<% if game %>
+  <%= link_to game_url(game) do %>
+    <%= game.title %>
+  <% end %>
+<% else %>
+  <%=  t('.removed_game') %>
+<% end %>

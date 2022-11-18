@@ -1,0 +1,10 @@
+<div class="<%= @passed ? 'hoveron' : 'hoveroff' %>">
+  <div class="Write20">
+    <%= link_to t('.active'), events_path(@params.except(:passed)), data: { pjax: true } %>
+  </div>
+</div>
+<div class="<%= !@passed ? 'hoveron' : 'hoveroff' %>">
+  <div class="Write20">
+    <%= link_to t('.inactive'), events_path(@params.merge(passed: true)), data: { pjax: true } %>
+  </div>
+</div>

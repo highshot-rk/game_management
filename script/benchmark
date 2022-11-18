@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bundle exec ruby script/ruby_benchmark | sort -r -k 6

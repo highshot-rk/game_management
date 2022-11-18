@@ -1,0 +1,9 @@
+[data-showable] {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  &.shown {
+    display: block;
+    height: initial;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.chart') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<%= link_to(t('.login'), new_user_session_url, class: 'ShowMore', style: 'margin-top:0; border: 1px solid') unless current_user %>
+		<div class="notifications_body">
+		<% @scores.each_with_index do |score, score_index| %>
+			<%= render 'scores/score', score_index: score_index, score: score %>
+		<% end %>
+		<%= link_to(t('.score_system_games'), search_path(search: { q: params[:name] }, sc:100), class: 'ShowMore', style: 'border: 1px solid') if current_user %>
+	</div>
+</div>

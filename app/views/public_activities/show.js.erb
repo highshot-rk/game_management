@@ -1,0 +1,4 @@
+$('.notifications-list').append('<%= raw escape_javascript(render_activities @activities) %>')
+<% if @is_last == 0 %>
+  $('.notifications_body .ShowMore').hide();
+<% end %>

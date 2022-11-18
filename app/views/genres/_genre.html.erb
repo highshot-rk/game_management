@@ -1,0 +1,4 @@
+<%= link_to url_for(@params.merge(genre: genre.id, page: 1)), data: { pjax: true, analytics_click: "filter genre #{genre.name}" }, class: @genre.try(:id) == genre.id ? 'active filters' : 'filters' do %>
+	<%= image_tag "genres/#{genre.name.downcase.gsub(/[^a-z]+/, '')}.png" %>
+	<span><%= t(".#{genre.name.downcase.gsub(/[^a-z]+/, '')}") %></span>
+<% end %>

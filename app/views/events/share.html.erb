@@ -1,0 +1,23 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.share') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<%= link_to "Whatsapp", "whatsapp://send?text=#{event_url(@event.slug)}", data: { action: "share/whatsapp/share" }, class: 'Write20 WidFlo Botton whatsapp mobile_only', data: { analytics_click: "Share Event on Whatsapp"}, target: '_blank' %>
+			<%= link_to "Telegram", "https://t.me/share/url?url=#{event_url(@event.slug)}", class: 'Write20 WidFlo Botton twitter mobile_only', data: { analytics_click: "Share Event on Telegram"}, target: '_blank' %>
+			<%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{event_url(@event.slug)}", class: 'Write20 WidFlo Botton facebook', data: { analytics_click: "Share Event on Facebook"}, target: '_blank' %>
+			<%= link_to "Reddit", "https://www.reddit.com/r/indiedev/submit?url=#{event_url(@event.slug)}&title=Join%20This%20Event!", class: 'Write20 WidFlo Botton reddit', data: { analytics_click: "Share Event on Reddit"}, target: '_blank' %>
+			<%= link_to "Twitter", "https://twitter.com/intent/tweet?url=#{event_url(@event.slug)}&text=%23indiegame%20Join%20This%20Event!", class: 'Write20 WidFlo Botton twitter', data: { analytics_click: "Share Event on Twitter"}, target: '_blank' %>
+			<%= link_to "tumblr", "https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=#{event_url(@event.slug)}", class: 'Write20 WidFlo Botton tumblr', data: { analytics_click: "Share Event on tumblr"}, target: '_blank' %>
+			<%= link_to "VK", "http://vk.com/share.php?url=#{event_url(@event.slug)}", class: 'Write20 WidFlo Botton twitter', data: { analytics_click: "Share Event on VK"}, target: '_blank' %>
+			<%= mail_to "", t('.email'), subject: "Check out this amazing Event!", body: "#{event_url(@event.slug)}", class: 'Write20 WidFlo Botton', data: { analytics_click: "Share Event on Email"} %>
+			<textarea onclick='this.select()' onKeyDown='return false;' class="center Write20" rows='1'><%= event_url(@event) %></textarea>
+			<div class="center Write20">
+				<%= t('.qrcode') %><br>
+				<img class="div100" src="http://chart.apis.google.com/chart?chs=160x160&chld=L|0&cht=qr&chl=<%= event_url(@event) %>&choe=ISO-8859-1%22" />
+			</div>
+		</div>
+	</div>
+</div>

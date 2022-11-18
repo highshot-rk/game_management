@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+	<head>
+		<title><%= content_for(:title) || ' - Indiexpo' %></title>
+		<%= render 'application/head' %>
+	</head>
+	<body>
+		<%= yield %>
+		<%= javascript_include_tag 'application' %>
+		<%= stylesheet_link_tag 'application', media: 'all' %>
+		<%= stylesheet_link_tag 'vendor/application', media: 'all' %>
+	</body>
+</html>

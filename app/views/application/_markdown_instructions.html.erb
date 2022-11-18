@@ -1,0 +1,23 @@
+<%= link_to '#', data: { show_element: '#formatting_help' }, class: 'WidFlo hoveron' do %>
+	<%= t('.formatting_help') %> 
+	<%= image_tag "Images/icons/expand.png", alt: t('.formatting_help') %>
+<% end %>
+<div id="formatting_help" style="display: none">
+	<div class="div45 grid"><%= t('.you_type') %></div>
+	<div class="div45 grid"><%= t('.you_see') %></div>
+	<div class="div45 grid">*<%= t('.italics') %>*</div>
+	<div class="div45 grid"><i><%= t('.italics') %></i></div>
+	<div class="div45 grid">**<%= t('.bold') %>**</div>
+	<div class="div45 grid"><b><%= t('.bold') %></b></div>
+	<div class="div45 grid">#<%= t('.hashtag') %></div>
+	<div class="div45 grid"><a class="textc60">#<%= t('.hashtag') %></a></div>
+	<div class="div45 grid">@<%= t('.profile') %></div>
+	<div class="div45 grid"><a class="textc60">@<%= t('.profile') %></a></div>
+	<div class="div45 grid">- <%= t('.item_one') %><br>- <%= t('.item_two') %><br>- <%= t('.item_three') %></div>
+	<div class="div45 grid">- <%= t('.item_one') %><br>- <%= t('.item_two') %><br>- <%= t('.item_three') %></div>
+	<div class="div45 grid">|| <%= t('.spoiler') %> ||</div>
+	<div class="div45 grid"><font class="spoiler"><%= t('.spoiler') %></font></div>
+	<%= link_to '#', data: { hide_element: '#formatting_help' }, class: 'center' do %>
+		<%= image_tag 'Images/icons/arrow_up.png' %>
+	<% end %>
+</div>

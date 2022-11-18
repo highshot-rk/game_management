@@ -1,0 +1,43 @@
+<% content_for(:structured_data) do %>
+	<%= render 'events/events/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'events/events/details/meta_tags' %>
+<% end %>
+
+<% content_for :menubar do %>
+	<%= render 'application/menubar', menu: :events %>
+<% end %>
+<div data-pjax-container>
+	<%= page_title t(".events") %>
+	<%= render 'home/navigation', section: :events, class: 'desktop_only' %>
+
+	<div id="ListRight">
+		<!-- Latest Best Players -->
+		<% if @best_players && @best_players.length > 0 %>
+			<div class="Write20 WidFlo"><%= t('.champions') %></div>
+			<div class="circle_container">
+				<div class="circle_sub_container">
+					<% @best_players.each do |game| %>
+						<%= link_to game_path(game.slug), class: 'circle' do %>
+							<%= image_tag game.image, alt: "#{game.title}" %>
+							<div class="record_prev"><%= game.max_score.user.username %></div>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+
+		<div class="Write20 WidFlo"><%= t('.challenges') %></div>
+		<%= render 'games/games', games: @games, skip_pages: true %>
+		<%= link_to t('.show_more'), search_path(search: { q: params[:name] }, sc:100), class: 'ShowMore' %>
+
+		<%= render 'active_selector' %>
+		<div class="clear"></div>
+
+		<div id="event_list">
+			<%= render partial: 'event', collection: @events %>
+			<%= paginate @events %>
+		</div>
+	</div>
+</div>

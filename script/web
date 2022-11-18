@@ -1,0 +1,3 @@
+#!/bin/bash
+# bundle exec passenger start -p $PORT --max-pool-size 3 --nginx-config-template nginx.conf.erb
+bundle exec puma -C config/puma.rb

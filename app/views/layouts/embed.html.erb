@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+	<head>
+		<title>Indiexpo Iframe</title>
+		<meta name="robots" content="noindex,nofollow"/>
+		<link href='//fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+		<!-- Google Analytics-->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71765582-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-71765582-1');
+		</script>
+
+		<%= stylesheet_link_tag 'embed/embed', media: 'all' %>
+	</head>
+	<body>
+		<%= yield %>
+		<%= javascript_include_tag 'embed/embed' %>
+	</body>
+</html>

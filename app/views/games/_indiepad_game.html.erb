@@ -1,0 +1,7 @@
+<%= link_to 'javascript:void(0)', data: { play_online: play_link_url(game.play_online.id), use_indiepad: true, game_id: game.slug }, class: 'box_screen_preview' do %>
+	<%= image_tag game.image, alt: "#{t('games.game.play')} #{game.title}", class: 'screen_preview' %>
+<% end %>
+<div class="caption">
+	<%= game.title %>
+	<br><span><%= game.author %></span>
+</div>

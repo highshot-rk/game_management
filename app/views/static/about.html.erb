@@ -1,0 +1,58 @@
+<%= page_title t('.about') %>
+<% content_for(:structured_data) do %>
+	<%= render 'static/about/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'static/about/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<li class="selected">
+		<div class="desktop_only"><%=t('.about')%></div>
+		<%= image_tag "Images/icons/pages/about.png", class: 'mobile_only', alt: t(".about") %>
+	</li>
+<% end %>
+<div class="WrapList">
+	<h1 class="Write30 WidFlo">indie<font style="color: #c60">x</font>po</h1>
+	<p class="Write20 WidFlo"><%= render 'static/about/body' %></p>
+	<%= image_tag 'Images/logo.png', class: 'right' %>
+	<div class="clear"></div>
+	<h2 class="Write30 WidFlo"><%=t('.app')%></h2>
+	<a href="https://play.google.com/store/apps/details?id=net.indiexpo.indiepad" target="_blank">
+		<%= image_tag 'Images/Sprites/indiepad_Google_Play.png' %>
+	</a>
+	<div class="clear"></div>
+	<h3 class="Write30 WidFlo"><%=t('.extension')%></h3>
+	<a href="https://chrome.google.com/webstore/detail/free-games/gechcfjojodafcpggkekfkkfpjacenno" target="_blank">
+		<%= image_tag 'Images/Sprites/Chrome_Web_Store.png' %>
+	</a>
+	<div class="clear"></div>
+	<a href="https://addons.opera.com/extensions/details/free-games-2/" target="_blank">
+		<%= image_tag 'Images/Sprites/Opera_Add-on.png' %>
+	</a>
+	<div class="Write30 WidFlo"><%=t('.social_networks')%></div>
+	<div class="circle_container">
+		<div class="circle_sub_container">
+			<a href="https://www.facebook.com/indiexpo/", class="circle", target="_blank">
+				<%= image_tag 'Images/Sprites/Facebook.png' %>
+			</a>
+			<a href="https://www.youtube.com/c/indiexpo?sub_confirmation=1", class="circle", target="_blank">
+				<%= image_tag 'Images/Sprites/Youtube.png' %>
+			</a>
+			<a href="https://tiktok.com/@indiexpo", class="circle", target="_blank">
+				<%= image_tag 'Images/Sprites/TikTok.png' %>
+			</a>
+			<a href="https://twitter.com/indiexpo_net", class="circle", target="_blank">
+				<%= image_tag 'Images/Sprites/Twitter.png' %>
+			</a>
+			<a href="https://instagram.com/indiexpo", class="circle", target="_blank">
+				<%= image_tag 'Images/Sprites/Instagram.png' %>
+			</a>
+			<a href="https://discord.gg/u3NSuZ7", class="circle", target="_blank">
+				<%= image_tag 'Images/Sprites/Discord.png' %>
+			</a>
+		</div>
+	</div>
+	<h4 class="Write30 WidFlo"><%=t('.games')%></h4>
+	<%= render 'games/games', games: @games, skip_pages: true %>
+	<%= link_to t('.show_more'), news_games_url(filter: :latest), class: 'ShowMore' %>
+</div>

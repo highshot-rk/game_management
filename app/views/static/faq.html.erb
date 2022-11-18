@@ -1,0 +1,24 @@
+<%= page_title t('.faq') %>
+<% content_for(:structured_data) do %>
+	<%= render 'static/faq/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'static/faq/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<li class="selected">
+		<div class="desktop_only"><%=t('.faq')%></div>
+		<%= image_tag "Images/icons/pages/faq.png", class: 'mobile_only', alt: t(".faq") %>
+	</li>
+<% end %>
+<div class="WrapList">
+	<h1 class="Write30 WidFlo"><%=t('.faq')%></h>
+	<div class="Write30 WidFlo"><%=t('.question_1')%></div>
+	<p class="Write20"><%=t('.answer_1')%></p>
+	<div class="Write30 WidFlo"><%=t('.question_2')%></div>
+	<p class="Write20"><%=t('.answer_2')%></p>
+	<div class="Write30 WidFlo"><%=t('.question_3')%></div>
+	<p class="Write20"><%=t('.answer_3')%></p>
+
+	<%= image_tag 'Images/Sprites/faq.png', class: 'right' %>
+</div>

@@ -1,0 +1,12 @@
+<div class="AreaNotifications">
+	<div id="change_language" class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.setlanguage') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="Write20 WidFlo" style="margin-top: 0px;"><%= t('.note') %></div>
+		<% Language.order(:name).each do |language| %>
+			<%= render language, selected: (@language == language) %>
+		<% end %>
+	</div>
+</div>

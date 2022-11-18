@@ -1,0 +1,68 @@
+<ul class="desktop_only">
+	<!-- Home -->
+	<%= link_to root_path, data: { pjax: true } do %>
+		<li class="<%= section == :home ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/home.png' %><span><%= t('.home') %></span>
+		</li>
+	<% end %>
+
+	<!-- News -->
+	<%= link_to news_games_path, data: { pjax: true } do %>
+		<li class="<%= section == :news ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/news.png' %><span><%= t('.news') %></span>
+		</li>
+	<% end %>
+
+	<!-- Chart -->
+	<%= link_to chart_games_path, data: { pjax: true } do %>
+		<li class="<%= section == :chart ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/chart.png' %><span><%= t('.chart') %></span>
+		</li>
+	<% end %>
+
+	<!-- Most Downloaded -->
+	<%= link_to downloaded_games_path(filter: :today), data: { pjax: true } do %>
+		<li class="<%= section == :downloaded ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/downloaded.png' %><span><%= t('.downloaded') %></span>
+		</li>
+	<% end %>
+
+	<!-- Events -->
+	<%= link_to events_path, data: { pjax: true } do %>
+		<li class="<%= section == :events ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/events.png' %><span><%= t('.events') %></span>
+		</li>
+	<% end %>
+
+	<!-- Console -->
+	<%= link_to indiepad_games_path, data: { pjax: true } do %>
+		<li class="<%= section == :indiepad ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/console.png' %><span><%= t('.console') %></span>
+		</li>
+	<% end %>
+
+	<!-- Subscriptions -->
+	<%= link_to subscribed_games_path, data: { pjax: true } do %>
+		<li class="<%= section == :subscriptions ? 'active' : '' %>" style="white-space: normal;">
+			<%= image_tag 'Images/icons/pages/followed_games.png' %><span><%= t('.subscriptions') %></span>
+			<% followed_games_last_month_count = current_user&.followed_games&.news_last_month&.count.to_i %>
+			<% if followed_games_last_month_count > 0 %>
+				<span class="right hoveron"><%= followed_games_last_month_count %></span>
+			<% end %>
+		</li>
+	<% end %>
+
+	<!-- Your Games -->
+	<%= link_to your_games_path, data: { pjax: true } do %>
+		<li class="<%= section == :your_games ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/your_games.png' %><span><%= t('.your_games') %></span>
+		</li>
+	<% end if current_user && current_user.games.any? %>
+
+	<!-- History -->
+	<%= link_to history_games_path, data: { pjax: true } do %>
+		<li class="<%= section == :history ? 'active' : '' %>">
+			<%= image_tag 'Images/icons/pages/history.png' %><span><%= t('.history') %></span>
+		</li>
+	<% end if current_user %>
+</ul>

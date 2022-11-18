@@ -1,0 +1,93 @@
+<%= page_title @event.title %>
+<% content_for(:structured_data) do %>
+	<%= render 'events/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'events/details/meta_tags' %>
+<% end %>
+
+<div class="AreaLeft">
+	<div class="big_box_preview">
+		<%= image_tag @event.image(:large), alt: "#{@event.title}", class: 'screen_preview' %>
+	</div>
+
+	<!-- Info -->
+	<div class="WidFlo">
+		<!-- Event Name -->
+		<div class="game_name">
+			<!-- Title -->
+			<h1 class="WidFlo"><%= @event.title %></h1>
+			<div class="sub_title div100">
+				<%= t('.subscribers') %>: <%= render partial: 'subscribers_list', locals: { users: @event.users } %>
+			</div>
+		</div>
+
+		<div class="right div100" style="margin-top: 1%;">
+			<!-- Share -->
+			<%= link_to t('.share'), share_event_path(@event.slug), class: 'share-button', data: { load_popup: true, remote: true } %>
+			<!-- Subscribe if active-->
+			<% if @event.end < Time.zone.now %>
+				<% if @event.subscribed? current_user %>
+					<%= render 'subscriptions/unsubscribe_button', event: @event %>
+				<% else %>
+					<%= render 'subscriptions/subscribe_button', event: @event %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+	<blockquote class="N_Window">
+		<!-- Info -->
+		<div class="WidFlo">
+			<!-- Website -->
+			<%= link_to t('.website'), @event.website, rel: 'nofollow', class: 'info_details', target: '_blank' if @event.website? %>
+			<!-- From... to -->
+			<div class="info_details">
+				<%= t('.from') %> <span data-time-in-zone><%= @event.start %></span> <%= t('.to') %> <span data-time-in-zone><%= @event.end %></span>
+			</div>
+			<div class="info_details">
+				<span data-time class="cw-relative-date" timestamp="<%= @event.end.strftime("%Y/%m/%d %H:%M:%S %z") %>">...</span>
+			</div>
+			<div class="info_details">
+				<% if @event.end > Time.zone.now %>
+					<%= t('.ends') %>
+				<% else %>
+					<%= t('.ended') %>
+				<% end %>
+			</div>
+		</div>
+
+		<!-- Description -->
+		<div class="Write20"><%= t('.description') %></div>
+		<span class="WidFlo"><%= parse_markdown(@event.description).html_safe %></span>
+
+		<!-- Language -->
+		<div class="WidFlo"><%= t('.language') %>:
+			<font class="textc60">
+				<% @event.languages.each do |lang| %> <%= lang.name %>&nbsp;&nbsp;<% end %>
+			</font>
+		</div>
+
+		<!-- Rules -->
+		<% if @event.rules? %>
+			<div class="Write20"><%= t('.rules') %></div>
+			<span class="WidFlo"><%= parse_markdown(@event.rules).html_safe %></span>
+		<% end %>
+
+		<!-- Awards -->
+		<% if @event.prizes? %>
+			<div class="Write20"><%= t('.prizes') %></div>
+			<span class="WidFlo"><%= parse_markdown(@event.prizes).html_safe %></span>
+		<% end %>
+	</blockquote>
+</div>
+
+<div class="AreaRight">
+	<!-- Adsense Banner -->
+	<div class="Adsense desktop_only" style="margin: 24px 0 0 0; max-height: 222px; overflow: hidden;">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Annuncio Reattiva FE -->
+		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4589575764100828" data-ad-slot="2160488094" data-ad-format="auto"></ins>
+		<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+	</div>
+</div>

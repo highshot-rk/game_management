@@ -1,0 +1,128 @@
+<%= page_title t('.search') %>
+<% content_for(:structured_data) do %>
+	<%= render 'search/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'search/details/meta_tags' %>
+<% end %>
+
+<div data-pjax-container>
+	<% content_for :menubar do %>
+		<%= render 'menubar', menu: :search %>
+	<% end %>
+	<%= form_for :search, url: search_path, method: :get, data: { advanced_search: '#search_q', form_auto_submit: true } do |f| %>
+		<%= f.hidden_field :q, value: @query, placeholder: t('.search_placeholder'), id: 'hidden_query_string' %>
+		<ul class="desktop_only">
+			<li><%= t '.filters' %></li>
+			<li>
+				<%= t '.language' %>
+				<%= link_to '#', data: { show_element: '#language_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="language_filter" style="display: none"><br>
+				<%= search_checkbox :l, Language.all, :id, :name, params: @search_params %>
+					<%= link_to '#', data: { hide_element: '#language_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				Extra
+				<%= link_to '#', data: { show_element: '#extra_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="extra_filter" style="display: none"><br>
+				<label><%= check_box_tag :ip, 1, @search_params[:ip].present? %> indiepad</label><br />
+				<label><%= check_box_tag :po, 1, @search_params[:po].present? %> Play Online</label><br />
+				<label><%= check_box_tag :sc, 1, @search_params[:sc].present? %> <%= t '.score_system_games' %></label><br />
+				<label><%= check_box_tag :ad, 1, @search_params[:ad].present? %> <%= t '.adult_content' %></label><br />
+				<label><%= check_box_tag :mo, 1, @search_params[:mo].present? %> <%= t '.mobile_first' %></label>
+					<%= link_to '#', data: { hide_element: '#extra_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				<%= t '.genre' %>
+				<%= link_to '#', data: { show_element: '#genre_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="genre_filter" style="display: none"><br>
+				<%= search_checkbox :g, Genre.all, :id, :name, params: @search_params %>
+					<%= link_to '#', data: { hide_element: '#genre_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				<%= t '.platform' %>
+				<%= link_to '#', data: { show_element: '#platform_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="platform_filter" style="display: none"><br>
+				<%= search_checkbox :p, Platform.all, :id, :name, params: @search_params %>
+					<%= link_to '#', data: { hide_element: '#platform_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				<%= t '.year' %>
+				<%= link_to '#', data: { show_element: '#year_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="year_filter" style="display: none"><br>
+					<% (2011..Time.now.year).reverse_each do |n| %>
+						<label><%= check_box_tag "y[]", n, @search_params[:y] %> <%= n %></label><br />
+					<% end %>
+					<%= link_to '#', data: { hide_element: '#year_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				<%= t '.tool' %>
+				<%= link_to '#', data: { show_element: '#tool_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="tool_filter" style="display: none"><br>
+				<%= search_checkbox :t, Tool.all.order(:name), :id, :name, params: @search_params %>
+					<%= link_to '#', data: { hide_element: '#tool_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				<%= t '.status' %>
+				<%= link_to '#', data: { show_element: '#status_filter' }, class: 'right' do %>
+					<%= image_tag 'Images/icons/arrow_down.png' %>
+				<% end %>
+				<span id="status_filter" style="display: none"><br>
+				<%= search_checkbox :rt, Game.release_types.map { |name, id| OpenStruct.new(id: id, name: name.capitalize) }, :id, :name, params: @search_params %>
+					<%= link_to '#', data: { hide_element: '#status_filter' }, class: 'WidFlo' do %>
+						<%= image_tag 'Images/icons/arrow_up.png', class: 'right' %>
+					<% end %>
+				</span>
+			</li>
+			<li>
+				<button id="Botton" class="center"><%= t '.search' %></button>
+			</li>
+		</ul>
+	<% end %>
+	<!-- rightwrap -->
+	<div id="ListRight">
+		<h1 class="Write20 WidFlo"><%= t '.games' %>: <%= @games.total_count %></h1>
+		<div class="WidFlo hoveron"><%= t '.recommended' %>: 
+			<%= link_to "#love", search_path(search: { q: 'love' }), class: 'textc60', data: { analytics_click: 'tag hashtag advanced search' }, target: '_blank' %>, 
+			<%= link_to "#horror", search_path(search: { q: 'horror' }), class: 'textc60', data: { analytics_click: 'tag hashtag advanced search' }, target: '_blank' %>, 
+			<%= link_to "#VisualNovel", search_path(search: { q: 'visualnovel' }), class: 'textc60', data: { analytics_click: 'tag hashtag advanced search' }, target: '_blank' %>
+		</div>
+		<% if @games.any? %>
+			<%= render @games %>
+			<div class="clear"></div>
+			<%= paginate @games %>
+		<% else %>
+			<div class="Write30 WidFlo"><%= t('.no_result') %></div>
+		<% end %>
+	</div>
+</div>

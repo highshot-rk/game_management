@@ -1,0 +1,53 @@
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.indiexpo.net/",
+      "name": "indiexpo",
+      "image": "<%= asset_path('Images/LogoMask.png') %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "<%= faq_url %>",
+				"@type": "FAQPage",
+				"name": "<%=t('.faq')%>",
+				"image": "<%= asset_path('Images/pages/faq.png') %>",
+				"url": "<%= faq_url %>",
+				"description": "<%= t('.description') %>",
+				"keywords": "<%=t('.faq')%>, <%= t('application.meta_tags.keywords') %>",
+				"inLanguage": "<%= I18n.locale %>",
+				"mainEntity": [{
+					"@type": "Question",
+					"name": "<%= t('static.faq.question_1') %>",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "<%= t('static.faq.answer_1') %>"
+					}
+				}, {
+					"@type": "Question",
+					"name": "<%= t('static.faq.question_2') %>",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "<%= t('static.faq.answer_2') %>"
+					}
+				}, {
+					"@type": "Question",
+					"name": "<%= t('static.faq.question_3') %>",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "<%= t('static.faq.answer_3') %>"
+					}
+				}]
+			}
+		}
+	]
+}
+</script>
+<!-- STRUCTURED DATA END -->

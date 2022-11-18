@@ -1,0 +1,12 @@
+<% counter_id = SecureRandom.uuid %>
+<%= form_for [game, Comment.new], html: { id: (defined?(comment_id) ? "new_comment_#{comment_id}" : 'new_comment') }, data: { new_comment: (defined?(comment_id) ? comment_id : '') }, remote: true do |form| %>
+  <%= form.hidden_field(:comment_id, value: comment_id) if defined?(comment_id) %>
+	<%= form.text_area :text, id: 'commentText', required: true, placeholder: t('.text'), minlength: Comment::MIN_LENGTH, maxlength: Comment.length_for(current_user), class: 'form_text_area', rows: "3", data: { character_counter: "comment_length_#{counter_id}" } %>
+  <%= render 'application/markdown_instructions' %>
+  <span class="WidFlo" id="comment_length_<%= counter_id %>"><%= Comment.length_for(current_user) %></span>
+  <%= form.submit t('.publish'), id: 'buttonComment', data: { analytics_click: 'Comment Posted', load: 'true' }, class: 'Botton right div100' %>
+<% end %>
+<div class="background_black center">
+	<div class="Write30 center"><%= t('.now_loading') %></div>
+	<%= image_tag 'loader.gif', alt: t('.now_loading') %>
+</div>

@@ -1,0 +1,166 @@
+<% content_for :metadata do %>
+	<%= render_with_format :html, 'users/details/structured_data' %>
+<% end %>
+<% content_for :style do %>
+	<style amp-custom>
+		body {
+			width: 100%;
+			background-color: #09090b;
+			padding-bottom: 50px;
+			font-family: 'Play', sans-serif;
+			color: #ccc;
+			text-align: center;
+			float: left;
+		}
+		a {
+			color: #ccc;
+			text-decoration: none;
+		}
+		.logo {
+			width: 100%;
+			height: 42px;
+			margin-bottom: 4px;
+			background: #041221;
+			background-image: url(<%= asset_url('Images/MiniLogo.png') %>);
+			background-position: center;
+			background-repeat: no-repeat;
+			float: left;
+		}
+		h1 {
+			margin-top: 60px;
+		}
+		h2 {
+			font-size: 20px;
+		}
+		h3 {
+			font-size: 16px;
+			opacity: 0.8;
+		}
+		amp-img {
+			width: 100%;
+			border: none;
+		}
+		.show_more {
+			position: fixed;
+			width: 100%;
+			padding: 10px 0px;
+			bottom: 0;
+			left: 0;
+			font-size: 20px;
+			background: #900;
+			z-index: 2;
+		}
+		.font22 {
+			margin-top: 20px;
+			font-size: 22px;
+		}
+		.ScreenAMP {
+			width: 95%;
+			margin: 2.5%;
+			border: 1px solid #393a3a;
+			float: left;
+		}
+		.textc60 {
+			color: #c60;
+		}
+	</style>
+<% end %>
+
+<amp-analytics type="googleanalytics">
+	<script type="application/json">
+	{
+		"vars": {
+			"account": "UA-71765582-1"
+		},
+		"triggers": {
+			"trackPageview": {
+				"on": "visible",
+				"request": "pageview"
+			}
+		}
+	}
+	</script>
+</amp-analytics>
+
+<%= link_to '', root_url, class:'logo' %>
+
+<article>
+	<h1>
+		<%= @user.username %>
+		<%= amp_image_tag('Images/icons/verified.png', alt: t('users.show.verified'), title: t('users.show.verified'), width: '17', height: '17') if @user.verified? %>
+		<% if @user.online? %>
+			- <span class="textc60"><%= t('users.show.online') %></span>
+		<% end %>
+	</h1>
+	<h2><%= t('users.show.chart') %>: <%= @user.chart %>°</h2>
+	<h3><%= t('users.show.level') %>: <%= @user.level %></h3>
+
+	<a class="show_more" href="<%= user_url(id: @user.username) %>"><%= t('users.show.show_more') %></a>
+</article>
+
+<% if @played_score_games.count > 0 %>
+	<div class="font22"><%= t('users.show.score_system_games') %></div>
+	<!-- Games List -->
+	<% @played_score_games.each do |game| %>
+		<a class="ScreenAMP" href="<%= game_url(game.slug) %>">
+			<%= amp_image_tag(game.image, layout: 'responsive', width: '480', height: '240') %>
+		</a>
+	<% end %>
+<% end %>
+
+<% if @user_games.count > 0 %>
+	<div class="font22"><%= t('users.show.games') %> (<%= @user.authored_games.count %>)</div>
+	<% @user_games.each do |game| %>
+		<a class="ScreenAMP" href="<%= game_url(game.slug) %>">
+			<%= amp_image_tag(game.image, layout: 'responsive', width: '480', height: '240') %>
+		</a>
+	<% end %>
+<% end %>
+
+<% if @supported_games.count > 0 %>
+	<div class="font22">Supported Games</div>
+	<!-- Games List -->
+	<% @supported_games.each do |game| %>
+		<a class="ScreenAMP" href="<%= game_url(game.slug) %>">
+			<%= amp_image_tag(game.image, layout: 'responsive', width: '480', height: '240') %>
+		</a>
+	<% end %>
+<% end %>
+
+<% if @followed_games.count > 0 %>
+	<div class="font22"><%= t('users.show.subscriptions') %> (<%= @user.followed_games.count %>)</div>
+	<!-- Games List -->
+	<% @followed_games.each do |game| %>
+		<a class="ScreenAMP" href="<%= game_url(game.slug) %>">
+			<%= amp_image_tag(game.image, layout: 'responsive', width: '480', height: '240') %>
+		</a>
+	<% end %>
+<% end %>
+
+<% if @commented_games.count > 0 %>
+	<div class="font22"><%= t('users.show.last_commented') %></div>
+	<!-- Games List -->
+	<% @commented_games.each do |game| %>
+		<a class="ScreenAMP" href="<%= game_url(game.slug) %>">
+			<%= amp_image_tag(game.image, layout: 'responsive', width: '480', height: '240') %>
+		</a>
+	<% end %>
+<% end %>
+
+<% if @downloaded_games.count > 0 %>
+	<div class="font22"><%= t('users.show.history') %></div>
+	<!-- Games List -->
+	<% @downloaded_games.each do |game| %>
+		<a class="ScreenAMP" href="<%= game_url(game.slug) %>">
+			<%= amp_image_tag(game.image, layout: 'responsive', width: '480', height: '240') %>
+		</a>
+	<% end %>
+<% end %>
+
+<div class="font22"><%= t('users.show.other_players') %></div>
+<br>
+<% @random_users.each do |user| %>
+	<a href="<%= user_path(user.username) %>">
+		<%= user.username %><br><%= t('.chart') %>: <%= user.chart %>°
+	</a><br><br>
+<% end %>

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+container_name=`docker-compose ps -q web`
+docker exec -it $container_name bash script/container/backup

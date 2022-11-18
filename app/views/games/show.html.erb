@@ -1,0 +1,317 @@
+<div data-pjax-container>
+	<% content_for :menubar do %>
+		<%= render 'games/details/game_menu', section: 0 %>
+	<% end %>
+	<% content_for :head  do %>
+		<link rel="amphtml" href="<%= url_for(format: :amp, only_path: false) %>" >
+	<% end %>
+
+	<% if @game.play_online %>
+		<div id="WidFlo">
+			<div id="play_online" class="big_box_preview" data-action="player-increment" data-url=<%= counter_api_v1_download_link_url(@game.play_online) %> data-target="#playersCount" data-analytics-click="Play Online" data-play-online="<%= play_link_url(@game.play_online.id) %>" <%= @game.indiepad ? 'data-use-indiepad="true"'.html_safe : '' %> <%= @auth_code ? "data-auth-code=\"#{@auth_code.token}\"".html_safe : '' %>>
+				<%= image_tag @game.image, alt: "Play #{@game.title} Online" %>
+				<div class="description"><%= t('games.show.play') %><span style="color: #c60;"> &#9658; </span></div>
+				<div data-open-embed="<%= @game.slug %>" class="embed">&lt;<span class="textc60">/</span>&gt; <%= t('games.show.embed') %></div>
+			</div>
+		</div>
+	<% elsif @game.videos.any? %>
+			<iframe width="100%" height="480px" class="big_box_preview" src="//www.youtube.com/embed/<%= @game.videos.first.try(:url) %>" frameborder="0" loading="lazy" allowfullscreen></iframe>
+	<% else %>
+		<div class="big_box_preview">
+			<%= image_tag @game.image(:large), alt: "Play #{@game.title}", class: 'screen_preview' %>
+		</div>
+	<% end %>
+
+	<% if policy(@game).update? %>
+		<!-- Stats -->
+		<%= render 'stats' if @stats %>
+		<div class="WidFlo">
+			<!-- Leaderboard Invite -->
+			<% if @game.token? && @game.scores.empty? %>
+				<div class="Window background900">
+					Do you want to add the Leaderboard on your game? <%= link_to 'Click here!', record_info_game_path(@game.slug), data: { load_popup: true, remote: true } %>
+				</div>
+			<% end %>
+			<div class="div74 div100">
+				<div class="Window">
+					<!-- News Count -->
+					<%= link_to game_news_path(@game.slug), class: 'Write20 WidFlo', data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' } do %>
+						<%= t('games.details.index.news') %> <span class="news-counter"><%= @game.news_count %></span>
+					<% end %>
+					<!-- Add News -->
+					<%= render 'news/form', game: @game %>
+				</div>
+			</div>
+			<div class="div26 div100">
+				<%= link_to edit_game_path(@game.slug), class: 'Window' do %>
+					<font class="Write20"><%= t('games.details.index.edit') %></font>
+					<%= image_tag 'Images/icons/edit.png', class: 'right' %>
+				<% end %>
+				<%= link_to stats_game_path(@game.slug), class: 'Window', data: { pjax: true, pjax_class: 'selected', pjax_parent_count: '1' } do %>
+					<font class="Write20"><%= t('games.details.index.statistics') %></font>
+					<%= image_tag 'Images/icons/stats.png', class: 'right' %>
+				<% end %>
+				<%= link_to monetisation_game_path(@game.slug), class: 'Window', data: { load_popup: true, remote: true } do %>
+					<font class="Write20"><%= t('games.show.monetisation') %></font>
+					<%= image_tag 'Images/icons/monetisation.png', class: 'right' %>
+				<% end %>
+			</div>
+		</div>
+
+		<% if policy(@game).admin_area? %>
+			Game ID: <%= @game.id %> - 
+			<%= mail_to @game.user.email, @game.user.username, class: 'Botton center' %>
+			<%= link_to 'DELETE', game_path(id: @game.slug), method: :delete, data: { confirm: 'CONFIRM PLEASE' }, class:'ShowMore background900' %>
+		<% end %>
+	<% end %>
+
+	<!-- Info -->
+	<div class="WidFlo">
+		<!-- Game Name -->
+		<div class="game_name">
+			<!-- Trending -->
+			<% if @game.created_since?(30) && @game.downloads_count > 15 && @game.ratings_chart_last_days(31) < 4 %>
+				<%= link_to news_games_url(filter: :popular), class: 'textc60 WidFlo', style: 'font-size: 14px;' do %>
+					#<%= @game.ratings_chart_last_days(31) %> - <%= t('games.show.on_the_rise') %>
+				<% end %>
+			<% end %>
+			<!-- Title -->
+			<h1 class="WidFlo"><%= @game.title %></h1>
+			<!-- Best Player -->
+			<% if @game.scores.any? %>
+				<%= link_to record_chart_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Leaderboard'}, class: 'best_player' do %>
+					<%= t('games.show.top_player') %>: <%= @game.max_score.user.username %>
+					<%= image_tag "Images/icons/record.png", alt: t('games.show.top_player'), style: 'margin-bottom: -2px;' %>
+					<%= image_tag "Images/icons/expand.png", alt: t('games.show.top_player') %>
+					<% if current_user&.username == @game.max_score.user.username %>
+						<div class="tag"><%= t('games.show.epic_win') %></div>
+					<% end %>
+				<% end %>
+			<% end %>
+			<!-- Players and Subscribers -->
+			<div class="sub_title div100">
+				<% if policy(@game).update? %>
+					<%= link_to players_list_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Players List'} do %>
+						<span id="playersCount">
+							<%= @game.downloads_count %>
+						</span>
+						<%= t('games.details.index.players') %>
+						<%= image_tag "Images/icons/expand.png", alt: t('games.details.index.players') %>
+					<% end %>
+				<% else %>
+					<span id="playersCount">
+						<%= @game.downloads_count %>
+					</span>
+					<%= t('games.details.index.players') %>
+				<% end %>
+				-
+				<%= link_to followers_list_game_path(@game.slug), data: { load_popup: true, remote: true, analytics_click: 'Opening Followers List'} do %>
+					<span id="followersCount">
+						<%= @game.followings_count %>
+						<%= t('games.show.subscribers') %>
+						<%= image_tag "Images/icons/expand.png", alt: t('games.show.subscribers') %>
+					</span>
+				<% end %>
+				<!-- Tips -->
+				<% if policy(@game).update? && @game.downloads_count < 20 %>
+					<br><%= image_tag "Images/icons/mini_arrow_top.png" %> Click on <%= image_tag "Images/icons/expand.png" %> to check out the latest Players & Subscribers
+				<% end %>
+			</div>
+		</div>
+
+		<!-- Rating -->
+		<div class="right div100" style="margin-top: 1%;">
+			<%# IF the user is not logged or voted using the old system, he can not vote %>
+			<% if current_user && current_user.ratings.legacy.find_by(game: @game) %>
+				<div class="rateit" data-rateit-readonly="true" data-rateit-value="<%= @game.ratings_avg %>" data-rateit-ispreset="true" data-rateit-step="1" data-rateit-resetable="false" data-rateit-starwidth="40" data-rateit-starheight="32"></div>
+			<% elsif current_user && (!current_user.downloaded_games.find_by(id: @game.id) || current_user.level < 2 || current_user.created_since?(10)) %>
+				<%= link_to rating_filters_game_path(@game.slug), data: { load_popup: true, remote: true } do %>
+					<div class="rateit" data-rateit-readonly="true" data-rateit-value="<%= @game.ratings_avg %>" data-rateit-ispreset="true" data-rateit-step="1" data-rateit-resetable="false" data-rateit-starwidth="40" data-rateit-starheight="32"></div>
+				<% end %>
+			<% else %>
+				<div class="rateit" data-rateit-game="<%= @game.id %>" data-rateit-value="<%= '%.1f' % @game.ratings_avg %>" data-rateit-ispreset="true" data-rateit-step="1" data-rateit-resetable="false" data-rateit-starwidth="40" data-rateit-starheight="32"></div>
+			<% end %>
+		</div>
+	</div>
+
+	<!-- Author, Support, Downloads, Subscribe and Medals -->
+	<div class="WidFlo" style="min-height: 40px;">
+		<!-- Author -->
+		<h2 class="Write20" style="margin-top: 5px;">
+			<%= link_to @game.author, game_author_page_path(@game) %>
+			<%= image_tag('Images/icons/verified.png', alt: t('games.show.verified'), title: t('games.show.verified')) if @game.user.verified? && @game.author == @game.user.username %>
+		</h2>
+		<div class="right div100">
+			<div class="right div100">
+				<!-- Support / Monetisation -->
+				<% if @game.monetisation_enabled? %>
+					<%= link_to support_game_path(@game.slug), id: 'Botton', class: 'download-button div100', style: 'margin-right: 8px; padding: 0px 40px; border-radius: 0; background: none; border: 4px double #ccc;', data: { load_popup: true, remote: true } do %>
+						<%= image_tag asset_path("Images/icons/support.png") %>
+					<% end %>
+				<% end %>
+				<!-- Downloads -->
+				<% if @game.downloadable_links.count < 2 %>
+					<% @game.downloadable_links.each do |download_link| %>
+						<%= render(download_link) %>
+					<% end %>
+				<% else %>
+					<a id="Botton" class="download-button" data-show-fading=".DownloadButtons">
+						<%= image_tag asset_path("Images/icons/download.png") %><%= t('games.show.download') %>
+					</a>
+				<% end %>
+				<div class="clear mobile_only"></div>
+				<!-- Share -->
+				<%= link_to t('games.show.share'), share_game_path(@game.slug), class: 'share-button', data: { load_popup: true, remote: true } %>
+				<!-- Subscribe -->
+				<%= div_for(@game, :favourite, class: following_css(@game), data: { game_id: @game.id }) do %>
+					<%= toggle_button_to t('games.show.subscribe'), t('games.show.subscribed'), game_followings_path(@game.id), on: 'subscribe-button subscribe', off: 'subscribe-button unsubscribe hoveron' %>
+				<% end %>
+			</div>
+
+			<% if @game.mobile_first %>
+				<div class="ShowMore mobile_only" style="border-top: 1px solid #c60; border-bottom: 1px solid #c60;"><%= t('games.show.mobile_first') %></div>
+			<% end %>
+
+			<div class="AreaIcons div100">
+				<!-- PEGI -->
+				<% if @game.adult_content %>
+					<%= image_tag "Images/icons/pegi18.png", class: "icon", alt: t('games.show.adult_content'), title: t('games.show.adult_content') %>
+				<% else %>
+					<%= image_tag "Images/icons/pegi16.png", class: "icon" %>
+				<% end %>
+				<!-- Medals -->
+				<% medals = @game.medals.select(&:persisted?) %>
+				<% if medals.any? %>
+					<% medals.each do |medal| %>
+						<%= render medal %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<% if @game.downloadable_links.count > 1 %>
+		<div class="WidFlo DownloadButtons" data-showable>
+			<% @game.downloadable_links.each do |download_link| %>
+				<%= render(download_link) %>
+			<% end %>
+		</div>
+	<% end %>
+
+	<blockquote class="N_Window">
+		<!-- Info -->
+		<div class="WidFlo">
+			<!-- Website -->
+			<%= link_to t('games.details.index.website'), @game.website, rel: 'nofollow', class: 'info_details', target: '_blank' if @game.website? %>
+			<!-- Date -->
+			<div class="info_details">
+				<%= t('games.show.published_on') %>: <%= l @game.created_at.to_date %>
+			</div>
+			<!-- Status -->
+			<%= link_to(search_path(rt: [Game.release_types[@game.release_type]]), class: 'info_details') do %>
+				<h6><%= t(".#{@game.release_type.titleize.downcase.gsub(/[^a-z]+/, '')}") %></h6>
+			<% end %>
+			<!-- Genre -->
+			<%= link_to(search_path(g: [@game.genre.id]), class: 'info_details') do %>
+				<h3><%= t("genres.genre.#{@game.genre.name.downcase.gsub(/[^a-z]+/, '')}") %></h3>
+			<% end %>
+			<!-- Tool -->
+			<%= link_to(search_path(t: [@game.tool.id]), class: 'info_details') do %>
+				<h4><%= @game.tool.name %></h4>
+			<% end %>
+		</div>
+
+		<!-- Description -->
+		<span class="WidFlo"><%= parse_markdown(@game.description).html_safe %></span>
+		<div class="WidFlo"><%= t('games.show.language') %>:
+			<font class="textc60">
+				<% @game.languages.each do |lang| %> <%= lang.name %>&nbsp;&nbsp;<% end %>
+			</font>
+		</div>
+		<% if @game.last_news %>
+			<%= link_to game_news_path(@game.slug), class: 'subWindow' do %>
+				<div class="news_count"><%= t('games.details.index.news') %>: <span class="news-counter"><%= @game.news_count %></span></div>
+				<div id="newsLatestContainer"><%= truncate(@game.last_news.text, length: 380, separator: ' ') %></div>
+			<% end %>
+		<% end %>
+		<% if @game.long_description? %>
+			<%= link_to t('games.show.more_comments'), '#', data: { show_element: '#game_long_description' }, class: 'load_more' %>
+			<div id="game_long_description" class="clear" style="display: none">
+				<%= parse_markdown(@game.long_description).html_safe %>
+			</div>
+		<% end %>
+	</blockquote>
+
+	<!--Screens -->
+	<% if @game.screens.any? %>
+		<% @game.screens.each do |screen| %>
+			<div class="box_preview">
+				<div class="box_screen_preview">
+					<%= image_tag screen.file.url(:medium), alt: @game.title, class: 'screen_preview' , data: { zoom_image: asset_url(screen.file.url(:large)) } %>
+				</div>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="box_preview">
+			<div class="box_screen_preview">
+				<%= image_tag 'Files/NoScreen.png', class: 'screen_preview' %>
+			</div>
+		</div>
+	<% end %>
+
+	<!-- Artwork -->
+	<% @game.artworks.each do |artwork| %>
+		<div class="box_preview">
+			<div class="box_screen_preview">
+				<%= image_tag artwork.file.url(:medium), alt: @game.title, class: 'screen_preview', data: { zoom_image: asset_url(artwork.file.url(:large)) } %>
+			</div>
+		</div>
+	<% end %>
+
+	<!-- Comments -->
+	<%= link_to game_comments_path(@game.slug), class: 'Write30 WidFlo' do %>
+		<%= t('games.show.comment') %>
+		<span class="comments-counter"><%= @game.comments_count %></span>
+	<% end %>
+
+	<!-- Left Comment -->
+	<div id="commentError" class="WidFlo center background900 Write20"></div>
+	<%= render 'comments/form', game: @game %>
+
+	<% if !@game.adult_content %>
+		<!-- Adsense Banner -->
+		<div class="Adsense mobile_only">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Annuncio Reattiva FE -->
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4589575764100828" data-ad-slot="2160488094" data-ad-format="auto"></ins>
+			<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+		</div>
+	<% end %>
+
+	<!-- Tips -->
+	<%= render 'tips' if policy(@game).update? %>
+
+	<!-- Last Comments -->
+	<% if @comments.size == 0 %>
+		<div  class="N_Window first_to_comment" style="margin-top: 15px">
+			<%= t('games.show.first_to_comment') %>
+			<div class="right">+20 <%= image_tag 'Images/icons/level.png', alt: 'Points' %></div>
+		</div>
+		<div id="commentsContainer"></div>
+	<% else %>
+		<div id="commentsContainer">
+			<%= render @comments %>
+		</div>
+	<% end %>
+
+	<!-- Show More -->
+	<% if @game.comments_count > 3 %>
+		<%= link_to t('games.show.more_comments'), game_comments_path(@game.slug), class: 'ShowMore' %>
+	<% end %>
+
+	<!-- Youtube -->
+	<% if @game.play_online && @game.videos.any? %>
+		<div class="Write30"><%= t('games.show.video') %></div>
+		<iframe width="960" height="480" class="big_box_preview" src="//www.youtube.com/embed/<%= @game.videos.first.try(:url) %>" frameborder="0" loading="lazy" allowfullscreen></iframe>
+	<% end %>
+</div>

@@ -1,0 +1,23 @@
+<%= page_title t('.send_email_again') %>
+<% content_for(:structured_data) do %>
+	<%= render 'devise/confirmations/new/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'devise/confirmations/new/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<%= render 'devise/shared/menubar', menu: :send_email_again %>
+<% end %>
+
+<%= render 'terms' %>
+<div id="ListRight" style="max-width: 750px;">
+	<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+		<div class="WidFlo center background900 Write20"><%= devise_error_messages! %></div>
+		<br>
+		<div class="Window2">
+			<div class="Write20"><%= f.label :email %></div>
+			<%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), style: "width: 100%", maxlength: 200, required: true, placeholder: t('.email') %>
+		</div>
+		<%= f.submit t('.send_email_again'), class: 'Botton div100' %>
+	<% end %>
+</div>

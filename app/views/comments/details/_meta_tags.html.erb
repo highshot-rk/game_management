@@ -1,0 +1,24 @@
+<link rel="canonical" href="<%= game_comments_url(@game.slug) %>"/>
+
+<meta name="description" content="<%= t('games.show.comment') %> - <%= @game.title %> - <%= t('games.details.index.published_by') %>: <%= @game.author %>" />
+<meta name="keywords" content="<%= @game.title %>, <%= @game.author %>, <%= t('games.show.comment') %>, <%= @game.genre.name %>, <%= @game.tool.name %>, <%= t('application.meta_tags.keywords') %>" />
+
+<!-- META TAG OG - Facebook-->
+<meta property="fb:app_id" content="<%= Settings.social.facebook.app_id %>" />
+<meta property="fb:admins" content="<%= Settings.social.facebook.admins %>">
+<meta property="og:title" content="<%= @game.title %> - <%= t('games.show.comment') %>" />
+<meta property="og:type" content="game" />
+<meta property="og:url" content="<%= game_comments_url(@game.slug) %>"/>
+<meta property="og:image" content="<%= @game.image(:large) %>"/>
+<meta property="og:description" content="[<%= t('games.show.comment') %>] <%= @game.title %> - <%= t('games.details.index.published_by') %>: <%= @game.author %>" />
+<meta property="og:site_name" content="www.indiexpo.net" />
+
+<!-- META TAG Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@indiexpo_net">
+<meta name="twitter:creator" content="@indiexpo_net">
+<meta name="twitter:url" content="<%= game_comments_url(@game.slug) %>">
+<meta name="twitter:title" content="<%= @game.title %> - <%= t('games.show.comment') %>">
+<meta name="twitter:description" content="[<%= t('games.show.comment') %>] <%= @game.title %> - <%= t('games.details.index.published_by') %>: <%= @game.author %>">
+<meta name="twitter:image" content="<%= @game.image %>">
+<!-- END META TAG -->

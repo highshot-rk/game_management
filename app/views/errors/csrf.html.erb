@@ -1,0 +1,16 @@
+<% content_for :menubar do %>
+	<%= render 'errors/menubar' %>
+<% end %>
+
+<div class="WrapList">
+	<div class="Write30 WidFlo">
+		Ouch! Your session has been expired!
+	</div>
+
+	<div class="Write20 WidFlo">
+		You idled for a bit, and your session timed out. Please try <%= link_to 'go back  and retry!', :back %>
+	</div>
+
+	<!-- Image -->
+	<%= image_tag 'Images/Sprites/500.png', class: 'right' %>
+</div>

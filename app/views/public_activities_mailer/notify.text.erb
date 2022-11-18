@@ -1,0 +1,25 @@
+<% game = find_game(@activity.trackable)
+   event = find_event(@activity.trackable)
+   subject = if game
+              game.title
+             elsif event
+              event.title
+             end
+
+   author = if @activity.key == 'rating.create'
+              t('public_activity.base.someone')
+            elsif  @activity.owner.is_a?(User)
+              @activity.owner.username
+            elsif  @activity.owner.is_a?(Game)
+              @activity.owner.title
+            end
+%>
+Hey <%= @activity.recipient.username %>,
+
+<%= author %> <%= t("activity.#{@activity.key}", game: @activity.parameters[:game_title], user: @activity.parameters[:leader]) %> <%= subject %>
+
+Check out on <%= root_url %>!
+
+===================
+
+Not interested in this emails? Unsubscribe at <%= edit_user_settings_url %>

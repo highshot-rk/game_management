@@ -1,0 +1,28 @@
+<% content_for(:structured_data) do %>
+	<%= render 'games_sections/downloaded/details/structured_data' %>
+<% end %>
+<% content_for(:meta_tags) do %>
+	<%= render 'games_sections/downloaded/details/meta_tags' %>
+<% end %>
+<% content_for :menubar do %>
+	<%= render 'menubar', menu: :home %>
+<% end %>
+
+<div data-pjax-container>
+	<% if @filter == :everytime %>
+		<%= page_title t('application.menubar.downloaded') %>
+	<% else %>
+		<%= page_title t('application.menubar.downloaded') + ' - '+ t("games_sections.filters.#{action_name}.#{@filter}") %>
+	<% end %>
+
+	<%= render 'home/navigation', section: :downloaded %>
+	<div id="ListRight">
+		<%= render 'filters', elements: @available_filters %>
+		<div class="WidFlo">
+			<%= link_to "#racing", search_path(search: { q: 'racing' }), class: 'textc60', data: { analytics_click: 'tag hashtag home' }, target: '_blank' %>, 
+			<%= link_to "#horror", search_path(search: { q: 'horror' }), class: 'textc60', data: { analytics_click: 'tag hashtag home' }, target: '_blank' %>, 
+			<%= link_to "#VisualNovel", search_path(search: { q: 'visualnovel' }), class: 'textc60', data: { analytics_click: 'tag hashtag home' }, target: '_blank' %>
+		</div>
+		<%= render 'games/games', games: @games, skip_pages: (@filter != :everytime) %>
+	</div>
+</div>

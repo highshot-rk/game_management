@@ -1,0 +1,28 @@
+<link rel="canonical" href="<%= user_url(id: @user.username) %>"/>
+
+<meta name="description" content="<%= t('.about') %>: <%= @user.username %> - <%= t('.description') %>" />
+<meta name="keywords" content="<%= @user.username %>, <%= t('.description') %>, <%= t('application.meta_tags.keywords') %>" />
+
+<% if @followed_games.count > 2 && @commented_games.count > 2 && @downloaded_games.count > 2 %>
+	<meta name="robots" content="noindex">
+<% end %>
+
+<!-- META TAG OG - Facebook-->
+<meta property="fb:app_id" content="<%= Settings.social.facebook.app_id %>" />
+<meta property="fb:admins" content="<%= Settings.social.facebook.admins %>">
+<meta property="og:title" content="<%= @user.username %>" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="<%= user_url(@user.username) %>"/>
+<meta property="og:image" content="<%= asset_path('Images/pages/profile.png') %>"/>
+<meta property="og:description" content="<%= t('.about') %>: <%= @user.username %> - <%= t('.description') %>" />
+<meta property="og:site_name" content="www.indiexpo.net" />
+
+<!-- META TAG Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@indiexpo_net">
+<meta name="twitter:creator" content="@indiexpo_net">
+<meta name="twitter:url" content="<%= user_url(@user.username) %>">
+<meta name="twitter:title" content="<%= @user.username %>">
+<meta name="twitter:description" content="<%= t('.about') %>: <%= @user.username %> - <%= t('.description') %>">
+<meta name="twitter:image" content="<%= asset_path('Images/pages/profile.png') %>">
+<!-- End META -->

@@ -1,0 +1,84 @@
+#play_online_iframe {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: black;
+	border: 5px solid #369;
+	border-left: 10px solid #162737;
+	border-right: 10px solid #162737;
+	z-index: 10;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	@media screen and (max-width: 700px) {
+		border: none;
+	}
+}
+.iframe_menu{
+	position: fixed;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 50%;
+	right: 50%;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 10px solid #c60;
+	z-index: 11;
+}
+.play_online_iframe_bottom {
+	position: fixed;
+	width: 100%;
+	height: 5%;
+	bottom: 0;
+	background: #162737;
+	background-image: url(asset-path('Images/MiniLogo.png'));
+	background-repeat: no-repeat;
+}
+#play_online {
+	cursor: pointer;
+	.description {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding-top: 20%;
+		text-align: center;
+		font-size: 60px;
+		top: 0;
+		z-index: 1;
+		@media screen and (max-width: 700px) {
+			padding-top: 80px;
+			font-size: 50px;
+		}
+		&:hover {
+			font-size: 80px;
+			@media screen and (max-width: 700px) {
+				font-size: 70px;
+			}
+		}
+	}
+	.embed{
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		padding: 10px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	img {
+		opacity: 0.4;
+		position: absolute;
+		width: 100%;
+		min-height: 100%;
+		margin: auto;
+		left: -100px;
+		right: -100px;
+		top: -100px;
+		bottom: -100px;
+	}
+}

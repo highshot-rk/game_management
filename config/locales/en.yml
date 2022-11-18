@@ -1,0 +1,940 @@
+---
+en:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Description
+        end_date: End Date
+        prizes: Prizes
+        rules: Rules
+        screen: Screen
+        start_date: Start Date
+        title: Title
+        website: Website
+      game:
+        author: Developer
+        description: Description
+        genre: Type
+        title: Title
+        website: Website
+      user:
+        username_or_email: Username/Email
+        password: Password
+        username: Username
+        characters_minimum: "%{minimum_password_length} or more characters"
+        email: Email
+        terms_of_service: I accept the license terms
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: you can upload only 2 games in 24 hours
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: Languages
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Your level was raised to %{level}
+      score: Your score was raised by + %{score}
+      new_title: New Title
+      prizes: Prizes
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: Show More
+      ok: Ok
+      setlanguage: Choose your language
+    footer:
+      about: About
+      contact_us: Contact Us
+      language: Language (Language)
+      faq: FAQ
+      feed_rss: Feed RSS
+      developers: Developers
+      sitemap: Site Map
+      terms_and_conds: Terms of Service
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Formatting Help
+      you_type: You Type
+      you_see: You See
+      italics: Italics
+      bold: Bold
+      hashtag: Hashtag
+      profile: Profile
+      item_one: Item 1
+      item_two: Item 2
+      item_three: Item 3
+      spoiler: Spoiler
+    menubar:
+      home: Home
+      chart: Chart
+      downloaded: Most Downloaded
+      events: Events
+      language: Language
+      news: News
+    meta_tags:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, indie games, Games, Download, Play, Upload, Players, Developers, Events, Challenges, Leaderboard Games, Most Popular, Most Recent, Gaming Creator on the Rise
+    navbar:
+      register: Sign Up
+      login: Log in
+      search: "Search... (Games, #Hashtags, @Profiles)"
+      upload: Upload
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Show More
+    structured_data:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, indie games, Games, Download, Play, Upload, Players, Developers, Events, Challenges, Leaderboard Games, Most Popular, Most Recent, Gaming Creator on the Rise
+      games: Games
+    terms:
+      terms_and_conditions: Terms of Service
+  comments:
+    answers:
+      more_comments: Show More
+    comment:
+      answer: Reply
+      answers:
+        few: View all %{count} replies
+        many: View all %{count} replies
+        one: View the reply
+        other: View all %{count} replies
+      destroy: Delete
+      destroy_confirm: Are you sure?
+      level: Level
+      new: New
+      verified: Verified
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: Now Loading...
+      publish: Post
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Log in
+        recover_password: Resetting Your Password
+        send_email_again: Send Email Again
+        details:
+          structured_data:
+            login: Log in
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: Log in
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: Email
+        send_email_again: Send Email Again
+        details:
+          structured_data:
+            send_email_again: Send Email Again
+            description: Confirm Your Email Address
+          meta_tags:
+            send_email_again: Send Email Again
+            description: Confirm Your Email Address
+    mailer:
+      confirmation_instructions:
+        welcome: Join in and have fun
+        title: 'Confirm your email by opening the link below:'
+        confirm_account: Confirm Your Email Address
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: Change my password
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: Someone has requested a link to change your password. You can do this through the link below.
+      unlock_instructions:
+        unlock_account: Unlock my account
+    passwords:
+      new:
+        recover_password: Resetting Your Password
+        email: Email
+        send: Send
+        details:
+          structured_data:
+            recover_password: Resetting Your Password
+            description: Enter an email that you can check now
+          meta_tags:
+            recover_password: Resetting Your Password
+            description: Enter an email that you can check now
+      edit:
+        change_password: Change my password
+        new_password: New Password
+        confirm_new_password: Confirm new password
+    registrations:
+      new:
+        register: Sign Up
+        details:
+          structured_data:
+            register: Sign Up
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: Sign Up
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: Change My Password
+        change_email: Change My Email
+        new_password: New Password
+        confirm_new_password: Confirm new password
+        current_password: Current Password
+        current_email: Current Email Address
+        new_email: New Email Address
+        save: Save Changes
+    shared:
+      menubar:
+        login: Log in
+        recover_password: Resetting Your Password
+        register: Sign Up
+        send_email_again: Send Email Again
+  download_links:
+    download_link:
+      download: Download
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Events & Challenges
+          description: 'Indie Games : Events & Challenges - Upcoming & Past'
+        structured_data:
+          events: Events & Challenges
+          description: 'Indie Games : Events & Challenges - Upcoming & Past'
+    active_selector:
+      active: Upcoming
+      inactive: Past
+    edit:
+      destroy: Delete
+      destroy_confirm: Are you sure?
+    end_after_start: should be after start date
+    event_types:
+      all: All
+      contest: Contest
+      mini_contest: Mini Contest
+      new: Create Event
+      other: Other
+    form:
+      language: Language
+      publish: Post
+      type: Type
+    menubar:
+      details: Overview
+      edit: Edit
+    index:
+      events: Events
+      challenges: Challenges
+      champions: Champions
+      points: Points
+      show_more: Show More
+    new:
+      event: Event
+    share:
+      share: Share
+      email: Email
+      qrcode: QR Code
+    show:
+      description: Description
+      ended: Inactive
+      ends: Ends
+      from: From
+      genre: Type
+      language: Language
+      prizes: Prizes
+      rules: Rules
+      share: Share
+      subscribers: Subscribers
+      to: To
+      website: Website
+  feeds:
+    index:
+      feed_rss: Feed RSS
+      events: 'Indie Games : Events'
+      latest: 'Indie Games : Most Recent'
+      popular: 'Indie Games : Most Popular'
+      last_updated: 'Indie Games : Recently Updated'
+    details:
+      meta_tags:
+        feed_rss: Feed RSS
+        description: 'Indie Games : Feed RSS - Events - Most Recent - Most Popular - Recently Updated'
+      structured_data:
+        feed_rss: Feed RSS
+        description: 'Indie Games : Feed RSS - Events - Most Recent - Most Popular - Recently Updated'
+  layouts:
+    application:
+      indie_games: Indie Games
+    game:
+      play: Play
+      download: Download
+      new: New
+      updates: Updates!
+      show_more: Show More
+      adult_content_message_html: You must be at least eighteen years old to view this content.</br> Are you over eighteen and willing to see adult content?
+      yes: Yes
+      no: No
+  games:
+    game:
+      play: Play
+      download: Download
+      new: New
+      updates: Updates!
+      chart: Chart
+      verified: Verified
+    destroy:
+      destroyed: Deleted
+    details:
+      game_header:
+        downloads_count: Players
+      game_menu:
+        comments: Comments
+        details: Overview
+        updates: Updates
+        edit: Edit
+        statistics: Statistics
+      structured_data:
+       games: Games
+       developer: Developer
+      index:
+        videogame: Videogame
+        published_by: 'published by '
+        edit: Edit
+        statistics: Statistics
+        players: Players
+        news: News
+        no_news: No news
+        website: Website
+        recommended: Recommended
+    edit:
+      edit: Edit
+      destroy: Delete
+      destroy_confirm: Are you sure?
+    embed_popup:
+      embed: Embed
+      preview: Preview
+    record_chart:
+      chart: Chart
+      login: Log in
+      score_system_games: Leaderboard Games
+    followers_list:
+      subscribers: Subscribers
+      verified: Verified
+    players_list:
+      downloads_count: Players
+      last_week: Last 7 Days
+      no_logged_user: Guest
+      no_result: No results
+      verified: Verified
+    form:
+      add_external_link: Add external link
+      add_file: Add file
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Long Description
+      artworks: Artworks
+      delete: Delete
+      downloads: Downloads
+      genre: Type
+      language: Language
+      publish: Post
+      remove_file: Delete
+      remove_url: Delete
+      restore: Undo
+      screens: Screens
+      status: Status
+      complete: Complete
+      demo: Demo
+      minigame: Minigame
+      tool: Tool
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      adult_content: Adults Contents
+      mobile_first: Optimized for Mobile Phones
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: Players
+      level: Level
+      subscribers: Subscribers
+      comments: Comments
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: Description
+      send: Send
+    new:
+      upload: Upload
+    share:
+      share: Share
+      email: Email
+      qrcode: QR Code
+    show:
+      play: Play
+      embed: Embed
+      share: Share
+      monetisation: Monetisation
+      download: Download
+      subscribe: Subscribe
+      subscribed: Subscribed
+      subscribers: Subscribers
+      comment: Comments
+      description: Description
+      published_on: Published on
+      adult_content: Adults Contents
+      complete: Complete
+      demo: Demo
+      minigame: Minigame
+      language: Language
+      first_to_comment: Share your thoughts...
+      mobile_first: Optimized for Mobile Phones
+      more_comments: Show More
+      screens: Screens
+      video: Video
+      top_player: Top Player
+      epic_win: Epic Win!
+      on_the_rise: Gaming Creator on the Rise
+      verified: Verified
+    stats:
+      statistics: Statistics
+      comments: Comments
+      monetisation: Monetisation
+      daily: Today
+      days: Days
+      date: Date
+      downloads: Players
+      followings: Subscribers
+      chart: Chart
+      most_rated: Most Voted
+      followings_chart: Most Followed
+      most_downloaded: Most Downloaded
+      last_week: Last week
+      this_week: This week
+      last_6_months: Last 6 Months
+      totals: Totals
+      visits: Visits
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Other
+      engagement: Engagement
+      show_more: Show More
+      qrcode: QR Code
+      warning: Warning
+    support:
+      prizes: Prizes
+      donate: 'Donate %{price}$'
+    tips:
+      enhancements: Enhancements
+      only_to_you: Visible only to you
+  games_sections:
+    chart:
+      last_6_months: Last 6 Months
+      details:
+        meta_tags:
+          chart: Chart
+          description: 'Indie Games : Most Downloaded - Most Voted - Most Followed'
+        structured_data:
+          chart: Chart
+          description: 'Indie Games : Most Downloaded - Most Voted - Most Followed'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Most Downloaded
+          description: 'Indie Games : Most Downloaded - Today - Last 7 Days - Last 30 Days - Lifetime'
+        structured_data:
+          downloaded: Most Downloaded
+          description: 'Indie Games : Most Downloaded - Today - Last 7 Days - Last 30 Days - Lifetime'
+    news:
+      details:
+        meta_tags:
+          news: News
+          description: 'Indie Games : News - Last 30 Days'
+        structured_data:
+          news: News
+          description: 'Indie Games : News - Last 30 Days'
+    filters:
+      chart:
+        most_downloaded: Most Downloaded
+        voted: Most Voted
+        followed: Most Followed
+      downloaded:
+        everytime: Lifetime
+        last_month: Last 30 Days
+        last_week: Last 7 Days
+        today: Today
+      news:
+        last_commented: Comments
+        last_updated: Recently Updated
+        latest: Most Recent
+        popular: Most Popular
+  genres:
+    genre:
+      rpg: Rpg
+      browsergame: Browser Game
+      platformaction: Platform/Action
+      shootemup: Shoot em Up
+      puzzle: Puzzle
+      pointandclick: Point and Click
+      sport: Sport
+      fighting: Fighting
+      other: Other
+    genres:
+      all: All
+    select:
+      genre: Type
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: Infringes my rights
+        offensive: Hateful or abusive content
+        sexual: Sexual content
+        spam: Spam or misleading
+        violent: Violent or repulsive content
+  home:
+    navigation:
+      home: Home
+      news: News
+      chart: Chart
+      events: Events
+      downloaded: Most Downloaded
+      console: Console
+      subscriptions: Subscriptions
+      your_games: Your Games
+      history: History
+    landing:
+      last_followed_games_updated: In case you missed it
+      play: Play
+      recommended: Recommended
+      based_recent_activity: Based on your recent activity
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Anniversary
+      query_of_the_day_3: Most Followed - Last 6 Months
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Leaderboard Games
+      query_of_the_day_6: Updates!
+      downloaded: Most Downloaded
+      today: Today
+      last_week: Last 7 Days
+      last_month: Last 30 Days
+      latest: Most Recent
+      show_more: Show More
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'Indie Games : Play'
+        meta_tags:
+          console: Console
+          description: 'Indie Games : Play'
+    subscriptions:
+      subscriptions: Subscriptions
+      updates: Updates!
+      no_result: No results
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Players
+      subscribers: Subscribers
+      comments: Comments
+      details: Overview
+      show_more: Show More
+    your_games:
+      your_games: Your Games
+      players: Players
+      subscribers: Subscribers
+      comments: Comments
+      details: Overview
+      show_more: Show More
+    history:
+      history: History
+      score_system_games: Leaderboard Games
+      last_commented: Comments
+      subscriptions: Subscriptions
+      votes: Votes
+  static:
+    about:
+      about: About
+      app: Apps
+      extension: Extensions
+      social_networks: Social Networks
+      games: Games
+      show_more: Show More
+      details:
+        structured_data:
+          about: About
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+        meta_tags:
+          about: About
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+    faq:
+      faq: FAQ
+      question_1: What is indiexpo?
+      answer_1: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games. Indiexpo provides an area for people to connect, inform, and inspire others across the globe and acts as a distribution platform for original content creators and advertisers large and small.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+        meta_tags:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+    developers:
+      developers: Developers
+      details:
+        structured_data:
+          developers: Developers
+          description: Explore our Developer Products. Statistics, Apps, Extensions, Tutorials
+        meta_tags:
+          developers: Developers
+          description: Explore our Developer Products. Statistics, Apps, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: Choose your language
+  medals:
+    medal:
+      titles:
+        age: "%{score} Years"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: Now Loading...
+      publish: Post
+    news:
+      destroy: Delete
+      destroy_confirm: Are you sure?
+    index:
+      players: Players
+      subscribers: Subscribers
+      download: Download
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Profile
+      followed_games: Subscriptions
+      your_games: Your Games
+      settings: Settings
+      logout: Logout
+  platforms:
+    platforms:
+      all: All
+    select:
+      platform: Operating System
+  public_activities:
+    index:
+      destroy_confirm: Are you sure?
+      mark_all_as_read: Mark all as read
+      notifications: Notifications
+      see_all: Show More
+  public_activities_mailer:
+    notify:
+      hello: Hello %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Unsubscribe
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: Verified
+  reports:
+    new:
+      details: 'Description:'
+      question: What is the issue?
+      send: Send
+      title: 'Report: %{game}'
+      report_submitted: Thanks for letting us know.
+      report_submitted_message: Your feedback helps our system learn when something isn't right.
+  scores:
+    score:
+      points: Points
+      delete: Delete
+      destroy_confirm: Are you sure?
+      verified: Verified
+  search:
+    games:
+      filters: Filters
+      adult_content: Adults Contents
+      mobile_first: Optimized for Mobile Phones
+      no_result: No results
+      search: Search
+      search_placeholder: Search...
+      search_tools: Search tools
+      language: Language
+      genre: Type
+      platform: Operating System
+      recommended: Recommended
+      tool: Tool
+      status: Status
+      games: Games
+      score_system_games: Leaderboard Games
+      year: Year
+    details:
+      meta_tags:
+        search: Search
+        description: "Search... (Games, #Hashtags, @Profiles, Search tools, Language, Type, Year, Operating System, Tool, Status)"
+      structured_data:
+        search: Search
+        description: "Search... (Games, #Hashtags, @Profiles, Search tools, Language, Type, Year, Operating System, Tool, Status)"
+  settings:
+    edit:
+      settings: Settings
+    form:
+      language: Language (Language)
+      setlanguage: Choose your language
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: Email Notifications
+      general: General
+      mail_comment_answer: Someone replies to your comment
+      mail_comment_mention: Someone mentioned you
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: Subscriptions
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Your Games
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone commented your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Account Data
+      email: Email
+      password: Password
+      edit: Edit
+      stats: Statistics
+      comments: Comments
+      subscriptions: Subscriptions
+      show_more: Show More
+      save: Save Changes
+      delete_account: Permanently Delete Account
+  sitemaps:
+    index:
+      active_events: Upcoming
+      inactive_events: Past
+      new_events: Create Event
+      recover: Resetting Your Password
+      sign_in: Log in
+      sign_up: Sign up
+      sitemap: Site Map
+    details:
+      meta_tags:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: Subscribe
+    unsubscribe_button:
+      unsubscribe: Unsubscribe
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Tool
+  users:
+    show:
+      page_title: "%{username} is on indiexpo"
+      online: Online
+      chart: Rank
+      last_month: Last 30 Days
+      level: Level
+      games: Games
+      score_system_games: Leaderboard Games
+      show_more: Show More
+      subscriptions: Subscriptions
+      last_commented: Comments
+      history: History
+      other_players: Other Players
+      verified: Verified
+    details:
+      structured_data:
+        developer: Developer
+        gamer: Gamer
+      meta_tags:
+        about: About
+        description: Profile, Trophy Case, Games, Subscriptions, Leaderboard Games, Comments & History
+  me:
+    menubar:
+      profile: Profile
+      event_subscriptions: My Events
+      followed_games: Subscriptions
+      your_games: Your Games
+      settings: Settings
+    followed_games:
+      no_result: No results
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Your Games
+      visits: Visits
+      downloads_count: Players
+      subscribers: Subscribers
+      totals: Totals
+      no_result: No results
+      upload: Upload
+  levels:
+    index:
+      level: Level
+      user_chart: Rank
+      last_month: Last 30 Days
+      gems: Gems
+      trophy_case: Trophy Case
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Verified
+    goals:
+      goals: Goals
+    stats:
+      stats: Statistics
+      comments: Comments
+      subscriptions: Subscriptions
+      your_games: Your Games
+      votes: Votes
+  warning:
+    index:
+      warning: Warning
+      destroy: Delete
+      destroy_confirm: Are you sure?
+      delete_account: Deleting your account is permanent.
+      delete_account_description: When you delete your indiexpo account, you won't be able to retrieve the content or information you've shared on indiexpo.

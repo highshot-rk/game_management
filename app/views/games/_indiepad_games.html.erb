@@ -1,0 +1,7 @@
+<div id="game_list" class="<%= defined?(genres) && 'with-genres' %>">
+  <%= render partial: 'games/indiepad_game', collection: games, locals: { position: local_assigns[:positions] }, as: :game %>
+  <div class="clear"></div>
+  <% if !defined?(skip_pages) || !skip_pages %>
+    <%= paginate games %>
+  <% end %>
+</div>

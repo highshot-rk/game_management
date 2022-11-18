@@ -1,0 +1,940 @@
+---
+ms:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Keterangan
+        end_date: End Date
+        prizes: Hadiah
+        rules: Peraturan
+        screen: Skrin
+        start_date: Start Date
+        title: Tajuk
+        website: Laman Web
+      game:
+        author: Pemaju
+        description: Keterangan
+        genre: Type
+        title: Tajuk
+        website: Laman Web
+      user:
+        username_or_email: Nama Pengguna/E-mel
+        password: Kata Laluan
+        username: Nama Pengguna
+        characters_minimum: "%{minimum_password_length} atau lebih aksara"
+        email: E-mel
+        terms_of_service: Saya terima syarat lesen
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: Anda melakukan perkara itu terlalu banyak, sila cuba semula dalam %{cooloff} minit
+        news:
+          attributes:
+            base:
+              check_spam: Anda melakukan perkara itu terlalu banyak, sila cuba semula dalam %{cooloff} minit
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: anda hanya boleh memuat naik 2 permainan setiap 24 jam
+        user:
+          attributes:
+            username:
+              invalid: hanya boleh mengandungi aksara abjad angka (A–Z, 0–9)
+    models:
+      game_languages: Languages
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'menyebut anda dalam komen di '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Your level was raised to %{level}
+      score: Your score was raised by + %{score}
+      new_title: New Title
+      prizes: Hadiah
+      game_new_leader: Anda adalah permain terhebat di %{game}!
+      game_old_leader: Anda termelampau! %{user} ialah ketua baharu %{game}! Lawanlah untuk takhta!
+      game_other_leader: "%{user} ialah ketua baharu %{game}! Lawanlah untuk takhta!"
+      game_dev_leader: "%{user} ialah ketua baharu %{game}!"
+  application:
+    cookie_law:
+      show_more: Lihat lagi
+      ok: Ok
+      setlanguage: Pilih bahasa anda
+    footer:
+      about: Perihal
+      contact_us: Contact Us
+      language: Bahasa (Language)
+      faq: FAQ
+      feed_rss: Suapan RSS
+      developers: Pembangun
+      sitemap: Site Map
+      terms_and_conds: Terma
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Formatting Help
+      you_type: Anda menaip
+      you_see: Anda melihat
+      italics: Condong
+      bold: Tebal
+      hashtag: Hashtag
+      profile: Profile
+      item_one: Item 1
+      item_two: Item 2
+      item_three: Item 3
+      spoiler: Spoiler
+    menubar:
+      home: Halaman Utama
+      chart: Carta
+      downloaded: Paling di muat turun
+      events: Acara
+      language: Bahasa
+      news: News
+    meta_tags:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, indie games, Permainan, Muat Turun, Bermain, Upload, Pemain, Pembangun, Acara, Cabaran, Leaderboard Games, Carta, Paling di muat turun, Paling popular, Most Recent, Pemaju yang sedang tren
+    navbar:
+      register: Daftar
+      login: Log Masuk
+      search: "Cari... (Permainan, #Hashtag, @Profile)"
+      upload: Upload
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Lihat lagi
+    structured_data:
+      description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+      keywords: indiexpo, indie games, Permainan, Muat Turun, Bermain, Upload, Pemain, Pembangun, Acara, Cabaran, Leaderboard Games, Carta, Paling di muat turun, Paling popular, Most Recent, Pemaju yang sedang tren
+      games: Permainan
+    terms:
+      terms_and_conditions: Terma
+  comments:
+    answers:
+      more_comments: Lihat lagi
+    comment:
+      answer: Balasan
+      answers:
+        few: Lihat kesemua %{count} balasan
+        many: Lihat kesemua %{count} balasan
+        one: Lihat balasan
+        other: Lihat kesemua %{count} balasan
+      destroy: Padam
+      destroy_confirm: Adakah anda pasti?
+      level: Level
+      new: Baharu
+      verified: Disahkan
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: Now Loading...
+      publish: Terbitkan
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Log Masuk
+        recover_password: Terlupa kata laluan?
+        send_email_again: Hantar E-mel Sekali Lagi
+        details:
+          structured_data:
+            login: Log Masuk
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: Log Masuk
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: E-mel
+        send_email_again: Hantar E-mel Sekali Lagi
+        details:
+          structured_data:
+            send_email_again: Hantar E-mel Sekali Lagi
+            description: Confirm Your Email Address.
+          meta_tags:
+            send_email_again: Hantar E-mel Sekali Lagi
+            description: Confirm Your Email Address.
+    mailer:
+      confirmation_instructions:
+        welcome: Join in and have fun
+        title: 'Confirm your email by opening the link below:'
+        confirm_account: Confirm Your Email Address
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: Tukar Kata Laluan
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: Seseorang telah meminta sebuah pautan untuk menukar kata laluan anda dan anda boleh melakukannya melalui pautan di bawah.
+      unlock_instructions:
+        unlock_account: Buka akaun saya
+    passwords:
+      new:
+        recover_password: Terlupa kata laluan?
+        email: E-mel
+        send: Seterusnya
+        details:
+          structured_data:
+            recover_password: Terlupa kata laluan?
+            description: Masukkan alamat e-mel pemulihan
+          meta_tags:
+            recover_password: Terlupa kata laluan?
+            description: Masukkan alamat e-mel pemulihan
+      edit:
+        change_password: Tukar Kata Laluan
+        new_password: Kata laluan baru
+        confirm_new_password: Sahkan kata laluan baru
+    registrations:
+      new:
+        register: Daftar
+        details:
+          structured_data:
+            register: Daftar
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: Daftar
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: Tukar Kata Laluan
+        change_email: Ubah e-mel
+        new_password: Kata laluan baru
+        confirm_new_password: Sahkan kata laluan baru
+        current_password: Kata laluan kini
+        current_email: E-mel Semasa
+        new_email: E-mel Baru
+        save: Simpan Perubahan
+    shared:
+      menubar:
+        login: Log Masuk
+        recover_password: Terlupa kata laluan?
+        register: Daftar
+        send_email_again: Hantar E-mel Sekali Lagi
+  download_links:
+    download_link:
+      download: Muat Turun
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Acara & Cabaran
+          description: 'Indie Games : Acara & Cabaran - Akan Datang & Past'
+        structured_data:
+          events: Acara & Cabaran
+          description: 'Indie Games : Acara & Cabaran - Akan Datang & Past'
+    active_selector:
+      active: Akan Datang
+      inactive: Past
+    edit:
+      destroy: Padam
+      destroy_confirm: Adakah anda pasti?
+    end_after_start: should be after start date
+    event_types:
+      all: Semua
+      contest: Contest
+      mini_contest: Mini Contest
+      new: Cipta Acara
+      other: Other
+    form:
+      language: Bahasa
+      publish: Terbitkan
+      type: Type
+    menubar:
+      details: Overview
+      edit: Sunting
+    index:
+      events: Acara
+      challenges: Cabaran
+      champions: Juara
+      points: Points
+      show_more: Lihat lagi
+    new:
+      event: Event
+    share:
+      share: Kongsi
+      email: E-mel
+      qrcode: Kod QR
+    show:
+      description: Keterangan
+      ended: Inactive
+      ends: Hingga
+      from: Dari
+      genre: Type
+      language: Bahasa
+      prizes: Hadiah
+      rules: Peraturan
+      share: Kongsi
+      subscribers: Pelanggan
+      to: To
+      website: Laman Web
+  feeds:
+    index:
+      feed_rss: Suapan RSS
+      events: 'Indie Games : Acara'
+      latest: 'Indie Games : Most Recent'
+      popular: 'Indie Games : Paling popular'
+      last_updated: 'Indie Games : Recently Updated'
+    details:
+      meta_tags:
+        feed_rss: Suapan RSS
+        description: 'Indie Games : Suapan RSS - Acara - Most Recent - Paling popular - Recently Updated'
+      structured_data:
+        feed_rss: Suapan RSS
+        description: 'Indie Games : Suapan RSS - Acara - Most Recent - Paling popular - Recently Updated'
+  layouts:
+    application:
+      indie_games: Indie Games
+    game:
+      play: Bermain
+      download: Muat Turun
+      new: Baharu
+      updates: Updates!
+      show_more: Lihat lagi
+      adult_content_message_html: Anda perlu di atas umur lapan belas tahun untuk melihat perkara ini. </br> Adakah anda lapan belas tahun ke atas atau mampu melihat perkara dewasa ini?
+      yes: Ya
+      no: Tidak
+  games:
+    game:
+      play: Bermain
+      download: Muat Turun
+      new: Baharu
+      updates: Updates!
+      chart: Carta
+      verified: Disahkan
+    destroy:
+      destroyed: Destroyed
+    details:
+      game_header:
+        downloads_count: Pemain
+      game_menu:
+        comments: Ulasan
+        details: Overview
+        updates: Updates
+        edit: Sunting
+        statistics: Statistik
+      structured_data:
+       games: Permainan
+       developer: Pemaju
+      index:
+        videogame: Permainan Video
+        published_by: 'diterbitkan oleh '
+        edit: Sunting
+        statistics: Statistik
+        players: Pemain
+        news: News
+        no_news: No news
+        website: Laman Web
+        recommended: Disyorkan
+    edit:
+      edit: Sunting
+      destroy: Padam
+      destroy_confirm: Adakah anda pasti?
+    embed_popup:
+      embed: Benamkan
+      preview: Preview
+    record_chart:
+      chart: Carta
+      login: Log Masuk
+      score_system_games: Leaderboard Games
+    followers_list:
+      subscribers: Pelanggan
+      verified: Disahkan
+    players_list:
+      downloads_count: Pemain
+      last_week: 7 hari yang lalu
+      no_logged_user: Guest
+      no_result: Tiada hasil carian ditemui
+      verified: Disahkan
+    form:
+      add_external_link: Add external link
+      add_file: Add file
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Download the App on your smartphone and use it like a Gamepad with several games on indiexpo. Only for Android
+      long_description: Long Description
+      artworks: Artworks
+      delete: Padam
+      downloads: Downloads
+      genre: Type
+      language: Bahasa
+      publish: Terbitkan
+      remove_file: Padam
+      remove_url: Padam
+      restore: Buat asal
+      screens: Imej
+      status: Status
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      tool: Peralatan
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: Pemain
+      level: Level
+      subscribers: Pelanggan
+      comments: Ulasan
+      offensive: Kandungan berunsur kebencian atau kesat
+      sexual: Kandungan seksual
+      spam: Spam atau mengelirukan
+      violent: Kandungan ganas atau menjijikkan
+      description: Keterangan
+      send: Seterusnya
+    new:
+      upload: Upload
+    share:
+      share: Kongsi
+      email: E-mel
+      qrcode: Kod QR
+    show:
+      play: Bermain
+      embed: Benamkan
+      share: Kongsi
+      monetisation: Monetisation
+      download: Muat Turun
+      subscribe: Langgan
+      subscribed: Melanggan
+      subscribers: Pelanggan
+      comment: Ulasan
+      description: Keterangan
+      published_on: Diterbitkan pada
+      adult_content: Adults Contents
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      language: Bahasa
+      first_to_comment: Tambahkan ulasan umum...
+      mobile_first: Mobile Friendly
+      more_comments: Lihat lagi
+      screens: Imej
+      video: Video
+      top_player: Top Player
+      epic_win: Epic Win!
+      on_the_rise: Pemaju yang sedang tren
+      verified: Disahkan
+    stats:
+      statistics: Statistik
+      comments: Ulasan
+      monetisation: Monetisation
+      daily: Hari Ini
+      days: Hari-hari
+      date: Date
+      downloads: Pemain
+      followings: Pelanggan
+      chart: Carta
+      most_rated: Dinilai Popular
+      followings_chart: Most Followed
+      most_downloaded: Paling di muat turun
+      last_week: Last week
+      this_week: This week
+      last_6_months: 180 hari yang lalu
+      totals: Totals
+      visits: Tontonan
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Other
+      engagement: Engagement
+      show_more: Lihat lagi
+      qrcode: Kod QR
+      warning: Amaran
+    support:
+      prizes: Hadiah
+      donate: 'Derma %{price}$'
+    tips:
+      enhancements: Penyempurnaan
+      only_to_you: Kelihatan kepada anda sahaja
+  games_sections:
+    chart:
+      last_6_months: 180 hari yang lalu
+      details:
+        meta_tags:
+          chart: Carta
+          description: 'Indie Games : Paling di muat turun - Dinilai Popular - Most Followed'
+        structured_data:
+          chart: Carta
+          description: 'Indie Games : Paling di muat turun - Dinilai Popular - Most Followed'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Paling di muat turun
+          description: 'Indie Games : Paling di muat turun - Hari Ini - 7 hari yang lalu - 30 hari yang lalu - Sepanjang hayat'
+        structured_data:
+          downloaded: Paling di muat turun
+          description: 'Indie Games : Paling di muat turun - Hari Ini - 7 hari yang lalu - 30 hari yang lalu - Sepanjang hayat'
+    news:
+      details:
+        meta_tags:
+          news: News
+          description: 'Indie Games : News - 30 hari yang lalu'
+        structured_data:
+          news: News
+          description: 'Indie Games : News - 30 hari yang lalu'
+    filters:
+      chart:
+        most_downloaded: Paling di muat turun
+        voted: Dinilai Popular
+        followed: Most Followed
+      downloaded:
+        everytime: Sepanjang hayat
+        last_month: 30 hari yang lalu
+        last_week: 7 hari yang lalu
+        today: Hari Ini
+      news:
+        last_commented: Ulasan
+        last_updated: Recently Updated
+        latest: Most Recent
+        popular: Paling popular
+  genres:
+    genre:
+      rpg: Rpg
+      browsergame: Browser Game
+      platformaction: Platform/Action
+      shootemup: Shoot em Up
+      puzzle: Puzzle
+      pointandclick: Point and Click
+      sport: Sport
+      fighting: Fighting
+      other: Other
+    genres:
+      all: Semua
+    select:
+      genre: Type
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: Melanggar hak saya
+        offensive: Kandungan berunsur kebencian atau kesat
+        sexual: Kandungan seksual
+        spam: Spam atau mengelirukan
+        violent: Kandungan ganas atau menjijikkan
+  home:
+    navigation:
+      home: Halaman Utama
+      news: News
+      chart: Carta
+      events: Acara
+      downloaded: Paling di muat turun
+      console: Console
+      subscriptions: Langganan
+      your_games: Your Games
+      history: Sejarah
+    landing:
+      last_followed_games_updated: In case you missed it
+      play: Bermain
+      recommended: Disyorkan
+      based_recent_activity: Berdasarkan aktiviti terbaharu anda
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Ulang Tahun
+      query_of_the_day_3: Most Followed - 180 hari yang lalu
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Leaderboard Games
+      query_of_the_day_6: Updates!
+      downloaded: Paling di muat turun
+      today: Hari Ini
+      last_week: 7 hari yang lalu
+      last_month: 30 hari yang lalu
+      latest: Most Recent
+      show_more: Lihat lagi
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'Indie Games : Bermain'
+        meta_tags:
+          console: Console
+          description: 'Indie Games : Bermain'
+    subscriptions:
+      subscriptions: Langganan
+      updates: Updates!
+      no_result: Tiada hasil carian ditemui
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Pemain
+      subscribers: Pelanggan
+      comments: Ulasan
+      details: Overview
+      show_more: Lihat lagi
+    your_games:
+      your_games: Your Games
+      players: Pemain
+      subscribers: Pelanggan
+      comments: Ulasan
+      details: Overview
+      show_more: Lihat lagi
+    history:
+      history: Sejarah
+      score_system_games: Leaderboard Games
+      last_commented: Ulasan
+      subscriptions: Langganan
+      votes: Votes
+  static:
+    about:
+      about: Perihal
+      app: Apps
+      extension: Extensions
+      social_networks: Perkhidmatan rangkaian sosial
+      games: Permainan
+      show_more: Lihat lagi
+      details:
+        structured_data:
+          about: Perihal
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+        meta_tags:
+          about: Perihal
+          description: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games.
+    faq:
+      faq: FAQ
+      question_1: What is indiexpo?
+      answer_1: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games. Indiexpo provides an area for people to connect, inform, and inspire others across the globe and acts as a distribution platform for original content creators and advertisers large and small.
+      question_2: How to earn Points?
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+        meta_tags:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+    developers:
+      developers: Pembangun
+      details:
+        structured_data:
+          developers: Pembangun
+          description: Explore our Developer Products. Statistik, Apps, Extensions, Tutorials
+        meta_tags:
+          developers: Pembangun
+          description: Explore our Developer Products. Statistik, Apps, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: Pilih bahasa anda
+  medals:
+    medal:
+      titles:
+        age: "%{score} Tahun"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: Now Loading...
+      publish: Terbitkan
+    news:
+      destroy: Padam
+      destroy_confirm: Adakah anda pasti?
+    index:
+      players: Pemain
+      subscribers: Pelanggan
+      download: Muat Turun
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Profile
+      followed_games: Langganan
+      your_games: Your Games
+      settings: Tetapan
+      logout: Log keluar
+  platforms:
+    platforms:
+      all: Semua
+    select:
+      platform: Platform
+  public_activities:
+    index:
+      destroy_confirm: Adakah anda pasti?
+      mark_all_as_read: Tanda Semua sebagai Telah Dibaca
+      notifications: Pemberitahuan
+      see_all: Lihat lagi
+  public_activities_mailer:
+    notify:
+      hello: Hello %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Melanggan
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: Disahkan
+  reports:
+    new:
+      details: 'Keterangan:'
+      question: What is the issue?
+      send: Seterusnya
+      title: 'Laporkan: %{game}'
+      report_submitted: Terima kasih kerana memberitahu kami.
+      report_submitted_message: Maklum balas anda membantu sistem kami mengetahui apabila ada sesuatu yang tidak kena.
+  scores:
+    score:
+      points: Points
+      delete: Padam
+      destroy_confirm: Adakah anda pasti?
+      verified: Disahkan
+  search:
+    games:
+      filters: Penapis
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      no_result: Tiada hasil carian ditemui
+      search: Cari
+      search_placeholder: Cari...
+      search_tools: Tapis
+      language: Bahasa
+      genre: Type
+      platform: Platform
+      recommended: Disyorkan
+      tool: Peralatan
+      status: Status
+      games: Permainan
+      score_system_games: Leaderboard Games
+      year: Tahun
+    details:
+      meta_tags:
+        search: Cari
+        description: "Cari... (Permainan, #Hashtag, @Profile, Tapis, Bahasa, Type, Tahun, Platform, Tool, Status)"
+      structured_data:
+        search: Cari
+        description: "Cari... (Permainan, #Hashtag, @Profile, Tapis, Bahasa, Type, Tahun, Platform, Tool, Status)"
+  settings:
+    edit:
+      settings: Tetapan
+    form:
+      language: Bahasa (Language)
+      setlanguage: Pilih bahasa anda
+      sounds: Bunyi
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'Hidupkan'
+      label_off: 'Matikan'
+      email_notifications: Pemberitahuan e-mel
+      general: Umum
+      mail_comment_answer: Balasan kepada ulasan saya
+      mail_comment_mention: Sebutan
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: Langganan
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Your Games
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Data Akaun
+      email: E-mel
+      password: Kata Laluan
+      edit: Sunting
+      stats: Statistik
+      comments: Ulasan
+      subscriptions: Langganan
+      show_more: Lihat lagi
+      save: Simpan Perubahan
+      delete_account: Padam Akaun Secara Kekal
+  sitemaps:
+    index:
+      active_events: Akan Datang
+      inactive_events: Past
+      new_events: Cipta Acara
+      recover: Terlupa kata laluan?
+      sign_in: Log Masuk
+      sign_up: Daftar
+      sitemap: Site Map
+    details:
+      meta_tags:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: Langgan
+    unsubscribe_button:
+      unsubscribe: Melanggan
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Peralatan
+  users:
+    show:
+      page_title: "%{username} berada di indiexpo"
+      online: Dalam talian
+      chart: Carta
+      last_month: 30 hari yang lalu
+      level: Level
+      games: Permainan
+      score_system_games: Leaderboard Games
+      show_more: Lihat lagi
+      subscriptions: Langganan
+      last_commented: Ulasan
+      history: Sejarah
+      other_players: Pemain Lain
+      verified: Disahkan
+    details:
+      structured_data:
+        developer: Pemaju
+        gamer: Gamer
+      meta_tags:
+        about: Perihal
+        description: Profile, Trophy Case, Permainan, Langganan, Leaderboard Games, Ulasan & Sejarah
+  me:
+    menubar:
+      profile: Profile
+      event_subscriptions: My Events
+      followed_games: Langganan
+      your_games: Your Games
+      settings: Tetapan
+    followed_games:
+      no_result: Tiada hasil carian ditemui
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Your Games
+      visits: Tontonan
+      downloads_count: Pemain
+      subscribers: Pelanggan
+      totals: Totals
+      no_result: Tiada hasil carian ditemui
+      upload: Upload
+  levels:
+    index:
+      level: Level
+      user_chart: Carta
+      last_month: 30 hari yang lalu
+      gems: Gems
+      trophy_case: Trophy Case
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Disahkan
+    goals:
+      goals: Goals
+    stats:
+      stats: Statistik
+      comments: Ulasan
+      subscriptions: Langganan
+      your_games: Your Games
+      votes: Votes
+  warning:
+    index:
+      warning: Amaran
+      destroy: Padam
+      destroy_confirm: Adakah anda pasti?
+      delete_account: Padam Akaun Secara Kekal
+      delete_account_description: Apabila anda memadam akaun indiexpo anda, anda tidak akan dapat mengambil kandungan atau maklumat yang anda kongsikan di indiexpo.

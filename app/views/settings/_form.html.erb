@@ -1,0 +1,114 @@
+<%= form_for @setting, method: :put, url: user_settings_path, data: { analytics_submit: 'Settings Changed' }, html: { class: 'indiexpo_form' } do |f| %>
+	<div class="WidFlo center background900 Write20"><%= @setting.errors.full_messages.to_sentence %></div>
+	<div class="Write20"><%=t('.general')%></div>
+	<div class="input_container">
+		<div class="label"><%=t('.language')%></div>
+		<div class="WidFlo">
+			<%= f.collection_select local_assigns[:name] || :language, Language.all, :id, :name, include_blank: t('.setlanguage'), selected: @setting.language %>
+		</div>
+		<div class="label"><%=t('.sounds')%></div>
+		<div class="WidFlo"><%=t('.sounds_description')%></div>
+		<div class="WidFlo">
+			<%= f.select :notification_sound, [[t('.label_on'), true], [t('.label_off'), false]], id: "setting_notification_sound" %>
+		</div>
+		<div class="label"><%=t('.adult_content')%></div>
+		<div class="WidFlo">
+			<%= f.select :adult_content, [[t('.label_off'), false], [t('.label_on'), true]], id: "setting_adult_content" %>
+		</div>
+	</div>
+	<!-- Save -->
+	<%= f.submit t('.save'), class: 'Botton right div100' %>
+	<div class="Write20"><%=t('.email_notifications')%></div>
+	<div class="input_container">
+		<div class="label"><%=t('.general')%></div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_comment_answer %>
+			<%= f.label :mail_comment_answer, t('.mail_comment_answer') %>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_comment_mention %>
+			<%= f.label :mail_comment_mention, t('.mail_comment_mention') %>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_event_subscription_create %>
+			<%= f.label :mail_event_subscription_create, t('.mail_event_subscription_create')%>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_medal_create %>
+			<%= f.label :mail_medal_create, t('.mail_medal_create')%>
+		</div>
+	</div>
+	<div class="input_container">
+		<div class="label"><%=t('.followed_games')%></div>
+		<div class="WidFlo">
+			<label><%= f.check_box :mail_comment_follower_create %> <%=t('.mail_comment_follower_create')%></label>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_follower_news_create %>
+			<%= f.label :mail_follower_news_create, t('.mail_follower_news_create') %>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_follower_game_create %>
+			<%= f.label :mail_follower_game_create, t('.mail_follower_game_create') %>
+		</div>
+		<!-- Score System -->
+		<div class="WidFlo">
+			<%= f.check_box :mail_user_game_new_leader %>
+			<%= f.label :mail_user_game_new_leader, t('.mail_user_game_new_leader') %>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_user_game_old_leader %>
+			<%= f.label :mail_user_game_old_leader, t('.mail_user_game_old_leader') %>
+		</div>
+		<div class="WidFlo">
+			<%= f.check_box :mail_user_game_other_leader %>
+			<%= f.label :mail_user_game_other_leader, t('.mail_user_game_other_leader') %>
+		</div>
+	</div>
+	<% if @user.games.any? %>
+		<div class="input_container">
+			<div class="label"><%=t('.your_games')%></div>
+			<div class="WidFlo">
+				<%= f.check_box :mail_rating_create %>
+				<%= f.label :mail_rating_create, t('.mail_rating_create') %>
+			</div>
+			<div class="WidFlo">
+				<%= f.check_box :mail_following_create %>
+				<%= f.label :mail_following_create, t('.mail_following_create') %>
+			</div>
+			<div class="WidFlo">
+				<%= f.check_box :mail_comment_create %>
+				<%= f.label :mail_comment_create, t('.mail_comment_create') %>
+			</div>
+			<div class="WidFlo">
+				<%= f.check_box :mail_user_game_dev_leader %>
+				<%= f.label :mail_user_game_dev_leader, t('.mail_user_game_dev_leader') %>
+			</div>
+		</div>
+	<% end %>
+	<!-- Save -->
+	<%= f.submit t('.save'), class: 'Botton right div100' %>
+	<div class="Write20"><%=t('.account_data')%></div>
+	<div class="input_container">
+		<div class="label WidFlo"><%=t('.email')%></div>
+		<%= link_to t('.edit'), edit_user_registration_path(:type => 'change_email'), remote: true, data: { load_popup: true }, class: 'BottonLight' %>
+		<div class="label WidFlo"><%=t('.password')%></div>
+		<%= link_to t('.edit'), edit_user_registration_path(:type => 'change_password'), remote: true, data: { load_popup: true }, class: 'BottonLight' %>
+	</div>
+	<div class="input_container">
+		<div class="label"><%=t('.stats')%></div>
+		<div class="WidFlo"><i>
+				<%=t('.comments')%>: <%= current_user.comments.count %><br>
+				<%=t('.subscriptions')%>: <%= current_user.followed_games.count %>
+				<% if current_user.followed_games.count > 0 %>
+					- <%= link_to t('.show_more'), user_followed_games_url %>
+				<% end %><br>
+				<% if current_user.games.count > 0 %>
+					<%=t('.your_games')%>: <%= current_user.games.count %> - <%= link_to t('.show_more'), user_games_url %>
+				<% end %>
+			</i></div>
+	</div>
+	<!-- Save & Delete -->
+	<%= f.submit t('.save'), class: 'Botton div100' %>
+	<%= link_to t('.delete_account'), warning_path(:type => 'delete_account'), remote: true, data: { load_popup: true }, class: 'BottonLight hoveron right' %>
+<% end %>

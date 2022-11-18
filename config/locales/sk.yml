@@ -1,0 +1,940 @@
+---
+sk:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Popis
+        end_date: Dátum ukončenia
+        prizes: Ceny
+        rules: Pravidlá
+        screen: Screen
+        start_date: Dátum začiatku
+        title: Title
+        website: Webová stránka
+      game:
+        author: Vývojár
+        description: Popis
+        genre: Kategória
+        title: Title
+        website: Webová stránka
+      user:
+        username_or_email: Používateľské meno/E-mail
+        password: Heslo
+        username: Používateľské meno
+        characters_minimum: "minimálne %{minimum_password_length} znakov"
+        email: E-mail
+        terms_of_service: Súhlasím s licenčnými podmienkami
+    errors:
+      messages:
+        exclude_domain: '"%{value}" nie je povolené'
+        include_domain: domain must be in %{list}
+        invalid_datetime: nie je platný dátum
+        url: nie je platný webová adresa
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: môžete nahrať iba 2 hry za 24 hodín
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: Jazyk
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'vás spomenul v komentári v '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: pridal novú hru!
+      destroy: 'removed his game '
+      update: aktualizoval svoju hru
+    medal:
+      create: " dostal medailu "
+    news:
+      create: 'pridal/a správu v službe '
+    rating:
+      create: 'voted '
+    user:
+      level: Vaša úroveň sa zvýšila na %{level}
+      score: Vaše skóre sa zvýšilo o + %{score}
+      new_title: New Title
+      prizes: Ceny
+      game_new_leader: Ste najlepším hráčom %{game}!
+      game_old_leader: Bol si predbehnutý! %{user} je novým lídrom v službe %{game}! Bojuj o trón!
+      game_other_leader: "%{user} je novým lídrom v službe %{game}! Bojuj o trón!"
+      game_dev_leader: "%{user} je novým lídrom v službe %{game}!"
+  application:
+    cookie_law:
+      show_more: Zobraziť viac
+      ok: Ok
+      setlanguage: Vyberte jazyk
+    footer:
+      about: Informácie
+      contact_us: Kontaktujte nás
+      language: Jazyk (Language)
+      faq: Často kladené otázky
+      feed_rss: RSS-Feedy
+      developers: Vývojári
+      sitemap: Mapa stránky
+      terms_and_conds: Podmienky
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Pomocník Formátovania
+      you_type: Napíšete
+      you_see: Uvidíte
+      italics: Kurzíva
+      bold: Tučné
+      hashtag: Hashtagy
+      profile: Profil
+      item_one: Položka 1
+      item_two: Položka 2
+      item_three: Položka 3
+      spoiler: Spoiler
+    menubar:
+      home: Domov
+      chart: Rebríčky
+      downloaded: Najviac Sťahované
+      events: Podujatia
+      language: Jazyk
+      news: Novinky
+    meta_tags:
+      description: Indiexpo umožňuje tisícom ľudí objavovať, sledovať a zdieľať hry indie a pôvodne vytvorené hry.
+      keywords: indiexpo, indie games, Hry, Stiahnuť, Hrať, Upload, Hráči, Vývojári, Podujatia, Challenges, Tabulkové Hry, Rebríčky, Najviac Sťahované, Most Popular, Most Recent, Tvorca hier na vzostupe
+    navbar:
+      register: Registrácia
+      login: Prihlásiť sa
+      search: "Hľadať... (Hry, #Hashtags, @Profiles)"
+      upload: Upload
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Zobraziť viac
+    structured_data:
+      description: Indiexpo umožňuje tisícom ľudí objavovať, sledovať a zdieľať hry indie a pôvodne vytvorené hry.
+      keywords: indiexpo, indie games, Hry, Stiahnuť, Hrať, Upload, Hráči, Vývojári, Podujatia, Challenges, Tabulkové Hry, Rebríčky, Najviac Sťahované, Most Popular, Most Recent, Tvorca hier na vzostupe
+      games: Hry
+    terms:
+      terms_and_conditions: Podmienky
+  comments:
+    answers:
+      more_comments: Zobraziť viac
+    comment:
+      answer: Odpovedať
+      answers:
+        few: Zobraziť %{count} odpovede
+        many: Zobraziť %{count} odpovede
+        one: Zobraziť odpoveď
+        other: Zobraziť %{count} odpovede
+      destroy: Odstrániť
+      destroy_confirm: Ste si istý?
+      level: Level
+      new: Nové
+      verified: Overené
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: Now Loading...
+      publish: Uverejniť
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Prihlásiť sa
+        recover_password: Resetovať heslo
+        send_email_again: Send Email Again
+        details:
+          structured_data:
+            login: Prihlásiť sa
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: Prihlásiť sa
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: E-mail
+        send_email_again: Send Email Again
+        details:
+          structured_data:
+            send_email_again: Send Email Again
+            description: Confirm Your Email Address
+          meta_tags:
+            send_email_again: Send Email Again
+            description: Confirm Your Email Address
+    mailer:
+      confirmation_instructions:
+        welcome: Join in and have fun
+        title: 'Potvrďte svoj e-mail otvorením odkazu nižšie:'
+        confirm_account: Confirm Your Email Address
+        text_1: Keď ste prihlásení do služby indiexpo, môžete zo svojej skúsenosti vyťažiť maximum.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: Zmeniť heslo
+        ignore_email: If you didn't request this, please ignore this email.
+        reset_info: Your password won't change until you access the link above and create a new one.
+        title: Niekto požiadal o zmenu vášho hesla a môžete to spraviť pomocou odkazu nižšie.
+      unlock_instructions:
+        unlock_account: Odomknúť môj účet
+    passwords:
+      new:
+        recover_password: Resetovať heslo
+        email: E-mail
+        send: Ďalej
+        details:
+          structured_data:
+            recover_password: Resetovať heslo
+            description: Enter an email that you can check now
+          meta_tags:
+            recover_password: Resetovať heslo
+            description: Enter an email that you can check now
+      edit:
+        change_password: Zmeniť heslo
+        new_password: Nové heslo
+        confirm_new_password: Potvrdiť nové heslo
+    registrations:
+      new:
+        register: Registrácia
+        details:
+          structured_data:
+            register: Registrácia
+            description: Keď ste prihlásení do služby indiexpo, môžete zo svojej skúsenosti vyťažiť maximum.
+          meta_tags:
+            register: Registrácia
+            description: Keď ste prihlásení do služby indiexpo, môžete zo svojej skúsenosti vyťažiť maximum.
+      edit:
+        change_password: Zmeniť heslo
+        change_email: Zmeniť e-mail
+        new_password: Nové heslo
+        confirm_new_password: Potvrdiť nové heslo
+        current_password: Súčasné heslo
+        current_email: Súčasné e-maily
+        new_email: Nový e-mail
+        save: Uložiť
+    shared:
+      menubar:
+        login: Prihlásiť sa
+        recover_password: Resetovať heslo
+        register: Registrácia
+        send_email_again: Send Email Again
+  download_links:
+    download_link:
+      download: Stiahnuť
+  errors:
+    messages:
+      not_saved: Uloženie zlyhalo
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Udalosti a Výzvy
+          description: 'Indie Games : Udalosti a Výzvy - Nadchádzajúce & Minulé'
+        structured_data:
+          events: Udalosti a Výzvy
+          description: 'Indie Games : Udalosti a Výzvy - Nadchádzajúce & Minulé'
+    active_selector:
+      active: Nadchádzajúce
+      inactive: Minulé
+    edit:
+      destroy: Odstrániť
+      destroy_confirm: Ste si istý?
+    end_after_start: should be after start date
+    event_types:
+      all: Všetko
+      contest: Sútaž
+      mini_contest: Mini Contest
+      new: Vytvoriť podujatie
+      other: Other
+    form:
+      language: Jazyk
+      publish: Uverejniť
+      type: Kategória
+    menubar:
+      details: Overview
+      edit: Upraviť
+    index:
+      events: Podujatia
+      challenges: Challenges
+      champions: Šampióny
+      points: Points
+      show_more: Zobraziť viac
+    new:
+      event: Event
+    share:
+      share: Zdieľať
+      email: E-mail
+      qrcode: Koda QR
+    show:
+      description: Popis
+      ended: Inactive
+      ends: Do
+      from: Od
+      genre: Kategória
+      language: Jazyk
+      prizes: Ceny
+      rules: Pravidlá
+      share: Zdieľať
+      subscribers: Odberateľov
+      to: To
+      website: Webová stránka
+  feeds:
+    index:
+      feed_rss: RSS-Feedy
+      events: 'Indie Games : Podujatia'
+      latest: 'Indie Games : Most Recent'
+      popular: 'Indie Games : Most Popular'
+      last_updated: 'Indie Games : Naposledy aktualizované'
+    details:
+      meta_tags:
+        feed_rss: RSS-Feedy
+        description: 'Indie Games : RSS-Feedy - Podujatia - Most Recent - Most Popular - Naposledy aktualizované'
+      structured_data:
+        feed_rss: RSS-Feedy
+        description: 'Indie Games : RSS-Feedy - Podujatia - Most Recent - Most Popular - Naposledy aktualizované'
+  layouts:
+    application:
+      indie_games: Indie Games
+    game:
+      play: Hrať
+      download: Stiahnuť
+      new: Nové
+      updates: Updates!
+      show_more: Zobraziť viac
+      adult_content_message_html: You must be at least eighteen years old to view this content.</br> Are you over eighteen and willing to see adult content?
+      yes: Yes
+      no: No
+  games:
+    game:
+      play: Hrať
+      download: Stiahnuť
+      new: Nové
+      updates: Updates!
+      chart: Rebríčky
+      verified: Overené
+    destroy:
+      destroyed: Deleted
+    details:
+      game_header:
+        downloads_count: Hráči
+      game_menu:
+        comments: Komentárov
+        details: Overview
+        updates: Updates
+        edit: Upraviť
+        statistics: Štatistiky
+      structured_data:
+       games: Hry
+       developer: Vývojár
+      index:
+        videogame: Videogame
+        published_by: 'publikoval používateľ '
+        edit: Upraviť
+        statistics: Štatistiky
+        players: Hráči
+        news: Novinky
+        no_news: Žiadne Novinky
+        website: Webová stránka
+        recommended: Odporúčané
+    edit:
+      edit: Upraviť
+      destroy: Odstrániť
+      destroy_confirm: Ste si istý?
+    embed_popup:
+      embed: Vložiť
+      preview: Preview
+    record_chart:
+      chart: Rebríčky
+      login: Prihlásiť sa
+      score_system_games: Tabulkové Hry
+    followers_list:
+      subscribers: Odberateľov
+      verified: Overené
+    players_list:
+      downloads_count: Hráči
+      last_week: Posledných 7 dní
+      no_logged_user: Guest
+      no_result: Žiadne výsledky
+      verified: Overené
+    form:
+      add_external_link: Pridajte externý odkaz
+      add_file: Priloženie Súborov
+      html5_description: 'Pre hry HTML5 / Flash / WebGL: Nahrajte súbor ZIP obsahujúci vašu hru. V ZIP musí byť súbor index.html.'
+      extra: Extra
+      enablable_indiepad: Povoliť podporu indiepadu (iba pre hry HTML5 / WebGL)
+      indiepad_description: Stiahnite si aplikáciu do svojho smartfónu a používajte ju ako gamepad s niekoľkými hrami na indiexpo. Iba pre Android.
+      long_description: Dlhý Popis
+      artworks: Artworks
+      delete: Odstrániť
+      downloads: Inštalácie
+      genre: Kategória
+      language: Jazyk
+      publish: Uverejniť
+      remove_file: Odstrániť
+      remove_url: Odstrániť
+      restore: Späť
+      screens: Obrázky
+      status: Stav
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      tool: Nástroje
+      hashtag: Odporúčame používať nie viac ako 2 hashtagy (#) pre čo najlepšiu prax
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: Hráči
+      level: Level
+      subscribers: Odberateľov
+      comments: Komentárov
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: Popis
+      send: Ďalej
+    new:
+      upload: Upload
+    share:
+      share: Zdieľať
+      email: E-mail
+      qrcode: Koda QR
+    show:
+      play: Hrať
+      embed: Vložiť
+      share: Zdieľať
+      monetisation: Monetisation
+      download: Stiahnuť
+      subscribe: Odoberať
+      subscribed: Odber aktívny
+      subscribers: Odberateľov
+      comment: Komentárov
+      description: Popis
+      published_on: Published on
+      adult_content: Adults Contents
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      language: Jazyk
+      first_to_comment: Share your thoughts...
+      mobile_first: Mobile Friendly
+      more_comments: Zobraziť viac
+      screens: Obrázky
+      video: Video
+      top_player: Top Player
+      epic_win: Epické víťazstvo!
+      on_the_rise: Tvorca hier na vzostupe
+      verified: Overené
+    stats:
+      statistics: Štatistiky
+      comments: Komentárov
+      monetisation: Monetisation
+      daily: Dnes
+      days: Dni
+      date: Date
+      downloads: Hráči
+      followings: Odberateľov
+      chart: Rebríčky
+      most_rated: Najviac hlasované
+      followings_chart: Najsledovanejšie
+      most_downloaded: Najviac Sťahované
+      last_week: Last week
+      this_week: This week
+      last_6_months: Posledných 180 dní
+      totals: Celkove
+      visits: Zhliadnutí
+      active_views: Active Views
+      votes: Hlasy
+      votes_averange: Priemer
+      other: Other
+      engagement: Engagement
+      show_more: Zobraziť viac
+      qrcode: Koda QR
+      warning: Výstraha
+    support:
+      prizes: Ceny
+      donate: 'Donate %{price}$'
+    tips:
+      enhancements: Enhancements
+      only_to_you: Viditeľné len pre vás
+  games_sections:
+    chart:
+      last_6_months: Posledných 180 dní
+      details:
+        meta_tags:
+          chart: Rebríčky
+          description: 'Indie Games : Najviac Sťahované - Najviac hlasované - Najsledovanejšie'
+        structured_data:
+          chart: Rebríčky
+          description: 'Indie Games : Najviac Sťahované - Najviac hlasované - Najsledovanejšie'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Najviac Sťahované
+          description: 'Indie Games : Najviac Sťahované - Dnes - Posledných 7 dní - Posledných 30 dní - Lifetime'
+        structured_data:
+          downloaded: Najviac Sťahované
+          description: 'Indie Games : Najviac Sťahované - Dnes - Posledných 7 dní - Posledných 30 dní - Lifetime'
+    news:
+      details:
+        meta_tags:
+          news: Novinky
+          description: 'Indie Games : Novinky - Posledných 30 dní'
+        structured_data:
+          news: Novinky
+          description: 'Indie Games : Novinky - Posledných 30 dní'
+    filters:
+      chart:
+        most_downloaded: Najviac Sťahované
+        voted: Najviac hlasované
+        followed: Najsledovanejšie
+      downloaded:
+        everytime: Lifetime
+        last_month: Posledných 30 dní
+        last_week: Posledných 7 dní
+        today: Dnes
+      news:
+        last_commented: Komentárov
+        last_updated: Naposledy aktualizované
+        latest: Most Recent
+        popular: Most Popular
+  genres:
+    genre:
+      rpg: Rpg
+      browsergame: Browser Game
+      platformaction: Platform/Action
+      shootemup: Shoot em Up
+      puzzle: Puzzle
+      pointandclick: Point and Click
+      sport: Sport
+      fighting: Fighting
+      other: Other
+    genres:
+      all: Všetko
+    select:
+      genre: Kategória
+  helpers:
+    label:
+      report:
+        broken: Nefunkčný odkaz
+        copyright: Porušenie mojich práv
+        offensive: Nenávistný alebo urážlivý obsah
+        sexual: Sexuálny obsah
+        spam: Spam alebo zavádzajúci obsah
+        violent: Násilný alebo odpudivý obsah
+  home:
+    navigation:
+      home: Domov
+      news: Novinky
+      chart: Rebríčky
+      events: Podujatia
+      downloaded: Najviac Sťahované
+      console: Console
+      subscriptions: Odbery
+      your_games: Vaše hry
+      history: História
+    landing:
+      last_followed_games_updated: V prípade, že ste to zmeškali
+      play: Hrať
+      recommended: Odporúčané
+      based_recent_activity: Na základe vašej nedávnej aktivity
+      query_of_the_day_0: Hry, ktoré nedávno získali viac ako 1000 hráčov
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Výročie
+      query_of_the_day_3: Najsledovanejšie - Posledných 180 dní
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Tabulkové Hry
+      query_of_the_day_6: Updates!
+      downloaded: Najviac Sťahované
+      today: Dnes
+      last_week: Posledných 7 dní
+      last_month: Posledných 30 dní
+      latest: Most Recent
+      show_more: Zobraziť viac
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'Indie Games : Hrať'
+        meta_tags:
+          console: Console
+          description: 'Indie Games : Hrať'
+    subscriptions:
+      subscriptions: Odbery
+      updates: Updates!
+      no_result: Žiadne výsledky
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Hráči
+      subscribers: Odberateľov
+      comments: Komentárov
+      details: Overview
+      show_more: Zobraziť viac
+    your_games:
+      your_games: Vaše hry
+      players: Hráči
+      subscribers: Odberateľov
+      comments: Komentárov
+      details: Overview
+      show_more: Zobraziť viac
+    history:
+      history: História
+      score_system_games: Tabulkové Hry
+      last_commented: Komentárov
+      subscriptions: Odbery
+      votes: Hlasy
+  static:
+    about:
+      about: Informácie
+      app: Apps
+      extension: Extensions
+      social_networks: Social Networks
+      games: Hry
+      show_more: Zobraziť viac
+      details:
+        structured_data:
+          about: Informácie
+          description: Indiexpo umožňuje tisícom ľudí objavovať, sledovať a zdieľať hry indie a pôvodne vytvorené hry.
+        meta_tags:
+          about: Informácie
+          description: Indiexpo umožňuje tisícom ľudí objavovať, sledovať a zdieľať hry indie a pôvodne vytvorené hry.
+    faq:
+      faq: Často kladené otázky
+      question_1: Čo je služba indiexpo?
+      answer_1: Indiexpo allows thousands of people to discover, watch and share indie games and originally-created games. Indiexpo provides an area for people to connect, inform, and inspire others across the globe and acts as a distribution platform for original content creators and advertisers large and small.
+      question_2: How to earn Points?
+      answer_2: Indiexpo má systém bodov a úrovní. Počet bodov, ktoré získate, závisí od konkrétnej akcie, ktorú podniknete. The points table below summarizes the point values for different actions.
+      question_3: How to Level Up?
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: Často kladené otázky
+          description: FAQ je zoznam častých a typických otázok a odpovedí súvisiacich s predmetnou témou.
+        meta_tags:
+          faq: Často kladené otázky
+          description: FAQ je zoznam častých a typických otázok a odpovedí súvisiacich s predmetnou témou.
+    developers:
+      developers: Vývojári
+      details:
+        structured_data:
+          developers: Vývojári
+          description: Explore our Developer Products. Štatistiky, Apps, Extensions, Tutorials
+        meta_tags:
+          developers: Vývojári
+          description: Explore our Developer Products. Štatistiky, Apps, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: Vyberte jazyk
+  medals:
+    medal:
+      titles:
+        age: "%{score} Rokov"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Level 2
+        level_4: Level 4
+        level_6: Level 6
+        level_10: Level 10
+        level_16: Level 16
+        level_26: Level 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: Odporúčame používať nie viac ako 2 hashtagy (#) pre čo najlepšiu prax
+      now_loading: Now Loading...
+      publish: Uverejniť
+    news:
+      destroy: Odstrániť
+      destroy_confirm: Ste si istý?
+    index:
+      players: Hráči
+      subscribers: Odberateľov
+      download: Stiahnuť
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Profil
+      followed_games: Odbery
+      your_games: Vaše hry
+      settings: Nastavenia
+      logout: Logout
+  platforms:
+    platforms:
+      all: Všetko
+    select:
+      platform: Platformy
+  public_activities:
+    index:
+      destroy_confirm: Ste si istý?
+      mark_all_as_read: Mark all as read
+      notifications: Notifikácie
+      see_all: Zobraziť viac
+  public_activities_mailer:
+    notify:
+      hello: Ahoj %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Zrušiť odber
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Comment removed
+      create:
+        comment_removed: Comment removed
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: Overené
+  reports:
+    new:
+      details: 'Popis:'
+      question: What is the issue?
+      send: Ďalej
+      title: 'Nahlásiť: %{game}'
+      report_submitted: Ďakujeme za oznámenie.
+      report_submitted_message: Vaša odozva nám pomáha nášmu systému naučiť sa rozpoznať, keď niečo nie je v poriadku.
+  scores:
+    score:
+      points: Points
+      delete: Odstrániť
+      destroy_confirm: Ste si istý?
+      verified: Overené
+  search:
+    games:
+      filters: Filtre
+      adult_content: Adults Contents
+      mobile_first: Mobile Friendly
+      no_result: Žiadne výsledky
+      search: Hľadať
+      search_placeholder: Hľadať...
+      search_tools: Search tools
+      language: Jazyk
+      genre: Kategória
+      platform: Platformy
+      recommended: Odporúčané
+      tool: Nástroje
+      status: Stav
+      games: Hry
+      score_system_games: Tabulkové Hry
+      year: Rok
+    details:
+      meta_tags:
+        search: Hľadať
+        description: "Hľadať... (Hry, #Hashtags, @Profiles, Search tools, Jazyk, Kategória, Rok, Platformy, Tool, Stav)"
+      structured_data:
+        search: Hľadať
+        description: "Hľadať... (Hry, #Hashtags, @Profiles, Search tools, Jazyk, Kategória, Rok, Platformy, Tool, Stav)"
+  settings:
+    edit:
+      settings: Nastavenia
+    form:
+      language: Jazyk (Language)
+      setlanguage: Vyberte jazyk
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: E-mailové notifikácie
+      general: Všeobecné
+      mail_comment_answer: Odpovede na moje komentáre
+      mail_comment_mention: Zmienky
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: Odbery
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Vaše hry
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Údaje účtu
+      email: E-mail
+      password: Heslo
+      edit: Upraviť
+      stats: Štatistiky
+      comments: Komentárov
+      subscriptions: Odbery
+      show_more: Zobraziť viac
+      save: Uložiť
+      delete_account: Trvalé odstránenie účtu
+  sitemaps:
+    index:
+      active_events: Nadchádzajúce
+      inactive_events: Minulé
+      new_events: Vytvoriť podujatie
+      recover: Resetovať heslo
+      sign_in: Prihlásiť sa
+      sign_up: Registrácia
+      sitemap: Mapa stránky
+    details:
+      meta_tags:
+        sitemap: Mapa stránky
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Mapa stránky
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: Odoberať
+    unsubscribe_button:
+      unsubscribe: Zrušiť odber
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Nástroje
+  users:
+    show:
+      page_title: "%{username} je na indiexpo"
+      online: Online
+      chart: Pozícia
+      last_month: Posledných 30 dní
+      level: Level
+      games: Hry
+      score_system_games: Tabulkové Hry
+      show_more: Zobraziť viac
+      subscriptions: Odbery
+      last_commented: Komentárov
+      history: História
+      other_players: Other Players
+      verified: Overené
+    details:
+      structured_data:
+        developer: Vývojár
+        gamer: Gamer
+      meta_tags:
+        about: Informácie
+        description: Profil, Vitrína Trofejí, Hry, Odbery, Tabulkové Hry, Komentárov & História
+  me:
+    menubar:
+      profile: Profil
+      event_subscriptions: My Events
+      followed_games: Odbery
+      your_games: Vaše hry
+      settings: Nastavenia
+    followed_games:
+      no_result: Žiadne výsledky
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Vaše hry
+      visits: Zhliadnutí
+      downloads_count: Hráči
+      subscribers: Odberateľov
+      totals: Celkove
+      no_result: Žiadne výsledky
+      upload: Upload
+  levels:
+    index:
+      level: Level
+      user_chart: Pozícia
+      last_month: Posledných 30 dní
+      gems: Gems
+      trophy_case: Vitrína Trofejí
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Overené
+    goals:
+      goals: Goals
+    stats:
+      stats: Štatistiky
+      comments: Komentárov
+      subscriptions: Odbery
+      your_games: Vaše hry
+      votes: Hlasy
+  warning:
+    index:
+      warning: Výstraha
+      destroy: Odstrániť
+      destroy_confirm: Ste si istý?
+      delete_account: Trvalé odstránenie účtu
+      delete_account_description: Keď odstránite svoj indiexpoový účet, nebudete môcť získať svoj obsah ani informácie, ktoré ste na indiexpou zdieľali.

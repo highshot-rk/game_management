@@ -1,0 +1,59 @@
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.indiexpo.net/search",
+      "name": "<%= t('search.games.games') %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.indiexpo.net/search?search%5Bauthor%5D=<%= @game.author %>",
+      "name": "<%= @game.author %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "<%= game_url(@game.slug, locale: nil) %>",
+      "name": "<%= @game.title %>",
+      "image": "<%= @game.image %>"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@id": "<%= game_news_url(@game.slug) %>",
+      "name": "<%= t('games.details.index.news') %>",
+      "image": "<%= @game.image %>"
+    }
+  }]
+}
+</script>
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "AboutPage",
+	"breadcrumb": "<%= t('search.games.games') %> > <%= @game.author %> > <%= @game.title %> > <%= t('games.details.index.news') %>",
+	"reviewedBy": {
+		"@type": "Person",
+		"name": "<%= @game.author %>",
+		"jobTitle": "<%= t('games.details.structured_data.developer') %>",
+		"url": "<%= game_author_page_url(@game) %>",
+		"image": "<%= asset_url('Images/pages/profile.png') %>"
+		},
+	"url": "<%= game_news_url(@game.slug) %>",
+	"name": "<%= @game.title %> - <%= t('games.details.index.news') %>",
+	"description": "<%= t('games.details.index.news') %> <%= @game.title %> - <%= t('games.details.index.published_by') %>: <%= @game.author %>",
+	"keywords": "devlog, <%= @game.title %>, <%= t('games.details.index.news') %>, <%= t('application.meta_tags.keywords') %>",
+	"primaryImageOfPage": "<%= @game.image %>"
+}
+</script>
+<!-- META END -->

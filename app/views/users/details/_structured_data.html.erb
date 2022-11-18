@@ -1,0 +1,27 @@
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Person",
+	"name": "<%= @user.username %>",
+	<% if @user_games.count > 0 %>
+		"jobTitle": "<%= t('.developer') %>",
+	<% else %>
+		"jobTitle": "<%= t('.gamer') %>",
+	<% end %>
+	"url": "<%= user_url(id: @user.username) %>",
+	"image": "<%= asset_path('Images/pages/profile.png') %>",
+	"sponsor":
+	{
+		"@type": "WebSite",
+		"url": "https://www.indiexpo.net/",
+		"description": "Indiexpo.net - International Website about Free Indie Games, Free to Play and Contest. Share your Game.",
+		"datePublished": "2011-03-01",
+		"genre": "Videogames",
+		"keywords": "<%= t('.developer') %>, <%= t('.gamer') %>, <%= t('application.meta_tags.keywords') %>",
+		"image": "<%= asset_path('Images/LogoMask.png') %>",
+		"inLanguage": "<%= I18n.locale %>"
+	}
+}
+</script>
+<!-- STRUCTURED DATA END -->

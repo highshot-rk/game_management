@@ -1,0 +1,940 @@
+---
+id:
+  active_admin:
+    dashboard: Dasbor
+  activerecord:
+    attributes:
+      event:
+        description: Deskripsi
+        end_date: Berakhir
+        prizes: Hadiah
+        rules: Peraturan
+        screen: Gambar
+        start_date: Mulai
+        title: Judul
+        website: Situs Web
+      game:
+        author: Pengembang
+        description: Deskripsi
+        genre: Genre
+        title: Judul
+        website: Situs Web
+      user:
+        username_or_email: Nama/Email
+        password: Kata Sandi
+        username: Nama
+        characters_minimum: "sedikitnya %{minimum_password_length} karakter"
+        email: Email
+        terms_of_service: Saya setuju dengan Persyaratan Layanan
+    errors:
+      messages:
+        exclude_domain: '"%{value}" tidak diizinkan'
+        include_domain: domain harus terdaftar di %{list}
+        invalid_datetime: tanggal tidak valid
+        url: url tidak valid
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        news:
+          attributes:
+            base:
+              check_spam: You are doing that too much. Try again in %{cooloff} minutes
+        game:
+          attributes:
+            artworks:
+              too_long: maksimal %{count} buah
+            download_links:
+              links_repetition: link tidak boleh berulang/sama
+              too_long: maksimal %{count} buah
+              too_short: minimal satu buah
+            game_languages:
+              too_short: minimal satu bahasa
+            screens:
+              too_long: maksimal %{count} buah
+            videos:
+              too_long: hanya boleh satu buah
+            base:
+              limit_games_uploaded: kamu hanya bisa mengunggah 2 gim dalam  24 jam
+        user:
+          attributes:
+            username:
+              invalid: hanya boleh memuat karakter alfanumerik (A–Z, 0–9)
+    models:
+      game_languages: Bahasa
+  activity:
+    comment:
+      answer: 'membalas komentarmu pada '
+      create: 'berkomentar pada '
+      follower_create: 'berkomentar pada '
+      mention: 'menyebut Anda dalam sebuah komentar di '
+    event_subscription:
+      create: 'sudah berlangganan '
+    following:
+      create: 'mulai mengikuti '
+    game:
+      create: menambahkan permainan baru!
+      destroy: 'menghapus permainannya '
+      update: memperbarui permainannya
+    medal:
+      create: " mendapat medali "
+    news:
+      create: 'menambahkan berita baru '
+    rating:
+      create: 'memilih '
+    user:
+      level: Kamu naik ke level %{level}
+      score: Skormu bertambah sebanyak + %{score}
+      new_title: Gim Baru
+      prizes: Hadiah
+      game_new_leader: Kamu adalah Pemain Terbaik dalam %{game}!
+      game_old_leader: Kamu tersusul! %{user} adalah pemain terbaik baru dalam %{game}! Berjuanglah demi posisi terbaik!
+      game_other_leader: "%{user} adalah pemain terbaik baru dalam %{game}! Berjuanglah demi posisi terbaik!"
+      game_dev_leader: "%{user} adalah pemain terbaik baru dalam %{game}!"
+  application:
+    cookie_law:
+      show_more: Tampilkan lebih banyak
+      ok: Ok
+      setlanguage: Pilih bahasa Anda
+    footer:
+      about: Tentang
+      contact_us: Hubungi Kami
+      language: Bahasa (Language)
+      faq: Tanya jawab
+      feed_rss: Umpan RSS
+      sitemap: Peta Situs
+      developers: Pengembang
+      terms_and_conds: Persyaratan Layanan
+      blog: Blog
+    markdown_instructions:
+      formatting_help: Bantuan formatting
+      you_type: Anda menulis
+      you_see: Anda melihat
+      italics: Miring
+      bold: Tebal
+      hashtag: Tagar
+      profile: Profil
+      item_one: Buah 1
+      item_two: Buah 2
+      item_three: Buah 3
+      spoiler: Beberan
+    menubar:
+      home: Beranda
+      chart: Peringkat
+      downloaded: Paling Banyak Diunduh
+      events: Acara
+      language: Bahasa
+      news: Berita
+    meta_tags:
+      description: indiexpo telah memudahkan ribu orang untuk menemukan, menonton, dan membagikan beragam Game dan Permainan Video Independen.
+      keywords: indiexpo, indie games, Permainan, Unduh, Mainkan, Unggah, Pemain, Pengembang, Acara, Tantangan, Game Papan Peringkat, Peringkat, Paling Banyak Diunduh, Populer, Terbaru, Kreator Game yang Beranjak Populer
+    navbar:
+      register: Mendaftar
+      login: Masuk
+      search: "Telusuri... (Permainan, #Tagar, @Profil)"
+      upload: Unggah
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Tampilkan lebih banyak
+    structured_data:
+      description: indiexpo telah memudahkan ribu orang untuk menemukan, menonton, dan membagikan beragam Game dan Permainan Video Independen.
+      keywords: indiexpo, indie games, Permainan, Unduh, Mainkan, Unggah, Pemain, Pengembang, Acara, Tantangan, Game Papan Peringkat, Peringkat, Paling Banyak Diunduh, Populer, Terbaru, Kreator Game yang Beranjak Populer
+      games: Permainan
+    terms:
+      terms_and_conditions: Persyaratan Layanan
+  comments:
+    answers:
+      more_comments: Muat lainnya
+    comment:
+      answer: Balas
+      answers:
+        few: Lihat %{count} balasan
+        many: Lihat %{count} balasan
+        one: Lihat jawabannya
+        other: Lihat %{count} balasan
+      destroy: Hapus
+      destroy_confirm: Kamu yakin?
+      level: Tingkat
+      new: Baru
+      verified: Terverifikasi
+    destroy:
+      destroy_failure: Gagal menghapus komentar
+    form:
+      text: Ada banyak hal yang bisa dilihat di sini dan ada banyak orang yang membuat hal-hal yang menakjubkan. Ekspresikan pendapat Anda!
+      now_loading: Now Loading...
+      publish: Poskan
+  cookie_law: Kuki membantu kami untuk menyediakan, melindungi, dan menyempurnakan layanan indiexpo. Dengan melanjutkan menggunakan situs kami, berarti Anda menyetujui kebijakan kuki kami.
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short_date: "%-d/%-m"
+  devise:
+    sessions:
+      new:
+        login: Masuk
+        recover_password: Ganti kata sandi
+        send_email_again: Kirim Email Lagi
+        details:
+          structured_data:
+            login: Masuk
+            description: Ada banyak hal yang bisa dilihat di sini dan ada banyak orang yang membuat hal-hal yang menakjubkan. Ekspresikan pendapat Anda!
+          meta_tags:
+            login: Masuk
+            description: Ada banyak hal yang bisa dilihat di sini dan ada banyak orang yang membuat hal-hal yang menakjubkan. Ekspresikan pendapat Anda!
+    confirmations:
+      new:
+        email: Email
+        send_email_again: Kirim ulang instruksi konfirmasi
+        details:
+          structured_data:
+            send_email_again: Kirim ulang instruksi konfirmasi
+            description: Konfirmasi Email
+          meta_tags:
+            send_email_again: Kirim ulang instruksi konfirmasi
+            description: Konfirmasi Email
+    mailer:
+      confirmation_instructions:
+        welcome: Mari bergabung dan bersenang-senang
+        title: 'Kamu bisa mengkonfirmasi e-mail akunmu dengan tautan di bawah ini:'
+        confirm_account: Konfirmasi Email
+        text_1: Saat masuk ke indiexpo, Anda dapat memaksimalkan pengalaman di situs.
+        text_2: Ada banyak hal yang bisa dilihat di sini dan ada banyak orang yang membuat hal-hal yang menakjubkan. Ekspresikan pendapat Anda!
+      reset_password_instructions:
+        change_password: Ubah kata sandi Anda
+        ignore_email: Jika kamu tidak merasa mengirim permintaan ini, kamu bisa abaikan e-mail ini.
+        reset_info: Kata sandimu tidak akan terganti sampai kamu mengakses tautan di atas dan membuat kata sandi baru.
+        title: Seseorang telah meminta tautan penggantian kata sandi. Kamu bisa melakukannya dengan mengakses tautan di bawah.
+      unlock_instructions:
+        unlock_account: Kunci akun saya
+    passwords:
+      new:
+        recover_password: Ganti kata sandi
+        email: Email
+        send: Kirim
+        details:
+          structured_data:
+            recover_password: Ganti kata sandi
+            description: Masukkan email yang dapat Anda periksa sekarang
+          meta_tags:
+            recover_password: Ganti kata sandi
+            description: Masukkan email yang dapat Anda periksa sekarang
+      edit:
+        change_password: Ubah kata sandi Anda
+        new_password: Password baru
+        confirm_new_password: Konfirmasi password baru
+    registrations:
+      new:
+        register: Mendaftar
+        details:
+          structured_data:
+            register: Mendaftar
+            description: Saat masuk ke indiexpo, Anda dapat memaksimalkan pengalaman di situs.
+          meta_tags:
+            register: Mendaftar
+            description: Saat masuk ke indiexpo, Anda dapat memaksimalkan pengalaman di situs.
+      edit:
+        change_password: Ubah kata sandi Anda
+        change_email: Ubah email
+        new_password: Password baru
+        confirm_new_password: Konfirmasi password baru
+        current_password: Kata sandi saat ini
+        current_email: Email Saat Ini
+        new_email: Email baru
+        save: Simpan Perubahan
+    shared:
+      menubar:
+        login: Masuk
+        recover_password: Ganti kata sandi
+        register: Mendaftar
+        send_email_again: Kirim Email Lagi
+  download_links:
+    download_link:
+      download: Unduh
+  errors:
+    messages:
+      not_saved: Gagal menyimpan
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Acara & Tantangan
+          description: 'Permainan Video Independen (Permainan Video Indie) : Acara & Tantangan - Yang Akan Datang & Lampau'
+        structured_data:
+          events: Acara & Tantangan
+          description: 'Permainan Video Independen (Permainan Video Indie) : Acara & Tantangan - Yang Akan Datang & Lampau'
+    active_selector:
+      active: Yang Akan Datang
+      inactive: Lampau
+    edit:
+      destroy: Hapus
+      destroy_confirm: Kamu yakin?
+    end_after_start: harus setelah tanggal mulai
+    event_types:
+      all: Semua
+      contest: Kontes
+      mini_contest: Kontes Kecil
+      new: Buat Acara
+      other: Lainnya
+    form:
+      language: Bahasa
+      publish: Poskan
+      type: Genre
+    menubar:
+      details: Ikhtisar
+      edit: Sunting
+    index:
+      events: Acara
+      challenges: Tantangan
+      champions: Champions
+      points: Poin
+      show_more: Tampilkan lebih banyak
+    new:
+      event: Acara
+    share:
+      share: Bagikan
+      email: Email
+      qrcode: Kode QR
+    show:
+      description: Deskripsi
+      ended: Non Aktif
+      ends: Berakhir
+      from: Mulai
+      genre: Genre
+      language: Bahasa
+      prizes: Hadiah
+      rules: Peraturan
+      share: Bagikan
+      subscribers: Pelanggan
+      to: sampai
+      website: Situs Web
+  feeds:
+    index:
+      feed_rss: Umpan RSS
+      events: 'Permainan Video Independen (Permainan Video Indie) : Acara'
+      latest: 'Permainan Video Independen (Permainan Video Indie) : Terbaru'
+      popular: 'Permainan Video Independen (Permainan Video Indie) : Populer'
+      last_updated: 'Permainan Video Independen (Permainan Video Indie) : Baru Diperbarui'
+    details:
+      meta_tags:
+        feed_rss: Umpan RSS
+        description: 'Permainan Video Independen (Permainan Video Indie) : Umpan RSS - Acara - Terbaru - Populer - Baru Diperbarui'
+      structured_data:
+        feed_rss: Umpan RSS
+        description: 'Permainan Video Independen (Permainan Video Indie) : Umpan RSS - Acara - Terbaru - Populer - Baru Diperbarui'
+  layouts:
+    application:
+      indie_games: Permainan Video Independen
+    game:
+      play: Mainkan
+      download: Unduh
+      new: Baru
+      updates: Berita!
+      show_more: Tampilkan lebih banyak
+      adult_content_message_html: Kamu harus setidaknya berumur delapan belas tahun untuk bisa melihat konten ini. </br> Apakah kamu berumur delapan belas tahun atau lebih dan bersedia melihat konten
+      yes: Iya nih
+      no: Tidak
+  games:
+    game:
+      play: Mainkan
+      download: Unduh
+      new: Baru
+      updates: Berita!
+      chart: Peringkat
+      verified: Terverifikasi
+    destroy:
+      destroyed: Terhapus
+    details:
+      game_header:
+        downloads_count: Pemain
+      game_menu:
+        comments: Komentar
+        details: Ikhtisar
+        updates: Berita
+        edit: Sunting
+        statistics: Statistik
+      structured_data:
+       games: Permainan
+       developer: Pengembang
+      index:
+        videogame: Permainan Video
+        published_by: 'diterbitkan oleh '
+        edit: Sunting
+        statistics: Statistik
+        players: Pemain
+        news: Berita
+        no_news: Tidak ada berita
+        website: Situs Web
+        recommended: Disarankan
+    edit:
+      edit: Sunting
+      destroy: Hapus
+      destroy_confirm: Kamu yakin?
+    embed_popup:
+      embed: Sematkan
+      preview: Pratinjau
+    record_chart:
+      chart: Peringkat
+      login: Masuk
+      score_system_games: Game Papan Peringkat
+    followers_list:
+      subscribers: Pelanggan
+      verified: Terverifikasi
+    players_list:
+      downloads_count: Pemain
+      last_week: 7 hari terakhir
+      no_logged_user: Guest
+      no_result: Tidak ada hasil
+      verified: Terverifikasi
+    form:
+      add_external_link: Tambah tautan luar
+      add_file: Tambah berkas
+      html5_description: 'Untuk gim HTML5/Flash/WebGL: Unggah file ZIP berisi gimmu. Harus ada file index.html dalam file ZIP tersebut.'
+      extra: Extra
+      enablable_indiepad: Aktifkan dukungan untuk menggunakan indiepad (hanya berlaku untuk gim HTML5/WebGL)
+      indiepad_description: Unduh aplikasinya di ponselmu dan kamu bisa menggunakannya seperti stik untuk memainkan sejumlah gim di indiexpo. Hanya berlaku untuk Android.
+      long_description: Deskripsi panjang
+      artworks: Gambar
+      delete: Hapus
+      downloads: Unduh
+      genre: Genre
+      language: Bahasa
+      publish: Poskan
+      remove_file: Hapus
+      remove_url: Hapus
+      restore: Urungkan
+      screens: Gambar
+      status: Status
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      tool: Alat
+      hashtag: Kami menyarankan untuk menggunakan tidak lebih dari 2 tagar
+      adult_content: Konten sensitif
+      mobile_first: Bisa dimainkan di ponsel
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisasi
+      players: Pemain
+      level: Tingkat
+      subscribers: Pelanggan
+      comments: Komentar
+      offensive: Konten bernada kebencian atau menyalahgunakan
+      sexual: Konten seksual
+      spam: Spam atau menyesatkan
+      violent: Konten yang kejam atau menjijikkan
+      description: Deskripsi
+      send: Kirim
+    new:
+      upload: Unggah
+    share:
+      share: Bagikan
+      email: Email
+      qrcode: Kode QR
+    show:
+      play: Mainkan
+      embed: Sematkan
+      share: Bagikan
+      monetisation: Monetisasi
+      download: Unduh
+      subscribe: Langganan
+      subscribed: Disubscribe
+      subscribers: Pelanggan
+      comment: Komentar
+      description: Deskripsi
+      published_on: Dipublikasikan tanggal
+      adult_content: Konten sensitif
+      complete: Full
+      demo: Demo
+      minigame: Minigame
+      language: Bahasa
+      first_to_comment: Tambahkan komentar publik...
+      mobile_first: Bisa dimainkan di ponsel
+      more_comments: Muat lainnya
+      screens: Gambar
+      video: Video
+      top_player: Pemain Teratas
+      epic_win: Epic Win!
+      on_the_rise: Kreator Game yang Beranjak Populer
+      verified: Terverifikasi
+    stats:
+      statistics: Statistik
+      comments: Komentar
+      monetisation: Monetisasi
+      daily: Hari ini
+      days: Hari-hari
+      date: Tanggal
+      downloads: Pemain
+      followings: Pelanggan
+      chart: Peringkat
+      most_rated: Terbanyak Didukung
+      followings_chart: Terbanyak Diikuti
+      most_downloaded: Terbanyak Diunduh
+      last_week: Minggu lalu
+      this_week: Minggu ini
+      last_6_months: 180 hari terakhir
+      totals: Total
+      visits: Penayangan
+      active_views: Penayangan aktif
+      votes: Beri Dukungan Suara
+      votes_averange: Rata-rata
+      other: Lainnya
+      engagement: Interaksi
+      show_more: Tampilkan lebih banyak
+      qrcode: Kode QR
+      warning: Peringatan
+    support:
+      prizes: Hadiah
+      donate: 'Beri Donasi %{price}$'
+    tips:
+      enhancements: Penyempurnaan
+      only_to_you: Hanya bisa dilihat oleh Anda
+  games_sections:
+    chart:
+      last_6_months: 180 hari terakhir
+      details:
+        meta_tags:
+          chart: Peringkat
+          description: 'Permainan Video Independen (Permainan Video Indie) : Terbanyak Diunduh - Terbanyak Didukung - Terbanyak Diikuti'
+        structured_data:
+          chart: Peringkat
+          description: 'Permainan Video Independen (Permainan Video Indie) : Terbanyak Diunduh - Terbanyak Didukung - Terbanyak Diikuti'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Terbanyak Diunduh
+          description: 'Permainan Video Independen (Permainan Video Indie) : Terbanyak Diunduh - Hari ini - 7 hari terakhir - 30 hari terakhir - Selama ini'
+        structured_data:
+          downloaded: Terbanyak Diunduh
+          description: 'Permainan Video Independen (Permainan Video Indie) : Terbanyak Diunduh - Hari ini - 7 hari terakhir - 30 hari terakhir - Selama ini'
+    news:
+      details:
+        meta_tags:
+          news: Berita
+          description: 'Permainan Video Independen (Permainan Video Indie) : Berita - 30 hari terakhir'
+        structured_data:
+          news: Berita
+          description: 'Permainan Video Independen (Permainan Video Indie) : Berita - 30 hari terakhir'
+    filters:
+      chart:
+        most_downloaded: Terbanyak Diunduh
+        voted: Terbanyak Didukung
+        followed: Terbanyak Diikuti
+      downloaded:
+        everytime: Selama ini
+        last_month: 30 hari terakhir
+        last_week: 7 hari terakhir
+        today: Hari ini
+      news:
+        last_commented: Komentar
+        last_updated: Baru Diperbarui
+        latest: Terbaru
+        popular: Populer
+  genres:
+    genre:
+      rpg: Permainan Peran
+      browsergame: Gim browser
+      platformaction: Aksi
+      shootemup: Tembak mereka
+      puzzle: Teka-Teki
+      pointandclick: Point and Click
+      sport: Olahraga
+      fighting: Permainan Pertempuran
+      other: Lainnya
+    genres:
+      all: Semua
+    select:
+      genre: Genre
+  helpers:
+    label:
+      report:
+        broken: Tautan rusak
+        copyright: Melanggar hak saya
+        offensive: Konten bernada kebencian atau menyalahgunakan
+        sexual: Konten seksual
+        spam: Spam atau menyesatkan
+        violent: Konten yang kejam atau menjijikkan
+  home:
+    navigation:
+      home: Beranda
+      news: Berita
+      chart: Peringkat
+      events: Acara
+      downloaded: Terbanyak Diunduh
+      console: Gim Konsol
+      subscriptions: Langganan
+      your_games: Permainan Anda
+      history: Histori
+    landing:
+      last_followed_games_updated: Barangkali terlewat
+      play: Mainkan
+      recommended: Disarankan
+      based_recent_activity: Berdasarkan aktivitas terbaru
+      query_of_the_day_0: Gim yang baru-baru ini mencapai lebih dari 1000 pemain
+      query_of_the_day_1: Gim Bagus yang Belum Pernah Dikomentari
+      query_of_the_day_2: Ulang Tahun
+      query_of_the_day_3: Terbanyak Diikuti - 180 hari terakhir
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Game Papan Peringkat
+      query_of_the_day_6: Berita!
+      downloaded: Terbanyak Diunduh
+      today: Hari ini
+      last_week: 7 hari terakhir
+      last_month: 30 hari terakhir
+      latest: Terbaru
+      show_more: Tampilkan lebih banyak
+    console:
+      details:
+        structured_data:
+          console: Gim Konsol
+          description: 'Permainan Video Independen (Permainan Video Indie) : Mainkan'
+        meta_tags:
+          console: Gim Konsol
+          description: 'Permainan Video Independen (Permainan Video Indie) : Mainkan'
+    subscriptions:
+      subscriptions: Langganan
+      updates: Berita!
+      no_result: Tidak ada hasil
+      no_subscriptions_message: Pengalaman mengakses indiexpo akan bisa lebih optimal jika kamu berlangganan setidaknya 5 gim.
+      players: Pemain
+      subscribers: Pelanggan
+      comments: Komentar
+      details: Ikhtisar
+      show_more: Tampilkan lebih banyak
+    your_games:
+      your_games: Permainan Anda
+      players: Pemain
+      subscribers: Pelanggan
+      comments: Komentar
+      details: Ikhtisar
+      show_more: Tampilkan lebih banyak
+    history:
+      history: Histori
+      score_system_games: Game Papan Peringkat
+      last_commented: Komentar
+      subscriptions: Langganan
+      votes: Beri Dukungan Suara
+  static:
+    about:
+      about: Tentang
+      app: Apl
+      extension: Ekstensi
+      social_networks: Jejaring sosial
+      games: Permainan
+      show_more: Tampilkan lebih banyak
+      details:
+        structured_data:
+          about: Tentang
+          description: indiexpo telah memudahkan ribu orang untuk menemukan, menonton, dan membagikan beragam Game dan Permainan Video Independen.
+        meta_tags:
+          about: Tentang
+          description: indiexpo telah memudahkan ribu orang untuk menemukan, menonton, dan membagikan beragam Game dan Permainan Video Independen.
+    faq:
+      faq: Tanya jawab
+      question_1: Apa itu indiexpo?
+      answer_1: indiexpo telah memudahkan ribu orang untuk menemukan, menonton, dan membagikan beragam Game dan Permainan Video Independen. indiexpo menyediakan forum bagi orang-orang untuk saling berhubungan, memberikan informasi, dan menginspirasi orang lain di seluruh dunia, serta bertindak sebagai platform distribusi bagi pembuat konten asli dan pengiklan, baik yang besar maupun kecil.
+      question_2: Bagaimana cara mendapatkan Poin?
+      answer_2: indiexpo memiliki sistem poin dan tingkat. Jumlah poin yang Anda dapatkan bergantung pada tindakan khusus yang Anda lakukan. Tabel poin di bawah merangkum nilai tindakan untuk tindakan yang berbeda.
+      question_3: Bagaimana cara Menaikkan Level?
+      answer_3: Tingkat adalah cara lain untuk mengetahui seberapa aktifkah Anda (dan orang lain). Semakin banyak poin yang Anda kumpulkan, semakin tinggi peringkat Anda. indiexpo mengenali tingkat prestasi Anda dengan ucapan terima kasih khusus.
+      details:
+        structured_data:
+          faq: Tanya jawab
+          description: Pertanyaan umum adalah daftar pertanyaan dan jawaban yang sering ditanyakan dalam suatu konteks dan tentang topik tertentu.
+        meta_tags:
+          faq: Tanya jawab
+          description: Pertanyaan umum adalah daftar pertanyaan dan jawaban yang sering ditanyakan dalam suatu konteks dan tentang topik tertentu.
+    developers:
+      developers: Pengembang
+      details:
+        structured_data:
+          developers: Pengembang
+          description: Jelajahi Produk Pengembang kami. Statistik, Apl, Ekstensi, Tutorial
+        meta_tags:
+          developers: Pengembang
+          description: Jelajahi Produk Pengembang kami. Statistik, Apl, Ekstensi, Tutorial
+  languages:
+    edit:
+      note: Pilihan ini akan mengubah bahasa situs. Semua teks yang dimasukkan oleh pengguna tidak akan berubah.
+      setlanguage: Pilih bahasa Anda
+  medals:
+    medal:
+      titles:
+        age: "%{score} Bertahun-tahun"
+        cg: Commentator
+        d: Diatas %{score} unduhan
+        dg: The Collector
+        e: I Am Here
+        fans: Diikuti lebih dari %{score} orang
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Tingkat 2
+        level_4: Tingkat 4
+        level_6: Tingkat 6
+        level_10: Tingkat 10
+        level_16: Tingkat 16
+        level_26: Tingkat 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Rating %{score} ke atas
+        king: Terbaik di Genrenya
+        vig: Very Important Game
+  news:
+    form:
+      text: Terbitkan kiriman untuk menarik perhatian pemirsa Anda.
+      hashtag: Kami menyarankan untuk menggunakan tidak lebih dari 2 tagar
+      now_loading: Now Loading...
+      publish: Poskan
+    news:
+      destroy: Hapus
+      destroy_confirm: Kamu yakin?
+    index:
+      players: Pemain
+      subscribers: Pelanggan
+      download: Unduh
+  options:
+    index:
+      dashboard: Dasbor
+      profile: Profil
+      followed_games: Langganan
+      your_games: Permainan Anda
+      settings: Pengaturan
+      logout: Keluar
+  platforms:
+    platforms:
+      all: Semua
+    select:
+      platform: Sistem Operasi
+  public_activities:
+    index:
+      destroy_confirm: Kamu yakin?
+      mark_all_as_read: Tandai Semua Telah Dibaca
+      notifications: Pemberitahuan
+      see_all: Tampilkan lebih banyak
+  public_activities_mailer:
+    notify:
+      hello: Halo %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Urungkan
+  public_activity:
+    base:
+      someone: Seseorang
+    comment:
+      answer:
+        comment_removed: Komentar dihapus
+      create:
+        comment_removed: Komentar dihapus
+    event_subscription:
+      create:
+        subscription_removed: Langganan dihentikan
+    following:
+      create:
+        following_removed: Tidak lagi mengikuti
+    game:
+      removed_game: Permainan yang dihapus
+    news:
+      create:
+        news_removed: Berita dihapus
+    rating:
+      create:
+        missing_rating: Rating tidak ada
+    user:
+      missing_user: User tidak ada
+      verified: Terverifikasi
+  reports:
+    new:
+      details: 'Tentang:'
+      question: Apa masalahnya?
+      send: Kirim
+      title: 'Loporan: %{game}'
+      report_submitted: Terima kasih sudah memberi tahu kami.
+      report_submitted_message: Masukan Anda akan membantu sistem kami mempelajari saat ada yang tidak beres.
+  scores:
+    score:
+      points: Poin
+      delete: Hapus
+      destroy_confirm: Kamu yakin?
+      verified: Terverifikasi
+  search:
+    games:
+      filters: Filter
+      adult_content: Konten sensitif
+      mobile_first: Bisa dimainkan di ponsel
+      no_result: Tidak ada hasil
+      search: Telusuri
+      search_placeholder: Telusuri...
+      search_tools: Alat pencarian
+      language: Bahasa
+      genre: Genre
+      platform: Sistem Operasi
+      recommended: Disarankan
+      tool: Alat
+      status: Status
+      games: Permainan
+      score_system_games: Game Papan Peringkat
+      year: Tahun
+    details:
+      meta_tags:
+        search: Telusuri
+        description: "Telusuri... (Permainan, #Tagar, @Profil, Alat pencarian, Bahasa, Genre, Tahun, Sistem Operasi, Alat, Status)"
+      structured_data:
+        search: Telusuri
+        description: "Telusuri... (Permainan, #Tagar, @Profil, Alat pencarian, Bahasa, Genre, Tahun, Sistem Operasi, Alat, Status)"
+  settings:
+    edit:
+      settings: Pengaturan
+    form:
+      language: Bahasa (Language)
+      setlanguage: Pilih bahasa Anda
+      sounds: Suara
+      sounds_description: Putar suara ketika pemberitahuan baru diterima
+      adult_content: Konten sensitif
+      label_on: 'Aktif'
+      label_off: 'Nonaktif'
+      email_notifications: Pemberitahuan email
+      general: Umum
+      mail_comment_answer: Ada yang menanggapi komentarmu
+      mail_comment_mention: Sebutan
+      mail_event_subscription_create: Ada yang berlangganan terhadap acaramu
+      followed_games: Langganan
+      mail_comment_follower_create: Ada yang mengomentari gim yang kamu ikuti
+      mail_follower_news_create: Ada pembaruan untuk gim yang kamu ikuti
+      mail_news_create: Ada pembaruan untuk gim yang kamu ikuti
+      mail_follower_game_create: Seorang pengguna yang kamu ikuti membuat gim baru
+      mail_game_create: Seorang pengguna yang kamu ikuti membuat gim baru
+      mail_user_game_new_leader: Kamu adalah Pemain Terbaik dari suatu gim
+      mail_user_game_old_leader: Kamu bukan lagi Pemain Terbaik dari suatu gim
+      mail_user_game_other_leader: Ada Pemain Terbaik baru
+      your_games: Permainan Anda
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: Saya diikuti oleh orang baru
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a medal
+      mail_user_game_dev_leader: New Leader on your game
+      account_data: Data Akun
+      email: Email
+      password: Kata Sandi
+      edit: Sunting
+      stats: Statistik
+      comments: Komentar
+      subscriptions: Langganan
+      show_more: Tampilkan lebih banyak
+      save: Simpan Perubahan
+      delete_account: Hapus Akun Selamanya
+  sitemaps:
+    index:
+      active_events: Yang Akan Datang
+      inactive_events: Lampau
+      new_events: Buat Acara
+      recover: Dapatkan kata sandi
+      sign_in: Masuk
+      sign_up: Mendaftar
+      sitemap: Peta Situs
+    details:
+      meta_tags:
+        sitemap: Peta Situs
+        description: Peta Situs adalah daftar halaman indiexpo yang bisa diakses oleh crawler atau pengguna.
+      structured_data:
+        sitemap: Peta Situs
+        description: Peta Situs adalah daftar halaman indiexpo yang bisa diakses oleh crawler atau pengguna.
+  subscriptions:
+    subscribe_button:
+      subscribe: Langganan
+    unsubscribe_button:
+      unsubscribe: Urungkan
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Alat
+  users:
+    show:
+      page_title: "%{username} berada di indiexpo"
+      online: On line
+      chart: Peringkat
+      last_month: 30 hari terakhir
+      level: Tingkat
+      games: Permainan
+      score_system_games: Game Papan Peringkat
+      show_more: Tampilkan lebih banyak
+      subscriptions: Langganan
+      last_commented: Komentar
+      history: Histori
+      other_players: Pemain Lain
+      verified: Terverifikasi
+    details:
+      structured_data:
+        developer: Pengembang
+        gamer: Gamer
+      meta_tags:
+        about: Tentang
+        description: Profil, Tempat Trofi, Permainan, Langganan, Game Papan Peringkat, Komentar & Histori
+  me:
+    menubar:
+      profile: Profil
+      event_subscriptions: Acara Saya
+      followed_games: Langganan
+      your_games: Permainan Anda
+      settings: Pengaturan
+    followed_games:
+      no_result: Tidak ada hasil
+      no_subscriptions_message: Pengalaman mengakses indiexpo akan bisa lebih optimal jika kamu berlangganan setidaknya 5 gim.
+    games:
+      your_games: Permainan Anda
+      visits: Penayangan
+      downloads_count: Pemain
+      subscribers: Pelanggan
+      totals: Total
+      no_result: Tidak ada hasil
+      upload: Unggah
+  levels:
+    index:
+      level: Tingkat
+      user_chart: Peringkat
+      last_month: 30 hari terakhir
+      gems: Batu Permata
+      trophy_case: Tempat Trofi
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Terverifikasi
+    goals:
+      goals: Sasaran
+    stats:
+      stats: Statistik
+      comments: Komentar
+      subscriptions: Langganan
+      your_games: Permainan Anda
+      votes: Beri Dukungan Suara
+  warning:
+    index:
+      warning: Peringatan
+      destroy: Hapus
+      destroy_confirm: Kamu yakin?
+      delete_account: Menghapus akun Anda bersifat permanen.
+      delete_account_description: Jika Anda menghapus akun indiexpo, Anda tidak akan dapat mengambil konten atau informasi yang sudah dibagikan di indiexpo.

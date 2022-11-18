@@ -1,0 +1,5 @@
+<div class="<%= @platform.try(:id) == platform.id ? 'hoveroff' : 'hoveron' %>">
+  <div class="Write20">
+    <%= link_to platform.name, send("#{action_name}_games_url", platform: platform.slug), data: { pjax: true } %>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+<div class="AreaNotifications">
+	<div class="notifications">
+		<div class="WidFlo">
+			<div class="Write30" style="margin-top: 0px;"><%= t('.monetisation') %></div>
+			<div class="close-notifications-icon clickable" alt="close" data-close-popup="true"></div>
+		</div>
+		<div class="notifications_body">
+			<marquee>During this summer we will support over 50 developers!</marquee>
+			<div class="Write20">Earn Money with your Free Games!</div>
+			<div class="clear"></div>
+
+			<div class="Write20">Reputation: <font class="textc60">Good</font></div>
+			<div class="clear"></div>
+
+			<!-- Checking Requirements -->
+			<% if @game.downloads_count >= 500 && @game.user.level >= 10 && @game.followings_count >= 15 && @game.comments.size >= 20 %>
+				<div class="Write20">Requirements: <font class="textc60">Good</font></div>
+				<div class="clear"></div>
+			<% else %>
+				<div class="Write20">Requirements:</div>
+				<div class="clear"></div>
+				<div class="table">
+					<% if @game.downloads_count >= 500 %>
+						<%= image_tag 'Images/icons/mini_v.png' %>
+						<font class="textc60">
+					<% else %>
+						<%= image_tag 'Images/icons/mini_x.png' %>
+						<font>
+					<% end %>
+					<%= @game.downloads_count %></font>/
+					<font class="textc60">500</font> <%= t('.players') %>
+					<br>
+					<% if @game.followings_count >= 15 %>
+						<%= image_tag 'Images/icons/mini_v.png' %>
+						<font class="textc60">
+					<% else %>
+						<%= image_tag 'Images/icons/mini_x.png' %>
+						<font>
+					<% end %>
+					<%= @game.followings_count %></font>/
+					<font class="textc60">15</font> <%= t('.subscribers') %>
+					<br>
+					<% if @game.comments.size >= 20 %>
+						<%= image_tag 'Images/icons/mini_v.png' %>
+						<font class="textc60">
+					<% else %>
+						<%= image_tag 'Images/icons/mini_x.png' %>
+						<font>
+					<% end %>
+					<%= @game.comments.size %></font>/
+					<font class="textc60">20</font> <%= t('.comments') %>
+					<br>
+					<% if @game.user.level >= 10 %>
+						<%= image_tag 'Images/icons/mini_v.png' %>
+					<% else %>
+						<%= image_tag 'Images/icons/mini_x.png' %>
+					<% end %>
+					<%= t('.level') %> 10
+					<br>
+					PayPal Account
+				</div>
+			<% end %>
+<!--
+			<div class="progress_bar">
+				<span style="width: 87%"></span>
+			</div>
+-->
+			<div class="Write20">Prohibitions:</div>
+			<div class="clear"></div>
+			<div class="table">
+				<%= t('.offensive') %><br>
+				<%= t('.sexual') %><br>
+				<%= t('.spam') %><br>
+				<%= t('.violent') %>
+			</div>
+
+			<% if @game.downloads_count >= 500 && @game.user.level >= 10 && @game.followings_count >= 15 && @game.comments.size >= 20 %>
+				<% if !@game.monetisation.present? %>
+					<br><hr>
+					<%= form_for(Monetisation.new, url: game_monetisations_path(@game), method: :post, html: { multipart: true }) do |f| %>
+						<!-- Select Prizes-->
+						<div class="Write20">Prize 1 - (1 $)</div>
+						<div class="clear"></div>
+						<div class="table">
+							<%= t('.description') %> <br>
+							<%= f.text_field :description, required: true %>
+							<br><br>
+							<%= f.file_field :prize_one_file, required: true %>
+						</div>
+						<div class="Write20">Prize 2 - (2.5 $)</div>
+						<div class="clear"></div>
+						<div class="table">
+							Secret Prize <br>
+							<%= f.file_field :prize_two_file, required: true %>
+						</div>
+						<div class="Write20">PayPal Account</div>
+						<div class="clear"></div>
+						<div class="table">
+							<%= f.text_field :paypal_account, required: true %>
+						</div>
+						<hr>
+
+						<!-- Send Request-->
+						<%= f.submit t('.send'), class: 'Botton WidFlo' %>
+					<% end %>
+				<% else %>
+					<br><hr>
+					<%= form_for(@game.monetisation, url: game_monetisation_path(@game, @game.monetisation), method: :put, html: { multipart: true }) do |f| %>
+						<!-- Select Prizes-->
+						<div class="Write20">Prize 1 - (1 $)</div>
+						<div class="clear"></div>
+						<div class="table">
+							<%= t('.description') %> <br>
+							<%= f.text_field :description, required: true %>
+							<br><br>
+							<%= f.file_field :prize_one_file %>
+							<br><br>
+							<%= link_to "Preview", @game.monetisation.prize_one_file.url, download: '' %>
+						</div>
+						<div class="Write20">Prize 2 - (2.5 $)</div>
+						<div class="clear"></div>
+						<div class="table">
+							Secret Prize <br>
+							<%= f.file_field :prize_two_file %>
+							<br><br>
+							<%= link_to "Preview", @game.monetisation.prize_two_file.url, download: '' %>
+						</div>
+						<div class="Write20">PayPal Account</div>
+						<div class="clear"></div>
+						<div class="table">
+							<%= f.text_field :paypal_account, required: true %>
+						</div>
+						<hr>
+
+						<!-- Send Request-->
+						<%= f.submit 'Update monetisation', class: 'Botton WidFlo' %>
+					<% end %>
+				<% end %>
+
+				<!-- User Request List-->
+				<!-- IF THE USERS REQUEST ARE > 0 -->
+				<% if @supporter_requests.present? %>
+					<div class="Write20">They are waiting to receive the Prizes</div>
+					<div class="WidFlo"><font class="textc60">IMPORTANT</font>: Remember to check first your PayPal account and then confirm the Prize</div>
+					<div class="clear"></div>
+					<div class="table">
+						<% @supporter_requests.each do |supporter| %>
+							<%= supporter.user.username %> <%= link_to "Confirm and Send PRIZE #{supporter.prize}", supporters_update_path(supporter_id: supporter.id), class: "right Botton", data: { analytics_click: 'Send Prize #{supporter.prize}' } %>
+							<%= link_to "Remove", supporters_destroy_path(supporter_id: supporter.id), method: :delete, class: 'ShowMore' %>
+							<div class="clear"></div>
+						<% end %>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="ShowMore" style="cursor: not-allowed;">Still not Ready</div>
+			<% end %>
+		</div>
+	</div>
+</div>

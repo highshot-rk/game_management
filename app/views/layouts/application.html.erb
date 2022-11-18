@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <title>
+      <% if content_for?(:title) %>
+				<%= content_for(:title) %> - <%= t('.indie_games') %>
+      <% else %>
+        <%= "(#{current_user.notifications_count})" if current_user&.notifications_count.to_i > 0 %> indiexpo
+      <% end %>
+    </title>
+    <%= render 'application/head' %>
+    <%= content_for :head %>
+    <%= content_for(:meta_tags) || render('meta_tags') %>
+    <%= content_for(:structured_data) || render('structured_data') %>
+    <%= action_cable_meta_tag %>
+  </head>
+  <body data-notification-sound="<%= current_user.setting.notification_sound if user_signed_in? && current_user.setting.present? %>">
+    <link rel="publisher" href="https://plus.google.com/+indiexpo">
+
+    <%= render 'application/navbar' %>
+    <%= content_for(:header) || render('blank') %>
+
+		<div class="Area mobile_only">
+      <ul>
+        <%= content_for :menubar %>
+      </ul>
+    </div>
+
+    <div class="List" style="padding-top: 0px;">
+      <%= yield %>
+    </div>
+
+    <%= render 'application/tail' %>
+  </body>
+</html>

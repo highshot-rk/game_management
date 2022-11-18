@@ -1,0 +1,1 @@
+<%= form.collection_select defined?(name) || :tool, Tool.all, :id, :name, include_blank: t('.tool'), selected: search_params[:tool] %>

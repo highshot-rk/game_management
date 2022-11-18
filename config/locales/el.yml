@@ -1,0 +1,940 @@
+---
+el:
+  active_admin:
+    dashboard: Dashboard
+  activerecord:
+    attributes:
+      event:
+        description: Περιγραφή
+        end_date: End Date
+        prizes: Βραβεία
+        rules: Κανόνες
+        screen: Στιγμιότυπο
+        start_date: Start Date
+        title: Τίτλος
+        website: Ιστότοπος
+      game:
+        author: Δημιουργός
+        description: Περιγραφή
+        genre: Τύπος
+        title: Τίτλος
+        website: Ιστότοπος
+      user:
+        username_or_email: Όνομα χρήστη/Email
+        password: Κωδικός πρόσβασης
+        username: Όνομα χρήστη
+        characters_minimum: "%{minimum_password_length} or more characters"
+        email: Email
+        terms_of_service: Συμφωνώ με τους όρους άδειας
+    errors:
+      messages:
+        exclude_domain: '"%{value}" is not allowed'
+        include_domain: domain must be in %{list}
+        invalid_datetime: is not a valid date
+        url: is not a valid url
+      models:
+        comment:
+          attributes:
+            base:
+              check_spam: Το κάνεις πάρα πολύ. Δοκίμασε ξανά σε %{cooloff} λεπτά.
+        news:
+          attributes:
+            base:
+              check_spam: Το κάνεις πάρα πολύ. Δοκίμασε ξανά σε %{cooloff} λεπτά.
+        game:
+          attributes:
+            artworks:
+              too_long: must be %{count} at most
+            download_links:
+              links_repetition: can't be duplicate
+              too_long: must be %{count} at most
+              too_short: must be at least one
+            game_languages:
+              too_short: must be at least one
+            screens:
+              too_long: must be %{count} at most
+            videos:
+              too_long: must be no more than one
+            base:
+              limit_games_uploaded: Μπορείτε μόνο να ανεβάσετε 2 παιχνίδια ανά 24 ώρες
+        user:
+          attributes:
+            username:
+              invalid: can only contain alphanumeric characters (A–Z, 0–9)
+    models:
+      game_languages: Γλώσσες
+  activity:
+    comment:
+      answer: 'answered your comment on '
+      create: 'added a new comment on '
+      follower_create: 'added a new comment on '
+      mention: 'mentioned you in '
+    event_subscription:
+      create: 'has been subscribed to '
+    following:
+      create: 'started to follow '
+    game:
+      create: added a new game!
+      destroy: 'removed his game '
+      update: updated his game
+    medal:
+      create: " received the medal "
+    news:
+      create: 'added a news on '
+    rating:
+      create: 'voted '
+    user:
+      level: Το επίπεδο ανέβηκε κατά %{level}
+      score: Το σκορ ανέβηκε κατά + %{score}
+      new_title: New Title
+      prizes: Βραβεία
+      game_new_leader: You are the Best Player of %{game}!
+      game_old_leader: You were exceeded! %{user} is the new leader of %{game}! Fight for the throne!
+      game_other_leader: "%{user} is the new leader of %{game}! Fight for the throne!"
+      game_dev_leader: "%{user} is the new leader of %{game}!"
+  application:
+    cookie_law:
+      show_more: Εμφάνιση περισσότερων
+      ok: Ok
+      setlanguage: Επιλέξτε τη γλώσσα σας
+    footer:
+      about: Πληροφορίες
+      contact_us: Επικοινωνήστε μαζί μας
+      language: Γλώσσα (Language)
+      faq: FAQ
+      feed_rss: Feed RSS
+      developers: Προγραμματιστές
+      sitemap: Site Map
+      terms_and_conds: Όροι
+      blog: Blog
+    markdown_instructions:
+      formatting_help: βοήθεια μορφοποίησης
+      you_type: γράφεις
+      you_see: βλέπεις
+      italics: πλάγια
+      bold: έντονα
+      hashtag: Hashtag
+      profile: Προφίλ
+      item_one: αντικείμενο 1
+      item_two: αντικείμενο 2
+      item_three: αντικείμενο 3
+      spoiler: Spoiler
+    menubar:
+      home: Αρχική σελ.
+      chart: Διάγραμμα
+      downloaded: Τα πιο κατεβασμένα
+      events: Εκδηλώσεις
+      language: Γλώσσα
+      news: News
+    meta_tags:
+      description: Η indiexpo επιτρέπει σε χιλιάδες ανθρώπους να ανακαλύψουν, δουν και να μοιραστούν Indie και πρωτότυπα παιχνίδια.
+      keywords: indiexpo, indie games, Παιχνίδια, Λήψη, Play, Upload, Παίκτες, Προγραμματιστές, Εκδηλώσεις, Προκλήσεις, Leaderboard Games, Τι είναι δημοφιλές, Νέες κυκλοφορίες, Gaming Creator on the Rise
+    navbar:
+      register: Εγγραφή
+      login: Σύνδεση
+      search: "Αναζήτηση... (Παιχνίδια, #Hashtags, @Προφίλς)"
+      upload: Upload
+      level_up: Level Up!
+    slideshow_mobile:
+      show_more: Εμφάνιση περισσότερων
+    structured_data:
+      description: Η indiexpo επιτρέπει σε χιλιάδες ανθρώπους να ανακαλύψουν, δουν και να μοιραστούν Indie και πρωτότυπα παιχνίδια.
+      keywords: indiexpo, indie games, Παιχνίδια, Λήψη, Play, Upload, Παίκτες, Προγραμματιστές, Εκδηλώσεις, Προκλήσεις, Leaderboard Games, Τι είναι δημοφιλές, Νέες κυκλοφορίες, Gaming Creator on the Rise
+      games: Παιχνίδια
+    terms:
+      terms_and_conditions: Όροι
+  comments:
+    answers:
+      more_comments: Εμφάνιση περισσότερων
+    comment:
+      answer: Απάντηση
+      answers:
+        few: Προβολή %{count} απαντήσεων
+        many: Προβολή %{count} απαντήσεων
+        one: Προβολή απάντησης
+        other: Προβολή %{count} απαντήσεων
+      destroy: Κατάργηση
+      destroy_confirm: Είστε σίγουροι;
+      level: Επίπεδο
+      new: Νέο
+      verified: Επαληθεύτηκε
+    destroy:
+      destroy_failure: Could not destroy the comment
+    form:
+      text: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      now_loading: Now Loading...
+      publish: Post
+  cookie_law: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short_date: "%-m/%-d"
+  devise:
+    sessions:
+      new:
+        login: Σύνδεση
+        recover_password: Αποστολή νέου κωδικού
+        send_email_again: Ξαναστείλε το email
+        details:
+          structured_data:
+            login: Σύνδεση
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+          meta_tags:
+            login: Σύνδεση
+            description: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+    confirmations:
+      new:
+        email: Email
+        send_email_again: Ξαναστείλε το email
+        details:
+          structured_data:
+            send_email_again: Ξαναστείλε το email
+            description: Επιβεβαιώστε το email σας
+          meta_tags:
+            send_email_again: Ξαναστείλε το email
+            description: Επιβεβαιώστε το email σας
+    mailer:
+      confirmation_instructions:
+        welcome: Συμμετέχετε και απολαύστε
+        title: 'Μπορείτε να επιβεβαιώσετε τη διεύθυνση email του λογαριασμού σας μέσω του συνδέσμου παρακάτω:'
+        confirm_account: Επιβεβαιώστε το email σας
+        text_1: When you're signed in to indiexpo, you're able to make the most out of your experience.
+        text_2: There's a lot to see here, with lots of folks creating amazing stuff. Let folks know what you think!
+      reset_password_instructions:
+        change_password: Αλλαγή του κωδικού πρόσβασής μου
+        ignore_email: Αν δεν το ζητήσατε εσείς, παρακαλώ αγνοήστε αυτό το email.
+        reset_info: Ο κωδικός πρόσβασής σας δεν θα αλλάξει μέχρι να χρησιμοποιήσετε τον σύνδεσμο παραπάνω και δημιουργήσετε ένα νέο.
+        title: Κάποιος έχει αιτηθεί ένα σύνδεσμο για αλλαγή του κωδικού πρόσβασής σας και εσείς μπορείτε να το κάνετε αυτό μέσω του συνδέσμου παρακάτω.
+      unlock_instructions:
+        unlock_account: Ξεκλείδωμα λογαριασμού
+    passwords:
+      new:
+        recover_password: Αποστολή νέου κωδικού
+        email: Email
+        send: Send
+        details:
+          structured_data:
+            recover_password: Αποστολή νέου κωδικού
+            description: Enter an email that you can check now
+          meta_tags:
+            recover_password: Αποστολή νέου κωδικού
+            description: Enter an email that you can check now
+      edit:
+        change_password: Αλλαγή του κωδικού πρόσβασής μου
+        new_password: Νέος κωδικός πρόσβασης
+        confirm_new_password: Επιβεβαίωση νέου κωδικού πρόσβασης
+    registrations:
+      new:
+        register: Εγγραφή
+        details:
+          structured_data:
+            register: Εγγραφή
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+          meta_tags:
+            register: Εγγραφή
+            description: When you're signed in to indiexpo, you're able to make the most out of your experience.
+      edit:
+        change_password: Αλλαγή του κωδικού πρόσβασής μου
+        change_email: Change My Email
+        new_password: Νέος κωδικός πρόσβασης
+        confirm_new_password: Επιβεβαίωση νέου κωδικού πρόσβασης
+        current_password: Τρέχων κωδικός πρόσβασης
+        current_email: Current Email Address
+        new_email: New Email Address
+        save: Αποθήκευση αλλαγών
+    shared:
+      menubar:
+        login: Σύνδεση
+        recover_password: Αποστολή νέου κωδικού
+        register: Εγγραφή
+        send_email_again: Ξαναστείλε το email
+  download_links:
+    download_link:
+      download: Λήψη
+  errors:
+    messages:
+      not_saved: Failed to save
+  events:
+    events:
+      details:
+        meta_tags:
+          events: Εκδηλώσεις & Προκλήσεις
+          description: 'Indie Games : Εκδηλώσεις & Προκλήσεις - Upcoming & Past'
+        structured_data:
+          events: Εκδηλώσεις & Προκλήσεις
+          description: 'Indie Games : Εκδηλώσεις & Προκλήσεις - Upcoming & Past'
+    active_selector:
+      active: Upcoming
+      inactive: Past
+    edit:
+      destroy: Κατάργηση
+      destroy_confirm: Είστε σίγουροι;
+    end_after_start: should be after start date
+    event_types:
+      all: Όλα
+      contest: Διαγωνισμός
+      mini_contest: Μίνι Διαγωνισμός
+      new: Create Event
+      other: Άλλο
+    form:
+      language: Γλώσσα
+      publish: Post
+      type: Τύπος
+    menubar:
+      details: Overview
+      edit: Επεξεργασία
+    index:
+      events: Εκδηλώσεις
+      challenges: Προκλήσεις
+      champions: Πρωταθλητές
+      points: Πόντοι
+      show_more: Εμφάνιση περισσότερων
+    new:
+      event: Εκδήλωση
+    share:
+      share: Κοινοποίηση
+      email: Email
+      qrcode: Κώδικας QR
+    show:
+      description: Περιγραφή
+      ended: Inactive
+      ends: Έως
+      from: Από
+      genre: Τύπος
+      language: Γλώσσα
+      prizes: Βραβεία
+      rules: Κανόνες
+      share: Κοινοποίηση
+      subscribers: Εγγεγραμμένοι
+      to: To
+      website: Ιστότοπος
+  feeds:
+    index:
+      feed_rss: Feed RSS
+      events: 'Indie Games : Εκδηλώσεις'
+      latest: 'Indie Games : Νέες κυκλοφορίες'
+      popular: 'Indie Games : Τι είναι δημοφιλές'
+      last_updated: 'Indie Games : Πρόσφατα ενημερωμένα'
+    details:
+      meta_tags:
+        feed_rss: Feed RSS
+        description: 'Indie Games : Feed RSS - Εκδηλώσεις - Νέες κυκλοφορίες - Τι είναι δημοφιλές - Πρόσφατα ενημερωμένα'
+      structured_data:
+        feed_rss: Feed RSS
+        description: 'Indie Games : Feed RSS - Εκδηλώσεις - Νέες κυκλοφορίες - Τι είναι δημοφιλές - Πρόσφατα ενημερωμένα'
+  layouts:
+    application:
+      indie_games: Indie Games
+    game:
+      play: Play
+      download: Λήψη
+      new: Νέο
+      updates: Updates!
+      show_more: Εμφάνιση περισσότερων
+      adult_content_message_html: You must be at least eighteen years old to view this content.</br> Are you over eighteen and willing to see adult content?
+      yes: Yes
+      no: No
+  games:
+    game:
+      play: Play
+      download: Λήψη
+      new: Νέο
+      updates: Updates!
+      chart: Διάγραμμα
+      verified: Επαληθεύτηκε
+    destroy:
+      destroyed: Deleted
+    details:
+      game_header:
+        downloads_count: Παίκτες
+      game_menu:
+        comments: σχόλια
+        details: Overview
+        updates: Updates
+        edit: Επεξεργασία
+        statistics: Στατιστικά
+      structured_data:
+       games: Παιχνίδια
+       developer: Δημιουργός
+      index:
+        videogame: Βιντεοπαιχνίδι
+        published_by: 'Δημοσιεύτηκε από '
+        edit: Επεξεργασία
+        statistics: Στατιστικά
+        players: Παίκτες
+        news: News
+        no_news: No news
+        website: Ιστότοπος
+        recommended: Προτεινόμενα
+    edit:
+      edit: Επεξεργασία
+      destroy: Κατάργηση
+      destroy_confirm: Είστε σίγουροι;
+    embed_popup:
+      embed: Ενσωμάτωση
+      preview: Preview
+    record_chart:
+      chart: Διάγραμμα
+      login: Σύνδεση
+      score_system_games: Leaderboard Games
+    followers_list:
+      subscribers: Εγγεγραμμένοι
+      verified: Επαληθεύτηκε
+    players_list:
+      downloads_count: Παίκτες
+      last_week: Last 7 Days
+      no_logged_user: Επισκέπτης
+      no_result: No results
+      verified: Επαληθεύτηκε
+    form:
+      add_external_link: Add external link
+      add_file: Add file
+      html5_description: 'For HTML5/Flash/WebGL Games: Upload a ZIP file containing your game. There must be an index.html file in the ZIP.'
+      extra: Extra
+      enablable_indiepad: Enable indiepad support (only for HTML5/WebGL Games)
+      indiepad_description: Μπορείς να κατεβάσεις την εφαρμογές στο κινητό σου και να την χρησιμοποιήσεις ως gamepad για διάφορα παιχνίδια στην indiexpo. Μόνο για Android.
+      long_description: Μεγάλη περιγραφή
+      artworks: Artworks
+      delete: Κατάργηση
+      downloads: Downloads
+      genre: Τύπος
+      language: Γλώσσα
+      publish: Post
+      remove_file: Κατάργηση
+      remove_url: Κατάργηση
+      restore: Undo
+      screens: Στιγμιότυπα
+      status: Status
+      complete: Complete
+      demo: Demo
+      minigame: Minigame
+      tool: Εργαλεία
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      adult_content: Adults Contents
+      mobile_first: Βελτιωμένο για κινητές συσκευές
+      now_loading: Now Loading...
+      video: Video
+    monetisation:
+      monetisation: Monetisation
+      players: Παίκτες
+      level: Επίπεδο
+      subscribers: Εγγεγραμμένοι
+      comments: σχόλια
+      offensive: Hateful or abusive content
+      sexual: Sexual content
+      spam: Spam or misleading
+      violent: Violent or repulsive content
+      description: Περιγραφή
+      send: Send
+    new:
+      upload: Upload
+    share:
+      share: Κοινοποίηση
+      email: Email
+      qrcode: Κώδικας QR
+    show:
+      play: Play
+      embed: Ενσωμάτωση
+      share: Κοινοποίηση
+      monetisation: Monetisation
+      download: Λήψη
+      subscribe: Εγγραφή
+      subscribed: Subscribed
+      subscribers: Εγγεγραμμένοι
+      comment: σχόλια
+      description: Περιγραφή
+      published_on: Published on
+      adult_content: Adults Contents
+      complete: Complete
+      demo: Demo
+      minigame: Minigame
+      language: Γλώσσα
+      first_to_comment: Γράψτε ένα σχόλιο...
+      mobile_first: Βελτιωμένο για κινητές συσκευές
+      more_comments: Εμφάνιση περισσότερων
+      screens: Στιγμιότυπα
+      video: Video
+      top_player: Top Player
+      epic_win: Epic Win!
+      on_the_rise: Gaming Creator on the Rise
+      verified: Επαληθεύτηκε
+    stats:
+      statistics: Στατιστικά
+      comments: σχόλια
+      monetisation: Monetisation
+      daily: Today
+      days: Days
+      date: Date
+      downloads: Παίκτες
+      followings: Εγγεγραμμένοι
+      chart: Διάγραμμα
+      most_rated: Κορυφαία
+      followings_chart: Most Followed
+      most_downloaded: Τα πιο κατεβασμένα
+      last_week: Last week
+      this_week: This week
+      last_6_months: Last 6 Months
+      totals: Totals
+      visits: Προβολές
+      active_views: Active Views
+      votes: Votes
+      votes_averange: Average
+      other: Άλλο
+      engagement: Engagement
+      show_more: Εμφάνιση περισσότερων
+      qrcode: Κώδικας QR
+      warning: Warning
+    support:
+      prizes: Βραβεία
+      donate: 'Donate %{price}$'
+    tips:
+      enhancements: Enhancements
+      only_to_you: Ορατό μόνο σε εσάς
+  games_sections:
+    chart:
+      last_6_months: Last 6 Months
+      details:
+        meta_tags:
+          chart: Διάγραμμα
+          description: 'Indie Games : Τα πιο κατεβασμένα - Κορυφαία - Most Followed'
+        structured_data:
+          chart: Διάγραμμα
+          description: 'Indie Games : Τα πιο κατεβασμένα - Κορυφαία - Most Followed'
+    downloaded:
+      details:
+        meta_tags:
+          downloaded: Τα πιο κατεβασμένα
+          description: 'Indie Games : Τα πιο κατεβασμένα - Today - Last 7 Days - Last 30 Days - Lifetime'
+        structured_data:
+          downloaded: Τα πιο κατεβασμένα
+          description: 'Indie Games : Τα πιο κατεβασμένα - Today - Last 7 Days - Last 30 Days - Lifetime'
+    news:
+      details:
+        meta_tags:
+          news: News
+          description: 'Indie Games : News - Last 30 Days'
+        structured_data:
+          news: News
+          description: 'Indie Games : News - Last 30 Days'
+    filters:
+      chart:
+        most_downloaded: Τα πιο κατεβασμένα
+        voted: Κορυφαία
+        followed: Most Followed
+      downloaded:
+        everytime: Lifetime
+        last_month: Last 30 Days
+        last_week: Last 7 Days
+        today: Today
+      news:
+        last_commented: σχόλια
+        last_updated: Πρόσφατα ενημερωμένα
+        latest: Νέες κυκλοφορίες
+        popular: Τι είναι δημοφιλές
+  genres:
+    genre:
+      rpg: Ρόλων
+      browsergame: Browser Game
+      platformaction: Platform/Δράση
+      shootemup: Shoot em Up
+      puzzle: Πάζλ
+      pointandclick: Point and Click
+      sport: Αθλητισμός
+      fighting: Μάχης
+      other: Άλλο
+    genres:
+      all: Όλα
+    select:
+      genre: Τύπος
+  helpers:
+    label:
+      report:
+        broken: Broken Link
+        copyright: Παραβιάζει τα δικαιώματά μου
+        offensive: Κακοποίηση ανηλίκων
+        sexual: Σεξουαλικό περιεχόμενο
+        spam: Spam or misleading
+        violent: Βίαιο/αποκρουστικό περιεχόμενο
+  home:
+    navigation:
+      home: Αρχική σελ.
+      news: News
+      chart: Διάγραμμα
+      events: Εκδηλώσεις
+      downloaded: Τα πιο κατεβασμένα
+      console: Console
+      subscriptions: Εγγραφές
+      your_games: Your Games
+      history: Ιστορικό
+    landing:
+      last_followed_games_updated: In case you missed it
+      play: Play
+      recommended: Προτεινόμενα
+      based_recent_activity: Based on your recent activity
+      query_of_the_day_0: Games that recently gained over 1,000 Players
+      query_of_the_day_1: Good Games Never Commented
+      query_of_the_day_2: Anniversary
+      query_of_the_day_3: Most Followed - Last 6 Months
+      query_of_the_day_4: indiepad
+      query_of_the_day_5: Leaderboard Games
+      query_of_the_day_6: Updates!
+      downloaded: Τα πιο κατεβασμένα
+      today: Today
+      last_week: Last 7 Days
+      last_month: Last 30 Days
+      latest: Νέες κυκλοφορίες
+      show_more: Εμφάνιση περισσότερων
+    console:
+      details:
+        structured_data:
+          console: Console
+          description: 'Indie Games : Play'
+        meta_tags:
+          console: Console
+          description: 'Indie Games : Play'
+    subscriptions:
+      subscriptions: Εγγραφές
+      updates: Updates!
+      no_result: No results
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+      players: Παίκτες
+      subscribers: Εγγεγραμμένοι
+      comments: σχόλια
+      details: Overview
+      show_more: Εμφάνιση περισσότερων
+    your_games:
+      your_games: Your Games
+      players: Παίκτες
+      subscribers: Εγγεγραμμένοι
+      comments: σχόλια
+      details: Overview
+      show_more: Εμφάνιση περισσότερων
+    history:
+      history: Ιστορικό
+      score_system_games: Leaderboard Games
+      last_commented: σχόλια
+      subscriptions: Εγγραφές
+      votes: Votes
+  static:
+    about:
+      about: Πληροφορίες
+      app: Apps
+      extension: Extensions
+      social_networks: Social Networks
+      games: Παιχνίδια
+      show_more: Εμφάνιση περισσότερων
+      details:
+        structured_data:
+          about: Πληροφορίες
+          description: Η indiexpo επιτρέπει σε χιλιάδες ανθρώπους να ανακαλύψουν, δουν και να μοιραστούν Indie και πρωτότυπα παιχνίδια.
+        meta_tags:
+          about: Πληροφορίες
+          description: Η indiexpo επιτρέπει σε χιλιάδες ανθρώπους να ανακαλύψουν, δουν και να μοιραστούν Indie και πρωτότυπα παιχνίδια.
+    faq:
+      faq: FAQ
+      question_1: Τι είναι το indiexpo;
+      answer_1: Η indiexpo επιτρέπει σε χιλιάδες ανθρώπους να ανακαλύψουν, δουν και να μοιραστούν Indie και πρωτότυπα παιχνίδια. Η indiexpo παρέχει έναν χώρο για τον κόσμο να επικοινωνήσει με άλλους, να ενημερώσει και να εμπνεύσει άλλους σε όλη την υφήλιος και διενεργεί σαν ένα distribution platform για δημιουργούς πρωτοτύπου περιεχομένου, και μικρούς ή μεγάλους συμβούλους.
+      question_2: Πώς κερδίζω πόντους;
+      answer_2: Indiexpo has a system of points and levels. The number of points you get depends on the specific action you take. The points table below summarizes the point values for different actions.
+      question_3: Πώς ανεβαίνω επίπεδο;
+      answer_3: Levels are another way to keep track of how active you (and others) have been. The more points you accumulate, the higher your level. Indiexpo recognizes your level achievements with our special brand of thank you's.
+      details:
+        structured_data:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+        meta_tags:
+          faq: FAQ
+          description: The FAQ is a list of frequently asked questions (FAQs) and answers about the features of indiexpo.
+    developers:
+      developers: Προγραμματιστές
+      details:
+        structured_data:
+          developers: Προγραμματιστές
+          description: Explore our Developer Products. Στατιστικά, Apps, Extensions, Tutorials
+        meta_tags:
+          developers: Προγραμματιστές
+          description: Explore our Developer Products. Στατιστικά, Apps, Extensions, Tutorials
+  languages:
+    edit:
+      note: This changes the language of the site. It won't change any text entered by users.
+      setlanguage: Επιλέξτε τη γλώσσα σας
+  medals:
+    medal:
+      titles:
+        age: "%{score} Χρόνια"
+        cg: Commentator
+        d: Over %{score} downloads
+        dg: The Collector
+        e: I Am Here
+        fans: Over %{score} followers
+        fg: The Watcher
+        g: I Am a Developer
+        gm1: First Medal
+        gm10: Hero Developer
+        level_2: Επίπεδο 2
+        level_4: Επίπεδο 4
+        level_6: Επίπεδο 6
+        level_10: Επίπεδο 10
+        level_16: Επίπεδο 16
+        level_26: Επίπεδο 26
+        life: Like a Boss
+        rg: Civic Duty
+        t: Top %{score}
+        ud: 1000 Downloads
+        ug: Blacksmith
+        v: Over %{score} rates
+        king: The Best of its kind
+        vig: Very Important Game
+  news:
+    form:
+      text: Publish a post to engage your audience.
+      hashtag: We recommend using no more than 2 hashtags as best practice
+      now_loading: Now Loading...
+      publish: Post
+    news:
+      destroy: Κατάργηση
+      destroy_confirm: Είστε σίγουροι;
+    index:
+      players: Παίκτες
+      subscribers: Εγγεγραμμένοι
+      download: Λήψη
+  options:
+    index:
+      dashboard: Dashboard
+      profile: Προφίλ
+      followed_games: Εγγραφές
+      your_games: Your Games
+      settings: Ρυθμίσεις
+      logout: Αποσύνδεση
+  platforms:
+    platforms:
+      all: Όλα
+    select:
+      platform: Operating System
+  public_activities:
+    index:
+      destroy_confirm: Είστε σίγουροι;
+      mark_all_as_read: Mark all as read
+      notifications: Ειδοποιήσεις
+      see_all: Εμφάνιση περισσότερων
+  public_activities_mailer:
+    notify:
+      hello: Γεια σας %{username}
+      not_interested_emails: Not interested in this emails?
+      unsubscribe: Unsubscribe
+  public_activity:
+    base:
+      someone: Someone
+    comment:
+      answer:
+        comment_removed: Το σχόλιο αφαιρέθηκε
+      create:
+        comment_removed: Το σχόλιο αφαιρέθηκε
+    event_subscription:
+      create:
+        subscription_removed: Subscription removed
+    following:
+      create:
+        following_removed: Subscription removed
+    game:
+      removed_game: Removed game
+    news:
+      create:
+        news_removed: News removed
+    rating:
+      create:
+        missing_rating: Missing rating
+    user:
+      missing_user: Missing user
+      verified: Επαληθεύτηκε
+  reports:
+    new:
+      details: 'Περιγραφή:'
+      question: What is the issue?
+      send: Send
+      title: 'Αναφορά: %{game}'
+      report_submitted: Thanks for letting us know.
+      report_submitted_message: Your feedback helps our system learn when something isn't right.
+  scores:
+    score:
+      points: Πόντοι
+      delete: Κατάργηση
+      destroy_confirm: Είστε σίγουροι;
+      verified: Επαληθεύτηκε
+  search:
+    games:
+      filters: Φίλτρα
+      adult_content: Adults Contents
+      mobile_first: Βελτιωμένο για κινητές συσκευές
+      no_result: No results
+      search: Αναζήτηση
+      search_placeholder: Αναζήτηση...
+      search_tools: Search tools
+      language: Γλώσσα
+      genre: Τύπος
+      platform: Operating System
+      recommended: Προτεινόμενα
+      tool: Εργαλεία
+      status: Status
+      games: Παιχνίδια
+      score_system_games: Leaderboard Games
+      year: Ετος
+    details:
+      meta_tags:
+        search: Αναζήτηση
+        description: "Αναζήτηση... (Παιχνίδια, #Hashtags, @Προφίλς, Search tools, Γλώσσα, Τύπος, Ετος, Operating System, Tool, Status)"
+      structured_data:
+        search: Αναζήτηση
+        description: "Αναζήτηση... (Παιχνίδια, #Hashtags, @Προφίλς, Search tools, Γλώσσα, Τύπος, Ετος, Operating System, Tool, Status)"
+  settings:
+    edit:
+      settings: Ρυθμίσεις
+    form:
+      language: Γλώσσα (Language)
+      setlanguage: Επιλέξτε τη γλώσσα σας
+      sounds: Sounds
+      sounds_description: Play a sound when each new notification is received
+      adult_content: Adults Contents
+      label_on: 'On'
+      label_off: 'Off'
+      email_notifications: Ειδοποιήσεις με μήνυμα ηλεκτρονικού ταχυδρομείου
+      general: Γενικά
+      mail_comment_answer: Απαντήσεις στα σχόλιά μου
+      mail_comment_mention: Αναφορές
+      mail_event_subscription_create: Someone subscribes to your events
+      followed_games: Εγγραφές
+      mail_comment_follower_create: Someone comments a game you follow
+      mail_follower_news_create: Someone updates a game you follow
+      mail_news_create: Someone updates a game you follow
+      mail_follower_game_create: An user you follow uploaded a new game
+      mail_game_create: An user you follow uploaded a new game
+      mail_user_game_new_leader: You are the Best Player of a game
+      mail_user_game_old_leader: You are no more the Best Player of a game
+      mail_user_game_other_leader: There is a new Best Player
+      your_games: Your Games
+      mail_rating_create: Someone adds a vote to your game
+      mail_following_create: I am followed by someone new
+      mail_comment_create: Someone comments your game
+      mail_medal_create: You received a badge
+      mail_user_game_dev_leader: New Leader on your own game
+      account_data: Account Data
+      email: Email
+      password: Κωδικός πρόσβασης
+      edit: Επεξεργασία
+      stats: Στατιστικά
+      comments: σχόλια
+      subscriptions: Εγγραφές
+      show_more: Εμφάνιση περισσότερων
+      save: Αποθήκευση αλλαγών
+      delete_account: Permanently Delete Account
+  sitemaps:
+    index:
+      active_events: Upcoming
+      inactive_events: Past
+      new_events: Create Event
+      recover: Αποστολή νέου κωδικού
+      sign_in: Σύνδεση
+      sign_up: Εγγραφή
+      sitemap: Site Map
+    details:
+      meta_tags:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+      structured_data:
+        sitemap: Site Map
+        description: The site map is a list of pages of indiexpo accessible to crawlers or users.
+  subscriptions:
+    subscribe_button:
+      subscribe: Εγγραφή
+    unsubscribe_button:
+      unsubscribe: Unsubscribe
+  time:
+    formats:
+      default: "%H:%M %Y/%m/%d"
+  tools:
+    select:
+      tool: Εργαλεία
+  users:
+    show:
+      page_title: "%{username} is on indiexpo"
+      online: Online
+      chart: Rank
+      last_month: Last 30 Days
+      level: Επίπεδο
+      games: Παιχνίδια
+      score_system_games: Leaderboard Games
+      show_more: Εμφάνιση περισσότερων
+      subscriptions: Εγγραφές
+      last_commented: σχόλια
+      history: Ιστορικό
+      other_players: Other Players
+      verified: Επαληθεύτηκε
+    details:
+      structured_data:
+        developer: Δημιουργός
+        gamer: Gamer
+      meta_tags:
+        about: Πληροφορίες
+        description: Προφίλ, Trophy Case, Παιχνίδια, Εγγραφές, Leaderboard Games, σχόλια & Ιστορικό
+  me:
+    menubar:
+      profile: Προφίλ
+      event_subscriptions: My Events
+      followed_games: Εγγραφές
+      your_games: Your Games
+      settings: Ρυθμίσεις
+    followed_games:
+      no_result: No results
+      no_subscriptions_message: indiexpo works best when you are subscribed to at least 5 games.
+    games:
+      your_games: Your Games
+      visits: Προβολές
+      downloads_count: Παίκτες
+      subscribers: Εγγεγραμμένοι
+      totals: Totals
+      no_result: No results
+      upload: Upload
+  levels:
+    index:
+      level: Επίπεδο
+      user_chart: Rank
+      last_month: Last 30 Days
+      gems: Gems
+      trophy_case: Trophy Case
+      title_1: Beginner
+      title_2: Recruit
+      title_3: Enthusiast
+      title_4: Apprentice
+      title_5: Rookie
+      title_6: Senior
+      title_7: Talented
+      title_8: Skilled
+      title_9: Warrior
+      title_10: Specialist
+      title_11: Expert
+      title_12: Veteran
+      title_13: Pro
+      title_14: Elite
+      title_15: Genius
+      title_16: Master
+      title_17: Superstar
+      title_18: Dragon
+      title_19: Champion
+      title_20: Legend
+      title_21: Grandmaster
+      verified: Επαληθεύτηκε
+    goals:
+      goals: Goals
+    stats:
+      stats: Στατιστικά
+      comments: σχόλια
+      subscriptions: Εγγραφές
+      your_games: Your Games
+      votes: Votes
+  warning:
+    index:
+      warning: Warning
+      destroy: Κατάργηση
+      destroy_confirm: Είστε σίγουροι;
+      delete_account: Deleting your account is permanent.
+      delete_account_description: When you delete your indiexpo account, you won't be able to retrieve the content or information you've shared on indiexpo.

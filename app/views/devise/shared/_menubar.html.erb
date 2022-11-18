@@ -1,0 +1,17 @@
+<%
+{
+  login: { url: new_user_session_url, t: t('.login'), h: 1 },
+  register: { url: new_user_registration_url, t: t('.register'), h: 2 },
+  recover_password: { url: new_user_password_url, t: t('.recover_password'), h: 3 },
+  send_email_again: { url: new_confirmation_url(resource_name), t: t('.send_email_again'), h: 4 }
+}.each do |name, data|
+%>
+<li class="<%= menu == name && 'selected' %>">
+	<%= content_tag :"h#{data[:h]}" do %>
+		<%= link_to data[:t], data[:url], class: 'desktop_only' %>
+		<%= link_to data[:url], class: 'mobile_only' do %>
+			<%= image_tag "Images/icons/pages/#{name}.png" %>
+		<% end %>
+	<% end %>
+</li>
+<% end %>

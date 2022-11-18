@@ -1,0 +1,4 @@
+<%= link_to user_path(user.username), class: 'textc60' do %>
+	<%= user.try!(:username) || t('.missing_user') %>
+	<%= image_tag('Images/icons/verified_mini.png', alt: t('.verified'), title: t('.verified')) if user.verified? %>
+<% end %>
